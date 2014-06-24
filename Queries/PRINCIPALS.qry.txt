@@ -1,0 +1,3 @@
+SELECT Schools.SCHOOL, Persons.FNAME, Persons.LNAME, Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP, Persons.SALUTATION
+FROM Persons RIGHT JOIN Schools ON Persons.PID = Schools.P_PID;
+

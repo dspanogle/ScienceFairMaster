@@ -1,0 +1,933 @@
+Version =20
+VersionRequired =20
+Checksum =-448259094
+Begin Form
+    AllowFilters = NotDefault
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
+    AllowAdditions = NotDefault
+    AllowEdits = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =2
+    ViewsAllowed =2
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3840
+    DatasheetFontHeight =10
+    ItemSuffix =28
+    Top =600
+    Right =5625
+    Bottom =9345
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x317c4474f25fe440
+    End
+    GUID = Begin
+        0x345c81422cdd1b42878286a65244b7a9
+    End
+    RecordSource ="SELECT ExhibitJudges.EXN, ExhibitJudges.JUN, ExhibitJudges.[CR1], ExhibitJudges."
+        "[CR2], ExhibitJudges.[CR3], ExhibitJudges.[CR4], ExhibitJudges.[CR5], ExhibitJud"
+        "ges.NTR, ExhibitJudges.[CR6], Judges.STATUS, Judges.JCAT, Judges.P_1, Judges.P_2"
+        ", Judges.P_3, Judges.P_4, Judges.TEAM_OK, ExhibitJudges.FYR, Judges.NUMEX FROM J"
+        "udges RIGHT JOIN ExhibitJudges ON Judges.JUN=ExhibitJudges.JUN; "
+    Caption ="xExhibitJudges Subform"
+    DatasheetFontName ="Arial"
+    AllowFormView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Subform
+            SpecialEffect =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Tab
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+            GUID = Begin
+                0x55828057c18fcc43af11001421e66811
+            End
+        End
+        Begin Section
+            Height =6180
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x620c038d9e78fe4bb5145261bf8daa52
+            End
+            Begin
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1020
+                    Top =120
+                    Width =900
+                    Height =255
+                    ColumnWidth =765
+                    ColumnOrder =0
+                    Name ="EXN"
+                    ControlSource ="EXN"
+                    StatusBarText ="Exhibit Number - Linked to Exhibit Master"
+                    GUID = Begin
+                        0x87ed8a98b0f96248ad2b357c4476581d
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =120
+                            Width =420
+                            Height =255
+                            Name ="EXN_Label"
+                            Caption ="EXN"
+                            GUID = Begin
+                                0xf9ff58a44dfc35459c9afad6a2d7c235
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1020
+                    Top =480
+                    Width =900
+                    Height =255
+                    ColumnWidth =630
+                    ColumnOrder =1
+                    TabIndex =1
+                    Name ="JUN"
+                    ControlSource ="JUN"
+                    StatusBarText ="Judge Number - Linked to Judge Table"
+                    GUID = Begin
+                        0x33aaf33ee94f1e4eac3ec8528d0bd861
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =480
+                            Width =480
+                            Height =255
+                            Name ="JUN_Label"
+                            Caption ="JUN"
+                            GUID = Begin
+                                0x56e6c9697af92545b3b8303e78e28bb1
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =3300
+                    Width =465
+                    Height =255
+                    ColumnWidth =495
+                    ColumnOrder =10
+                    TabIndex =2
+                    Name ="CAS"
+                    ControlSource ="CR1"
+                    StatusBarText ="Creative Ability Sub Score"
+                    GUID = Begin
+                        0xbe7ced8ac5622e4bad83734354df36db
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =3300
+                            Width =1560
+                            Height =255
+                            Name ="CAS_Label"
+                            Caption ="CR1"
+                            GUID = Begin
+                                0xeb81cceddc89474c82d3b829803ad78f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =3660
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    ColumnOrder =11
+                    TabIndex =3
+                    Name ="STS"
+                    ControlSource ="CR2"
+                    StatusBarText ="Scientific Thought Sub Score"
+                    GUID = Begin
+                        0x87e903c4025d5446b4cb007c1657a50e
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =3660
+                            Width =1560
+                            Height =255
+                            Name ="STS_Label"
+                            Caption ="CR2"
+                            GUID = Begin
+                                0x33353ee0f2ea9b4a981a07af39c40ec7
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =4020
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    ColumnOrder =12
+                    TabIndex =4
+                    Name ="THS"
+                    ControlSource ="CR3"
+                    StatusBarText ="Thoroughness Sub Score"
+                    GUID = Begin
+                        0xa64ed24d830f494eb0dcf8414d388bd1
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4020
+                            Width =1560
+                            Height =255
+                            Name ="THS_Label"
+                            Caption ="CR3"
+                            GUID = Begin
+                                0xfc258a53e05320499e23eece58f410d2
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =4380
+                    Width =465
+                    Height =255
+                    ColumnWidth =495
+                    ColumnOrder =13
+                    TabIndex =5
+                    Name ="SKS"
+                    ControlSource ="CR4"
+                    StatusBarText ="Skill Sub Score"
+                    GUID = Begin
+                        0x8bd71f99f06bf94fac767fe7923b4987
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4380
+                            Width =1560
+                            Height =255
+                            Name ="SKS_Label"
+                            Caption ="CR4"
+                            GUID = Begin
+                                0x71db5697afdd5c4e921ab19952bda5c3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =4740
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    ColumnOrder =14
+                    TabIndex =6
+                    Name ="CLS"
+                    ControlSource ="CR5"
+                    StatusBarText ="Clarity Sub Score"
+                    GUID = Begin
+                        0x912384493d4ed94eae1831e5fcf53306
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4740
+                            Width =1560
+                            Height =255
+                            Name ="CLS_Label"
+                            Caption ="CR5"
+                            GUID = Begin
+                                0x505fb8a1306c0c468ff05fd769132dca
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =5100
+                    Width =465
+                    Height =255
+                    ColumnWidth =570
+                    ColumnOrder =15
+                    TabIndex =7
+                    Name ="TWS"
+                    ControlSource ="CR6"
+                    StatusBarText ="Teamwork Sub Score"
+                    GUID = Begin
+                        0xcc6f7e45f0dcac4d957fd48b1f74ef88
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5100
+                            Width =1560
+                            Height =255
+                            Name ="TWS_Label"
+                            Caption ="CR6"
+                            GUID = Begin
+                                0x7a051e82d08a6f4eb62d2c44188630ab
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =5460
+                    Width =600
+                    Height =255
+                    ColumnWidth =735
+                    ColumnOrder =17
+                    TabIndex =8
+                    Name ="FYR"
+                    ControlSource ="FYR"
+                    StatusBarText ="Fair Year.  These assingments belong to the fair held or to be held on the year "
+                        "entered"
+                    GUID = Begin
+                        0x3aaace9f1bf7304ea79e6927dea8c7bf
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5460
+                            Width =1560
+                            Height =255
+                            Name ="FYR_Label"
+                            Caption ="FYR"
+                            GUID = Begin
+                                0x90583fa4437f12418f95b7ec34415f84
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =5820
+                    Width =465
+                    Height =255
+                    ColumnWidth =525
+                    ColumnOrder =16
+                    TabIndex =9
+                    Name ="NTR"
+                    ControlSource ="NTR"
+                    StatusBarText ="Number of times then data has been entered"
+                    GUID = Begin
+                        0x5527e0441ff88a42965e7e67026dc147
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5820
+                            Width =1560
+                            Height =255
+                            Name ="NTR_Label"
+                            Caption ="NTR"
+                            GUID = Begin
+                                0xb801923fa90a3445a11b4e870f2dc7d8
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =780
+                    Width =240
+                    ColumnWidth =855
+                    ColumnOrder =4
+                    TabIndex =10
+                    Name ="STATUS"
+                    ControlSource ="STATUS"
+                    StatusBarText ="Judge is Active this year = 'A'        Active but After Cards Printed = 'L'"
+                    GUID = Begin
+                        0x0b6d89a5c7eac548ba95718101cc1023
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =780
+                            Width =765
+                            Height =240
+                            Name ="Label20"
+                            Caption ="STATUS:"
+                            GUID = Begin
+                                0xc90b250f805df344a98d6d1b8353bcd4
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =1080
+                    Width =840
+                    ColumnWidth =915
+                    ColumnOrder =3
+                    TabIndex =11
+                    Name ="JCAT"
+                    ControlSource ="JCAT"
+                    StatusBarText ="Assigned Judging Category Code  Same as old SFJM [DIV + CAT]"
+                    GUID = Begin
+                        0x59e03e1036e57c4aace1117fdce96dcb
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1080
+                            Width =510
+                            Height =240
+                            Name ="Label21"
+                            Caption ="JCAT:"
+                            GUID = Begin
+                                0x9d014f1bd9149c439d36ed8f8e9f5386
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =1380
+                    Width =840
+                    ColumnWidth =915
+                    ColumnOrder =5
+                    TabIndex =12
+                    Name ="P_1"
+                    ControlSource ="P_1"
+                    StatusBarText ="Judging Preference 1                Same as old SFJM[D1 + C1]"
+                    GUID = Begin
+                        0xd5f5271a37c88843a1375e4f55a14726
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =60
+                            Top =1440
+                            Width =405
+                            Height =240
+                            Name ="Label22"
+                            Caption ="P_1:"
+                            GUID = Begin
+                                0x8d9e60bbb8092244ba1850bd71232a1d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =1680
+                    Width =840
+                    ColumnWidth =960
+                    ColumnOrder =7
+                    TabIndex =13
+                    Name ="P_2"
+                    ControlSource ="P_2"
+                    StatusBarText ="Judging Preference 2                Same as old SFJM[D2 + C2]"
+                    GUID = Begin
+                        0xf3412dd8e7a1684f81f253fb9e3dca3d
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =87
+                            Left =60
+                            Top =1680
+                            Width =405
+                            Height =240
+                            Name ="Label23"
+                            Caption ="P_2:"
+                            GUID = Begin
+                                0xad7896dce3cc0d43a60cce8dd8f962bc
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =1980
+                    Width =840
+                    ColumnWidth =885
+                    ColumnOrder =6
+                    TabIndex =14
+                    Name ="P_3"
+                    ControlSource ="P_3"
+                    StatusBarText ="Judging Preference 3                Same as old SFJM[D3 + C3]"
+                    GUID = Begin
+                        0x02e912477a02a94ea31514416bece9e2
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1980
+                            Width =405
+                            Height =240
+                            Name ="Label24"
+                            Caption ="P_3:"
+                            GUID = Begin
+                                0xbd49570366fe744ea56c8b7d215732f3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =2340
+                    Width =840
+                    ColumnWidth =930
+                    ColumnOrder =8
+                    TabIndex =15
+                    Name ="P_4"
+                    ControlSource ="P_4"
+                    StatusBarText ="Judging Preference 4                Same as old SFJM[D4 + C4]"
+                    GUID = Begin
+                        0xda1c66743d5c144eb48a1eaf90f12b99
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2280
+                            Width =405
+                            Height =240
+                            Name ="Label25"
+                            Caption ="P_4:"
+                            GUID = Begin
+                                0x46234af9aa7a234e9a41ed5a6005c0b7
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =2640
+                    Width =360
+                    ColumnWidth =1020
+                    ColumnOrder =9
+                    TabIndex =16
+                    Name ="TEAM_OK"
+                    ControlSource ="TEAM_OK"
+                    StatusBarText ="Will Judge TEAM (N=No,Y=Yes;Blank=?)      Same as old TEAM"
+                    GUID = Begin
+                        0xd38097231099034da07f0b0f1dfe5e35
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2640
+                            Width =780
+                            Height =240
+                            Name ="Label26"
+                            Caption ="TEAM_OK:"
+                            GUID = Begin
+                                0xe2a052bbabb4074ca101ebdadcab6a77
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =960
+                    Top =2940
+                    Width =840
+                    ColumnWidth =885
+                    ColumnOrder =2
+                    TabIndex =17
+                    Name ="NUMEX"
+                    ControlSource ="NUMEX"
+                    StatusBarText ="Temp Used by SFCards DO NOT REMOVE"
+                    GUID = Begin
+                        0xf620fb975c47f64fbb0f3e32318dde86
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2940
+                            Width =705
+                            Height =240
+                            Name ="Label27"
+                            Caption ="NUMEX:"
+                            GUID = Begin
+                                0xf1c56961856c0949a0470f39bde379f5
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0x7c177f4e16ab9a4882eec2b621050512
+            End
+        End
+    End
+End

@@ -1,0 +1,3 @@
+UPDATE Judges SET Judges.NUM_YR = 0, Judges.LAST_YR = [FIRST_YR]
+WHERE (((Judges.FIRST_YR)=FairYear()));
+

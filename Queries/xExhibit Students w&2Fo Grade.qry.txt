@@ -1,0 +1,5 @@
+SELECT ExhibitStudents.EXN, Students.GRADE, Persons.LNAME
+FROM Persons RIGHT JOIN (ExhibitStudents LEFT JOIN Students ON ExhibitStudents.STID = Students.STID) ON Persons.PID = Students.PID
+WHERE (((Students.GRADE) Is Null Or (Students.GRADE)>12 Or (Students.GRADE)<6))
+ORDER BY ExhibitStudents.EXN;
+

@@ -1,0 +1,3 @@
+SELECT Persons.SALUTATION, Persons.FNAME, Persons.MI, Persons.LNAME, Judges.JCAT, Persons.HOME_PHONE, Persons.WORK_PHONE
+FROM Persons RIGHT JOIN Judges ON Persons.PID=Judges.PID;
+

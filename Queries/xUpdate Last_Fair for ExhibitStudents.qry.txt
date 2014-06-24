@@ -1,0 +1,2 @@
+UPDATE (Persons RIGHT JOIN Students ON (Persons.PID=Students.PID) AND (Persons.PID=Students.PID) AND (Persons.PID=Students.PID)) RIGHT JOIN ExhibitStudents ON Students.STID=ExhibitStudents.STID SET Students.LAST_FAIR = fairyear(), Persons.COMMENTS = [persons.comments] & "  " & fairyear() & " EXN: " & [EXN];
+

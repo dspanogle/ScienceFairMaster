@@ -1,0 +1,2536 @@
+Version =20
+VersionRequired =20
+Checksum =1630772319
+Begin Form
+    RecordSelectors = NotDefault
+    OrderByOn = NotDefault
+    DefaultView =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    Cycle =1
+    GridX =24
+    GridY =24
+    Width =10860
+    DatasheetFontHeight =10
+    ItemSuffix =125
+    Left =615
+    Top =285
+    Right =11715
+    Bottom =6090
+    DatasheetGridlinesColor =12632256
+    BeforeDelConfirm ="[Event Procedure]"
+    AfterDelConfirm ="[Event Procedure]"
+    Filter ="((Lookup_cbPerson.PName=\"Cummings, Tom  Mr.  (RJ,AD)\"))"
+    OrderBy ="AwardDonors.AN"
+    RecSrcDt = Begin
+        0x4377ac7b33f2e240
+    End
+    OnDirty ="[Event Procedure]"
+    GUID = Begin
+        0x0d4ac0aa33cb3d4092141e8c032020f1
+    End
+    RecordSource ="SELECT AwardDonors.*, AwardMaster.*, Persons.*, AwardMaster.AN AS AWD_NUM, Perso"
+        "ns.LNAME AS sortLNAME FROM Persons RIGHT JOIN (AwardMaster RIGHT JOIN AwardDonor"
+        "s ON AwardMaster.AN=AwardDonors.AN) ON Persons.PID=AwardDonors.PID ORDER BY Awar"
+        "dMaster.AN, Persons.LNAME; "
+    OnCurrent ="[Event Procedure]"
+    OnDelete ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
+    AfterUpdate ="[Event Procedure]"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00580343ef800701000100ea0a6f08640001000f00580202000100 ,
+        0x5802020001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x220010014c030c00cad2f6720000000000000000000000000000000000000000 ,
+        0x0000000000000000090000000000000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000000000000000000010010000534d544a ,
+        0x00000000100000014d006900630072006f0073006f0066007400200058005000 ,
+        0x5300200044006f00630075006d0065006e007400200057007200690074006500 ,
+        0x72000000496e70757442696e00464f524d534f5552434500524553444c4c0055 ,
+        0x6e69726573444c4c00496e7465726c656176696e67004f464600496d61676554 ,
+        0x797065004a5045474d6564004f7269656e746174696f6e00504f525452414954 ,
+        0x00436f6c6c617465004f4646005265736f6c7574696f6e004f7074696f6e3100 ,
+        0x506170657253697a65004c455454455200436f6c6f724d6f6465003234627070 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000c0000004d58445701010000
+    End
+    PrtDevNames = Begin
+        0x0800270046000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000585053506f72743a000000000000000000000000000000000000
+    End
+    OnTimer ="[Event Procedure]"
+    OnLoad ="[Event Procedure]"
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    AllowLayoutView =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            UnknownProp = {324 ,0 ,0 ,0 ,1 } Begin
+                0x00
+            End
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Section
+            Height =5820
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x3ba94a92da86f74cbccfaee2f7ad9cad
+            End
+            Begin
+                Begin Label
+                    OverlapFlags =93
+                    Left =60
+                    Width =4995
+                    Height =300
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label92"
+                    Caption ="Award Donor: Edit, Add, Delete "
+                    GUID = Begin
+                        0xfcf3c6f835066b43849139ff67626245
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =2160
+                    Left =8760
+                    Top =60
+                    Width =1860
+                    FontSize =10
+                    TabIndex =18
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
+                    GUID = Begin
+                        0x8d9d0b2e03d63d4b940d0c2780545cf9
+                    End
+                    Name ="cbFindNum"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT AwardMaster.AN, AwardMaster.an & \" - \" & [LNAME] & \" (\" & AwardDonors"
+                        ".pid & \")\" AS AnNam FROM Persons RIGHT JOIN (AwardMaster LEFT JOIN AwardDonors"
+                        " ON AwardMaster.AN=AwardDonors.AN) ON Persons.PID=AwardDonors.PID ORDER BY Award"
+                        "Master.AN, AwardMaster.an & \" - \" & [LNAME] & \" (\" & AwardDonors.pid & \")\""
+                        "; "
+                    ColumnWidths ="0;2160"
+                    AfterUpdate ="[Event Procedure]"
+                    OnEnter ="[Event Procedure]"
+                    BaseInfo ="\"SELECT AwardMaster.AN, AwardMaster.an & \"\" - \"\" & [LNAME] & \"\" (\"\" & A"
+                        "wardDonors.pid & \"\")\"\" AS AnNam FROM Persons RIGHT JOIN (AwardMaster LEFT JO"
+                        "IN AwardDonors ON AwardMaster.AN=AwardDonors.AN) ON Persons.PID=AwardDonors.PID "
+                        "ORDER BY AwardMaster.AN, AwardMaster.an & \"\" - \"\" & [LNAME] & \"\" (\"\" & A"
+                        "wardDonors.pid & \"\")\"\"; \";\"Persons\";\"AwardMaster\";\"AwardDonors\";\"\""
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =6420
+                            Top =60
+                            Width =2280
+                            Height =255
+                            FontSize =10
+                            Name ="ES_EXN_Label"
+                            Caption ="Find Award Num (Donor)"
+                            GUID = Begin
+                                0x36e987d849056e4680f7575a953a17b6
+                            End
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =87
+                    ColumnCount =2
+                    ListWidth =4320
+                    Left =7380
+                    Top =360
+                    Width =3240
+                    FontSize =10
+                    TabIndex =19
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"200\""
+                    GUID = Begin
+                        0x9318fe638eb95748a352d582dbd19cbd
+                    End
+                    Name ="cbFindAwdName"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT AwardMaster.AN, AwardMaster.Award_Name FROM AwardMaster ORDER BY AwardMas"
+                        "ter.Award_Name; "
+                    ColumnWidths ="0;4320"
+                    AfterUpdate ="[Event Procedure]"
+                    OnEnter ="[Event Procedure]"
+                    BaseInfo ="\"SELECT AwardMaster.AN, AwardMaster.Award_Name FROM AwardMaster ORDER BY AwardM"
+                        "aster.Award_Name; \";\"AwardMaster\";\"\";\"AN\";\"Award_Name\";\"AN\""
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =5340
+                            Top =360
+                            Width =2040
+                            Height =300
+                            FontSize =10
+                            Name ="lbFindStudent"
+                            Caption ="FIRST Award by Name"
+                            GUID = Begin
+                                0x333723847a3ad94aa492e31a97543d1d
+                            End
+                        End
+                    End
+                End
+                Begin Rectangle
+                    OverlapFlags =93
+                    Left =60
+                    Top =720
+                    Width =10680
+                    Height =960
+                    Name ="Box103"
+                    GUID = Begin
+                        0x9f86c1550a902740a04719e312b80ba3
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =4380
+                    Top =840
+                    Width =576
+                    Height =546
+                    TabIndex =20
+                    Name ="btnFirst"
+                    Caption ="Command61"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8800888888800888800000008800888888000888840000008800888880000888 ,
+                        0x8004322688008888000008888040e26288008880000008888440366688008800 ,
+                        0x000008888111a3338800888000000888899deaee8800888800000888888caaaa ,
+                        0x8800888880000888811133228800888888000888811909108800888888800888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="First Record"
+                    GUID = Begin
+                        0x3844f777b2deea45a0cfcb5e6be89a0c
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =5040
+                    Top =840
+                    Width =576
+                    Height =546
+                    TabIndex =21
+                    Name ="btnPrev"
+                    Caption ="Command62"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888888800888888800000008888888000888888840000008888880000888888 ,
+                        0x8004322688888000008888888040e26288880000008888888440366688800000 ,
+                        0x008888888111a3338888000000888888899deaee8888800000888888888caaaa ,
+                        0x8888880000888888811133228888888000888888811909108888888800888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Previous Record"
+                    GUID = Begin
+                        0xd28e0d08f4c92f4580ac4766830c4715
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    AutoRepeat = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =5820
+                    Top =840
+                    Width =576
+                    Height =546
+                    TabIndex =22
+                    Name ="btnNext"
+                    Caption ="Command63"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888800888888888800000008888800088888888840000008888800008888888 ,
+                        0x8004322688888000008888888040e26288888000000888888440366688888000 ,
+                        0x000088888111a3338888800000088888899deaee8888800000888888888caaaa ,
+                        0x8888800008888888811133228888800088888888811909108888800888888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Next Record"
+                    GUID = Begin
+                        0x9974de2ca77c0047a60d8cbc0a69eef7
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =6480
+                    Top =840
+                    Width =576
+                    Height =546
+                    TabIndex =23
+                    Name ="btnLast"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8800888888800888800000008800088888800888840000008800008888800888 ,
+                        0x8004322688000008888008888040e26288000000888008888440366688000000 ,
+                        0x088008888111a3338800000088800888899deaee8800000888800888888caaaa ,
+                        0x8800008888800888811133228800088888800888811909108800888888800888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Last Record"
+                    GUID = Begin
+                        0xc35d6b707e3693468ca3a80e2b95ba37
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =2100
+                    Top =1140
+                    Width =1026
+                    Height =486
+                    TabIndex =24
+                    Name ="btnAdd"
+                    Caption ="Command65"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000100000000f0000000100040000000000780000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x80800000c0c0c000808080000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00777777777777777777777777777777777777777777777777 ,
+                        0x7077777777777777700777777770777770007777707070777000077777000777 ,
+                        0x7000007700000007700007777700077770007777707070777007777777707777 ,
+                        0x7077777777777777777777777777777777777777777777777777777777777777 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Add Record"
+                    GUID = Begin
+                        0x66bc5f6bb8dc404ba631fd75f84dc863
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =9120
+                    Top =840
+                    Width =576
+                    Height =546
+                    TabIndex =25
+                    Name ="btnDelete"
+                    Caption ="Command66"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000020000000200000000100080000000000000400000000000000000000 ,
+                        0x0000000000000000000000000000bf0000bf000000bfbf00bf000000bf00bf00 ,
+                        0xbfbf0000c0c0c000c0dcc000f0c8a40000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0xf0fbff00a4a0a000808080000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00070707070707070707070707070707070000000000000000 ,
+                        0x0007070707070707070707070707070707070707070700000000000000000000 ,
+                        0x0000000707070707070707070707070707070707000000000000000000000000 ,
+                        0x0000000000070707070707070707070707000000f8f8f8f8f8f8000000000000 ,
+                        0x0000000000070707070707070707070700f8f8f80707070707f8f8f8f8000000 ,
+                        0x00000000000707070707070707070700f80707070700f80700f8f8f8f8f80000 ,
+                        0x00000000000707070707070707070700070700f80700f80700f8f800f8f80000 ,
+                        0x00000000000707070707070707070700070700f80700f80700f8f800f8f80000 ,
+                        0x00000000070707070707070707070700070700f80700f80700f8f800f8f80000 ,
+                        0x00000707070707070707070707070007070700f80700f80700f8f8f800f8f800 ,
+                        0x070707070707070707070707070700070700f8070000f8070000f8f800f8f800 ,
+                        0x070707070707070707070707070700070700f80700f807070700f8f800f8f800 ,
+                        0x070707070707070707070707070700070700f80700f807070700f8f800f8f800 ,
+                        0x070707070707070707070707070007070700070700f807070700f8f8f800f8f8 ,
+                        0x0007070707070707070707070700070700f8070700f807070700f8f8f800f8f8 ,
+                        0x0007070707070707070707070700070700f8070700f800070700f800f800f8f8 ,
+                        0x0007070707070707070707070700070700f807070000000707000000f800f8f8 ,
+                        0x00070707070707070707070707000700f8000707070707070707f8f8f800f8f8 ,
+                        0x0007070707070707070707070007070000070707f8f8f8f8f8f8f8f8f8f800f8 ,
+                        0xf800070707070707070707070007070707f8f8f8000000000000f8f8f8f8f800 ,
+                        0xf800070707070707070707070007f8f8f80000000707070707f8000000f8f8f8 ,
+                        0xf8000707070707070707070700f8000000070707000000000000f8f8f8000000 ,
+                        0xf800070707070707070707070000070707000000070707070707000000f8f8f8 ,
+                        0x00000707070707070707070700070700000707070707070707070707070000f8 ,
+                        0xf800070707070707070707000707000707070707070707070707070707070700 ,
+                        0xf8f8000707070707070707000700070707070000f8f8f8f8f8f8000007070707 ,
+                        0x00f8000707070707070707070007070707070000000000000000000007070707 ,
+                        0x0700070707070707070707070700000707070700000707070700000707070700 ,
+                        0x0007070707070707070707070707070000070707000000000000070707000007 ,
+                        0x0707070707070707070707070707070707000007070707070707070000070707 ,
+                        0x0707070707070707070707070707070707070700000000000000000707070707 ,
+                        0x0707070707070707070707070707070707070707070707070707070707070707 ,
+                        0x0707070707070707000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Delete Record"
+                    GUID = Begin
+                        0x348e76c7d0ea134bace0fa8d9e80abed
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =1080
+                    Top =1140
+                    Width =786
+                    Height =486
+                    TabIndex =26
+                    Name ="btnSave"
+                    Caption ="Command67"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadadadadadadadaad000000000000add0330880000330da ,
+                        0xa0330880000330add0330880000330daa0330000000330add0333333333330da ,
+                        0xa0330000000330add030fffffff030daa030fccccff030add030ffcccff030da ,
+                        0xa03dfccccff000add0dacccfcff070daadacccadad0000addacccadadadadada ,
+                        0xadacadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Save Record"
+                    GUID = Begin
+                        0x48d7da9d29be5a4d966480bffd09957b
+                    End
+
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =480
+                    Top =1200
+                    Width =585
+                    Height =405
+                    Name ="Label69"
+                    Caption ="Save +\015\012Re Sort"
+                    GUID = Begin
+                        0x92bf197683ddec4699c00cb1ee740ba8
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =3180
+                    Top =1200
+                    Width =1080
+                    Height =420
+                    Name ="Label104"
+                    Caption ="Add New Donor Record"
+                    GUID = Begin
+                        0x3103e6b0bb7ea54fbdd9c9f69805d149
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =6600
+                    Top =1380
+                    Width =480
+                    Height =240
+                    Name ="Label71"
+                    Caption ="Last"
+                    GUID = Begin
+                        0x0bcf81d73e0b0945a41a61e68c9b2bb6
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =5940
+                    Top =1380
+                    Width =480
+                    Height =210
+                    Name ="Label72"
+                    Caption ="Next"
+                    GUID = Begin
+                        0x9fedf3ff3049a947aea8a7acb3abec1c
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =5100
+                    Top =1380
+                    Width =540
+                    Height =210
+                    Name ="Label105"
+                    Caption ="Prev."
+                    GUID = Begin
+                        0xeaa08d575bcf48498cf60885cb7e1d45
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =4380
+                    Top =1380
+                    Width =540
+                    Height =210
+                    Name ="Label74"
+                    Caption ="First"
+                    GUID = Begin
+                        0x48e484c6658fef4baf7b1ac8c8d1757d
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =9180
+                    Top =1380
+                    Width =540
+                    Height =210
+                    Name ="Label106"
+                    Caption ="Delete"
+                    GUID = Begin
+                        0x5165fcf75056404dbc7c97d3b7ad0f15
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =7800
+                    Top =840
+                    Width =780
+                    TabIndex =27
+                    Name ="tbRecord"
+                    GUID = Begin
+                        0x66be3f277b2518498e8d151d6a8023a5
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =7140
+                            Top =840
+                            Width =645
+                            Height =240
+                            Name ="Label107"
+                            Caption ="Record:"
+                            GUID = Begin
+                                0x9eca9d73bfadfb4997b30ea5252236c2
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =7800
+                    Top =1140
+                    Width =780
+                    TabIndex =28
+                    Name ="tbNumRec"
+                    GUID = Begin
+                        0xaeb546afc63f134e84115d608aa53e18
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =7500
+                            Top =1140
+                            Width =300
+                            Height =240
+                            Name ="Label108"
+                            Caption ="Of:"
+                            GUID = Begin
+                                0xb15627c05bcb2d4d82eddab1a93674b9
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =95
+                    Left =1020
+                    Top =1740
+                    Width =480
+                    Name ="AWD_NUM"
+                    ControlSource ="AwardDonors.AN"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0xd4abb5e063c8b6448d42b975d92547da
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =120
+                            Top =1740
+                            Width =900
+                            Height =240
+                            Name ="Label0"
+                            Caption ="Award Num"
+                            GUID = Begin
+                                0x835d6d227cade144a9b8ad2455d70b8a
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =2640
+                    Top =1740
+                    Width =7320
+                    TabIndex =7
+                    Name ="Award_Name"
+                    ControlSource ="Award_Name"
+                    GUID = Begin
+                        0x501420dc771b3d4a874e958ce3ca5896
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =1620
+                            Top =1740
+                            Width =990
+                            Height =240
+                            Name ="Label3"
+                            Caption ="Award Name"
+                            GUID = Begin
+                                0x53b46a6c749f1a499f4a20a81cbd4077
+                            End
+                        End
+                    End
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =1440
+                    Left =840
+                    Top =2820
+                    Width =3120
+                    TabIndex =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
+                    GUID = Begin
+                        0xdfd75484fcbdfb479e90f4602893a51e
+                    End
+                    Name ="cbPerson"
+                    ControlSource ="AwardDonors.PID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT Persons.PID, [LNAME] & \", \" & [FNAME] & \" \" & [MI] & \" \" & [salutat"
+                        "ion] & \"  (\" & [TP] & \")\" AS PName FROM Persons ORDER BY [LNAME] & \", \" & "
+                        "[FNAME] & \" \" & [MI] & \" \" & [salutation] & \"  (\" & [TP] & \")\"; "
+                    ColumnWidths ="0;1440"
+                    BeforeUpdate ="[Event Procedure]"
+                    OnExit ="[Event Procedure]"
+                    OnNotInList ="[Event Procedure]"
+                    BaseInfo ="\"SELECT Persons.PID, [LNAME] & \"\", \"\" & [FNAME] & \"\" \"\" & [MI] & \"\" \""
+                        "\" & [salutation] & \"\"  (\"\" & [TP] & \"\")\"\" AS PName FROM Persons ORDER B"
+                        "Y [LNAME] & \"\", \"\" & [FNAME] & \"\" \"\" & [MI] & \"\" \"\" & [salutation] &"
+                        " \"\"  (\"\" & [TP] & \"\")\"\"; \";\"Persons\";\"\";\"PID\";\"[LNAME] & \"\", \""
+                        "\" & [FNAME] & \"\" \"\" & [MI] & \"\" \"\" & [salutation] & \"\"  \";\"PrimaryK"
+                        "ey\""
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2820
+                            Width =720
+                            Height =240
+                            Name ="cbPerson_Label"
+                            Caption ="Donor"
+                            GUID = Begin
+                                0x86c0747f3a8d5646ab83fb6e01b31e44
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =9420
+                    Top =4380
+                    Width =720
+                    ColumnWidth =765
+                    TabIndex =17
+                    Name ="TP"
+                    ControlSource ="TP"
+                    StatusBarText ="Previous/current person type . Two  letters per type (commas between)"
+                    GUID = Begin
+                        0xb5b2d3fe1dfae64e95cabd554ac77509
+                    End
+
+                    LayoutCachedLeft =9420
+                    LayoutCachedTop =4380
+                    LayoutCachedWidth =10140
+                    LayoutCachedHeight =4620
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =9060
+                            Top =4380
+                            Width =315
+                            Height =240
+                            Name ="Label6"
+                            Caption ="TP:"
+                            GUID = Begin
+                                0x4c362fc86262ab4da0aa154c86ec9f7c
+                            End
+                            LayoutCachedLeft =9060
+                            LayoutCachedTop =4380
+                            LayoutCachedWidth =9375
+                            LayoutCachedHeight =4620
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =8160
+                    Top =4680
+                    Width =900
+                    TabIndex =29
+                    Name ="LAST_CHG"
+                    ControlSource ="LAST_CHG"
+                    StatusBarText ="Last Time this record was changed"
+                    InputMask ="99/99/00;0;\" \""
+                    GUID = Begin
+                        0x4499510cab914f4e83c31665551c30d7
+                    End
+
+                    LayoutCachedLeft =8160
+                    LayoutCachedTop =4680
+                    LayoutCachedWidth =9060
+                    LayoutCachedHeight =4920
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =6720
+                            Top =4680
+                            Width =1395
+                            Height =240
+                            Name ="Label7"
+                            Caption ="Persons Last_chg:"
+                            GUID = Begin
+                                0x619d2f55b1fa4c4eb99d80cb9a8e6273
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    Left =5100
+                    Top =2820
+                    Width =840
+                    TabIndex =2
+                    Name ="Type"
+                    ControlSource ="Type"
+                    StatusBarText ="(Enter All that apply separated by comma's) 'P'=Primary; 'M'=Gets Money; 'B'=A B"
+                        "oss for Recognition; 'A'=Alternate; 'O'=Other(see Notes)"
+                    OnExit ="[Event Procedure]"
+                    GUID = Begin
+                        0xb3090fc1cacd7b499a3913de5e1791d5
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =4020
+                            Top =2820
+                            Width =1110
+                            Height =240
+                            Name ="Label8"
+                            Caption ="Donor Type(s)"
+                            GUID = Begin
+                                0xc19327df9d4fdf458e898775de62fffa
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =95
+                    Left =2640
+                    Top =2100
+                    Width =7320
+                    Height =243
+                    ColumnWidth =5925
+                    TabIndex =30
+                    Name ="Description"
+                    ControlSource ="Description"
+                    StatusBarText ="P-Description/Criteria  for Scripts and News [SFAM.M1+M2+M3+M4]"
+                    GUID = Begin
+                        0xb8a9557433e5f843936e58b500a831c6
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =1620
+                            Top =2100
+                            Width =1020
+                            Height =240
+                            Name ="Label11"
+                            Caption =" Description:"
+                            GUID = Begin
+                                0xc3d50f395bf2a746ad676eaf37da6039
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =9360
+                    Top =2400
+                    Width =1320
+                    TabIndex =31
+                    Name ="Level"
+                    ControlSource ="Level"
+                    StatusBarText ="P-Galaxy, Friends, Atom, Jewel, Etc.  [New]"
+                    GUID = Begin
+                        0x13a1d8154bc226488ef974c56d66102c
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =8760
+                            Top =2400
+                            Width =510
+                            Height =240
+                            Name ="Label13"
+                            Caption ="Level:"
+                            GUID = Begin
+                                0xed27d768a1245c418553e11c7c2def58
+                            End
+                        End
+                    End
+                End
+                Begin CheckBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =6000
+                    Top =2460
+                    TabIndex =32
+                    Name ="Benefactor"
+                    ControlSource ="Benefactor"
+                    StatusBarText ="S-Checked if the Donor is ALSO a Benefactor [New]"
+                    GUID = Begin
+                        0x6ec15a1fabf33544b18c2cefe2295615
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =6240
+                            Top =2400
+                            Width =870
+                            Height =240
+                            Name ="Label14"
+                            Caption ="Benefactor"
+                            GUID = Begin
+                                0x7823fd0678e77048a34ec09d22df15c9
+                            End
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =120
+                    Top =300
+                    Width =4440
+                    Height =420
+                    Name ="Label15"
+                    Caption ="There may be more than one 'Donor' record per award. -->   \015\012Use the 'Next"
+                        "' button to scroll through the other donors.\015\012"
+                    GUID = Begin
+                        0xf55d71f9e497ee4ea40560fd32259ff7
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =960
+                    Top =3660
+                    Width =5580
+                    ColumnWidth =3495
+                    TabIndex =4
+                    Name ="ADDR1"
+                    ControlSource ="ADDR1"
+                    StatusBarText ="Address 1"
+                    GUID = Begin
+                        0xc406f81ac40db548a054dcb58fae3266
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =3660
+                            Width =645
+                            Height =240
+                            Name ="Label16"
+                            Caption ="ADDR1:"
+                            GUID = Begin
+                                0x15e7d6f9e12e1c468be963bcd559bbba
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =960
+                    Top =4020
+                    Width =5580
+                    ColumnWidth =3135
+                    TabIndex =5
+                    Name ="ADDR2"
+                    ControlSource ="ADDR2"
+                    StatusBarText ="Additional Address Information"
+                    GUID = Begin
+                        0xac945decfcde8e4697991cf64a900c61
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4020
+                            Width =645
+                            Height =240
+                            Name ="Label17"
+                            Caption ="ADDR2:"
+                            GUID = Begin
+                                0x0b7165b49014a64387d58c8457027583
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =960
+                    Top =4380
+                    Width =2160
+                    ColumnWidth =585
+                    TabIndex =6
+                    Name ="CITY"
+                    ControlSource ="CITY"
+                    StatusBarText ="City"
+                    GUID = Begin
+                        0x6d6eea07c39499458c53603ac3d4d62c
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4380
+                            Width =480
+                            Height =240
+                            Name ="Label18"
+                            Caption ="CITY:"
+                            GUID = Begin
+                                0x9966647137981f44bd203b0e8bd6464f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =4020
+                    Top =4380
+                    Width =480
+                    ColumnWidth =780
+                    TabIndex =8
+                    Name ="STATE"
+                    ControlSource ="STATE"
+                    StatusBarText ="State (Two Letter Abreviations)"
+                    GUID = Begin
+                        0x7e00d494bd44c74e8583a96b6f949013
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =3360
+                            Top =4380
+                            Width =600
+                            Height =240
+                            Name ="Label19"
+                            Caption ="STATE:"
+                            GUID = Begin
+                                0xc63df3526debd44986e6bcd44b4ab9e5
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =5100
+                    Top =4380
+                    ColumnWidth =450
+                    TabIndex =9
+                    Name ="ZIP"
+                    ControlSource ="ZIP"
+                    StatusBarText ="Postal ZIP code I.E. 87110-0324"
+                    InputMask ="00000\\-9999;0;\" \""
+                    GUID = Begin
+                        0x414ffb8ac00f9b4eab9ae3d315d063b5
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =4680
+                            Top =4380
+                            Width =375
+                            Height =240
+                            Name ="Label20"
+                            Caption ="ZIP:"
+                            GUID = Begin
+                                0xbfd896596d39f5498324e0f5878299d3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =960
+                    Top =5460
+                    Width =3720
+                    TabIndex =15
+                    Name ="EMAIL"
+                    ControlSource ="EMAIL"
+                    StatusBarText ="Email Address"
+                    GUID = Begin
+                        0xc3542ebb91575848a712d0940764928d
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5460
+                            Width =585
+                            Height =240
+                            Name ="Label21"
+                            Caption ="EMAIL:"
+                            GUID = Begin
+                                0x375a73190ea1ca47a26a2e2ef4050a5c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =5100
+                    Top =5100
+                    TabIndex =14
+                    Name ="CELL_PHONE"
+                    ControlSource ="CELL_PHONE"
+                    StatusBarText ="Cell Phone number"
+                    InputMask ="!\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0x8446bd85da99c94bbaaa25a12ac5d2af
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =4020
+                            Top =5100
+                            Width =1080
+                            Height =240
+                            Name ="Label22"
+                            Caption ="CELL_PHONE:"
+                            GUID = Begin
+                                0x663afd1bf8c3ad4d96bbafe295d06b1c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =5100
+                    Top =4740
+                    TabIndex =11
+                    Name ="FAX_PHONE"
+                    ControlSource ="FAX_PHONE"
+                    StatusBarText ="Fax Phone Number (work or home - Prefered)"
+                    InputMask ="!\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0xa9f15a8dbddf604e8c3ac356f4e05112
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =4020
+                            Top =4740
+                            Width =1020
+                            Height =240
+                            Name ="Label23"
+                            Caption ="FAX_PHONE:"
+                            GUID = Begin
+                                0xb501e00effbe444091d2a6da94ff5442
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    Left =5760
+                    Top =5460
+                    Width =840
+                    TabIndex =16
+                    Name ="MAILPREF"
+                    ControlSource ="MAILPREF"
+                    StatusBarText ="E=Email, P=Phone, Blank = Regular mail"
+                    GUID = Begin
+                        0x74e4846ef46c74489dd4e483bcbbccf2
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =4920
+                            Top =5460
+                            Width =870
+                            Height =240
+                            Name ="Label24"
+                            Caption ="MAILPREF:"
+                            GUID = Begin
+                                0x0dd7403ae2d2fd47998214b9ec7863d7
+                            End
+                        End
+                    End
+                End
+                Begin CheckBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =6720
+                    Top =5490
+                    TabIndex =33
+                    Name ="SPECIAL"
+                    ControlSource ="SPECIAL"
+                    StatusBarText ="Special Handling"
+                    GUID = Begin
+                        0x22f40607f6449b43a34a73bfcdc30f03
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =6945
+                            Top =5460
+                            Width =1230
+                            Height =240
+                            Name ="Label25"
+                            Caption ="Special Handling"
+                            GUID = Begin
+                                0xd7167666274ce44daa5ebe7fc02fe1a0
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    Left =6720
+                    Top =3960
+                    Width =4020
+                    Height =363
+                    ColumnWidth =3405
+                    TabIndex =34
+                    Name ="COMMENTS"
+                    ControlSource ="COMMENTS"
+                    StatusBarText ="Comments about the PERSON"
+                    GUID = Begin
+                        0xfa342220345158489118004b8c61cb68
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =6720
+                            Top =3660
+                            Width =3120
+                            Height =240
+                            Name ="Label26"
+                            Caption ="Persons Table Notes: Re the 'Person'"
+                            GUID = Begin
+                                0x07059a32217a354fb7f31b19c3a1a7f7
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1320
+                    Top =4740
+                    ColumnWidth =1500
+                    TabIndex =10
+                    Name ="HOME_PHONE"
+                    ControlSource ="HOME_PHONE"
+                    StatusBarText ="Home Phone number"
+                    InputMask ="!\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0x1954ae167504e549be3881701e452530
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4740
+                            Width =1170
+                            Height =240
+                            Name ="Label27"
+                            Caption ="HOME_PHONE:"
+                            GUID = Begin
+                                0x45fda1afd3736c439837a7a396c320de
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1320
+                    Top =5100
+                    Width =1380
+                    ColumnWidth =1545
+                    TabIndex =12
+                    Name ="WORK_PHONE"
+                    ControlSource ="WORK_PHONE"
+                    StatusBarText ="Work Phone Number"
+                    InputMask ="\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0x14189963d8462042b345e3a9afa8d290
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5100
+                            Width =1200
+                            Height =240
+                            Name ="Label28"
+                            Caption ="WORK_PHONE:"
+                            GUID = Begin
+                                0xb4ab69c568b2db419850174d43fcfd39
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =3060
+                    Top =5100
+                    Width =900
+                    ColumnWidth =870
+                    TabIndex =13
+                    Name ="EXTENSION"
+                    ControlSource ="EXTENSION"
+                    StatusBarText ="Work Phone Extension"
+                    GUID = Begin
+                        0x92fdd638af80d748b8f2d3c2f547b659
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =2760
+                            Top =5100
+                            Width =300
+                            Height =240
+                            Name ="Label29"
+                            Caption ="Ext"
+                            GUID = Begin
+                                0xb5a0e2898280ee4e985c104571ffa15f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =9540
+                    Top =4680
+                    Width =600
+                    ColumnWidth =675
+                    TabIndex =35
+                    Name ="Persons.PID"
+                    ControlSource ="Persons.PID"
+                    StatusBarText ="Person's ID Number - AutoNumber"
+                    EventProcPrefix ="Persons_PID"
+                    GUID = Begin
+                        0xe03eaf39b673e84991443ff0a0334089
+                    End
+
+                    LayoutCachedLeft =9540
+                    LayoutCachedTop =4680
+                    LayoutCachedWidth =10140
+                    LayoutCachedHeight =4920
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =9120
+                            Top =4680
+                            Width =360
+                            Height =240
+                            Name ="Label31"
+                            Caption ="PID"
+                            GUID = Begin
+                                0x5b8172f4a29f624ebb54d77c8a68e92b
+                            End
+                            LayoutCachedLeft =9120
+                            LayoutCachedTop =4680
+                            LayoutCachedWidth =9480
+                            LayoutCachedHeight =4920
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =95
+                    Left =1200
+                    Top =3120
+                    Width =5760
+                    Height =423
+                    TabIndex =3
+                    Name ="Notes"
+                    ControlSource ="Notes"
+                    StatusBarText ="Notes/History/#years/type donor/functions etc. (Enter new notes at top)   NOT 'A"
+                        "ward' notes, NOT 'Person notes (use Persons comments)!"
+                    GUID = Begin
+                        0x43600934b765b045ad42ad47f4fc03c1
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =60
+                            Top =3120
+                            Width =1140
+                            Height =420
+                            Name ="Label32"
+                            Caption ="Award DONOR\015\012Notes:"
+                            GUID = Begin
+                                0xe1843ccee9f0b94aaff73144ee4fe8cc
+                            End
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =87
+                    Left =6960
+                    Top =3120
+                    Width =2880
+                    Height =420
+                    Name ="Label33"
+                    Caption ="<- Use this for Donor 'Job' Info only. \015\012     Use Awards Edit for Award No"
+                        "tes!"
+                    GUID = Begin
+                        0xc49330b256b7ca4f9a830a053927e41b
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6000
+                    Top =2820
+                    Width =3795
+                    Height =240
+                    Name ="Label34"
+                    Caption ="<-'P'rimary etc. (Filter for Select Mailings, Lists Etc.)"
+                    GUID = Begin
+                        0x5eff74d71bf7d2489f3ca0d6ef34a2da
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    ColumnCount =2
+                    ListWidth =3600
+                    Left =1440
+                    Top =780
+                    Width =2820
+                    Height =300
+                    FontSize =10
+                    TabIndex =36
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
+                    GUID = Begin
+                        0xb8a98e96bb7d9c48bbc2686f9ce1edb6
+                    End
+                    Name ="cbFindName"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT AwardDonors.PID, [LNAME] & \", \" & [FNAME] & \" \" & [MI] & \" (\" & [AN"
+                        "] & \")\" AS Name FROM Persons INNER JOIN AwardDonors ON Persons.PID=AwardDonors"
+                        ".PID ORDER BY [LNAME] & \", \" & [FNAME] & \" \" & [MI] & \" (\" & [AN] & \")\";"
+                        " "
+                    ColumnWidths ="0;3600"
+                    AfterUpdate ="[Event Procedure]"
+                    OnEnter ="[Event Procedure]"
+                    BaseInfo ="\"SELECT AwardDonors.PID, [LNAME] & \"\", \"\" & [FNAME] & \"\" \"\" & [MI] & \""
+                        "\" (\"\" & [AN] & \"\")\"\" AS Name FROM Persons INNER JOIN AwardDonors ON Perso"
+                        "ns.PID=AwardDonors.PID ORDER BY [LNAME] & \"\", \"\" & [FNAME] & \"\" \"\" & [MI"
+                        "] & \"\" (\"\" & [AN] & \"\")\"\"; \";\"Persons\";\"AwardDonors\";\"\""
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =60
+                            Top =780
+                            Width =1395
+                            Height =300
+                            FontSize =10
+                            Name ="Donor_Label"
+                            Caption ="Find Donor(AN)"
+                            GUID = Begin
+                                0x36338708f028e84aa6d69b290f58f0ec
+                            End
+                        End
+                    End
+                End
+                Begin Rectangle
+                    OverlapFlags =255
+                    Left =60
+                    Top =1680
+                    Width =10680
+                    Height =1020
+                    Name ="Box118"
+                    GUID = Begin
+                        0xb4e1acc1365da945aa50b9f3359e0405
+                    End
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =120
+                    Top =2160
+                    Width =1440
+                    Height =480
+                    Name ="Label119"
+                    Caption ="Info Only:    --->  \015\012Edit in AwardsEdit."
+                    GUID = Begin
+                        0xaf738df4b96c7b4e82f39fe2fda1ab68
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =7800
+                    Top =4380
+                    Width =1200
+                    TabIndex =37
+                    Name ="Persons.Temp"
+                    ControlSource ="Persons.Temp"
+                    StatusBarText ="Persons.Temp: Free game for any use"
+                    EventProcPrefix ="Persons_Temp"
+                    GUID = Begin
+                        0x36f5eb1f4cd52143ba2d2dcb18f96163
+                    End
+
+                    LayoutCachedLeft =7800
+                    LayoutCachedTop =4380
+                    LayoutCachedWidth =9000
+                    LayoutCachedHeight =4620
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =6720
+                            Top =4380
+                            Width =1155
+                            Height =240
+                            Name ="Label120"
+                            Caption ="Persons.Temp:"
+                            GUID = Begin
+                                0x03a2c215d9ee3b40a3922c446818c69b
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =247
+                    Left =8040
+                    Top =2400
+                    Width =600
+                    TabIndex =38
+                    Name ="ValueSum"
+                    GUID = Begin
+                        0x7f38fcff7bb1a7479fe7fd2ad88f512d
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =7200
+                            Top =2400
+                            Width =765
+                            Height =240
+                            Name ="Label122"
+                            Caption ="ValueSum"
+                            GUID = Begin
+                                0xc5b150c215aee64190b1b5905cde6a0d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =87
+                    Left =8280
+                    Top =5100
+                    TabIndex =39
+                    Name ="AwardDonors.Temp"
+                    ControlSource ="AwardDonors.Temp"
+                    StatusBarText ="Free game for any use"
+                    EventProcPrefix ="AwardDonors_Temp"
+                    GUID = Begin
+                        0x5322d0f639154f4380ab69f276fb23e8
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =6720
+                            Top =5100
+                            Width =1560
+                            Height =240
+                            Name ="Label123"
+                            Caption ="AwardDonors.Temp:"
+                            GUID = Begin
+                                0xabbb96a1c75d604dbbec7e9226cb77be
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =247
+                    Left =2640
+                    Top =2400
+                    Width =3240
+                    TabIndex =40
+                    Name ="Sponsor"
+                    ControlSource ="Sponsor"
+                    StatusBarText ="P-Company, Firm, Trust, Endowment - For Booklets, Reports (Future Scripts or New"
+                        "s?) - - May Include Division, Branch or other details (not address). [New]"
+                    GUID = Begin
+                        0x5805fd749c670844bb02a9eada2f4702
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =1620
+                            Top =2400
+                            Width =720
+                            Height =240
+                            Name ="Label124"
+                            Caption ="Sponsor:"
+                            GUID = Begin
+                                0xfd3c2328638e7c4f8c95452ebf94d205
+                            End
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+'First Rev 201   06/27/02
+Option Compare Database
+Option Explicit
+Private HoldCRCState As Boolean ' current state of 'Confirm Record Change' option
+Private ctlPrevFocus As Control 'Used to reset focus after button push
+Private criteria As String      'Query SQL Strings
+Private dbSciFair As Database
+Private personsRS As Recordset
+Private AwardsRS As Recordset   ' local copy for summation of prize value
+Private OldPID As Long          ' To delete or update Person.TY if changed Person
+Private OldAN As Long
+Private DeletePID As Long       'To delete person if delete donor
+Private tAwd                    'Award number of deleted donor
+Private tLNAME As String
+Private tFNAME As String
+Private msg As String           'Message Box Prompts
+Private Title As String         'Title of this form
+Private DidDelete As Boolean    'Deleted a Record from Form recordset
+Private DidPersonAdd As Boolean 'Added a Person using cbPerson needing CrLf
+Private DidAdd As Boolean       'A New Record has been added to Form Recordset
+Private TouchedUndo As Boolean  'The Undo Button was touched by mouse
+Private DeleteLast As Boolean   'The Delete button deleted the last record
+                                'Used to avoid moving to add new record
+Private InAdd As Boolean        'In Add new record mode
+Private DoCrLf As Boolean       'May be used by timer to exit a combo box
+
+Private Sub AWD_NUM_AfterUpdate()
+  Call FillValueSum
+  
+End Sub
+Private Sub FillValueSum()
+  On Error GoTo SubError
+  Dim SumValue As Currency
+  SumValue = 0
+  With AwardsRS
+    .MoveFirst
+    .FindFirst "[przAN] = " & Me.AWD_NUM
+    Do While Not .NoMatch
+      SumValue = SumValue + IIf(IsNull(!Value), 0, !Value)
+      .FindNext "[przAN] = " & Me.AWD_NUM
+    Loop
+  End With
+  Me.ValueSum = SumValue
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub cbFindName_AfterUpdate()
+  On Error GoTo SubError
+  Dim awstr As String
+  Dim awnum As String
+  Dim leftparn As Integer
+  If (IsNull(cbFindName)) Then
+     'MsgBox "Nothing Selected!"
+     'cbFindName.SetFocus
+     Exit Sub
+  End If
+  awstr = cbFindName.Text
+  leftparn = InStr(Len(awstr) - IIf(Len(awstr) > 7, 7, Len(awstr) - 1), awstr, "(")
+  awnum = Mid(awstr, leftparn + 1, Len(awstr) - leftparn - 1)
+  If leftparn > 0 And Val(awnum) > 0 Then
+     Me.Recordset.FindFirst "AWARDDONORS.PID = " & Str(Me![cbFindName]) & _
+        " AND AWD_NUM = " & awnum
+  Else
+     ' Find only the PID - does not seem to be an AN in string
+     Me.Recordset.FindFirst "AWARDDONORS.PID = " & Str(Me![cbFindName])
+  End If
+  ' Edit This?
+  Me.cbFindName = Null ' No Edits or replacement on this line
+  Me.cbPerson.SetFocus ' Replace / Edit this
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub cbFindName_Enter()
+   Call RequeryCBs
+End Sub
+
+Private Sub cbFindAwdName_AfterUpdate()
+  On Error GoTo SubError
+  If (IsNull(cbFindAwdName)) Then
+     'MsgBox "Nothing Selected!"
+     'cbFindStudent.SetFocus
+     Exit Sub
+  End If
+  'Nextline (vs setrs,me.bookmark=rs.bookmark) allows updates in
+  ' Form.BeforeUpdate
+  ' Replace 'First' 'Name' next line. Do not replace in 2nd line Find Next
+  Me.Recordset.FindFirst "AWD_NUM = " & Str(Me![cbFindAwdName]) ' Edit This?
+  If Me.Recordset.NoMatch Then
+    MsgBox "No Current Donor", vbOKOnly
+  End If
+  Me.cbFindAwdName = Null ' No Edits or replacement on this line
+  Me.cbPerson.SetFocus ' Replace / Edit this
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub cbFindNum_AfterUpdate()
+   ' Find the record that matches the control.
+   Dim pidstr As String
+   Dim pidnum As String
+   Dim leftparn As Integer
+   On Error GoTo SubError
+   If (IsNull(cbFindNum)) Then
+       'MsgBox "Nothing Selected!"
+       'cbFindNum.SetFocus
+       Exit Sub
+   End If
+  'Nextline (vs setrs,me.bookmark=rs.bookmark) allows updates in
+  '  Form.BeforeUpdate
+  pidstr = Me.cbFindNum.Text
+  leftparn = InStr(Len(pidstr) - IIf(Len(pidstr) > 7, 7, Len(pidstr) - 1), pidstr, "(")
+  pidnum = Mid(pidstr, leftparn + 1, Len(pidstr) - leftparn - 1)
+  If leftparn > 0 And Val(pidnum) > 0 Then
+    Me.Recordset.FindFirst "AWD_NUM = " & Str(Me![cbFindNum]) _
+       & " AND PERSONS.PID = " & pidnum
+  Else
+    Me.Recordset.FindFirst "AWD_NUM = " & Str(Me![cbFindNum])  'Edit This?
+  End If
+  If Me.Recordset.NoMatch Then
+     MsgBox "No Current Donor", vbOKOnly
+     
+  
+  End If
+  Me.cbFindNum = Null
+  Me.cbPerson.SetFocus ' Replace / Edit this
+Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub RequeryCBs()
+   On Error GoTo SubError
+   If DidDelete = True Then
+     Me.cbFindNum.Requery
+     ' Do not replace string name in this or next line - Find Next
+     Me.cbFindAwdName.Requery
+     Me.cbFindName.Requery
+     DidDelete = False
+   End If
+   If DidAdd = True Then
+     Me.cbFindNum.Requery
+     ' Do not replace string name in this or next line - Find Next
+     Me.cbFindName.Requery
+     Me.cbFindAwdName.Requery
+     DidAdd = False
+   End If
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub cbFindNum_Enter()
+   Call RequeryCBs
+End Sub
+Private Sub cbFindAwdName_Enter()
+   Call RequeryCBs
+End Sub
+Private Sub cbPerson_BeforeUpdate(Cancel As Integer)
+   'IMPORTANT: This and AfterUpdate not called if notinlist
+   '  sets Response = acDataErrContinue (i.e. not acDataErrAdd)
+   'Edit This (Delete if no cbPersons
+   ' User selected a different Person or new person (with no ; and with
+   ' no fixes in name string for a New record (see important note above)
+   ' If an existing person, The person selected could already be
+   '    referenced in another record.
+  '***** NOTE:  I allow duplicates in AwardDonors Table !!!!!   ***************
+   ' If I do not want duplicates, then do the following
+  ' ALL CODE DISABLED
+   On Error GoTo SubError
+   ' Find the record that matches the new PID
+   Dim rs As Object
+   Set rs = Me.Recordset.Clone
+   rs.FindFirst "[AwardDonors].[PID] = " & cbPerson.Value 'Edit this PID of selected person
+   If rs.NoMatch Then
+      ' Find just continue
+   Else
+      ' Edit this (next line)
+      msg = "Alert Only! This person is already a donor " & _
+            "  (In another AwardDonors record)!" & vbCrLf & _
+             " Hint: Press [Esc] key after selecting [NO] " & vbCrLf & _
+             "Keep this Person (i.e. does more than one award)?"
+       If MsgBox(msg, vbYesNo + vbDefaultButton2, Title) = vbNo Then
+           Cancel = True
+           Exit Sub
+       End If
+   End If
+   ' Save info to Remove "AD" from old person (optional) or delete person or...
+   ' see Form.AfterUpdate
+   If cbPerson.OldValue <> cbPerson.Value Then
+      OldPID = cbPerson.OldValue
+      OldAN = Me.AWD_NUM
+   Else
+      OldPID = 0
+   End If
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub cbPerson_Exit(Cancel As Integer)
+   ' Do this code for new adds for Job type Tables (judges, students etc)
+   ' If the Person is not the first entry (required)
+   ' this may not be needed.
+   ' Use this area to set up other fields after the person entry
+   On Error GoTo SubError
+   ' Edit This
+   If (Not IsNull(Me.cbPerson.Value)) And _
+              (Me.AWD_NUM = 0 Or IsNull(Me.AWD_NUM)) Then
+      MsgBox "Set Award Number to the correct (existing) Award", vbOKOnly
+      Me.AWD_NUM.SetFocus
+   End If
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+
+Private Sub Form_AfterUpdate()
+  On Error GoTo SubError
+  If OldPID > 0 Then   ' set in cbperson.BeforeUpdate -  Option to delete Previous person
+    Call DeleteFixPerson(OldPID, "AD", True, "Donor For Award " & OldAN)
+    ' True means just changed the person
+  End If
+  Exit Sub
+SubError:
+  OldPID = 0
+  personsRS.Close
+  MsgBox Err.Description
+End Sub
+
+Private Sub Form_Timer()
+  ' Edit this  - delete this if cbPerson is not used
+  ' This moves to the next object in the case a persons was added to cbPerson
+  ' that was not orgionally typed or in case the orgional string had a ';'
+  ' SEE cbPerson_NotInList
+  On Error GoTo SubError
+  DidPersonAdd = False
+  Me.TimerInterval = 0
+  SendKeys "{TAB}"  '(vbCrLf) is bad adds charters in next field
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub cbPerson_NotInList(newdata As String, Response As Integer)
+   ' If the person is not in the Persons Table then we need to add a record
+   ' To the persons table.
+   On Error GoTo SubError
+   ' Edit This  (next Line   name of forms table and TP )
+   If Person_NotInList(Me, "AwardDonors", "AD", newdata, Response, _
+            DidPersonAdd, True) = True Then ' Allow Duplicates (last parameter=True)
+     If Response = acDataErrAdded Then ' Person added just as typed
+         ' Focus will move to next object, no more work
+     Else  ' Added diferent person (List selection) or had ';' in string
+         ' Focus remains with cbPerson with new person selected.
+         ' try to move on to next object with timer...
+         Me.TimerInterval = 50  ' wait 50 milliseconds.  Should be
+         ' enough for slower PCs (133 Mhz) since 1 Ms works for 833Mhz PC
+     End If
+   Else   ' failed to work or user canceled add..
+     ' Origionally typed string still in combo box, user can edit or whatever!
+   End If
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_Current()  'Here for each time a new record is selected
+   On Error GoTo SubError
+   TouchedUndo = False
+   OldPID = 0
+   If Me.NewRecord Then ' Or IsNull(Me.PROTOID) Then
+      'Me.Fieldnam.Locked = False ' Allow a field to be changed. Edit This
+      Me.tbRecord = 1 + Me.Recordset.RecordCount
+      Me.tbNumRec = 1 + Me.Recordset.RecordCount
+      DidAdd = True
+      InAdd = True
+   Else
+      Call RequeryCBs ' If
+      DeleteLast = False
+      InAdd = False
+      Me.tbNumRec = Me.Recordset.RecordCount
+      Me.tbRecord = Me.CurrentRecord
+      Call FillValueSum
+      'Me.Fieldnam.Locked = False ' CHANGE this to TRUE to lock. Edit This
+   End If
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub AWD_NUM_BeforeUpdate(Cancel As Integer) ' Replace this  Edit This
+  'You may not want users to change the key value!
+  ' Use this area to warn of changes
+  On Error GoTo SubError
+  '  Warn if about to change
+  If Not IsNull(Me.AWD_NUM) And TouchedUndo = False _
+        And InAdd = False Then ' Replace /Edit This
+    ' Replace or Edit This  (next line)
+    msg = "CAUTION: You are about to change the AWD_NUM! " & vbCrLf & _
+          "Although OK, This is unusual. This Donor " & _
+          "Will be be switched to Award " & Me.AWD_NUM & vbCrLf & _
+          " (Hint: Press [Esc] key after selecting [NO]) " & vbCrLf & _
+          "CHANGE AWD_NUM? "
+    If MsgBox(msg, vbYesNo + vbDefaultButton2, Title) = vbNo Then
+       Cancel = True
+       Exit Sub
+    End If
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+  On Error GoTo SubError
+  ' Edit This   Do any checks here.  For Example
+  If Me.AWD_NUM > 9999 Or Me.AWD_NUM < 1 Or IsNull(Me.AWD_NUM) Then
+      MsgBox "AWD_NUM Must be between 1 and 9999!", , Title
+      Cancel = True
+  End If
+  ' Edit This  Do any updates for example
+  Dim tpstr As String
+  tpstr = IIf(IsNull(Me.TP), "", Me.TP)
+  Call setFieldTP(tpstr, "AD")         'Add the AD if not in the string
+  Me.TP = tpstr
+  Me.LAST_CHG = Format(Now, "mm/dd/yy")
+
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_Delete(Cancel As Integer)
+   ' This plus Sub Form_BeforeDelConfirm work to ALWAYS show a delete message
+   ' Even if user has turned off the warning messages.
+   On Error GoTo SubError
+   msg = "DELETE RECORD?"
+   If MsgBox(msg, vbYesNo + vbDefaultButton2, Title) = vbNo Then
+      Cancel = True
+      Exit Sub
+   End If
+   DidDelete = True   ' Indicate did a delete of the record
+   DeletePID = Me.cbPerson.Value
+   
+   tAwd = Me.AWD_NUM
+   tLNAME = IIf(IsNull(Me!LNAME), "", Me!LNAME)
+   tFNAME = IIf(IsNull(Me!FNAME), "", Me!FNAME)
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_BeforeDelConfirm(Cancel As Integer, Response As Integer)
+   ' This suppresses the system confirmation message, I give message in
+   ' Sub Form_Delete (
+   On Error GoTo SubError
+   Response = acDataErrContinue
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_AfterDelConfirm(STATUS As Integer)
+  ' Use this to delete other related records (i.e. Persons) BUT,
+  ' You must do :me.Application.SetOption "Confirm RecordChanges",True
+  '   Or this Routine is NEVER CALLED!
+   On Error GoTo SubError
+   If DeletePID > 0 Then
+    Call ScifairLog("Del DONOR Record for Awd " & tAwd & " PID ", DeletePID, _
+               " " & tLNAME & ", " & tFNAME)
+    Call DeleteFixPerson(DeletePID, "AD")
+   End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub Form_Dirty(Cancel As Integer)
+  On Error GoTo SubError
+  ' Edit This  You can use this area to update fields that change anytime
+  ' and edit is done to the record - i.e. LastUpdate fields
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_Load()
+  On Error GoTo SubError
+  ' Add any Code Required prior to Form showing on Screen Edit This
+  ' This is Required If any Work is done in me.AfterDeleteConfirm_Click Action
+  HoldCRCState = Me.Application.GetOption("Confirm Record Changes")
+  Me.Application.SetOption "Confirm Record Changes", True
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_Open(Cancel As Integer)
+  ' Open any Tables or SQL queries here
+  On Error GoTo SubError
+  Title = "AwardDonors Edit"     'Edit This
+  DidDelete = False
+  DeletePID = 0
+  DidAdd = False
+  DoCrLf = False
+  ' The next statements give a type mismatch error unless or until
+  ' I fixed the priority of references in the Visual Basic Tools option.
+  ' Sequence must be:
+  ' Visual Basic for Applications
+  ' Microsoft Access 9.0 Library
+  ' Microsoft Office 9.0 Library
+  ' OLE Automation
+  ' Microsoft DAO 3.6 Obj Lib
+  ' Microsoft Visual Basic of Application Extensibility 5.3
+  '  Others as needed
+  ' Open any Needed Recordsets Edit This
+   criteria = "SELECT [AwardGroup.GID]-100*Int(([AwardGroup.GID]/100)) " & _
+    "AS GrpGN, [AwardPrize.GID]-100*Int([AwardPrize.GID]/100) AS PrzGN, " & _
+    "Int([AwardPrize.GID]/100) AS PrzAN, AwardMaster.*, AwardGroup.*, " & _
+    "AwardPrize.*, AwardPrize.EXN AS numexn FROM AwardMaster " & _
+    "RIGHT JOIN (AwardGroup RIGHT JOIN AwardPrize ON AwardGroup.GID = " & _
+    "AwardPrize.GID) ON AwardMaster.AN = AwardGroup.AN;"
+
+  Set AwardsRS = CurrentDb().OpenRecordset(criteria, dbOpenDynaset)
+  Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_Close()
+   On Error GoTo SubError
+   ' Close Any Needed Recordsets  Edit This
+   'theRS.Close
+   Me.Application.SetOption "Confirm Record Changes", HoldCRCState
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub btnFirst_MouseDown(Button As Integer, Shift As Integer, _
+                              x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+ ' MsgBox Err.Description 'Normally No Message is needed
+End Sub
+Private Sub btnFirst_Click()
+On Error GoTo Err_btnFirst_Click
+    DoCmd.GoToRecord , , acFirst
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnFirst_Click:
+    Exit Sub
+Err_btnFirst_Click:
+    MsgBox Err.Description
+    Resume Exit_btnFirst_Click
+End Sub
+Private Sub btnPrev_MouseDown(Button As Integer, Shift As Integer, _
+                                                  x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+ ' MsgBox Err.Description 'Normally No Message is needed
+End Sub
+Private Sub btnPrev_Click()
+On Error GoTo Err_btnPrev_Click
+    DoCmd.GoToRecord , , acPrevious
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnPrev_Click:
+    Exit Sub
+Err_btnPrev_Click:
+    MsgBox Err.Description
+    Resume Exit_btnPrev_Click
+End Sub
+Private Sub btnNext_MouseDown(Button As Integer, Shift As Integer, _
+x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+ ' MsgBox Err.Description 'Normally No Message is needed
+End Sub
+Private Sub btnNext_Click()
+On Error GoTo Err_btnNext_Click
+    If Me.CurrentRecord = Me.Recordset.RecordCount Then
+       MsgBox "End of Data!"
+       ctlPrevFocus.SetFocus
+       Exit Sub
+    End If
+    DoCmd.GoToRecord , , acNext
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnNext_Click:
+    Exit Sub
+Err_btnNext_Click:
+    MsgBox Err.Description
+    Resume Exit_btnNext_Click
+End Sub
+Private Sub btnLast_MouseDown(Button As Integer, Shift As Integer, _
+                                            x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+ ' MsgBox Err.Description 'Normally No Message is needed
+End Sub
+Private Sub btnLast_Click()
+On Error GoTo Err_btnLast_Click
+    DoCmd.GoToRecord , , acLast
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnLast_Click:
+    Exit Sub
+Err_btnLast_Click:
+    MsgBox Err.Description
+    Resume Exit_btnLast_Click
+End Sub
+Private Sub btnAdd_Click()
+On Error GoTo Err_btnAdd_Click
+    DoCmd.GoToRecord , , acNewRec
+    On Error Resume Next
+    ' Set Focus on Desired First Entry Box here Edit This
+    Me.AWD_NUM.SetFocus
+Exit_btnAdd_Click:
+    Exit Sub
+Err_btnAdd_Click:
+    MsgBox Err.Description
+    Resume Exit_btnAdd_Click
+End Sub
+Private Sub btnDelete_MouseDown(Button As Integer, Shift As Integer, _
+                                    x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+ ' MsgBox Err.Description 'Normally No Message is needed
+End Sub
+Private Sub btnDelete_Click()
+On Error GoTo Err_btnDelete_Click
+      DeleteLast = False
+      If Me.Recordset.RecordCount = Me.CurrentRecord Then  'last record
+        DeleteLast = True
+      End If
+      DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70  'Select Record
+      DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70  'Delete
+      If DeleteLast = True Then ' Bill Gates goes to add new record-Not Desired
+        'On Error Resume Next '
+        'DoCmd.DoMenuItem acFormBar, acEditMenu, acUndo, , acMenuVer70
+        'On Error GoTo Err_btnDelete_Click
+        DoCmd.GoToRecord , , acPrevious
+        DeleteLast = False
+      End If
+      On Error Resume Next ' Skip all messages re not able to focus
+      ctlPrevFocus.SetFocus
+Exit_btnDelete_Click:
+    Exit Sub
+Err_btnDelete_Click:
+    MsgBox Err.Description
+    Resume Exit_btnDelete_Click
+End Sub
+Private Sub btnSave_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+ ' MsgBox Err.Description 'Normally No Message is needed
+End Sub
+Private Sub btnSave_Click()
+    ' Save the Indexed value so can move to it after save
+    Dim SvAWD_NUM As Long   ' Replace this else Edit This
+    Dim SvPID As Long       ' In this case need person also since can
+                       ' be more than one contact per award
+    On Error GoTo Err_btnSave_Click
+    ' Check that at least the minimum is done. NOTE: any code put here will not
+    ' be executed if the user does menu save Record, Shift Enter or moves to
+    ' Another record - so... This is just to 'Pre-Warn'
+    If IsNull(Me.AWD_NUM) Then ' Replace This else Edit This
+      MsgBox "Must Enter AWD_NUM! (or Undo)", vbOKOnly, Title 'Rpl/ Edit This
+      On Error Resume Next
+      ctlPrevFocus.SetFocus
+      Exit Sub
+    Else
+      SvAWD_NUM = Me.AWD_NUM  ' Replace both Else Edit This
+      SvPID = 0
+      SvPID = Me.cbPerson.Value
+      
+    End If
+    If InAdd Then  ' Only save if in add mode
+      DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+    End If
+    ' The next command does a Remove Filter Sort which in effect requeries
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, 3, , acMenuVer70 'RemFiltSort
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+    If SvPID > 0 Then
+     Me.Recordset.FindFirst "AWD_NUM = " & SvAWD_NUM & _
+        " AND [Awarddonors].[PID] = " & SvPID
+    Else
+     Me.Recordset.FindFirst "AWD_NUM = " & SvAWD_NUM  'Replace Both /Edit This
+    End If
+Exit_btnSave_Click:
+    Exit Sub
+Err_btnSave_Click:
+    MsgBox Err.Description
+    Resume Exit_btnSave_Click
+End Sub
+Private Sub btnUndo_Click()
+On Error GoTo Err_btnUndo_Click
+   If IsNull(Me.AWD_NUM) And IsNull(Me.cbPerson) Then
+     DoCmd.GoToRecord , , acPrevious
+     Exit Sub
+   End If
+    DoCmd.DoMenuItem acFormBar, acEditMenu, acUndo, , acMenuVer70
+Exit_btnUndo_Click:
+    Exit Sub
+Err_btnUndo_Click:
+    MsgBox Err.Description
+    Resume Exit_btnUndo_Click
+End Sub
+Private Sub btnUndo_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+   TouchedUndo = True
+End Sub
+Private Sub Type_Exit(Cancel As Integer)
+    On Error GoTo SubError
+    If IsNull(Me.[Type]) Then
+      MsgBox "Donor Type Set to 'P'rimary " & vbCrLf & _
+          "Change if not Primary Donor for this award!", vbOKOnly
+      Me.Type = "P"
+    End If
+    If StrComp(Me.[Type], UCase(Me.[Type]), 0) <> 0 Then ' Binary compare
+        Me.[Type] = UCase(Me.[Type])   ' do only if not already ucase
+    End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub

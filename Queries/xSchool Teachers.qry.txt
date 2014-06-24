@@ -1,0 +1,3 @@
+SELECT Schools.SCHOOL, Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP, Schools.PHONE, Schools.JR_Forms, Schools.SR_Forms, Persons.FNAME AS PFname, Persons.LNAME AS PLname, Persons_1.FNAME AS Tfname, Persons_1.LNAME AS tlname, Teachers.Temp
+FROM (Persons RIGHT JOIN Schools ON Persons.PID=Schools.P_PID) LEFT JOIN (Teachers LEFT JOIN Persons AS Persons_1 ON Teachers.PID=Persons_1.PID) ON Schools.SCH_CODE=Teachers.SCH_CODE;
+

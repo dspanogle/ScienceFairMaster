@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="AA_x0020_HINTS_x0020__x0026__x0020_TIPS" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="AA_x0020_HINTS_x0020__x0026__x0020_TIPS">
+<xsd:annotation>
+<xsd:appinfo>
+<od:tableProperty name="Orientation" type="2" value="0"/>
+<od:tableProperty name="OrderByOn" type="1" value="1"/>
+<od:tableProperty name="NameMap" type="11" value="CswOVQAAAADzKqosnW7YEaYkAAZbUui0AAAAAC2/0oRwlOJAAACQAAEsVTBBAEEA
+IABIAEkATgBUAFMAIAAmACAAVABJAFAAUwAAAAAAAAD0KqosnW7YEaYkAAZbUui0
+BwAAAPMqqiydbtgRpiQABltS6LRIAEkATgBUAFMAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAA=
+"/>
+<od:tableProperty name="Description" type="10" value="READ ME!      OFTEN! "/>
+<od:tableProperty name="GUID" type="9" value="8yqqLJ1u2BGmJAAGW1LotA==
+"/>
+<od:tableProperty name="DefaultView" type="2" value="2"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="HINTS" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="ColumnWidth" type="3" value="10155"/>
+<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+<od:fieldProperty name="Description" type="10" value="Make No Changes/Additions/Deletions Tables Linked From SciFairData"/>
+<od:fieldProperty name="Required" type="1" value="0"/>
+<od:fieldProperty name="AllowZeroLength" type="1" value="0"/>
+<od:fieldProperty name="DisplayControl" type="3" value="109"/>
+<od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
+<od:fieldProperty name="GUID" type="9" value="9CqqLJ1u2BGmJAAGW1LotA==
+"/>
+<od:fieldProperty name="IMEMode" type="2" value="0"/>
+<od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="120"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>11a.   * Access tables are linked from SciFairData! All Relationships and Table design must be done there!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>11e.   *  dB tables are dBase (*.dbf) tables. They are &apos;Linked&apos; for use by the Build Utilities. Do Not Unlink!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>01c. *  Avoid working directly on Tables&amp;Queries for Edits, Adds &amp; Deletes! You may corrupt the data.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02a. *  Never break or change the Relationships and Relationship properties in SciFairData.mdb</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02b.        This is a must to maintain Referential Integrity and protect the data base from coruption.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>06a. *  Remember, data in the queries comes from many different tables.  USE CAUTION!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>06b.      For instance: Changing a Judges Address or comments may change a Chairs Address or comments.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>06c.      This is because you actually edit a record in Persons. The same person may be a Judge,Chair, and ASTA!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>06f.       Review the Relationships in Tools:Relationships each time you build an Edit Query and/or Form.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>06d.      For instance: A Student&apos;s Address (in Persons) may link to a WorkShop Persons&apos; address. (same Person)</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>01d.    YES IT&apos;S TEMPTING, but don&apos;t do it! INSTEAD:</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>00b. TO PROTECT YOUR DATA AND SCIFAIR OBJECTS:</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02g. *  Put shortcuts to often used, developed and tested Forms, Reports, and Macros in the Groups Area</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02f.  *  Hide the developed and tested Querys, Forms, Reports or Macros in the Objects area - prevent modifications!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02l   *  Keep hidden objects hidden by not checking that option. See Tools: Options.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02o.     Turn on the option to show hidden objects only to modify a developed object - then turn the option back OFF!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>01g. *  Develop New &apos;Forms&apos; for doing edit work. Develop &apos;Reports&apos; for Queries that are often printed or viewed.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>01i.  *  Use Existing,Tested Queries where possible!  Keep the number of queries to a minimum.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>05a. OTHER NOTES:</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>05b. * The Startup Form sets the Fair Year. It sets a &apos;global&apos; parameter you can retrieve</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>05c.    Use the function FairYear() to retrieve the current fair year. I.E.  YEAR:FairYear() or FYR = FairYear()</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>05d.    Fair Year is used to select which records to use in Table FairInfo,SchoolsEntries, etc. (Exhibits perhaps later)</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02e  *  Name Tested objects so they sort at the end of the object list I.E. &apos;xForm, xReport, xQuery or …</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02h.      Rename the Shortcuts in the Group area to be &apos;User Friendly&quot; Hint: You can edit the real object from Groups.</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>01b. *  Queries are just that - Queries! OK for inquiring about data, and doing lists and feeding reports! But!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02c. *  It is quite OK to delete and or build new relationships in Queries. This does NOT</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>11h.       Well, they must be linked before you can do the Builds (Export Access Data to Old dBase Tables)!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>00c. :ALWAYS Use Queries, Forms, Reports and Macros in the GROUPS area when possible - they are tested!</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>00d</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>00a                                                                                        Last Revision:  Jan 12 2002</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+<HINTS>02d.        effect the referential Integrity set up in SciFairData (the data is still protected!)</HINTS>
+</AA_x0020_HINTS_x0020__x0026__x0020_TIPS>
+</dataroot>
+</root>
+

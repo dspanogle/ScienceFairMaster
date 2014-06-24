@@ -1,0 +1,951 @@
+Version =20
+VersionRequired =20
+Checksum =1892155396
+Begin Form
+    RecordSelectors = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
+    AllowAdditions = NotDefault
+    OrderByOn = NotDefault
+    AllowDesignChanges = NotDefault
+    TabularFamily =48
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =6600
+    DatasheetFontHeight =10
+    ItemSuffix =21
+    Left =7305
+    Top =7005
+    Right =13935
+    Bottom =9435
+    DatasheetGridlinesColor =12632256
+    OrderBy ="ExhibitJudges.NTR DESC"
+    RecSrcDt = Begin
+        0x15019dd30f4ce340
+    End
+    GUID = Begin
+        0xa5b18568f24e064ebb68ba593c02ff07
+    End
+    RecordSource ="ExhibitJudges"
+    Caption ="TestExhbitScores  Subform"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0040120008401200a3da21300200000034401200ac4312004040120040401200 ,
+        0x010421409c006d0703df80070100010000000000640001000700fdff02000100 ,
+        0x0000030000000006a07988067c4f20347849120058eb98300100000020000000 ,
+        0x00000000451e0000000000000000000000000000000000000000000001000000 ,
+        0x0300000001000000010000000000000000000000000000000000000042836587 ,
+        0x0000000000000000000000000000000000000008880800088808000000000000 ,
+        0x0000000000000000520300004c04000000640000010000000000000000000000 ,
+        0x0000000100070000000000000000000000000000000036000000000000000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0041007200690061006c00000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000038000000c201000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000f2b100004283658701ccdaba000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000ccdaba6800700020007000730063 ,
+        0x0020003100320030003000200073006500720069006500730000006500720069 ,
+        0x00650073002c004c006f00630061006c004f006e006c0079002c004400720076 ,
+        0x0043006f006e0076006500720074000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000010000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000555342303031000000000000000000000000 ,
+        0x000000000000000000
+    End
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    DatasheetGridlinesColor12 =12632256
+    UnknownProp = {419 ,0 ,0 ,0 ,2121 } Begin
+        0x00009300f8be130044e8ac003c8f130035794139a883170004000000788f1300 ,
+        0xd5784139040000008806d50d1c000000000000004c901300ebe7003001000000 ,
+        0x01042140dc006d0703df80070100010000000000640001000700fdff02000100 ,
+        0x000003000000000000009300302e930000000000c08f1300ded5413944e8ac00 ,
+        0x80cabb00c60d0000ffffffff303193000000000080019300c60d000080cabb00 ,
+        0xdc8f130077d40000000000000000000000000000000000000000000001000000 ,
+        0x0300000001000000010000000000000000000000000000000000000042836587 ,
+        0x0000000000000000000000000000000000000008880800088808000000000000 ,
+        0x0000000000000000520300004c04000000640000010000000000000000000000 ,
+        0x0000000100070000000000000000000000000000000036000000000000000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0041007200690061006c00000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000038000000c201000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000f2b100004283658701ccdaba000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000ccdaba6800700020007000730063 ,
+        0x0020003100320030003000200073006500720069006500730000006500720069 ,
+        0x00650073002c004c006f00630061006c004f006e006c0079002c004400720076 ,
+        0x0043006f006e0076006500720074000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000010000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000
+    End
+    UnknownProp = {420 ,0 ,0 ,0 ,138 } Begin
+        0x040017002a000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000550053004200300030003100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            UnknownProp = {324 ,0 ,0 ,0 ,1 } Begin
+                0x00
+            End
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Subform
+            SpecialEffect =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CustomControl
+            SpecialEffect =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            UnknownProp = {321 ,0 ,0 ,0 ,1 } Begin
+                0x00
+            End
+        End
+        Begin Tab
+            BackStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            UnknownProp = {311 ,0 ,0 ,0 ,1 } Begin
+                0x00
+            End
+        End
+        Begin FormHeader
+            Height =360
+            BackColor =-2147483633
+            Name ="FormHeader"
+            GUID = Begin
+                0x8852d4f591487d4abfdbbb2a339d1326
+            End
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =60
+                    Top =60
+                    Width =900
+                    Height =240
+                    Name ="EXN_Label"
+                    Caption ="EXN"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x7ecc820ff54a39428bb44fcc8caf87d5
+                    End
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =1020
+                    Top =60
+                    Width =900
+                    Height =240
+                    Name ="JUN_Label"
+                    Caption ="JUN"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xfd1488fbf5a8894691c88ddd49118bfc
+                    End
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =3
+                    Left =1845
+                    Top =60
+                    Width =600
+                    Height =240
+                    Name ="CAS_Label"
+                    Caption ="CR1"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x31d7a6cff1c7c946805b76a13c740675
+                    End
+                    LayoutCachedLeft =1845
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2445
+                    LayoutCachedHeight =300
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =2490
+                    Top =60
+                    Width =480
+                    Height =240
+                    Name ="STS_Label"
+                    Caption ="CR2"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x69ff32a0a5052242b93780aecd4a837a
+                    End
+                    LayoutCachedLeft =2490
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2970
+                    LayoutCachedHeight =300
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =3030
+                    Top =60
+                    Width =465
+                    Height =240
+                    Name ="THS_Label"
+                    Caption ="CR3"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x40c5a57428a0414db8211b05a0b2acc8
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =3555
+                    Top =60
+                    Width =465
+                    Height =240
+                    Name ="SKS_Label"
+                    Caption ="CR4"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x6b8719bd49c4f246a8a129ec73b3060f
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =4080
+                    Top =60
+                    Width =465
+                    Height =240
+                    Name ="CLS_Label"
+                    Caption ="CR5"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x48ad0178702ddb45b25b80018c5aab44
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =4605
+                    Top =60
+                    Width =465
+                    Height =240
+                    Name ="TWS_Label"
+                    Caption ="CR6"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xc6e1bd7ec23b6c409537bee1bb461cfb
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =5130
+                    Top =60
+                    Width =465
+                    Height =240
+                    Name ="NTR_Label"
+                    Caption ="NTR"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x645d94986ee8554f884c5b0712c384ea
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =5700
+                    Top =60
+                    Width =600
+                    Height =240
+                    Name ="Label20"
+                    Caption ="BSeq"
+                    GUID = Begin
+                        0xe425b11bcacc9d4c876753c7d47aecfc
+                    End
+                    LayoutCachedLeft =5700
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =6300
+                    LayoutCachedHeight =300
+                End
+            End
+        End
+        Begin Section
+            Height =540
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0xa51c04b7573a21419a821e3445a1c38d
+            End
+            Begin
+                Begin TextBox
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =60
+                    Top =60
+                    Width =900
+                    Height =255
+                    ColumnWidth =900
+                    Name ="EXN"
+                    ControlSource ="EXN"
+                    StatusBarText ="Exhibit Number - Linked to Exhibit Master"
+                    GUID = Begin
+                        0x99e42643cd32e544a9cc1ee856d35239
+                    End
+
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1020
+                    Top =60
+                    Width =900
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =1
+                    Name ="JUN"
+                    ControlSource ="JUN"
+                    StatusBarText ="Judge Number - Linked to Judge Table"
+                    GUID = Begin
+                        0x9d093a0c7824ff499e877097ee967e45
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1980
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =2
+                    Name ="CR1"
+                    ControlSource ="CR1"
+                    StatusBarText ="Creative Ability Sub Score"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x6014d113487800419c2c9fdd2425d6b0
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =2505
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =3
+                    Name ="CR2"
+                    ControlSource ="CR2"
+                    StatusBarText ="Scientific Thought Sub Score"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0xd388e088c479fc4aa264f80906a64c8b
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3030
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =4
+                    Name ="CR3"
+                    ControlSource ="CR3"
+                    StatusBarText ="Thoroughness Sub Score"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x72b749a60bc73f48819839b235a3b6bf
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3555
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =5
+                    Name ="CR4"
+                    ControlSource ="CR4"
+                    StatusBarText ="Skill Sub Score"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x4e205993ac041940acdaa42bf9b8834d
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =4140
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =6
+                    Name ="CR5"
+                    ControlSource ="CR5"
+                    StatusBarText ="Clarity Sub Score"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x50e41321f9e34543af58dab8ded3ffd6
+                    End
+
+                    LayoutCachedLeft =4140
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =4605
+                    LayoutCachedHeight =315
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =87
+                    IMESentenceMode =3
+                    Left =4605
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =7
+                    Name ="CR6"
+                    ControlSource ="CR6"
+                    StatusBarText ="Teamwork Sub Score"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x23cd456dda37544fbebcb0cf8ad986b3
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5100
+                    Top =60
+                    Width =465
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =8
+                    Name ="NTR"
+                    ControlSource ="NTR"
+                    StatusBarText ="Number of times then data has been entered"
+                    GUID = Begin
+                        0x6d5365cf8060084eae38f8ff7e8e393e
+                    End
+
+                    LayoutCachedLeft =5100
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =5565
+                    LayoutCachedHeight =315
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5700
+                    Width =780
+                    Height =300
+                    TabIndex =9
+                    Name ="BSeq"
+                    ControlSource ="BSeq"
+                    StatusBarText ="Batch Sequ"
+                    GUID = Begin
+                        0x56430a7bf4832946af8ccbfb90b10592
+                    End
+
+                    LayoutCachedLeft =5700
+                    LayoutCachedWidth =6480
+                    LayoutCachedHeight =300
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0x4ff27d4dd0c6214a992e17b9022692af
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Private MsgDone As Boolean
+Private Function OKChangeMark() As Boolean
+  '  Changes 5.4.1 added MsgDone and code to show message only once per form load
+  If MsgDone = False Then   ' Show this only once
+     If MsgBox("REALLY CHANGE? Best to re-read Score Form Instead!" & vbCrLf & _
+      "Click [NO] and press [Esc] to clear your change!" & vbCrLf & vbCrLf & _
+      "You should change score card marks ONLY IF YOU ARE AUTHORIZED!" & vbCrLf & _
+      "Then (and only then) you may click [Yes]" & vbCrLf & vbCrLf & _
+      "ARE YOU AUTHORIZED TO MAKE THIS CHANGE?", vbYesNo + vbDefaultButton2, _
+      "WARNING - NOT NORMALLY CHANGED") = vbYes Then
+          MsgDone = True
+          OKChangeMark = True
+          MsgBox "Warning disabled! Be careful with addtional changes."
+      Else
+        OKChangeMark = False
+      End If
+   Else
+     OKChangeMark = True
+   End If
+   Exit Function
+End Function
+' MODS TO ALL FOR CR1 - CR6  548DES 5.4.8DES
+' 5.5.1 551 DES  The events for these were not calling these subs.  When the Sub names were changed, the
+' events in the form (design view) were broken - still pointed to the old sub names.  This was fixed
+
+Private Sub CR1_AfterUpdate()
+ Me.Requery
+  ' rev 5.4.7 547  did this on every entry after update
+  ' but first had to make xJudge Scores Entry   btRecalculateScore_Click public
+   Call Forms("xJudge Scores Entry").btnRecalculateScore_Click  'rev 547 5.4.7
+   CR2.SetFocus   ' rev 5.5.7
+End Sub
+
+Private Sub CR1_BeforeUpdate(Cancel As Integer)
+   If OKChangeMark = False Then Cancel = True: Exit Sub
+End Sub
+
+Private Sub CR2_AfterUpdate()
+  Me.Requery
+  Call Forms("xJudge Scores Entry").btnRecalculateScore_Click  'rev 547 5.4.7
+  CR3.SetFocus   ' rev 5.5.7
+End Sub
+
+Private Sub CR2_BeforeUpdate(Cancel As Integer)
+   If OKChangeMark = False Then Cancel = True: Exit Sub
+End Sub
+
+Private Sub CR3_AfterUpdate()
+  Me.Requery
+  Call Forms("xJudge Scores Entry").btnRecalculateScore_Click  'rev 547 5.4.7
+  CR4.SetFocus   ' rev 5.5.7
+End Sub
+Private Sub CR3_BeforeUpdate(Cancel As Integer)
+   If OKChangeMark = False Then Cancel = True: Exit Sub
+End Sub
+
+Private Sub CR4_AfterUpdate()
+  Me.Requery
+  Call Forms("xJudge Scores Entry").btnRecalculateScore_Click  'rev 547 5.4.7
+End Sub
+Private Sub CR4_BeforeUpdate(Cancel As Integer)
+   If OKChangeMark = False Then Cancel = True: Exit Sub
+End Sub
+
+Private Sub CR5_AfterUpdate()
+  Me.Requery
+  Call Forms("xJudge Scores Entry").btnRecalculateScore_Click  'rev 547 5.4.7
+  CR6.SetFocus   ' rev 5.5.7
+End Sub
+
+Private Sub CR5_BeforeUpdate(Cancel As Integer)
+   If OKChangeMark = False Then Cancel = True: Exit Sub
+End Sub
+
+Private Sub CR6_AfterUpdate()
+  Me.Requery
+  Call Forms("xJudge Scores Entry").btnRecalculateScore_Click  'rev 547 5.4.7
+End Sub
+
+Private Sub CR6_BeforeUpdate(Cancel As Integer)
+   If OKChangeMark = False Then Cancel = True: Exit Sub
+End Sub

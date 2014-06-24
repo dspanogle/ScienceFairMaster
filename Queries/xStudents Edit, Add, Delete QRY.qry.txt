@@ -1,0 +1,4 @@
+SELECT Persons.LNAME, Persons.FNAME, Persons.MI, Persons.SALUTATION, Students.STID, Students.GRADE, Students.SSN, Students.SEX, Students.PID, Students.S_SCH AS SCH_CODE, Students.S_TID AS TID, Students.Temp, Schools.SCHOOL, Persons.PID AS P_PID, Persons.TP, Persons.HOME_PHONE, Persons.CID, Persons.WORK_PHONE, Persons.EXTENSION, Persons.ADDR1, Persons.ADDR2, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.LAST_CHG, Persons.EMAIL, Persons.CELL_PHONE, Persons.FAX_PHONE, Persons.MAILPREF, Persons.SPECIAL, Persons.COMMENTS AS P_Comments, Persons.Temp AS P_Temp, Students.LAST_FAIR
+FROM ((Students LEFT JOIN Teachers ON Students.S_TID=Teachers.TID) LEFT JOIN Persons ON Students.PID=Persons.PID) LEFT JOIN Schools ON Students.S_SCH=Schools.SCH_CODE
+ORDER BY Persons.LNAME, Persons.FNAME, Persons.MI, Persons.SALUTATION;
+

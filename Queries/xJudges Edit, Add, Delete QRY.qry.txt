@@ -1,0 +1,4 @@
+SELECT Persons.LNAME, Persons.ZIP, Persons.FNAME, Persons.MI, Persons.SALUTATION, Judges.JUN, Judges.PID, Judges.JCAT, Judges.STATUS, Persons.LAST_CHG, Judges.LAST_CHG AS J_LAST_CHG, Judges.DEGREE, Judges.MAJOR, Judges.EXPER, Judges.MINOR, Judges.P_1, Judges.P_2, Judges.P_3, Judges.P_4, Judges.TEAM_OK, Judges.CHAIR, Judges.COMMENT AS J_COMMENT, Judges.LOCAL_FAIR, Judges.ORG_NAME, Persons.WORK_PHONE, Persons.EXTENSION, Persons.ADDR1, Persons.ADDR2, Persons.CITY, Persons.STATE, Persons.HOME_PHONE, Judges.FIRST_YR, Judges.LAST_YR, Judges.NUM_YR, Persons.COMMENTS AS P_COMMENT, Persons.CELL_PHONE, Persons.FAX_PHONE, Persons.EMAIL, Persons.MAILPREF, Persons.TP, Judges.Temp, Persons.SPECIAL, Persons.Temp AS P_Temp
+FROM Persons RIGHT JOIN Judges ON Persons.PID=Judges.PID
+ORDER BY Persons.LNAME, Persons.ZIP, Persons.FNAME, Persons.MI, Persons.SALUTATION;
+

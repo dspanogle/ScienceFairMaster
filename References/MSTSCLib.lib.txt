@@ -1,0 +1,6 @@
+Begin Reference MSTSCLib
+	FullPath: C:\Windows\SysWOW64\mstscax.dll
+	Guid: {8C11EFA1-92C3-11D1-BC1E-00C04FA31489}
+	Major: 1
+	Minor: 0
+End

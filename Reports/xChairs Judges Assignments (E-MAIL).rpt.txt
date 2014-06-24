@@ -1,0 +1,792 @@
+Version =20
+VersionRequired =20
+Checksum =1526393481
+Begin Report
+    LayoutForPrint = NotDefault
+    OrderByOn = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    PageFooter =3
+    TabularFamily =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =20
+    GridY =24
+    Width =12816
+    DatasheetFontHeight =10
+    ItemSuffix =40
+    Top =600
+    Right =7605
+    Bottom =10470
+    DatasheetGridlinesColor =12632256
+    OrderBy ="[JName]"
+    RecSrcDt = Begin
+        0x5e2757adbd4ce340
+    End
+    GUID = Begin
+        0xe0393cda9843ba4d87926cec09cd1f92
+    End
+    RecordSource ="SELECT DISTINCTROW JudgeTypes.CHAIRNUM, Judges.STATUS, Categories.NCAT, Categori"
+        "es.CATNAME, persons.LNAME & \", \" & persons.FNAME & \" \" & Persons.mi AS JName"
+        ", persons.LNAME & \", \" & persons.FNAME & \" \" & Persons.mi & judges.JUN AS JN"
+        "ameJUN, Judges.JUN, Judges.PID, Judges.JCAT, JudgeTypes.[JCAT NAME], Chairs.LOCA"
+        "TION AS CaucusLoc, Persons_1.FNAME AS ChFN, Persons_1.LNAME AS ChLN, Persons.HOM"
+        "E_PHONE, Persons.WORK_PHONE, Persons.EXTENSION, Persons.EMAIL, Persons.CELL_PHON"
+        "E, Persons.FAX_PHONE FROM (((Chairs LEFT JOIN Judges AS Judges_1 ON Chairs.JUN=J"
+        "udges_1.JUN) LEFT JOIN Persons AS Persons_1 ON Judges_1.PID=Persons_1.PID) RIGHT"
+        " JOIN (Persons RIGHT JOIN (JudgeTypes RIGHT JOIN Judges ON JudgeTypes.JCAT=Judge"
+        "s.JCAT) ON Persons.PID=Judges.PID) ON Chairs.CHAIRNUM=JudgeTypes.CHAIRNUM) LEFT "
+        "JOIN (Categories RIGHT JOIN JudgeTypeCategories ON Categories.NCAT=JudgeTypeCate"
+        "gories.NCAT) ON JudgeTypes.JCAT=JudgeTypeCategories.JCAT WHERE (((Judges.STATUS)"
+        "=\"A\")); "
+    OnOpen ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xf0000000f0000000f0000000f00000000000000010320000d002000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x47656e65726963202f2054657874204f6e6c7900000000000000000000000000 ,
+        0x010401049c00400043ef800501000100ea0a6f08640001000501580201000100 ,
+        0x5802010000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000010000000000000000000000000000000000000044494e55 ,
+        0x2200b000ec020000ba9173ca0000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000200000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002700000077696e73706f6f6c004747656e65726963202f2054657874 ,
+        0x204f6e6c79004946494c453a0036004c5054313a00000000000000000000
+    End
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    DisplayOnSharePointSite =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            FELineBreak = NotDefault
+            OldBorderStyle =0
+            Height =300
+            FontSize =10
+            FontWeight =300
+            FontName ="Arial"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =0
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            ControlSource ="ChLN"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            KeepTogether =1
+            ControlSource ="NCAT"
+        End
+        Begin BreakLevel
+            ControlSource ="JCAT"
+        End
+        Begin PageHeader
+            Height =420
+            Name ="PageHeaderSection"
+            GUID = Begin
+                0x711a249c7350e141a91d7eb7e82d8aa8
+            End
+            Begin
+                Begin Label
+                    TextFontFamily =49
+                    Left =144
+                    Width =8700
+                    Height =300
+                    FontSize =10
+                    Name ="rptTitle"
+                    Caption ="Report Title Filled in after  sort order.   Do Not Delete this box (see Basic co"
+                        "de)"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xa182382d562716458e147107eb8734f3
+                    End
+                    LayoutCachedLeft =144
+                    LayoutCachedWidth =8844
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    BackStyle =0
+                    Left =10584
+                    Width =2115
+                    FontWeight =400
+                    Name ="Text21"
+                    ControlSource ="=Format(Date(),\"Medium Date\")"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xdc3a4d45779e4d4ca8523b62b3b44912
+                    End
+
+                    LayoutCachedLeft =10584
+                    LayoutCachedWidth =12699
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =9000
+                    ColumnWidth =1470
+                    TabIndex =1
+                    Name ="tbChLN"
+                    ControlSource ="=IIf(IsNull([ChLN]),\"N/A\",[ChLN])"
+                    StatusBarText ="Last Name"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x1b98e3242dc36b42a356c8b6caabb41a
+                    End
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedWidth =10440
+                    LayoutCachedHeight =300
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            ForceNewPage =1
+            Height =960
+            OnFormat ="[Event Procedure]"
+            OnPrint ="[Event Procedure]"
+            Name ="GroupHeader1"
+            GUID = Begin
+                0xcd08ae24ad92dc4e8085839a33797e21
+            End
+            Begin
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =144
+                    Top =300
+                    Width =10014
+                    FontWeight =400
+                    Name ="Text13"
+                    ControlSource ="=\"Caucus @ \" & [CaucusLoc]"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xfffe030ddb57db4cb9112c01640a9e3b
+                    End
+
+                    LayoutCachedLeft =144
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =10158
+                    LayoutCachedHeight =600
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =1
+                    TextFontFamily =49
+                    Left =9864
+                    Width =510
+                    ColumnWidth =945
+                    TabIndex =1
+                    Name ="tbCHAIRNUM"
+                    ControlSource ="CHAIRNUM"
+                    StatusBarText ="Chair Person  Number"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x3e939f4a8d73b5489c5d37758be94c5c
+                    End
+
+                    LayoutCachedLeft =9864
+                    LayoutCachedWidth =10374
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =3804
+                    Width =5127
+                    FontWeight =400
+                    TabIndex =2
+                    Name ="Text20"
+                    ControlSource ="=IIf(IsNull([ChLN]),\"Judges with No JCAT or NCAT\",[ChFN] & \"  \" & [ChLN])"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x8c26625140faa44598f32a6441f359bf
+                    End
+
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextFontFamily =49
+                    Left =1800
+                    Top =600
+                    Width =8346
+                    TabIndex =3
+                    Name ="tbJCATS"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xbc43d749a4e4a9408a9e4c16b71e3ee4
+                    End
+
+                    LayoutCachedLeft =1800
+                    LayoutCachedTop =600
+                    LayoutCachedWidth =10146
+                    LayoutCachedHeight =900
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Width =3810
+                    Height =300
+                    FontSize =10
+                    Name ="Label26"
+                    Caption ="Judge Assignments for "
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xdfb802c91d2b0b4fb882c4e26835c86f
+                    End
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Left =9000
+                    Width =792
+                    Height =300
+                    FontSize =10
+                    Name ="Label27"
+                    Caption ="Chair#"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x75dafed122d2a140a40c96975ca667a7
+                    End
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Top =600
+                    Width =1806
+                    Height =300
+                    FontSize =10
+                    Name ="Label28"
+                    Caption ="Judge Types"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xdcfb242eb2bab2498ee88562159f8e7f
+                    End
+                    LayoutCachedTop =600
+                    LayoutCachedWidth =1806
+                    LayoutCachedHeight =900
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =360
+            BreakLevel =1
+            Name ="GroupHeader0"
+            GUID = Begin
+                0x804b87d3f3b1d84b8eaea48da050bd0a
+            End
+            Begin
+                Begin TextBox
+                    TextFontFamily =49
+                    Width =765
+                    Height =255
+                    ColumnWidth =900
+                    Name ="NCAT"
+                    ControlSource ="NCAT"
+                    StatusBarText ="National Science Fair Category Code     Old SFCM: [DIV + SCAT]"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xb82b0de731ac4e4293b8ddbf2925f3ad
+                    End
+
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =885
+                    Width =6405
+                    Height =255
+                    ColumnWidth =3315
+                    TabIndex =1
+                    Name ="CATNAME"
+                    ControlSource ="CATNAME"
+                    StatusBarText ="Category long name      1st 37 char =    Old SFCM:CATNAME for types \"B\" and \""
+                        "S\""
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x9828cf491de2a542a9c7428fbba9bc0c
+                    End
+
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =1020
+            OnFormat ="[Event Procedure]"
+            OnPrint ="[Event Procedure]"
+            Name ="Detail"
+            GUID = Begin
+                0x80d086d9d233f74d8f33c45592666c55
+            End
+            Begin
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =564
+                    Width =3681
+                    Name ="Text18"
+                    ControlSource ="=[JName]"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x614acc1db55c0d4e815d3b311843cd53
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =1
+                    TextFontFamily =49
+                    Width =510
+                    ColumnWidth =630
+                    TabIndex =1
+                    Name ="tbJUN"
+                    ControlSource ="JUN"
+                    StatusBarText ="Judge Number - Linked to Judge Table"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xdbb75474f0261343a403edfbf3633d50
+                    End
+
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =4896
+                    Width =2085
+                    ColumnWidth =1500
+                    TabIndex =2
+                    Name ="HOME_PHONE"
+                    ControlSource ="HOME_PHONE"
+                    StatusBarText ="Home Phone number"
+                    FontName ="Device Font 10cpi"
+                    InputMask ="!\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0x4f61c83879386143a5748edf5f00924b
+                    End
+
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =7704
+                    Width =2085
+                    ColumnWidth =1545
+                    TabIndex =3
+                    Name ="WORK_PHONE"
+                    ControlSource ="WORK_PHONE"
+                    StatusBarText ="Work Phone Number"
+                    FontName ="Device Font 10cpi"
+                    InputMask ="\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0x658d814867e31e4aba65b55f0ababb8a
+                    End
+
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =9933
+                    Width =1140
+                    ColumnWidth =870
+                    TabIndex =4
+                    Name ="EXTENSION"
+                    ControlSource ="EXTENSION"
+                    StatusBarText ="Work Phone Extension"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xfa4de5a773785045871192ab3636e251
+                    End
+
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =2520
+                    Top =300
+                    Width =2235
+                    TabIndex =5
+                    Name ="CELL_PHONE"
+                    ControlSource ="CELL_PHONE"
+                    StatusBarText ="Cell Phone number"
+                    FontName ="Device Font 10cpi"
+                    InputMask ="!\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0x1a1ac4f220f18c45bdd9d9e8ff404c24
+                    End
+
+                    LayoutCachedLeft =2520
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =4755
+                    LayoutCachedHeight =600
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    Left =5832
+                    Top =300
+                    Width =6630
+                    TabIndex =6
+                    Name ="EMAIL"
+                    ControlSource ="EMAIL"
+                    StatusBarText ="Email Address"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0xe382c06d9729324483e8c8c68ad5d637
+                    End
+
+                    LayoutCachedLeft =5832
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =12462
+                    LayoutCachedHeight =600
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Left =4320
+                    Width =645
+                    Height =285
+                    FontSize =10
+                    Name ="Label35"
+                    Caption ="Home "
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x850d69a68a08754b91da7380b7460edb
+                    End
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Left =4824
+                    Top =300
+                    Width =930
+                    Height =285
+                    FontSize =10
+                    Name ="Label36"
+                    Caption ="e-Mail"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x2e9ca795e1a6594fad6a2cded494dcd4
+                    End
+                    LayoutCachedLeft =4824
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =5754
+                    LayoutCachedHeight =585
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Left =1800
+                    Top =300
+                    Width =636
+                    Height =300
+                    FontSize =10
+                    Name ="Label37"
+                    Caption ="Cell"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x60c0b5a8b6235147a2cdab1704605395
+                    End
+                    LayoutCachedLeft =1800
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =2436
+                    LayoutCachedHeight =600
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Left =7056
+                    Width =651
+                    Height =300
+                    FontSize =10
+                    Name ="Label38"
+                    Caption ="Work "
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x89fef75cc3ad154a8fbd33550616e8a1
+                    End
+                End
+                Begin Label
+                    TextFontFamily =49
+                    Top =300
+                    Width =801
+                    Height =300
+                    FontSize =10
+                    Name ="Label39"
+                    Caption ="JCAT"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x47605a0b01c0ac45a8aabdcd7f7f21c6
+                    End
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =801
+                    LayoutCachedHeight =600
+                End
+                Begin TextBox
+                    TextFontFamily =49
+                    IMESentenceMode =3
+                    Left =792
+                    Top =300
+                    Width =930
+                    ColumnWidth =915
+                    TabIndex =7
+                    Name ="JCAT"
+                    ControlSource ="JCAT"
+                    StatusBarText ="Assigned Judging Category Code  Same as old SFJM [DIV + CAT]"
+                    FontName ="Device Font 10cpi"
+                    GUID = Begin
+                        0x1c11dcda28f68146b84ec226417edadc
+                    End
+
+                    LayoutCachedLeft =792
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =1722
+                    LayoutCachedHeight =600
+                End
+            End
+        End
+        Begin PageFooter
+            Height =0
+            Name ="PageFooterSection"
+            GUID = Begin
+                0x00712a316e02d344988a86e36cda44c1
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Option Explicit
+Private ExCount As Integer
+Private criteria As String
+Private jnum As Long
+Private Estr As String
+Private chnum As Long
+Private JudgeExhibitsRS As Recordset
+Private ChairJCATSRS As Recordset
+Private ChStr As String
+Private ShortChStr As String
+Private ShorterChStr As String
+Private PChairName As String
+Private Sub Detail_Format(Cancel As Integer, FormatCount As Integer)
+ ' Fill in the Judge Assignments.
+  On Error GoTo SubError
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Detail_Print(Cancel As Integer, PrintCount As Integer)
+  ' Fill in the Judge Assignments.
+  On Error GoTo SubError
+  'At this time, me.JUN is not available, so  I get it from the textbox
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub GroupHeader1_Format(Cancel As Integer, FormatCount As Integer)
+  'Chairs header
+  'Note, normally this would be GroupHeader0, but I deleted that one and got
+  On Error GoTo SubError
+  Dim chnum As Integer
+  chnum = IIf(IsNull(Me.tbCHAIRNUM), 0, Me.tbCHAIRNUM)
+  Me.tbJCATS = ""
+  If chnum > 0 Then
+     criteria = "SELECT JCAT FROM JUDGETYPES WHERE " & _
+             "CHAIRNUM = " & chnum & " ORDER BY JCAT"
+  Else
+    criteria = "SELECT JCAT FROM JUDGETYPES WHERE " & _
+             "CHAIRNUM = null ORDER BY JCAT"
+  End If
+  Set ChairJCATSRS = CurrentDb().OpenRecordset(criteria, dbOpenDynaset)
+  With ChairJCATSRS
+    If .EOF Then
+      Me.tbJCATS = "NullChair/ExhibitsDataJUNnotJudge?"
+    Else
+      .MoveFirst
+      Do While Not .EOF
+         Me.tbJCATS = Me.tbJCATS & !JCAT & ", "
+        .MoveNext
+      Loop
+    End If
+  End With
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub GroupHeader1_Print(Cancel As Integer, PrintCount As Integer)
+  'chairs Header
+End Sub
+Private Sub Report_Open(Cancel As Integer)
+  Dim promptmsg As String
+  Dim Instrg As String
+  On Error GoTo SubError ' <-- goes to bottome of the Sub and displays message
+  ' <- tick mark means comment  Add these anywhere
+  ' Fill in the first part of the report Title
+  Me.rptTitle.Caption = "Chairs Judges Assignments By: JCAT and "
+  ' Build a string to put in the inputbox as a prompt to user
+  '  Stings are in quotes unless you use a string variable or constant
+  '  promptmsg is a string variable,
+  '  Note to continue on next line here, use the underscore character '_'
+  '  the vbCrLf means go to a new line when the message is displayed
+  '  the '&' character adds the strings together. you could use a + sign also
+  promptmsg = "Enter Sort Order  --- " & vbCrLf & _
+     " N = Judge Name [JName] (default)  OR ... " & vbCrLf & _
+     " J = Judge Number [JUN] "
+  Instrg = InputBox(promptmsg, "Exhibits Summary Report", "N")
+  If Len(Instrg) = 0 Then Instrg = "J"
+  If Len(Instrg) = 1 Then
+   If UCase(Mid(Instrg, 1, 1)) = "J" Then
+      Me.OrderBy = "[JUN]"
+      Me.rptTitle.Caption = Me.rptTitle.Caption & _
+        "Judge Number"
+   End If
+   If UCase(Mid(Instrg, 1, 1)) = "N" Then
+      Me.OrderBy = "[JName]"
+      Me.rptTitle.Caption = Me.rptTitle.Caption & _
+       "Judge Name"
+   End If
+  Else
+     Me.OrderBy = "[JName]"
+     Me.rptTitle.Caption = Me.rptTitle.Caption & _
+       "Judge Name" & Instrg
+  End If
+  Me.OrderByOn = True
+  ' The report is driven by Active Judges.  STATUS = "A".  There is a chance that
+  ' A judge has been assigned exibits, then accidently set inactive. This will
+  ' check out this and give a warning if so.
+  Dim JudgeExhibitsRS As Recordset
+  criteria = "SELECT JUN FROM ExhibitJudges ORDER BY JUN"
+  Set JudgeExhibitsRS = CurrentDb().OpenRecordset(criteria, dbOpenDynaset)
+  Dim rs As Recordset
+  Dim missing As String
+  Dim statusnotA As String
+  Dim jcatnull As String
+  statusnotA = ""
+  missing = ""
+  jcatnull = ""
+  criteria = "SELECT JUN, STATUS, JCAT FROM Judges ORDER BY JUN"
+  Set rs = CurrentDb().OpenRecordset(criteria, dbOpenDynaset)
+  With JudgeExhibitsRS
+     If Not .EOF Then ' do only if records
+       Dim curjun As Integer
+       curjun = 0
+       Do While Not .EOF
+         If !JUN <> curjun Then '   check if in active judges (this report rs)
+            curjun = !JUN  ' use below and skip the rest
+            With rs
+              .FindFirst "JUN = " & curjun
+              If .NoMatch Then
+                 missing = missing & curjun & ", "
+              Else ' found judge
+                If IsNull(!STATUS) Or !STATUS <> "A" Then
+                 statusnotA = statusnotA & curjun & ", "
+                End If
+                If IsNull(!JCAT) Then
+                 jcatnull = jcatnull & curjun & ", "
+                End If
+              End If
+            End With
+         End If
+         .MoveNext
+       Loop
+     Else
+       MsgBox "FYI: There are no Judge Assignments in ExhibitJudges table!"
+     End If
+  .Close
+  rs.Close
+  End With
+  If Len(jcatnull) > 1 Then
+    MsgBox "Following Judges have exhibit assignments" & vbCrLf & _
+           "(are in ExhibitJudges table) and are in Judges table" & vbCrLf & _
+           "But JCAT is blank" & vbCrLf & _
+           "These Print First (if Active) . Fix the Problem(s)!" & vbCrLf & _
+            jcatnull
+  End If
+  If Len(missing) > 1 Then
+    MsgBox "Following Judges have exhibit assignments" & vbCrLf & _
+           "(are in ExhibitJudges table) but they " & vbCrLf & _
+           "DO NOT EXIST in Judges table" & vbCrLf & _
+           "These ARE NOT LISTED! FIX THE PROBLEM(s)!" & vbCrLf & _
+           missing
+  End If
+  If Len(statusnotA) > 1 Then
+    MsgBox "Following Judges have exhibit assignments" & vbCrLf & _
+           "(are in ExhibitJudges table) and are in Judges table" & vbCrLf & _
+           "But STATUS is not set Active ('A') " & vbCrLf & _
+           "These ARE NOT LISTED! FIX THE PROBLEM(s)!" & vbCrLf & _
+           statusnotA
+  
+  End If
+
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub

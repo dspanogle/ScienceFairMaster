@@ -1,0 +1,4 @@
+SELECT Judges.JUN, Persons.FNAME, Persons.MI, Persons.LNAME, Judges.P_1, Judges.P_2, Judges.P_3, Judges.P_4, Judges.JCAT, Judges.STATUS, Persons.HOME_PHONE, Persons.WORK_PHONE
+FROM Persons RIGHT JOIN Judges ON Persons.PID=Judges.PID
+WHERE (((Judges.STATUS)="A"));
+

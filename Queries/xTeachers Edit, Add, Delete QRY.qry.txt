@@ -1,0 +1,4 @@
+SELECT Persons.LNAME, Persons.FNAME, Persons.MI, Persons.SALUTATION, Teachers.TID, Teachers.SCH_CODE, Teachers.Type, Teachers.PID, Teachers.Temp, Schools.SCHOOL, Persons.PID AS P_PID, Persons.TP, Persons.HOME_PHONE, Persons.CID, Persons.WORK_PHONE, Persons.EXTENSION, Persons.ADDR1, Persons.ADDR2, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.LAST_CHG, Persons.EMAIL, Persons.CELL_PHONE, Persons.FAX_PHONE, Persons.MAILPREF, Persons.SPECIAL, Persons.COMMENTS AS P_Comments, Persons.Temp AS P_Temp
+FROM Schools RIGHT JOIN (Persons RIGHT JOIN Teachers ON Persons.PID=Teachers.PID) ON Schools.SCH_CODE=Teachers.SCH_CODE
+ORDER BY Persons.LNAME, Persons.FNAME, Persons.MI, Persons.SALUTATION;
+

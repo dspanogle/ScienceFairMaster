@@ -1,0 +1,835 @@
+Version =20
+VersionRequired =20
+Checksum =-1568883899
+Begin Form
+    AllowFilters = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    Cycle =1
+    GridX =24
+    GridY =24
+    Width =3720
+    DatasheetFontHeight =10
+    ItemSuffix =4
+    Left =6555
+    Top =4515
+    Right =10005
+    Bottom =6105
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xe0885121b0c4e340
+    End
+    GUID = Begin
+        0xf723579b0e956043a83e00dce5be8025
+    End
+    RecordSource ="xExhibits Edit, Student 2"
+    OnCurrent ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    OnTimer ="[Event Procedure]"
+    OnLoad ="[Event Procedure]"
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    AllowLayoutView =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Section
+            Height =2280
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x745cd731401d4b40a7c2e4b99f2d1cf7
+            End
+            Begin
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =87
+                    Left =180
+                    Top =60
+                    Width =240
+                    Name ="F_ord"
+                    ControlSource ="F_ORD"
+                    StatusBarText ="Form Order: Order of Student on Entry Form"
+                    GUID = Begin
+                        0xd2982dff5f57784696934a652b6bdcfd
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Top =60
+                            Width =180
+                            Height =240
+                            Name ="Label70"
+                            Caption ="#"
+                            GUID = Begin
+                                0x5858868ce4a94840909beae2b2e726e4
+                            End
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =1440
+                    Left =480
+                    Top =60
+                    Width =2460
+                    TabIndex =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
+                    GUID = Begin
+                        0x8d9ab1de32b18c40b3554226832c62cf
+                    End
+                    Name ="cbStudent"
+                    ControlSource ="ES_STID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT Students.STID, [LNAME] & \", \" & [FNAME] & \" \" & [MI] & \" \" & [SALUT"
+                        "ATION] & \" (\" & [TP] & \")\" AS Name FROM Persons RIGHT JOIN Students ON Perso"
+                        "ns.PID=Students.PID ORDER BY [LNAME] & \", \" & [FNAME] & \" \" & [MI] & \" \" &"
+                        " [SALUTATION]; "
+                    ColumnWidths ="0;1440"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    OnNotInList ="[Event Procedure]"
+                    BaseInfo ="\"SELECT Students.STID, [LNAME] & \"\", \"\" & [FNAME] & \"\" \"\" & [MI] & \"\""
+                        " \"\" & [SALUTATION] & \"\" (\"\" & [TP] & \"\")\"\" AS Name FROM Persons RIGHT "
+                        "JOIN Students ON Persons.PID=Students.PID ORDER BY [LNAME] & \"\", \"\" & [FNAME"
+                        "] & \"\" \"\" & [MI] & \"\" \"\" & [SALUTATION]; \";\"Persons\";\"Students\";\"\""
+
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =960
+                    Top =360
+                    Width =1140
+                    TabIndex =4
+                    Name ="ssn"
+                    ControlSource ="SSN"
+                    StatusBarText ="Soc.l Sec. Num. (Opt) / pin type number Old SFEM SSN"
+                    InputMask ="000\\-00\\-0000;0;\" \""
+                    GUID = Begin
+                        0x9e70c736e60e304ca608c38c132e18fb
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =600
+                            Top =360
+                            Width =360
+                            Height =240
+                            Name ="Label75"
+                            Caption ="ssn:"
+                            GUID = Begin
+                                0xaee4ba082c622840a1f7270807af44cf
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =300
+                    Top =660
+                    Width =3360
+                    TabIndex =6
+                    Name ="addr1"
+                    ControlSource ="ADDR1"
+                    StatusBarText ="Address 1"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x801c97ba072dc5418ca21f78f3b33cf0
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Top =660
+                            Width =300
+                            Height =240
+                            Name ="Label77"
+                            Caption ="Ad:"
+                            GUID = Begin
+                                0x32df931d21594e469b05b3ee982ae6de
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =300
+                    Top =960
+                    Width =3360
+                    TabIndex =7
+                    Name ="addr2"
+                    ControlSource ="ADDR2"
+                    StatusBarText ="Additional Address Information"
+                    GUID = Begin
+                        0x5629013ef1d16742ade1596a759b6aed
+                    End
+
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    Left =600
+                    Top =1260
+                    Width =1680
+                    TabIndex =8
+                    Name ="city"
+                    ControlSource ="CITY"
+                    StatusBarText ="City"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0xfa8a0f11f737eb418f2a5d6b885ea702
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Top =1260
+                            Width =750
+                            Height =240
+                            Name ="Label80"
+                            Caption ="CtyStZip"
+                            GUID = Begin
+                                0xf4f777b321f60c45a812c9dddbd4d128
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2340
+                    Top =1260
+                    Width =300
+                    TabIndex =9
+                    Name ="STATE"
+                    ControlSource ="STATE"
+                    StatusBarText ="State (Two Letter Abreviations)"
+                    OnExit ="[Event Procedure]"
+                    GUID = Begin
+                        0x397c8dffc03dc44aacef85c3301d96d5
+                    End
+
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2700
+                    Top =1260
+                    Width =960
+                    TabIndex =10
+                    Name ="zip"
+                    ControlSource ="ZIP"
+                    StatusBarText ="Postal ZIP code I.E. 87110-0324"
+                    InputMask ="00000\\-9999;0;\" \""
+                    GUID = Begin
+                        0xb25d1c7f1d1338448cb285a99f7ef823
+                    End
+
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =720
+                    Top =1560
+                    Width =2940
+                    TabIndex =11
+                    Name ="email"
+                    ControlSource ="EMAIL"
+                    StatusBarText ="Email Address"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x200b337e11d8bb4cac293109b07e52c8
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Top =1560
+                            Width =585
+                            Height =240
+                            Name ="Label84"
+                            Caption ="E-Mail:"
+                            GUID = Begin
+                                0xb2fecd582671e14ebb0ac98fc07b5366
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2460
+                    Top =360
+                    Width =1200
+                    TabIndex =5
+                    Name ="SHmPh"
+                    ControlSource ="SHmPh"
+                    StatusBarText ="Home Phone number"
+                    AfterUpdate ="[Event Procedure]"
+                    OnEnter ="[Event Procedure]"
+                    InputMask ="!\\(999\") \"000\\-0000;0;\" \""
+                    GUID = Begin
+                        0xe313b9bd01fe474d8d207bf445c8a9af
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =2160
+                            Top =360
+                            Width =240
+                            Height =240
+                            Name ="Label86"
+                            Caption ="Ph"
+                            GUID = Begin
+                                0x54e473b908da884bb53d3ef0fc883c5d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =87
+                    Left =300
+                    Top =360
+                    Width =300
+                    TabIndex =3
+                    Name ="Grade"
+                    ControlSource ="GRADE"
+                    StatusBarText ="Students Current Grade                           Old SFEM GRADE"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x025a86bc80c2224cbff7e46306f0a1b5
+                    End
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =600
+                    LayoutCachedHeight =600
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Top =360
+                            Width =240
+                            Height =240
+                            Name ="Label88"
+                            Caption ="Gr:"
+                            GUID = Begin
+                                0x79903720bbcea246ad142c63d62a1639
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =3360
+                    Top =60
+                    Width =300
+                    ColumnWidth =570
+                    TabIndex =2
+                    Name ="SEX"
+                    ControlSource ="SEX"
+                    StatusBarText ="Male (M) or Female (F)                             Old SFEM SEX"
+                    OnExit ="[Event Procedure]"
+                    GUID = Begin
+                        0x48e7633eea2cdf4ba923ed01f583dc9a
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =3000
+                            Top =60
+                            Width =300
+                            Height =240
+                            Name ="Label0"
+                            Caption ="Sex"
+                            GUID = Begin
+                                0xe1ebb8014976184bb07730d5b4dc7bf3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =87
+                    Left =240
+                    Top =1860
+                    Width =660
+                    ColumnWidth =765
+                    TabIndex =12
+                    Name ="TP"
+                    ControlSource ="TP"
+                    StatusBarText ="Previous/current person type . Two  letters per type (commas between)"
+                    GUID = Begin
+                        0x786a60ab9444294cb736755f87437433
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Top =1860
+                            Width =240
+                            Height =240
+                            Name ="Label1"
+                            Caption ="TP"
+                            GUID = Begin
+                                0xb56f988c78774c4fbaf450fa0f93c3db
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =87
+                    Left =2940
+                    Top =1860
+                    Width =720
+                    TabIndex =13
+                    Name ="LAST_CHG"
+                    ControlSource ="LAST_CHG"
+                    StatusBarText ="Last Time this record was changed"
+                    InputMask ="99/99/00;0;\" \""
+                    GUID = Begin
+                        0xe26224533df1064da84361bd9cd61302
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =2460
+                            Top =1860
+                            Width =480
+                            Height =240
+                            Name ="Label2"
+                            Caption ="LstCh"
+                            GUID = Begin
+                                0x7acac03aa2e9c549b5cfeb7051df7716
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =87
+                    Left =1440
+                    Top =1860
+                    Width =900
+                    TabIndex =14
+                    Name ="LAST_FAIR"
+                    ControlSource ="LAST_FAIR"
+                    StatusBarText ="The year of the last fair atteneded          New"
+                    GUID = Begin
+                        0x8193a2cad0cda447bdbdece43602e6fa
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =1020
+                            Top =1860
+                            Width =420
+                            Height =240
+                            Name ="Label3"
+                            Caption ="LstFr"
+                            GUID = Begin
+                                0x7d3b85ff5226ae4c8122fd910aedce9a
+                            End
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Option Explicit
+Private dbSciFair As Database
+Private NewPID As Long
+Private NewSTID As Long
+Private StudentsRS As Recordset
+Private msg As String
+Private Title As String
+Private NeedGradeChange As Boolean
+Private tempTP As String
+Private DoCrLf As Boolean
+Private criteria As String
+Private FixedName As Boolean
+
+Private Sub ADDR1_AfterUpdate()
+    On Error GoTo SubError
+    Me.LAST_CHG = Format(Now, "mm/dd/yy")
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+
+Private Sub cbStudent_AfterUpdate()
+   On Error GoTo ErrorSub
+   NeedGradeChange = True
+   Exit Sub
+ErrorSub:
+   MsgBox Err.Description
+End Sub
+
+Private Sub cbStudent_BeforeUpdate(Cancel As Integer)
+  On Error GoTo SubError
+  With StudentsRS
+    .FindFirst "STID = " & Me.cbStudent.Value
+    If Not .NoMatch Then
+      tempTP = !TP   ' get the current TP of the selected person
+      If InStr(1, tempTP, "PS") > 0 Then  ' Change PS to ES
+        Mid(tempTP, InStr(1, tempTP, "PS"), 2) = "ES"
+        .Edit
+        !TP = tempTP
+        .Update
+      End If
+      .Edit
+      !LAST_FAIR = FairYear()
+      .Update
+    End If
+  End With
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub city_AfterUpdate()
+  If Len(Me.CITY) > 2 Then
+    If Mid(Me.CITY, 1, 3) = "alb" And Len(Me.CITY) < 5 Then
+      Me.CITY = "Albuquerque"
+    End If
+  End If
+  If InStr(1, Me.CITY, "Albuquerque") > 0 Then
+    Dim ne As Boolean
+    Dim se As Boolean
+    Dim nw As Boolean
+    Dim sw As Boolean
+    If InStr(1, Me.ADDR1, "NE") Or InStr(1, Me.ADDR2, "NE") Then ne = True
+    If InStr(1, Me.ADDR1, "SE") Or InStr(1, Me.ADDR2, "SE") Then se = True
+    If InStr(1, Me.ADDR1, "NW") Or InStr(1, Me.ADDR2, "NW") Then nw = True
+    If InStr(1, Me.ADDR1, "SW") Or InStr(1, Me.ADDR2, "SW") Then sw = True
+    If InStr(1, Me.ADDR1, "N.E.") Or InStr(1, Me.ADDR2, "N.E.") Then ne = True
+    If InStr(1, Me.ADDR1, "S.E.") Or InStr(1, Me.ADDR2, "S.E.") Then se = True
+    If InStr(1, Me.ADDR1, "N.W.") Or InStr(1, Me.ADDR2, "N.W.") Then nw = True
+    If InStr(1, Me.ADDR1, "S.W.") Or InStr(1, Me.ADDR2, "S.W.") Then sw = True
+    If ne Or se Or nw Or sw Then
+      Exit Sub
+    Else
+      MsgBox "Enter Quadrant in Address (NE, SE, NW, SW)"
+    End If
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub EMAIL_AfterUpdate()
+    On Error GoTo SubError
+    Me.LAST_CHG = Format(Now, "mm/dd/yy")
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+  On Error GoTo SubError
+  If NeedGradeChange = True Then
+    MsgBox "Change or Re-enter GRADE(Student2)"
+    Cancel = True
+  End If
+  If Me.F_ORD <> 2 Then
+     Me.F_ORD = 2
+     'MsgBox "F_ORD fixed! OK to continue"
+  End If
+  If Me.FYR <> FairYear() Then
+     Me.FYR = FairYear()
+  End If
+  If IsNull(Me.SEX) Then
+    MsgBox "SEX must be Entered!", , Title
+    Cancel = True
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_Current()
+   If Me.NewRecord = True Then
+     Me.cbStudent.SetFocus
+     NeedGradeChange = True ' Change to False only if edit Grade
+   Else  ' listing or editing
+     Me.GRADE.SetFocus
+     NeedGradeChange = False ' Assume only edit address etc - change to True
+                             ' If change (update) student
+   End If
+End Sub
+Private Sub Form_Timer()
+  On Error GoTo SubError
+  Me.TimerInterval = 0     ' Stop timer so only do this once!
+  If DoCrLf = True Then  '   just move from the Student box
+    SendKeys "{TAB}"
+    FixedName = False
+    DoCrLf = False
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub cbStudent_NotInList(newdata As String, Response As Integer)
+   On Error GoTo SubError
+   Dim Name As String
+   Dim ln As String
+   Dim FN As String
+   Dim min As String
+   Dim SAL As String
+   Dim rtn As Boolean
+   Name = newdata   'lastname, firstname, mi, salutation'
+   rtn = ParseName(Name, ln, FN, min, SAL, FixedName)
+   If rtn = False Then      ' did not parse so exit. Error message done already
+       'MsgBox "Bad Name, ReEnter!"
+       Response = acDataErrContinue
+       Exit Sub
+   Else  ' have names so create a new record
+     'msg = "LN = " & LN & vbCrLf & _
+     '      "FN = " & FN & vbCrLf & _
+     '      "MI = " & min & vbCrLf & _
+     '      "SAL = " & SAL & vbCrLf & _
+     '      "ENTER NEW STUDENT?"
+     msg = SAL & " " & FN & " " & min & " " & ln & vbCrLf & vbCrLf & _
+           "ENTER NEW STUDENT?"
+     If MsgBox(msg, vbYesNo, Title) = vbYes Then
+       ' returns false if error, else true with NewPid = 0 if no dups, else pid
+       ' of selected person to use instead of the the one typed
+       If SearchDuplicatePersons(ln, FN, min, SAL, "Students", NewPID) = False Then
+         Response = acDataErrContinue
+         Exit Sub
+       End If
+       With StudentsRS
+          .AddNew           ' entering a student record
+          If NewPID = 0 Then
+            ' No Duplicates or user indicated to use his/her Input
+            'Entering data in these fields creates new PID
+                            ' and puts it in Student.PID field
+            NeedGradeChange = True  ' New students need a grade
+            !LNAME = IIf(ln = "", Null, ln)
+            !FNAME = IIf(FN = "", Null, FN)
+            !MI = IIf(min = "", Null, min)
+            !SALUTATION = IIf(SAL = "", Null, SAL)
+            !TP = "ES"   ' Exhibit student
+            ' next entry is actually in Students table so sets STID
+            ' it is required to put something in table to set STID
+            !Temp = "t"  ' <----- STUDENT TEMP  it is reentered below
+             NewSTID = !STID
+            .Update   ' ---------------------------- ADD NEW STUDENT RECORD
+          Else
+            ' User choose an existing student
+            NeedGradeChange = True  ' Existing students have grades for prev years
+            !PID = NewPID  ' this just links in the selected Person
+                           ' to the new student record thus avoiding dups
+                           ' and fills in LNAME, FNAME, TP, LAST_CHG etc.
+            NewSTID = !STID
+            .Update   ' ---------------------------- ADD NEW STUDENT RECORD
+            .MoveFirst    ' go to the new record!
+            .FindFirst "STID = " & NewSTID
+            .Edit
+            tempTP = IIf(IsNull(!TP), "", !TP)
+            Call setFieldTP(tempTP, "ES")      ' Add "ES" to the TP field
+            !TP = tempTP
+            .Update
+          End If
+          .MoveFirst    ' go to the new record!
+          .FindFirst "STID = " & NewSTID
+          .Edit
+          !Temp = "ES2" & Format(Now, "mm/yy")   ' <----- STUDENT TEMP
+          !LAST_FAIR = FairYear
+          !LAST_CHG = Format(Now, "mm/dd/yy")     ' < ----- Persons LAST_CHG --
+          
+          .Update
+          Me.cbStudent.Value = !STID
+       End With
+       Me.cbStudent.Requery
+       If NewPID = 0 And InStr(1, newdata, ";") <= 0 _
+          And FixedName = False Then ' Clean new add
+         Response = acDataErrAdded
+       Else 'Selected from a list or typed name had ; (i.e. Spanogle, ; ; Mr.)
+         'If I set Response = acDataErrAdded in this case,( new record)
+         'combobox.value and me.ES_STID are reset to the value
+         'that was selected in the combobox prior to me forcing a new STID.
+         'I think the acdataerrAdded puts this in there before it trys to
+         'exit the box..
+         'by settin Response = acDataErrContinue the new record is added,
+         'the correct record is selected in the combo box and the user just
+         'has to press enter or tab again or click somewhere else.
+         'perhaps the is a way to do this better but I know not this took two
+         'days to figure out!
+         ' if do all this then cbstudent_beforeupdate is not called
+         Response = acDataErrContinue
+         DoCrLf = True
+         Me.TimerInterval = 50  ' in 50 msec do a crlf for the user
+       End If
+     Else  ' abort the process, user abort
+       Response = acDataErrContinue
+       Exit Sub
+     End If  ' user response to add record
+   End If 'parsename rtn check
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_Load()
+  On Error GoTo SubError
+  Set dbSciFair = CurrentDb()
+  criteria = "SELECT Students.STID, Students.LAST_FAIR, Students.SEX, Students.GRADE, " & _
+     "Students.S_SCH, Students.Temp, Persons.LNAME, Persons.FNAME, " & _
+     "Persons.MI, Persons.SALUTATION, Students.S_TID, Persons.LAST_CHG, " & _
+     "Persons.TP, Students.PID " & _
+     "FROM Persons RIGHT JOIN Students ON Persons.PID = Students.PID " & _
+     "ORDER BY Persons.LNAME, Persons.FNAME, Persons.MI, Persons.SALUTATION;"
+  Set StudentsRS = dbSciFair.OpenRecordset(criteria, dbOpenDynaset)
+  Title = "ExhibitStudent 2"
+  NewPID = 0
+  NewSTID = 0
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub SEX_Exit(Cancel As Integer)
+    On Error GoTo SubError
+    If IsNull(Me.[SEX]) Then Exit Sub     ' no need to check
+    If Asc(Me.[SEX]) <> Asc(UCase(Me.[SEX])) Then ' do only not ucase
+        Me.[SEX] = UCase(Me.[SEX])
+    End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+Private Sub GRADE_AfterUpdate()
+    On Error GoTo SubError
+    NeedGradeChange = False
+    Me.LAST_CHG = Format(Now, "mm/dd/yy")
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+Private Sub SHmPh_AfterUpdate()
+    On Error GoTo SubError
+    Me.LAST_CHG = Format(Now, "mm/dd/yy")
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+
+Private Sub SHmPh_Enter()
+  On Error GoTo SubError
+  If Mid(Me.SHmPh, 1, 5) = "(505)" Then
+    Me.SHmPh.SelStart = 6
+    Me.SHmPh.SelLength = 0
+  Else
+    If IsNull(Me.SHmPh) Then '  no entry
+       Me.SHmPh = "(505) " & Me.SHmPh
+       Me.SHmPh.SelStart = 6
+       Me.SHmPh.SelLength = 0
+    Else ' have entry but first is not 505
+       Beep
+       Me.SHmPh.SelStart = 0
+       Me.SHmPh.SelLength = 0
+    End If
+  End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+Private Sub STATE_Exit(Cancel As Integer)
+    On Error GoTo SubError
+    If IsNull(Me.[STATE]) Then Exit Sub ' no need to check
+    If StrComp(Me.[STATE], UCase(Me.[STATE]), 0) <> 0 Then ' Binary compare
+        Me.[STATE] = UCase(Me.[STATE])   ' do only if not already ucase
+    End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub

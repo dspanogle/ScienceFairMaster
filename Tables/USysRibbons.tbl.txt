@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="USysRibbons" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="USysRibbons">
+<xsd:annotation>
+<xsd:appinfo>
+<od:index index-name="PrimaryKey" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"/>
+<od:tableProperty name="Orientation" type="2" value="0"/>
+<od:tableProperty name="OrderByOn" type="1" value="0"/>
+<od:tableProperty name="NameMap" type="11" value="CswOVQAAAABpc5Zl7hu4TrZSknm1fOJwAAAAAJNE4Y40muNAOgMdAAEAAABVAFMA
+eQBzAFIAaQBiAGIAbwBuAHMAAAAAAAAAA9YCW9zWMUiv6FSHvyHg+gcAAABpc5Zl
+7hu4TrZSknm1fOJwSQBEAAAAAAAAAI8+exkcNHNAlKkZejZiJiwHAAAAaXOWZe4b
+uE62UpJ5tXzicFIAaQBiAGIAbwBuAE4AYQBtAGUAAAAAAAAA6ETFf3btCkKUSppg
+S4PnbwcAAABpc5Zl7hu4TrZSknm1fOJwUgBpAGIAYgBvAG4AWABtAGwAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAAAAAAAAAAAAAAA=
+"/>
+<od:tableProperty name="DefaultView" type="2" value="2"/>
+<od:tableProperty name="DisplayViewsOnSharePointSite" type="2" value="1"/>
+<od:tableProperty name="TotalsRow" type="1" value="0"/>
+<od:tableProperty name="FilterOnLoad" type="1" value="0"/>
+<od:tableProperty name="OrderByOnLoad" type="1" value="1"/>
+<od:tableProperty name="HideNewField" type="1" value="0"/>
+<od:tableProperty name="RowHeight" type="3" value="4185"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ID" minOccurs="1" od:jetType="autonumber" od:sqlSType="int" od:autoUnique="yes" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+<od:fieldProperty name="ColumnOrder" type="3" value="1"/>
+<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+<od:fieldProperty name="TextAlign" type="2" value="0"/>
+<od:fieldProperty name="AggregateType" type="4" value="-1"/>
+<od:fieldProperty name="GUID" type="9" value="vHtaSE89xkyq48hqug+eiA==
+"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="RibbonName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+<od:fieldProperty name="Required" type="1" value="0"/>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+<od:fieldProperty name="DisplayControl" type="3" value="109"/>
+<od:fieldProperty name="IMEMode" type="2" value="0"/>
+<od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
+<od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
+<od:fieldProperty name="TextAlign" type="2" value="0"/>
+<od:fieldProperty name="AggregateType" type="4" value="-1"/>
+<od:fieldProperty name="GUID" type="9" value="lfPzqbpOfUCbymgNtjVruw==
+"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="RibbonXml" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="ColumnWidth" type="3" value="13635"/>
+<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+<od:fieldProperty name="Required" type="1" value="0"/>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+<od:fieldProperty name="IMEMode" type="2" value="0"/>
+<od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
+<od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
+<od:fieldProperty name="TextFormat" type="2" value="0"/>
+<od:fieldProperty name="TextAlign" type="2" value="0"/>
+<od:fieldProperty name="AggregateType" type="4" value="-1"/>
+<od:fieldProperty name="GUID" type="9" value="1GkZZuwy7kmv7ia/U298Ow==
+"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<USysRibbons>
+<ID>1</ID>
+<RibbonName>SciFairMaster</RibbonName>
+<RibbonXml>&lt;customUI xmlns=&quot;http://schemas.microsoft.com/office/2006/01/customui&quot;&gt;
+  &lt;ribbon startFromScratch=&quot;false&quot;&gt;
+    &lt;tabs&gt;
+       &lt;tab id=&quot;dbCustomTab&quot; label=&quot;SciFairMaster&quot; visible=&quot;true&quot;&gt;
+           &lt;group id=&quot;dbCustomGroup&quot; label=&quot;SciFairMaster&quot;&gt;
+              &lt;button id=&quot;SciFairMasterHelp&quot; label=&quot;Help&quot; screentip=&quot;SciFairMaster Help &quot; 
+                             supertip=&quot;Open the SciFairMaster Help File. Get help on many different aspects of SciFairMaster.&quot; 
+                             onAction=&quot;xShow SciFairMaster Help&quot;
+                              imageMso=&quot;SharePointListsWorkOffline&quot;/&gt;
+           &lt;/group&gt;
+      &lt;/tab&gt;
+    &lt;/tabs&gt;
+  &lt;/ribbon&gt;
+&lt;/customUI&gt;</RibbonXml>
+</USysRibbons>
+</dataroot>
+</root>
+

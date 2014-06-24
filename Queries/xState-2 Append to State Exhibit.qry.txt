@@ -1,0 +1,6 @@
+INSERT INTO NWTSExhibit ( ExhibitNum, Title, CategoryID, Region, SpaceType )
+SELECT 70000+[EXN] AS NWEN, ExhibitData.EXHB_TITLE, StateCatIDtoNCAT.CategoryId AS Expr1, "NWNM-" & exhibitdata.ncat AS Region, IIf([FLOOR]="Y","Floor","Table") AS ST
+FROM ExhibitData, StateCatIDtoNCAT, NWTSCategory
+WHERE (((ExhibitData.TO_STATE)="Y"))
+ORDER BY 70000+[EXN];
+

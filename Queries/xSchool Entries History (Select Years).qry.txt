@@ -1,0 +1,5 @@
+SELECT Schools.SCHOOL, SchoolEntries.FYR, Schools.SCH_CODE, Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP, Schools.PHONE, Schools.JR_Forms, Schools.SR_Forms, Schools.Temp, SchoolEntries.Total_Exhibits, SchoolEntries.To_State, SchoolEntries.Alternates, SchoolEntries.To_ISEF, SchoolEntries.No_Shows, [Note - Schools with NO Exhibit Entries are NOT included] AS [Note]
+FROM Schools INNER JOIN SchoolEntries ON Schools.SCH_CODE = SchoolEntries.SCH_CODE
+WHERE (((SchoolEntries.FYR)>=[FirstFairYear] And (SchoolEntries.FYR)<=[LastFairYear]))
+ORDER BY Schools.SCHOOL, SchoolEntries.FYR;
+

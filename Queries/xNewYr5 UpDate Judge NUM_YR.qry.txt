@@ -1,0 +1,3 @@
+UPDATE Judges SET Judges.LAST_YR = FairYear(), Judges.NUM_YR = IIf([NUM_YR]=Null,1,[NUM_YR]+1), Judges.Temp = [Temp] & " " & IIf("NUM_YR"=Null,"0",[NUM_YR])
+WHERE (((UCase([STATUS]))="A" Or (UCase([STATUS]))="L")) OR (((UCase([CHAIR]))="C"));
+

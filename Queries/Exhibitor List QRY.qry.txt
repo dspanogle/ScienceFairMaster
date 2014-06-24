@@ -1,0 +1,4 @@
+SELECT Persons.LNAME, Persons.FNAME, Persons.MI, ExhibitData.EXN, Persons.ADDR1, Persons.CITY, Persons.STATE, Persons.ZIP, ExhibitData.TFN AS Expr1, ExhibitData.TMI AS Expr2, ExhibitData.Temp2, ExhibitData.EXHB_TITLE, ExhibitData.FLOOR, ExhibitData.JCAT, Students.SSN, Persons.HOME_PHONE
+FROM (Persons RIGHT JOIN Students ON Persons.PID=Students.PID) RIGHT JOIN (ExhibitData RIGHT JOIN ExhibitStudents ON ExhibitData.EXN=ExhibitStudents.EXN) ON Students.STID=ExhibitStudents.STID
+ORDER BY Persons.LNAME, Persons.FNAME, Persons.MI;
+

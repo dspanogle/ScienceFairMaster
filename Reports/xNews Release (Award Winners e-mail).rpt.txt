@@ -1,0 +1,780 @@
+Version =20
+VersionRequired =20
+Checksum =-296793480
+Begin Report
+    LayoutForPrint = NotDefault
+    FilterOn = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    TabularFamily =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10080
+    DatasheetFontHeight =10
+    ItemSuffix =29
+    Left =90
+    Top =60
+    Right =11205
+    Bottom =9420
+    DatasheetGridlinesColor =12632256
+    Filter ="WinnersOnly=True And teamex=True"
+    RecSrcDt = Begin
+        0x5b5ca8922f63e240
+    End
+    GUID = Begin
+        0x0bcb76dcf5ccf244849c375a476cd97c
+    End
+    RecordSource ="xAwards w/Exhibits&SpecWinners Data"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x380400006801000038040000960200000000000060270000e001000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x47656e65726963202f2054657874204f6e6c7900000000000000000000000000 ,
+        0x010400069c00ec0243ef800501000100ea0a6f08640001000f00580201000100 ,
+        0x5802020000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200b000ec020000ba9173ca0000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000200000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000b0000000534d544a ,
+        0x000000001000a000470065006e00650072006900630020002f00200054006500 ,
+        0x7800740020004f006e006c0079000000496e70757442696e004f7074696f6e31 ,
+        0x00524553444c4c00556e69726573444c4c005265736f6c7574696f6e004f7074 ,
+        0x696f6e3100506170657253697a65004c4554544552004f7269656e746174696f ,
+        0x6e00504f52545241495400000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002700000077696e73706f6f6c003047656e65726963202f2054657874 ,
+        0x204f6e6c79005546494c453a0000555342303031000000000000000000000000 ,
+        0x0000
+    End
+    FilterOnLoad =255
+    DatasheetBackColor12 =16777215
+    DisplayOnSharePointSite =0
+    DatasheetGridlinesColor12 =12632256
+    UnknownProp = {419 ,0 ,0 ,0 ,968 } Begin
+        0x470065006e00650072006900630020002f002000540065007800740020004f00 ,
+        0x6e006c0079000000000000000000000000000000000000000000000000000000 ,
+        0x01040006dc00ec0243ef800501000100ea0a6f08640001000f00580201000100 ,
+        0x5802020000004c00650074007400650072000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200b000ec020000ba9173ca0000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000200000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000b0000000534d544a ,
+        0x000000001000a000470065006e00650072006900630020002f00200054006500 ,
+        0x7800740020004f006e006c0079000000496e70757442696e004f7074696f6e31 ,
+        0x00524553444c4c00556e69726573444c4c005265736f6c7574696f6e004f7074 ,
+        0x696f6e3100506170657253697a65004c4554544552004f7269656e746174696f ,
+        0x6e00504f52545241495400000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    UnknownProp = {420 ,0 ,0 ,0 ,124 } Begin
+        0x04000e0023000000770069006e00730070006f006f006c000000300047006500 ,
+        0x6e00650072006900630020002f002000540065007800740020004f006e006c00 ,
+        0x790000005500460049004c0045003a0000000000550053004200300030003100 ,
+        0x00000000000000000000000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =0
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            ControlSource ="AwardMaster.News_Sort"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            ControlSource ="SCHOOL"
+        End
+        Begin BreakLevel
+            ControlSource ="WinLN"
+        End
+        Begin BreakLevel
+            ControlSource ="WinFN"
+        End
+        Begin BreakLevel
+            ControlSource ="WinMI"
+        End
+        Begin BreakLevel
+            ControlSource ="EXN"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =8460
+            OnFormat ="[Event Procedure]"
+            Name ="ReportHeader"
+            GUID = Begin
+                0x52c939354156b0478d4a5dfb0aa076fb
+            End
+            Begin
+                Begin Label
+                    TextFontFamily =34
+                    Left =120
+                    Top =840
+                    Width =9840
+                    Height =7560
+                    Name ="Label10"
+                    Caption ="          -------------   Award Winners Central NM Research Challenge ( Award, S"
+                        "chool, Winner/Place/Prize)  -------- \015\012What you see in the report is NOT e"
+                        "xactly what is placed in the output text file.  The displayed/printed report may"
+                        " have additional data and newline characters not found in the text file.  See th"
+                        "e code for details. You may navigate, review, or print this report to verify its"
+                        " contents. HOWEVER, TO CREATE THE FINAL TEXT FILE, DO ONLY the following -exactl"
+                        "y as specified:\015\0121. Close and re-run the report and enter all the options "
+                        " (You did this to get to this point)\015\0122. DO NOT NAVIGATE or browse the rep"
+                        "ort, DO ONLY  the next steps.\015\0123. Click on the printer icon (or select [Fi"
+                        "le] [Print]).  As the report is printed,  the text file is written.\015\0124. Cl"
+                        "ose the report.  This is necessary in order to finish writting and to close the "
+                        "text file.\015\0125. REVIEW the text file/printed report to be sure it contains "
+                        "what you expect!\015\0126. Note: Running the report always re-writes the text fi"
+                        "le. Use unique file names if you want to save the files' contents."
+                    GUID = Begin
+                        0xbb109c3a4a054b45b679cc30fd3c44b8
+                    End
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =360
+                    Top =480
+                    Width =9600
+                    Height =300
+                    FontSize =10
+                    Name ="tbRptInfo"
+                    GUID = Begin
+                        0x99deb816e2916146b101a8ad8dda8ee0
+                    End
+
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =60
+                    Top =60
+                    Width =9900
+                    Height =360
+                    FontSize =10
+                    TabIndex =1
+                    Name ="tbHeader"
+                    GUID = Begin
+                        0xed1b260ed58a40418c4aa914d5ea5749
+                    End
+
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =240
+            OnPrint ="[Event Procedure]"
+            Name ="GroupHeader0"
+            GUID = Begin
+                0x6e8ceb9ccfb0c344871e72b5f1b09746
+            End
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextFontFamily =34
+                    Left =60
+                    Width =8040
+                    ColumnWidth =2070
+                    FontWeight =700
+                    Name ="tbAward_Name"
+                    ControlSource ="=[Award_Name]"
+                    StatusBarText ="P-Award Name as listed in Scripts, News, Booklets  i.e. 'Albert Smith Endowment "
+                        "Award'  [SFAM.Donar]"
+                    GUID = Begin
+                        0x10703af7e7961c4897fa48e41b560f29
+                    End
+
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =1
+                    Left =8580
+                    Width =1080
+                    ColumnWidth =615
+                    TabIndex =1
+                    Name ="AN"
+                    ControlSource ="PrzAN"
+                    StatusBarText ="S-Award Number (Primary Key) [SFAM.AN]  Description Ledger: P = Public Reports  "
+                        "   S=Staff use only"
+                    GUID = Begin
+                        0x14f61104b8c104488e2a200c08423e36
+                    End
+
+                    Begin
+                        Begin Label
+                            Left =8160
+                            Width =345
+                            Height =225
+                            Name ="Label20"
+                            Caption ="AN:"
+                            GUID = Begin
+                                0xcff8624a05d4c444b9aa09570f764383
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =240
+            BreakLevel =1
+            OnPrint ="[Event Procedure]"
+            Name ="GroupHeader1"
+            GUID = Begin
+                0xc4b32c02619ac243a6d2f0539084acad
+            End
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    FontItalic = NotDefault
+                    TextFontFamily =34
+                    Left =240
+                    Width =8100
+                    ColumnWidth =1035
+                    FontWeight =700
+                    Name ="tbSCHOOL"
+                    ControlSource ="=IIf([EXN]>100 And [EXN]<3000,[SCHOOL],[SWSch])"
+                    GUID = Begin
+                        0x6b507c1e360f4b4583453e10252d9b1b
+                    End
+
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =480
+            OnPrint ="[Event Procedure]"
+            Name ="Detail"
+            GUID = Begin
+                0x9df7c46b7d4ba746aacda5a32d3d145a
+            End
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    Left =360
+                    Width =7500
+                    ColumnWidth =1965
+                    Name ="tbWinName"
+                    ControlSource ="=IIf([Win_EXN]<101,[Desc_FN] & \" \" & [Desc_LN] & \": \" & [WinNameFNFirst],IIf"
+                        "([Win_EXN]>2999,[Desc_FN] & \" \" & [Desc_LN],IIf([Type]='T',\"Teacher: \" & [Wi"
+                        "nNameFNFirst],[WinNameFNFirst]))) & \" - \" & [Place] & \" \" & [Prize]"
+                    GUID = Begin
+                        0x6200084945bfa2418245a6eaca6ae97c
+                    End
+
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =5280
+                    Top =240
+                    Width =600
+                    ColumnWidth =405
+                    TabIndex =1
+                    Name ="PN"
+                    ControlSource ="PN"
+                    StatusBarText ="S-Prize Number - 5th Script Sort (After Sort based on Type) [SFAPM.PN]"
+                    GUID = Begin
+                        0xba40aed77bede1489a603db39821d17d
+                    End
+
+                    Begin
+                        Begin Label
+                            Left =4860
+                            Top =240
+                            Width =345
+                            Height =225
+                            Name ="Label14"
+                            Caption ="PN:"
+                            GUID = Begin
+                                0x839ef65544bad045b76b307e37567bc1
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =1
+                    Left =6540
+                    Top =240
+                    Width =960
+                    ColumnWidth =645
+                    TabIndex =2
+                    Name ="EXN"
+                    ControlSource ="EXN"
+                    StatusBarText ="S-Winning Exhibit (EXN) or Special Winner Number (RXN)  [SFAPM.EXN]"
+                    GUID = Begin
+                        0x1949f8ce2501824ea9554f9800b74211
+                    End
+
+                    Begin
+                        Begin Label
+                            Left =6000
+                            Top =240
+                            Width =480
+                            Height =225
+                            Name ="Label15"
+                            Caption ="EXN:"
+                            GUID = Begin
+                                0x0c94df495166ab4cb26d1bee595bed49
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =1260
+                    Top =240
+                    Width =2220
+                    ColumnWidth =960
+                    TabIndex =3
+                    Name ="G_Desc"
+                    ControlSource ="G_Desc"
+                    StatusBarText ="P-Group Description for Scripts, News, Booklets. Typically but not limited to:  "
+                        "'Junior' or 'Senior' or 'Junior or Senior'   [SFAGM.G1+G2]"
+                    GUID = Begin
+                        0xe92909868160294ca3654189592373a2
+                    End
+
+                    Begin
+                        Begin Label
+                            Left =540
+                            Top =240
+                            Width =690
+                            Height =225
+                            Name ="Label17"
+                            Caption ="G_Desc:"
+                            GUID = Begin
+                                0x94832296cbe652439fa6bb94baecd4b5
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =4080
+                    Top =240
+                    Width =600
+                    ColumnWidth =420
+                    TabIndex =4
+                    Name ="GrpGN"
+                    ControlSource ="GrpGN"
+                    GUID = Begin
+                        0x795c403b37d92748be09296772774c4a
+                    End
+
+                    Begin
+                        Begin Label
+                            Left =3540
+                            Top =240
+                            Width =480
+                            Height =225
+                            Name ="Label19"
+                            Caption ="GN:"
+                            GUID = Begin
+                                0x7bce709dbc8a4249b75c4582bd9349af
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =8700
+                    Top =240
+                    Width =360
+                    ColumnWidth =450
+                    TabIndex =5
+                    Name ="F_ORD"
+                    ControlSource ="F_ORD"
+                    StatusBarText ="Form Order: Order of Student on Entry Form"
+                    GUID = Begin
+                        0xc59d04574affc6458ea2b1ec8251c174
+                    End
+
+                    Begin
+                        Begin Label
+                            Left =8040
+                            Top =240
+                            Width =660
+                            Height =225
+                            Name ="Label21"
+                            Caption ="Team#:"
+                            GUID = Begin
+                                0x92ac1f5fc636c7449ff0fdba66a015b7
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =60
+            Name ="ReportFooter"
+            GUID = Begin
+                0xf25ea6563fd13f4eabb4b8032f75c895
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Private PaperNam As String
+Private FirstAward As String
+Private OKtoStart As Boolean
+Private GotFirst As Boolean
+Private PersonNam As String
+Private NewSch As Boolean
+Private NewAwd As Boolean
+Private boldon As String
+Private boldoff As String
+Private Filenam As String
+Private TestPrint As Boolean '  set to true to print text file like report
+                            '   ie. put cr lf after each school, student
+Private Sub Report_Open(Cancel As Integer)
+  On Error GoTo SubError
+  Dim msg As String
+  Dim Instrg As String
+  Dim instrg2 As String
+  ' ---------------------  set next true for testing SET FALSE for normal ----
+  TestPrint = False
+  ' ----- define boldon and bold off  -- Change these here versus hard code everywhere
+  boldon = "ZZX"
+  boldoff = "ZZZ"
+  OKtoStart = False
+  GotFirst = False
+ '  ------------------------Hard coded criteria ------------------------
+  '  NOTE: This is where you set up filters!
+ '  Used To eliminate unwanted awards, Prizes, Winners
+ '  Normally:
+ '      eliminate winners with EXN/RXN 98,99,95 = Not Awarded
+ '     note exn is set to 95 in the query used for the report
+ '    query 'xAwards wExhibits&SpecialWinners data' for all team members
+ '     where F_Ord is not equal to Stud_Num and Stud_Num > 0
+ '     see the query and the function FixWinExn in module functions
+ '      eliminate prizes with EXN/RXN = 0 or null
+ '      eliminate prizes for "Script Notes"  Type = "S"
+ '  Others Not sent to NewsPapers (can hardcode or have user enter criteria)
+  Me.Filter = "WinnersOnly = True"
+ ' ---- First message to user ---------------------
+  MsgBox "This report creates a text file of Awards & Winners grouped by: " & vbCrLf & _
+         " 1.) Award Name, 2.) School, 3.) Student, place and prize." & vbCrLf & _
+         "Please read the instructions on the first page of the report. " & vbCrLf & _
+         "IMPORTANT NOTES: Selects WinnersOnly = True" & vbCrLf & _
+         "1. ONLY Active Awards are included!  (Very Important)" & vbCrLf & _
+         "2. Awards with Exn = 0, 95,98 & 99 are NOT included" & vbCrLf & _
+         "3. Special Headings (Prize Type = 'S') are NOT included" & vbCrLf & _
+         "4. Report uses Query 'xAwards w/Exhibits&SpecWinners Data'" & vbCrLf & _
+         "5. Fields used for Report Sort order:" & vbCrLf & _
+         "  * 1st= [Award].[News_Sort] - DID YOU SET THESE UP? " & vbCrLf & _
+         "  * 2nd= [SCHOOL]  (School of student or teacher winner)" & vbCrLf & _
+         "    3rd= [WinLN]   (Place and Prize added for each winner)" & vbCrLf & _
+         "     Note: Group, Prize, Type, Prize.News_sort, fields   " & vbCrLf & _
+         "           are not used in this report.  " & vbCrLf & _
+         "   " & vbCrLf
+  '  next note for 2003 ++ fairs.
+  '  In previous years, the sort was :  Donor, Prize, School, name,name,...
+  '  This caused prizes to be listed in non-logical order (not by type, not by place
+  '  not by value or even by group or division. Place was not previously included
+  '  This report lists: Award Donor, then School, then winner, then PLACE/Prize
+  '  Donor gets first billing, school next and... PLACE adds emphasis to the prize
+  '  description.
+  '  this is of course subject to change so the above note may be erroneous
+  '
+  '  ----------------------------------------------------------------------
+  '  The following code is only required if prize.News_sort is used in the report
+  'Set AwdPrizeRS = CurrentDb.OpenRecordset("AwardPrize", dbOpenDynaset)
+  'Set AwdPrizeSortRS = CurrentDb.OpenRecordset("AwardPrizeSort", dbOpenDynaset)
+  'With AwdPrizeRS
+  '  .MoveFirst
+  '  Do While Not .EOF
+  '     holdtype = IIf(IsNull(!Type), " ", !Type)
+  '     With AwdPrizeSortRS
+  '        .FindFirst ("Type = '" & holdtype & "'")
+  '        If Not .NoMatch Then
+  '           holdsortnum = 99 - !sort  ' THIS INVERTS THE SORT FROM THE SCRIPT SORT
+  '        Else
+  '           holdsortnum = 99  ' for unknown types make it sort at bottom
+  '        End If
+  '     End With
+  '     .Edit
+  '     If IsNull(!EXN) Then !EXN = 0
+  '     If IsNull(!Stud_Num) Then !Stud_Num = 0
+  '     !News_Sort = holdsortnum
+  '     .Update
+  '     .MoveNext
+  '  Loop
+  'End With
+  ' ---------------------------------------------------
+'  -------------------  Allow user to include or exclude other items -----------
+  msg = "Enter additional Filter criteria. (use valid field names) " & vbCrLf & _
+        "  example: to 'exclude' AN 500 to 599 and 55 enter:" & vbCrLf & _
+        "    (PrzAN < 500 OR PrzAN > 599) AND PrzAN <> 55 " & vbCrLf & _
+        "  example: to 'include' only first place prizes enter:" & vbCrLf & _
+        "    Place = 'First Place'" & vbCrLf & _
+        " (leave this blank if no additional criteria)"
+TryAgain:
+  Instrg = InputBox(msg, "Filter Criteria")
+  If Len(Instrg) > 0 Then
+    Me.Filter = Me.Filter & " AND " & Instrg
+  End If
+ ' ' parse the string for all values (this was old code when entered individual
+ '     award numbers to exclude.
+ ' If Len(instrg) > 0 Then
+ '   Dim holdstr As String
+ '   Dim compos As Integer
+ '   Dim endpos As Integer
+ '   Dim Doneall As Boolean
+ '   Dim valstr As String
+ '   Dim Anval As Integer
+ '   holdstr = instrg
+ '   Do
+ '     ' find end of string or next comma postion
+ '     Doneall = True  ' assume no more to do
+ '     endpos = Len(holdstr)
+ '     compos = InStr(1, holdstr, ",") ' returns -1 if none else position of next comma
+ '     If compos > 0 Then
+ '       Doneall = False
+ '       valstr = Mid(holdstr, 1, compos - 1)
+ '       holdstr = Mid(holdstr, compos + 1, Len(holdstr) - compos)
+ '     Else
+ '       valstr = holdstr
+ '       holdstr = ""
+ '     End If
+ '     Anval = val(valstr)
+ '     If Anval < 1 Or Anval > 99999 Then
+ '       MsgBox "Error on input - try again"
+ '       GoTo tryagain
+ '     End If
+ '     Me.Filter = Me.Filter & " AND [AN] <> " & Anval
+ '     If Doneall Then Exit Do
+ '   Loop
+ ' End If
+  
+  Me.FilterOn = True
+  ' ------------------------  the Text file to be created ------------------
+  msg = "Note: Current folder/directory is " & CurDir & "\ " & vbCrLf & _
+        "      Output file will be in the current folder" & vbCrLf & _
+        "      unless you enter a complete path name." & vbCrLf & _
+        "ENTER A UNIQUE FILE NAME." & vbCrLf & _
+        "  i.e. 'Journal.txt' or 'C:/SF_Access/Data/MtNews.txt'"
+  Filenam = InputBox(msg, "Filename", "Newspaper.txt")
+  msg = "Enter the Newspaper Name" & vbCrLf & _
+        " (will be included in the text file header)"
+  Instrg = InputBox(msg, "Newspaper", "Albuquerque Journal")
+  PaperNam = Instrg
+  msg = "Enter the name of the person to receive the data" & vbCrLf & _
+        " (will be included in the text file header)"
+  instrg2 = InputBox(msg, "Recipient", "John Fleck")
+  PersonNam = instrg2
+  '----    OPEN THE TEXT FILE AND WRITE THE HEADER INFO ------------------------
+  '  this can be here or in the report header_format/print event
+  Open Filenam For Output As #1
+  Print #1, "e-mail To: " & PaperNam & " Attention: " & PersonNam & "   Date: " & Format(Date, "MMM DD, YYYY") & _
+            " " & Format(Now, "hh:mm AMPM")
+  Print #1, "NM NW Regional Research Challenge 'Award' Winners information follows. The information is"
+  Print #1, "sorted by 1.) Award Donor, 2.)School name, 3.) Winner name."
+  Print #1, "'" & boldon & "' Starts text to be printed bold,  '" & boldoff & "' Stops bold text."
+  Print #1, "Thank you for your support of the Regional Research Challenge"
+  Print #1, ""
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Report_Close()
+  On Error GoTo ErrorSub
+  Close #1   '   -----------VERY IMPORTANT TO CLOSE THE TEXT FILE HERE ------
+  Exit Sub
+ErrorSub:
+  MsgBox Err.Description
+End Sub
+
+Private Sub ReportHeader_Format(Cancel As Integer, FormatCount As Integer)
+   On Error GoTo SubError
+    tbHeader = "Award Winners to: " & PaperNam & ", " & PersonNam & " Date: " & _
+    Format(Date, "MMM DD, YYYY") & " " & Format(Now, "hh:mm AMPM")
+    ' see if user enter the full path
+    If InStr(1, Filenam, ":") > 0 Then  ' Seems user entered the full path
+      tbRptInfo = " Output File is: " & Filenam
+    Else ' seems user just entered a file name
+      tbRptInfo = " Output File is: " & CurDir & "\" & Filenam
+    End If
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+
+Private Sub GroupHeader0_Print(Cancel As Integer, PrintCount As Integer)
+  On Error GoTo SubError
+  '  come here each time print a new Award_name  (Donor)
+starthere:
+  If OKtoStart Then
+    NewAwd = True
+    Print #1, ""    ' do crlf at first or after last list
+    If TestPrint Then
+      Print #1, Me.tbAward_Name     'leave off boldon/off and add crlf for test
+    Else
+      Print #1, boldon & Me.tbAward_Name & boldoff;  ' no crlf - let next section do it
+    End If
+  Else
+    If GotFirst Then
+      If Me.tbAward_Name = FirstAward Then
+        OKtoStart = True
+        GoTo starthere
+      End If
+    Else
+      FirstAward = Me.tbAward_Name
+      GotFirst = True
+    End If
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub GroupHeader1_Print(Cancel As Integer, PrintCount As Integer)
+  ' come here each time print a new School
+  On Error GoTo SubError
+  If OKtoStart Then
+    If TestPrint Then  '  --- test print
+       Print #1, "  " & Me.tbSCHOOL   ' space over then crlf for test
+    Else  '  ---- normal print
+       If NewAwd = True Then
+         Print #1, ""    ' Do crlf
+         NewAwd = False
+       Else
+         Print #1, " ";   ' for next school
+       End If
+     NewSch = True
+     Print #1, boldon & Me.tbSCHOOL & ": " & boldoff;    ' Do not do crlf
+    End If '               ---- test or normal print
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Detail_Print(Cancel As Integer, PrintCount As Integer)
+  ' come here each time print a new student/prize '
+  On Error GoTo SubError
+  If OKtoStart Then
+    If TestPrint Then  '  ---  test print
+     Print #1, "     " & Me.tbWinName   ' space over and do crlf for test
+    Else
+     If NewSch = True Then '  have a new line
+       NewSch = False
+     Else
+       Print #1, "; ";
+     End If
+     Print #1, Me.tbWinName;   '  Do not do crlf
+    End If   '  --- test/normal --
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub

@@ -1,0 +1,3 @@
+SELECT FairInfo.FAIR_NAME
+FROM FairInfo;
+

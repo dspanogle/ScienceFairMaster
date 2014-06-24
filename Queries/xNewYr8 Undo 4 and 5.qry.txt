@@ -1,0 +1,3 @@
+UPDATE Judges SET Judges.LAST_YR = Mid([temp],1,4), Judges.NUM_YR = IIf(Len([temp])>5,Mid([temp],6,Len([temp])-5),Null), Judges.STATUS = IIf([Chair]="C",Null,"A"), Judges.Temp = Null
+WHERE (((Len([Temp]))>1));
+

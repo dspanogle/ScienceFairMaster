@@ -1,0 +1,49 @@
+Begin Database Properties
+	Show Values Limit: 4,1000
+	Show Values in Indexed: 4,1
+	Show Values in Non-Indexed: 4,1
+	Show Values in Remote: 4,0
+	Show Values in Snapshot: 4,1
+	Show Values in Server: 4,0
+	Auto Compact: 4,0
+	Perform Name AutoCorrect: 4,0
+	Log Name AutoCorrect Changes: 4,1
+	Track Name AutoCorrect Info: 4,0
+	Four-Digit Year Formatting: 4,0
+	Row Limit: 4,10000
+	HasCustomGroups: 1,True
+	StartUpShowDBWindow: 1,True
+	StartUpShowStatusBar: 1,True
+	AllowShortcutMenus: 1,True
+	AllowFullMenus: 1,True
+	AllowBuiltInToolbars: 1,True
+	AllowToolbarChanges: 1,True
+	AllowSpecialKeys: 1,True
+	HijriCalendar: 1,False
+	FairYear: 3,2014
+	LastOtherPersonType: 10,PK
+	UseAppIconForFrmRpt: 1,False
+	StartUpForm: 10,Startup
+	AppTitle: 10,SciFairMaster Rev 5.5.7 
+	NavPane Closed: 4,0
+	NavPane Width: 4,248
+	NavPane Category: 4,4
+	NavPane View By: 4,1
+	NavPane Sort By: 4,1
+	Show Navigation Pane Search Bar: 4,1
+	UseMDIMode: 2,1
+	ShowDocumentTabs: 1,True
+	AllowDatasheetSchema: 1,False
+	ANSI Query Mode: 4,0
+	Picture Property Storage Format: 4,1
+	CheckTruncatedNumFields: 4,1
+	Property Sheet Label Width: 4,2310
+	Use Default Page Folder: 4,0
+	Use Default Connection File: 4,0
+	CustomRibbonID: 10,SciFairMaster
+	Themed Form Controls: 4,0
+	NavPane Category Name: 10,Custom Groups
+	WebDesignMode: 2,0
+	DesignWithData: 1,True
+	SciFairDataMaxSize: 7,6.788224
+End

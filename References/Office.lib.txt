@@ -1,0 +1,6 @@
+Begin Reference Office
+	FullPath: C:\Program Files (x86)\Common Files\Microsoft Shared\OFFICE12\MSO.DLL
+	Guid: {2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}
+	Major: 2
+	Minor: 4
+End

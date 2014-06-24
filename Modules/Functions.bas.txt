@@ -1,0 +1,1287 @@
+Public Const RevisionDate As String = "5.5.7 (xxx/xx/14)"  ' Note: first 6 char are added to app title
+  ' The above line is the revision code of the software for SciFair be sure to include a space before (,,date)
+  ' Rev 5.5.7  change Note: for first 5 characters to first 6 characters (need a space after rev)
+  
+Public UseTeamworkMark            ' 5.5.0 550 DES use a global and set once when first use ExhScore to speed up processing.
+Public CRWeight(80, 6) As Double    ' 549DES  5.4.9DES   first dimension is for the CritNum when have more than one record.
+  '                                  There can be up to 39 categories criteria 1-39 and 39 TeamCategories criteria 41 to 79
+  ' Public CRDesc(80, 6) As String      ' not used as of rev 5.4.9DES 549DES
+  ' Next line added then removed rev 5.4.1
+  ' Public Const UseTeamworkMark As Boolean = False
+  ' The above line sets the global status if we use teamwork or not in all the code
+  '
+  ' SciFair Code, Forms and Reports are products of At Work Software, and owner
+  ' Dennis E. Spanogle. All code forms and reports - copyright 2000-2014  (See module 'License')
+'
+'
+'   NOTE: The revision history has been moved to the module "History"
+'
+
+Option Compare Database
+Option Explicit           'Always use this to avoid code errors
+Private Type PerRecord    'Persons record variable type
+   PLN As String
+   PFN As String
+   PMI As String
+   PSAL As String
+   PID As Long
+   TP As String
+End Type
+
+
+
+
+
+
+Function FileNameOnly(pathname As String) As String    ' DES 4.0.4
+  On Error GoTo FunctError
+  'Dim pathst As String
+  Dim i As Integer
+  Dim j As Integer
+  Dim st As Integer
+  st = Len(pathname) - 1
+  For i = st To 1 Step -1
+     j = InStr(i, pathname, "\")
+     If j > 0 Then Exit For
+  Next i
+  FileNameOnly = Mid(pathname, j + 1, Len(pathname))
+  Exit Function
+FunctError:
+  MsgBox "Error FileNameOnly sub: " & Err.Description
+End Function
+
+Function FilePath(pathname As String) As String  ' DES 4.0.4
+  On Error GoTo FunctError
+  'Dim pathst As String
+  Dim i As Integer
+  Dim j As Integer
+  Dim st As Integer
+  st = Len(pathname) - 1
+  For i = st To 1 Step -1
+     j = InStr(i, pathname, "\")
+     If j > 0 Then Exit For
+  Next i
+  FilePath = Mid(pathname, 1, j)
+  Exit Function
+FunctError:
+  MsgBox "Error FilePath sub: " & Err.Description
+End Function
+
+Function ShowHelp() As Integer   ' DeS 4.0.4  start of new help system
+  On Error GoTo SubError
+  Dim pathst As String
+  pathst = CurrentDb.Name    ' there is probably a better way but this works.
+  Shell "hh.exe " & FilePath(pathst) & "SciFairMaster.chm", vbNormalNoFocus
+  Exit Function
+SubError:
+  MsgBox "Can not show SciFairMaster.chm help." & vbCrLf & _
+  "Be sure the file 'SciFairMaster.chm is located in the same directory as this application" & vbCrLf & _
+  "Details: " & Err.Description
+End Function
+Function Revision() As String  ' Rev 2.3.3   makes easy to add to forms etc  without code - use function
+   Revision = RevisionDate
+End Function
+' rev 5.4.1 added then deleted  - use table fairinfo instead
+'Function UseTeamwork() As Boolean
+'   UseTeamwork = UseTeamworkMark
+'End Function
+Public Function Barcode(Tm As Integer, En As Integer, Jn As Integer) As String
+  ' DES 4.0.4 used in xscoreformpreslugquery
+  ' create the barcode number and checksum for the apperson Benchmark 3000 score forms
+   Dim ID As String
+   Dim Cksum As Integer
+   ID = IIf(Tm = -1, "2", "1") & Format(En, "0000") & Format(Jn, "0000")
+   Cksum = CInt(Mid([ID], 1, 1)) + CInt(Mid([ID], 2, 1)) + CInt(Mid([ID], 3, 1)) + CInt(Mid([ID], 4, 1)) + CInt(Mid([ID], 5, 1)) + CInt(Mid([ID], 6, 1)) + CInt(Mid([ID], 7, 1)) + CInt(Mid([ID], 8, 1)) + CInt(Mid([ID], 9, 1))
+   ID = "<" & ID & "/" & Cksum & ">"
+   Barcode = ID
+End Function
+
+
+
+Function ExhScore(EXN As Long) As String
+' rev 5.4.1  added check for global option (UseTeamworkMark)
+' rev 5.3.5  made EXN as Long
+' rev 2.3.4.1
+' Calculated score from exhibitjudges table entries and fills in
+' ExhibitData Score if valid and not set as override
+' rev548 5.4.8 changing abbreviations of criteria to CR1, CR2, CR3, CR4, CR5, CR6 for a more generalized code inc ase of changes.
+' Using SForm table.
+  On Error GoTo FuncError
+  Dim CurrentScore As Double
+  Dim ExhJudges As Recordset
+  Dim criteria As String
+  Dim Jno(5) ' the Judge for this record
+  Dim CR1(5) ' The first criteria on the score form score marks for up to 5 judges.
+  Dim CR1Avr As Double
+  Dim CR2(5) ' The second criteria on the score form
+  Dim CR2Avr As Double
+  Dim CR3(5) ' The third criteria on the score form
+  Dim CR3Avr As Double
+  Dim CR4(5)
+  Dim CR4Avr As Double
+  Dim CR5(5)
+  Dim CR5Avr As Double
+  Dim CR6(5) ' The sixth criteria on the score form.
+  Dim CR6Avr As Double
+  Dim i As Integer
+  Dim n As Integer
+  Dim j As Integer
+  Dim mm(5) As Integer  ' missing mark
+  Dim dm(5) As Integer  ' double or multiple marks
+  Dim bm(5) As Integer ' mark = 6 or > 7
+  Dim nc(5) As Integer  ' no card
+  Dim invalid As Integer
+  Dim Ovrd As Integer
+  Dim Temp As Double
+  'mm() = 0
+  'dm() = 0
+  'bm() = 0
+  Ovrd = 0
+  invalid = False
+  CurrentScore = 0
+  Dim StatusStr As String
+  '****************** rev 549DES 5.4.9DES  need to save scoring criteria so we do not open data table over and over  CRWeight are global
+  ' This runs the first time ExhScores is called after SciFairMaster is opened. Also, Form Enter Judges Scores resets CRWeight(0,0) to 0
+  '   each time that form runs - mostly for easier debugging.
+  Dim ExhCritNum ' 5.4.9DES  549DES   use to save the CritNum from Categories for this exhibit.
+' If CRWeight(1) = 0 Or IsNull(CRWeight(1)) Then
+  If CRWeight(0, 0) <> 1 Or IsNull(CRWeight(0, 0)) Then
+    Dim temprs1 As Recordset
+    Set temprs1 = CurrentDb().OpenRecordset("SELECT * FROM SForm", , dbOpenDynaset)
+    If temprs1.EOF Then
+      MsgBox "No records in SForm. You must set up the criteria and weights in the table SForm"
+      GoTo FuncError
+    End If
+    '  SFORM as at least one record
+    temprs1.MoveFirst
+    n = 0
+   ' j = FairYear()
+    Dim HaveCrit0 As Boolean   '550DES 5.5.0DES   check that record CritNum0 is always there.
+    HaveCrit0 = False
+    Do While Not temprs1.EOF   ' get data from all the records
+      n = n + 1
+      If temprs1!Critnum = 0 Then HaveCrit0 = True
+      '  Note:  the Critnum will (should) match the CritNum entry in one or more records from Categories table  (NCAT for the exhibit we are doing)
+      '         We will use Critnum 0 record to indicate that team exhibits are scored with the same criteria as non-team exhibits
+      '           This is true for 2014 but could change in the future so the code and tables allow for different criteria teams vs non-teams
+      '         Also, There must always be a record with Critnum = 0 but the first weight is placed in CRWeight(0,1)
+      '         CRWeight(0,0) is never used as storage except to test if the array CRWeight has been filled with data from the table.
+      CRWeight(temprs1!Critnum, 1) = temprs1!Weight1 / 5  'Note we let users fill in the table with percents but we need to divide by 5 for our use
+      CRWeight(temprs1!Critnum, 2) = temprs1!Weight2 / 5  'the first array value is the CritNum in SForm and Categories table.
+      CRWeight(temprs1!Critnum, 3) = temprs1!Weight3 / 5
+      CRWeight(temprs1!Critnum, 4) = temprs1!Weight4 / 5
+      CRWeight(temprs1!Critnum, 5) = temprs1!Weight5 / 5
+      CRWeight(temprs1!Critnum, 6) = temprs1!Weight6 / 5
+      Dim x As Double
+      x = 0
+      For i = 1 To 6
+         x = x + CRWeight(temprs1!Critnum, i)
+      Next
+      If x <> 20 And temprs1!Critnum > 0 Then     '550DES 5.5.0DES  do not need to check for CritNum 0 (not used in any scores calculations)
+          MsgBox " Score Weights for CritNum " & temprs1!Critnum & " In table SForm do not add up to 100 (100%)  you must fix this."
+          CRWeight(0, 0) = 0 ' make sure to do all again
+          GoTo FuncError
+      End If
+      temprs1.MoveNext
+   Loop
+   If HaveCrit0 = False Then   ' rev 5.5.0DES 550DES
+        MsgBox " you must have a record with CritNum = 0 in SForm Table. You must add that record"
+        CRWeight(0, 0) = 0
+        GoTo FuncError
+   End If
+   CRWeight(0, 0) = 1  '   Passed all tests, so will not fill arrays again
+   temprs1.Close     ' 5.5.0DES  550DES
+   ' REV 5.5.0DES 550DES  Made UseTeamworkMark Global so only have to run this once ther first time ExhScore is called
+   '           and moved this code into the if statement checking if globals are set.  This will save opening temprs each time ExhScore is called.
+   ' Rev 5.4.0  added TeamEx
+   ' Rev 5.4.1 added FairYear and UseTeamworkMark
+   ' Rev 5.4.7 547  548 5.4.8 549 5.4.9   updated for the new scoring rubric/criteria and the new score forms for use 2014 on.
+   'Dim UseTeamworkMark As Boolean  '  5.5.0DES 550DES  made this global
+   Dim temprs As Recordset
+   Set temprs = CurrentDb().OpenRecordset("SELECT UseTeamworkMark FROM FairInfo WHERE Fair_Year = FairYear()", , dbOpenDynaset)
+   temprs.MoveFirst
+   ' rev 547   5.4.7   the useteamworkmark must always be set for the new scoring FY 2014 on...
+   If temprs!UseTeamworkMark = False Then
+     MsgBox "UseTeamworkMark was not checked - It is now checked!"
+     temprs.Edit
+     temprs!UseTeamworkMark = True   'for 2014 ++   NOTE this forces it to true so the code always checks the mark for CR6  (old teamwork criteria)
+     temprs.Update
+   End If
+   '  end rev 5.4.7 547
+   UseTeamworkMark = temprs!UseTeamworkMark
+   temprs.Close
+   
+ End If
+' *************************  End if 5.4.9DES addition ***********************************
+'  Find all the judges for this exhibit
+' criteria = "SELECT * FROM ExhibitJudges WHERE EXN = " & exn
+' NOTE:  this query does  select based on Fair Year.  That should probably be an option for debug.
+' DES 5.4.9DES  549DES  added the new fields  CritNum and TmCritNum from the Categories so can select the correct weights
+criteria = "SELECT Categories.CritNum, Categories.TmCritNum, Categories.TEAM, ExhibitData.SCORE_OVERRIDE, ExhibitData.SCORE, " & _
+"ExhibitData.TeamEx, ExhibitJudges.*, ExhibitJudges.EXN " & _
+"FROM Categories RIGHT JOIN (ExhibitData RIGHT JOIN ExhibitJudges ON " & _
+"ExhibitData.EXN = ExhibitJudges.EXN) ON Categories.NCAT = ExhibitData.NCAT " & _
+"WHERE ExhibitJudges.EXN = " & EXN & " AND ExhibitJudges.FYR = " & FairYear()
+  Set ExhJudges = CurrentDb().OpenRecordset(criteria, dbOpenDynaset)
+' ---------------------------------------------------------------  Do all this for each judge
+With ExhJudges
+    If .EOF Then ExhScore = "000.00 Error: No Judges Assigned for FairYear " & FairYear(): Exit Function  ' rev 5.3.5
+    .MoveFirst
+     CurrentScore = IIf(IsNull(!SCORE), 0, !SCORE)
+    i = 1
+    'debug
+    'If EXN = 101 Then
+    '  Dim test
+    '  test = 1
+    'End If
+    
+    
+    Do While Not .EOF  'for each record in ExhibitJudges with exhibit = exn
+    '                                           new use rev 547 5.4.7 on
+       CR1(i) = IIf(IsNull(!CR1), 0, !CR1)    ' research question  or problem (engr)
+       CR2(i) = IIf(IsNull(!CR2), 0, !CR2)    ' design and methodology
+       CR3(i) = IIf(IsNull(!CR3), 0, !CR3)    ' Data collection & Methodology (Research) or. Construction and testing (Engr)
+       CR4(i) = IIf(IsNull(!CR4), 0, !CR4)    ' Creativity
+       CR5(i) = IIf(IsNull(!CR5), 0, !CR5)    ' Presentation and Display
+       CR6(i) = IIf(IsNull(!CR6), 0, !CR6)    ' rev 5.4.7 this is now always used = Interview and teamwork if applicagble
+       Jno(i) = IIf(IsNull(!JUN), 0, !JUN)    'rev548 5.4.8 changing abbreviations to more generalized abbreviations for easier changes. CR1, CR2, CR3, CR4, CR5, CR6. Using SForm table.
+       Dim test1 As Boolean
+       Dim test2 As Boolean
+       ' Rev 5.4.0   added   'Or TeamEx'
+       ' rev 5.4.1   check if use teamwork evaluation this Fair Year.
+   '  rev 5.4.7  547  always consider and use teamworkmark is not interview mark
+       'If (!TEAM = True Or !TeamEx = True) And UseTeamworkMark = True Then
+       If UseTeamworkMark = True Then   ' forced true in code above after rev 5.4.7 547 should always be true That mark is now "Interview"
+       ' end rev 5.4.7 change
+         If CR1(i) = 0 And CR2(i) = 0 And CR3(i) = 0 And CR4(i) = 0 And CR5(i) = 0 And CR6(i) = 0 Then nc(i) = 1
+       Else   ' rev 5.4.7    leave the code in case we ever go back to using a separate criteria just for teamwork.
+         If CR1(i) = 0 And CR2(i) = 0 And CR3(i) = 0 And CR4(i) = 0 And CR5(i) = 0 Then nc(i) = 1
+       End If
+       
+       i = i + 1
+       If i > 5 Then   'rev 4.0.4
+         ' error more judges than allowed for this exhibit
+         MsgBox "Error: Exhibit " & EXN & " has more than 5 judges!" & vbCr & vbLf & _
+                "In the file ExhibitJudges. Only first 5 judges used", vbCritical, "ExhibitJudges Data Error"
+         Exit Do
+       End If
+      .MoveNext
+    Loop
+  i = i - 1 ' set to last entry
+  ' Get average for each score type
+  ' -------CAS----rev 5.4.7 547-Research question or problem-------
+  'rev 5.4.8 548 changing CAS to CR1
+  n = 0
+  For j = 1 To i
+   CR1Avr = CR1Avr + IIf(CR1(j) >= 6, 0, CR1(j))
+   If Not (CR1(j) = 0 Or CR1(j) >= 6) Then n = n + 1   'only compile error rev 5.4.8DES  changed 'Or CAS(j)' to 'Or CR1(j)'
+   If CR1(j) = 0 Then mm(j) = 1
+   If CR1(j) = 7 Then dm(j) = 1
+   If CR1(j) = 6 Or CR1(j) >= 8 Then  ' Should never happen
+      bm(j) = 1
+   End If
+  Next
+  If n > 0 Then
+    CR1Avr = CR1Avr / n
+  Else
+    GoTo InvalidExit
+  End If
+  ' ---- STS------rev 5.4.7 547---Design and methodology-------
+  ' rev 5.4.8 548 changing STS to CR2
+  n = 0
+  For j = 1 To i
+   CR2Avr = CR2Avr + IIf(CR2(j) >= 6, 0, CR2(j))
+   If Not (CR2(j) = 0 Or CR2(j) >= 6) Then n = n + 1
+   If CR2(j) = 0 Then mm(j) = 1
+   If CR2(j) = 7 Then dm(j) = 1
+   If CR2(j) = 6 Or CR2(j) >= 8 Then bm(j) = 1
+  Next
+  If n > 0 Then
+    CR2Avr = CR2Avr / n
+  Else
+    GoTo InvalidExit
+  End If
+  ' -------THS----rev 5.4.7 547-Data collection or construction-----
+  'rev 5.4.8 548 changing THS to CR3
+  n = 0
+  For j = 1 To i
+   CR3Avr = CR3Avr + IIf(CR3(j) >= 6, 0, CR3(j))
+   If Not (CR3(j) = 0 Or CR3(j) >= 6) Then n = n + 1
+   If CR3(j) = 0 Then mm(j) = 1
+   If CR3(j) = 7 Then dm(j) = 1
+   If CR3(j) = 6 Or CR3(j) >= 8 Then bm(j) = 1
+  Next
+  If n > 0 Then
+    CR3Avr = CR3Avr / n
+  Else
+    GoTo InvalidExit
+  End If
+  ' ---------SKS---rev 5.4.7 547----creativity -
+  'rev 5.4.8 548 changing SKS to CR4
+  n = 0
+  For j = 1 To i
+   CR4Avr = CR4Avr + IIf(CR4(j) >= 6, 0, CR4(j))  ' adds 0 for missing mark, 0 if mark bad, i.e. > 5
+   If Not (CR4(j) = 0 Or CR4(j) >= 6) Then n = n + 1
+   If CR4(j) = 0 Then mm(j) = 1
+   If CR4(j) = 7 Then dm(j) = 1
+   If CR4(j) = 6 Or CR4(j) >= 8 Then bm(j) = 1
+  Next
+  If n > 0 Then
+    CR4Avr = CR4Avr / n
+  Else
+    GoTo InvalidExit
+  End If
+  ' --------cls------rev 5.4.7 547---Presentation and display
+  'rev 5.4.8 548 changing CLS to CR5
+  n = 0
+  For j = 1 To i
+   CR5Avr = CR5Avr + IIf(CR5(j) >= 6, 0, CR5(j))
+   If Not (CR5(j) = 0 Or CR5(j) >= 6) Then n = n + 1
+   If CR5(j) = 0 Then mm(j) = 1
+   If CR5(j) = 7 Then dm(j) = 1
+   If CR5(j) = 6 Or CR5(j) >= 8 Then bm(j) = 1
+  Next
+  If n > 0 Then
+    CR5Avr = CR5Avr / n
+  Else
+    GoTo InvalidExit
+  End If
+  ' -------tws----------rev 5.4.7 547----Interview (and teamwork if applicable)--Teamwork can be depreciated ---------
+  .MoveFirst  ' do this so that can read !Team and !Score_override
+   ' rev 5.4.1 ONLY if UseTeamworkMark true do we work on teamwork
+   If UseTeamworkMark = True Then
+     n = 0
+     For j = 1 To i
+      CR6Avr = CR6Avr + IIf(CR6(j) >= 6, 0, CR6(j))  ' adds 0 if no mark, 0 if mark 7 or greater
+      If Not (CR6(j) = 0 Or CR6(j) >= 6) Then n = n + 1  ' we used this one.
+      ' Rev 5.4.0  added 'OR Teamex
+  '    If !TEAM = True Or !TeamEx = True Then         'rev 547  5.4.7  never check always use this mark
+  'rev 5.4.8 548 changing TWS to CR6
+        If CR6(j) = 0 Then mm(j) = 1
+        If CR6(j) = 7 Then dm(j) = 1
+        If CR6(j) = 6 Or CR6(j) >= 8 Then bm(j) = 1
+  '    End If
+     Next
+     If n > 0 Then
+       CR6Avr = CR6Avr / n
+     Else      '  Had no scores for Teamwork
+     '  Rev 5.4.0 added or teamex
+     ' If !TEAM = True Or !TeamEx = True Then   ' rev 547  5.4.7  no need to check as always use this mark
+        GoTo InvalidExit
+     ' End If
+    End If
+   End If    '  if UseTeamworkMark = true
+  ' ---have a valid subscores at this point--calculate score----------------------
+  ' rev 5.4.8  548 changing abbreviations to more general abbreviations, CR1, CR2, CR3, CR4, CR5, CR6
+  ' rev 5.4.8DES  548DES   just need to use the new SForm table to get the weights.
+ ExhCritNum = !Critnum   ' THis is the criteria number from Categories table for the NCAT for this Exhibit -Non-Team exhibits
+ 'Assume not a team and get the score.
+ Temp = CRWeight(ExhCritNum, 1) * CR1Avr + CRWeight(ExhCritNum, 2) * CR2Avr + CRWeight(ExhCritNum, 3) * CR3Avr + CRWeight(ExhCritNum, 4) * CR4Avr + CRWeight(ExhCritNum, 5) * CR5Avr + CRWeight(ExhCritNum, 6) * CR6Avr
+ If !TeamEx Then  ' See if a team exhibit
+    ' See if there is a special Team criteria - I.E. if TmCritNum exists and is >=41
+    If IsNull(!TmCritNum) Or !TmCritNum < 41 Then  ' TmCritNum is restricted to 0, or 41-79 in SForm   0 is used to indicate use same crit as non-team
+       'leave the score as it was
+    Else   ' Need a new calculation since Categories Table and SForm Table has an entry for team projects and this is a team project
+     Temp = CRWeight(!TmCritNum, 1) * CR1Avr + CRWeight(!TmCritNum, 2) * CR2Avr + CRWeight(!TmCritNum, 3) * CR3Avr + CRWeight(!TmCritNum, 4) * CR4Avr + CRWeight(!TmCritNum, 5) * CR5Avr + CRWeight(!TmCritNum, 6) * CR6Avr
+     End If
+ End If
+    
+'   Temp = 2 * CR1Avr + 3 * CR2Avr + 4 * CR3Avr + 4 * CR4Avr + 2 * CR5Avr + 5 * CR6Avr
+'    max =   10           15             20        20          10            25
+
+'   If (!TEAM = True Or !TeamEx = True) And UseTeamworkMark = True Then
+   
+'     Temp = 5 * CasAvr + 5 * StsAvr + 2.4 * ThsAvr + 2.4 * SksAvr + 2 * ClsAvr + 3.2 * TwsAvr
+'   Else
+'      Temp = 6 * CasAvr + 6 * StsAvr + 3 * ThsAvr + 3 * SksAvr + 2 * ClsAvr
+'   End If
+'   end of rev 547  5.4.7 change
+If !SCORE_OVERRIDE = False Then
+  .Edit
+  !SCORE = Temp
+  .Update
+  ExhScore = Format(Temp, "000.00") & " "
+  StatusStr = " "  ' one space indicates good score no problems forces length to 9 characters
+Else
+  Ovrd = 1
+  StatusStr = "Final "  'Rev 5.3.3  changed  "OverRide " to "Final "
+  ExhScore = Format(Temp, "000.00") & " "
+End If
+  
+  ExhJudges.Close
+' Generate the return string
+  For j = 1 To i
+    If nc(j) = 1 Then
+      StatusStr = StatusStr & "J" & Jno(j) & ":No Crd "
+    Else
+     If dm(j) = 1 Or mm(j) = 1 Or bm(j) = 1 Then StatusStr = StatusStr & "J" & Jno(j) & ": "
+     If dm(j) = 1 Then StatusStr = StatusStr & "DblMrk "
+     If mm(j) = 1 Then StatusStr = StatusStr & "No Mrk "
+     If bm(j) = 1 Then StatusStr = StatusStr & "BadMrk "
+    End If
+  Next
+  ExhScore = ExhScore & StatusStr
+  Exit Function
+InvalidExit:   ' Invalid score = no good records or other reasons
+ '  ExhScore = OneK * (1 + 2 * mm + 4 * dm + 8 * Ovrd + bm * 64) + CurrentScore
+.MoveFirst  ' in order to read scoreoverride
+If !SCORE_OVERRIDE = False Then
+  .Edit
+  !SCORE = Null
+  .Update
+  ExhScore = Format(0, "000.00") & " No Complete Score Forms "   ' 5.5.1  551 DES  changed text
+Else
+  ExhScore = Format(CurrentScore, "000.00") & " OverRide (No Complete Score Forms) "  ' 551 5.5.1  DES  changed text
+End If
+End With
+  ExhJudges.Close
+  Exit Function
+FuncError:
+  ExhScore = Format(CurrentScore, "000.00") & " CodeError: " & Err.Description
+ 'ExhScore = OneK * (1 + 2 * mm + 4 * dm + 8 * Ovrd + 32 + bm * 64) + CurrentScore
+  'MsgBox "Error in ExhScore: " & Err.Description
+End Function
+
+
+Sub ChangeTitle(sname As String)
+    Dim obj As Object
+    Dim Dbs As Database
+    Const conPropNotFoundError = 3270
+    On Error GoTo ErrorHandler
+    ' Return Database object variable pointing to
+    ' the current database.
+    Set Dbs = CurrentDb
+    ' Change title bar.
+   Dbs.Properties!AppTitle = sname & " Rev " & Mid(RevisionDate, 1, 6)
+    ' Update title bar on screen.
+    Application.RefreshTitleBar
+    Exit Sub
+ErrorHandler:
+    If Err.Number = conPropNotFoundError Then
+        Set obj = Dbs.CreateProperty("AppTitle", dbText, sname & " Rev " & Mid(RevisionDate, 1, 6))
+        Dbs.Properties.Append obj
+    Else
+        MsgBox "Error: " & Err.Number & vbCrLf & Err.Description
+    End If
+    Resume Next
+End Sub
+
+
+Function FixWinExn(TEAM As Variant, TeamEx As Variant, Exnum As Variant, studnum As Variant, _
+                   Ford As Variant) As Long
+  ' Rev 5.4.0  added TeamEx in call and fix all calls to FixWinExn (fix winner exhibit)to use team or teamex true or false.
+  '    The calls fixed are in  query 'xAwards wExhibits&SpecialWinners data'
+  '     and xAwardsWithEverything (no edits)
+  '
+  ' Used in 'xAwards w/Exhibits&SpecWinners Data' query and perhaps
+  ' other places  Note: Ford is Form Order Number of student.
+  '    for teams Ford can be 1,2,3   For all others, Ford = 1
+  '** If exnum is null then return 0
+  '  ***  This is real purpose of this routine  --  Sets team members NOT TO GET PRIZE to EXN 95
+  '** If exn is team, prize.studnum is 1,2, or 3 and does not match Ford then:
+  '   return 95 (this team member is not awarded this prize)
+  '** else just return exnum.
+  On Error GoTo SubError
+  If IsNull(Exnum) Then
+    FixWinExn = 0  'could happen since the EXN field in
+                   'AwardPrize table is 'Not Required' IE can be null
+    Exit Function
+  End If
+  FixWinExn = Exnum '  Default is normal WINNER unless prove otherwise
+  If Not IsNull(studnum) Then '  if studnum is null - just bail as winner
+    If studnum > 0 And studnum < 4 Then ' if studnum is 0 or out of range
+                                         ' then just bail as winner
+        If Exnum > 100 Then       ' There can be no teams in sepecial winners
+                                   ' so just bail as winner if 100 or less
+          
+          If Not IsNull(TEAM) Then
+              If TEAM = True Then
+                If Not IsNull(Ford) Then
+                  If Ford <> studnum Then
+                   FixWinExn = 95
+                  End If
+                End If
+              End If
+          End If
+          'Rev 5.4.0  check teamex also  add following
+          If Not IsNull(TeamEx) Then
+              If TeamEx = True Then
+                If Not IsNull(Ford) Then
+                  If Ford <> studnum Then
+                   FixWinExn = 95
+                  End If
+                End If
+              End If
+          End If
+          '  end Rev 5.4.0 add
+        End If
+    End If
+  End If
+  Exit Function
+SubError:
+  MsgBox "FixWinExn: " & Err.Description
+End Function
+
+
+Function TeamMember(Exnum As Long, studnum As Integer) As String
+' Used in Form Award Winners Entry and perhaps others to ID a winning Team
+'  member when a prize is given only to that team winner.
+   On Error GoTo ErrorSub
+   Dim msg As String
+   Dim TeamStud As Recordset
+   Dim recnum As Integer
+   recnum = 1
+   TeamMember = "ERROR"
+   msg = "SELECT Persons.FNAME, Persons.LNAME " & _
+         "FROM Persons RIGHT JOIN (Students RIGHT JOIN ExhibitStudents " & _
+         "ON Students.STID = ExhibitStudents.STID) ON (Persons.PID = " & _
+         "Students.PID) AND (Persons.PID = Students.PID) AND " & _
+         "(Persons.PID = Students.PID) " & _
+         "WHERE (((ExhibitStudents.EXN)= " & Exnum & ") AND " & _
+         "((ExhibitStudents.F_ORD)=" & studnum & "))"
+   Set TeamStud = CurrentDb().OpenRecordset(msg, dbOpenDynaset)
+   With TeamStud
+     If Not .BOF And Not .EOF Then ' should be only one record
+      Do While Not .EOF
+        If recnum = 1 Then
+           TeamMember = !FNAME & " " & !LNAME
+           recnum = 2  ' will leave as error if more than one record found
+         End If
+        .MoveNext
+      Loop
+      .Close
+    End If
+   End With
+   Exit Function
+ErrorSub:
+   MsgBox "TeamMember function: " & Err.Description
+   TeamMember = "ERROR"
+End Function
+Sub DeleteFixPerson(DeletePID As Long, xdeleteTP As String, _
+    Optional Change As Boolean = False, Optional ChangeName As String = "")
+   ' Set change = true if changed a person (i.e. Principal, Award Donor)
+   ' Example ChangeName "Donor for AWD Number 256"
+   '
+   On Error GoTo SubError
+   Dim deleteTP As String
+   Dim TPValue As String
+   Dim personsRS As Recordset
+   Dim Title As String
+   Dim msg As String
+   Dim holdTP As String
+   Title = "Delete or Update Persons Record"
+   deleteTP = xdeleteTP
+   If DeletePID <> 0 Then '  donor delted,  see if want to delete Person
+     Set personsRS = CurrentDb().OpenRecordset("SELECT * FROM Persons", dbOpenDynaset)
+     With personsRS
+       .FindFirst "PID = " & DeletePID
+       If .NoMatch Then
+         ' do nothing, not even there?
+       Else  ' Ask if want to delete person
+          Dim Name As String
+          Name = IIf(IsNull(!LNAME), "", !LNAME) & ", " & _
+          IIf(IsNull(!FNAME), "", !FNAME) & " " & _
+          IIf(IsNull(!MI), "", !MI) & " " & _
+          IIf(IsNull(!SALUTATION), "", !SALUTATION) & "  (" & _
+          IIf(IsNull(!TP), "", !TP) & ")"
+          If Change = True Then
+            Call ScifairLog("Changed " & ChangeName & " Old PID = ", _
+                  DeletePID, " = " & Name)
+            msg = "You Changed " & ChangeName & vbCrLf & _
+                  "The Previous Person was: " & vbCrLf
+          Else
+            msg = "Person for the Previous Deleted Record:" & vbCrLf
+          End If
+          msg = msg & Name & vbCrLf & "Delete PERSON?"
+          holdTP = IIf(IsNull(!TP), "", !TP)
+          If deleteTP = "ES" Then  ' must see if PS in string
+            If InStr(1, holdTP, "PS") > 0 Then
+              deleteTP = "PS"
+              If InStr(1, holdTP, "ES") > 0 Then
+                MsgBox Name & " has TP Set to 'ES' and 'PS' - Resolve 'PS' Problem"
+                deleteTP = "ES"
+              End If
+            End If
+          End If
+          If deleteTP = "TH" Then ' must see if PT or ET in string
+            If InStr(1, holdTP, "PT") > 0 Then
+              deleteTP = "PT"
+              If InStr(1, holdTP, "TH") > 0 Then
+                MsgBox Name & " has TP Set to 'PT' and 'TH' - Resolve 'PT' Problem"
+                deleteTP = "TH"
+              End If
+            End If
+            If InStr(1, holdTP, "ET") > 0 Then
+              deleteTP = "ET"
+              If InStr(1, holdTP, "TH") > 0 Then
+                MsgBox Name & " has TP Set to 'ET' and 'TH' - Resolve 'ET' Problem"
+                deleteTP = "TH"
+              End If
+            End If
+          End If
+          If MsgBox(msg, _
+                     vbYesNo + vbDefaultButton2, Title) = vbYes Then
+            On Error Resume Next
+            .Delete
+            If Err.Number > 0 Then
+              Err.Clear
+              On Error GoTo 0
+              On Error GoTo SubError
+              If MsgBox("Cannot Delete " & Name & " - Used elsewhere" & vbCrLf & _
+                        "Remove '" & deleteTP & "' From TP field?", _
+                        vbYesNo, Title) = vbYes Then
+removeTP:
+                holdTP = IIf(IsNull(!TP), "", !TP)
+                TPValue = holdTP
+                Call ClearFieldTP(TPValue, deleteTP) ' remove 'deletetp' from it
+                If TPValue = "error" Then
+                  MsgBox "Persons.TP entry '" & !TP & "' not correct format" & vbCrLf & _
+                   "No Change Made!"
+                Else
+                  If holdTP <> TPValue Then
+                   .Edit
+                   !TP = IIf(TPValue = "", Null, TPValue)
+                    !LAST_CHG = Format(Now, "mm/dd/yy")
+                   .Update
+                   Call ScifairLog("Removed TP '" & deleteTP & "' PID =", DeletePID, " = " & Name)
+                  End If
+               End If
+              End If
+            Else
+              On Error GoTo 0
+              On Error GoTo SubError
+              Call ScifairLog(" Del Person (" & deleteTP & ") PID: ", DeletePID, " = " & Name)
+            End If
+          Else  ' elected to not delete the person so see if want to fix
+            If MsgBox("Remove '" & deleteTP & "' from " & vbCrLf & _
+                Name & " TP field?", _
+                vbYesNo, Title) = vbYes Then GoTo removeTP
+          End If
+       End If
+       .Close
+     End With
+     DeletePID = 0
+   End If
+  Exit Sub
+SubError:
+  DeletePID = 0
+  MsgBox Err.Description
+End Sub
+Sub FillValueSum(AN As Long)
+'  used in Awards Edit, add, delete form main form and when change value in prize
+  On Error GoTo SubError
+  Dim SumValue As Currency
+  Dim AwardPrizesRS
+  Set AwardPrizesRS = CurrentDb().OpenRecordset("AwardPrize", dbOpenDynaset)
+  SumValue = 0
+  With AwardPrizesRS
+    .MoveFirst
+    .FindFirst "[GID] between " & 100 * AN & " AND " & 100 * AN + 99
+    Do While Not .NoMatch
+      Dim test As Long
+      test = !GID
+      test = !PN
+      SumValue = SumValue + IIf(IsNull(!Value), 0, !Value)
+      .FindNext "[GID] between " & 100 * AN & " AND " & 100 * AN + 99
+    Loop
+  End With
+  Forms![xAwards Edit, Add, Delete].Form.ValueSum = SumValue ' this works
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Sub ScifairLog(Action_Table As String, Keyvalue As Long, NameStr As String)
+   'Example of use to log deletions
+   ' "Del-Persons PID: ", 3201, "Smith, Sally" deleted on 021402 would log as
+   '  Del- Persons PID: 3201 Smith, Sally  021402
+   On Error GoTo SubError
+   Dim LogRS As Recordset
+   Set LogRS = CurrentDb().OpenRecordset("ActionLog", dbOpenDynaset)
+   With LogRS
+     .AddNew
+     !Date = Now  ' Format(Now, "mm/dd/yy hh:mm ampm")
+     !ACT_Table = Action_Table
+     !Key = Keyvalue
+     NameStr = Left(NameStr, 99)  ' rev 540  too long for field length
+     !Name = NameStr
+     .Update
+     .Close
+     Exit Sub
+SubError:
+   MsgBox Err.Description
+   End With
+End Sub
+
+
+
+Function Person_NotInList(ObjMe As Form, TableName As String, _
+    TypePerson As String, newdata As String, Response As Integer, _
+    DidPersonAdd As Boolean, Optional DuplicateOK As Boolean) As Boolean
+' ADDs a Record to Persons, and a new record in 'TableName, then
+'    completes the 'link' by filling in TableName.PID
+' This is used by Edit, Add, Delete forms for Teachers, Judges, Students etc
+'   That have a combo box bound to persons for the Add feature.
+' ObjMe is the form's object   i.e. 'Me'
+' Table Name is the Table a record is to be added to (i.e. Teachers, Judges..)
+' TypePerson is the Persons.TP string that is to be added in the new
+'    Persons record - i.e.  "TH", "RJ", "PT" ....
+' TO USE THIS: Calling form must have the following properties:
+'
+' The form (and or the query that is the source for the form ) must have:
+'  * The link to Persons.PID in the form's source query must be named PID
+'     (For schools, the form's query must rename P_PID to PID)
+'     ( if the form shows or query selects Persons.PID it must
+'         be named P_PID or something not... 'PID')
+' * A combo box named 'cbPerson' must be bound to PID  i.e. Me.cbPerson
+'     (the combo box is assumed and is not passed i.e. I use ObjMe.cbPerson)
+' * cbPersons should use the following selection critreia (properties):
+'    SELECT [Persons].[PID], [LNAME] & ", " & [FNAME] & " " & [MI] &
+'              " " & [salutation] & "  (" & [TP] & ")" AS PName FROM Persons
+'              ORDER BY [LNAME] & ", " & [FNAME] & " " & [MI] & " " & -
+'               [salutation] & "  (" & [TP] & ")";
+' * A text box bound to Persons.LAST_CHG  i.e. me.LAST_CHG
+'     ( the text box is assumed and is not passed  i.e. I use ObjMe.LAST_CHG
+' * A text box bount to Persons.TP        i.e. me.TP
+'     ( the text box is assumed and is not passed i.e. I use ObjMe.TP)
+'
+'  The Function Returns:
+'  False if error or Abort: Response is always acDataErrContinue in this case
+'                  DidPersonAdd is set to False
+'                   Calling routine (cbPerson_NotInList) should just exit
+'
+' True if successful:
+'  Response = acDataErrContinue:
+'    (focus remains in text box on the 'new' Persons record as entered)
+'      DidPersonAdd = False:
+'  When  User selected a value from a list of duplicates (not same as NewData)
+'      DidPersonAdd = True
+'  When  User typed string had ";"s  (result add not same as NewData)
+'
+'  Response = acDataErrAdded
+'    (in this case resulting add results in same string as NewData, then
+'     focus moves to the next tab seq. textbox or the clicked control)
+'      DidPersonADD = True
+'  When  User's choice was used, and there were no ";" in string
+   On Error GoTo FuncError
+   Dim Name As String
+   Dim ln As String
+   Dim FN As String
+   Dim min As String
+   Dim SAL As String
+   Dim rtn As Boolean
+   Dim msg As String
+   Dim Title As String
+   Dim NewPID As Long
+   Dim criteria As String
+   Dim personsRS As Recordset
+   Dim dbSciFair As Database
+   Dim FixedName As Boolean
+   Title = "SciFair Add Person"
+   Name = newdata   'lastname, firstname, mi, salutation'
+   '  Name is what the user typed. It may include semicolon place holders
+   '  and/or single quotes I.E.  O'Conner, ; ; Ms. or  'Smith Jones', Mary
+   ' Go get the separate fields from the input string.
+   rtn = ParseName(Name, ln, FN, min, SAL, FixedName)
+   If rtn = False Then      ' did not parse so exit Error message already done
+       'MsgBox "Bad Name, ReEnter!"
+       Response = acDataErrContinue
+       Person_NotInList = False
+       DidPersonAdd = False
+       Exit Function
+   Else  ' have names so create a new record
+     newdata = Name
+     msg = SAL & " " & FN & " " & min & " " & ln & vbCrLf & vbCrLf & _
+           "ENTER a NEW Person?"
+     'msg = "LN:  " & LN & vbCrLf & _
+     '      "FN:  " & FN & vbCrLf & _
+     '      "MI:  " & min & vbCrLf & _
+     '      "SAL: " & SAL & vbCrLf & _
+     '      "ENTER a NEW Person?"
+     If MsgBox(msg, vbYesNo, Title) = vbYes Then
+       If SearchDuplicatePersons(ln, FN, min, SAL, TableName, NewPID, DuplicateOK) _
+              = False Then
+         Response = acDataErrContinue  ' Some type error in SearchDuplicatePersons
+         Person_NotInList = False
+         Exit Function
+       End If
+       criteria = "SELECT * FROM Persons"
+       If NewPID = 0 Then    ' ---------- Use User Entered Name -------
+         Set dbSciFair = CurrentDb()
+         Set personsRS = dbSciFair.OpenRecordset(criteria, dbOpenDynaset)
+         With personsRS
+           Dim AddPID As Long
+          .AddNew
+          !LNAME = IIf(ln = "", Null, ln)
+          !FNAME = IIf(FN = "", Null, FN)
+          !MI = IIf(min = "", Null, min)
+          !SALUTATION = IIf(SAL = "", Null, SAL)
+          !LAST_CHG = Format(Now, "mm/dd/yy")
+          !TP = TypePerson ' i.e. "TH"   ' Protocol Teacher PT Teacher TH Judge RJ
+          AddPID = !PID
+          .Update          '   -------------------------NEW PERSON IS NOW ADDED!
+          ObjMe.cbPerson.Value = AddPID  '  Me.cbPerson.Value = AddPID
+          .Close
+          DidPersonAdd = True
+         End With
+       Else '  PID > ------------USER SELECTED A CURRENT PERSON -----
+          ObjMe.PID = NewPID  '  This also fills in LNAME etc.
+          Dim tpstr As String
+          tpstr = IIf(IsNull(ObjMe.TP), "", ObjMe.TP)
+          Call setFieldTP(tpstr, TypePerson) '    set or add "TH", PH, RJ etc to type
+          ObjMe.TP = tpstr
+          ObjMe.LAST_CHG = Format(Now, "mm/dd/yy")
+          'Me.cbPerson.Value = NewPID
+          DidPersonAdd = False '(just selected existing
+       End If
+       ObjMe.cbPerson.Requery  ' This seems needed to put new person in list
+       ' See Code in Protocols form to see why I do this
+       If FixedName = True Or NewPID > 0 Or InStr(1, newdata, ";") > 0 Then
+         Response = acDataErrContinue
+       Else
+         Response = acDataErrAdded
+       End If
+     Else  ' abort the process, user abort
+       Response = acDataErrContinue
+       Person_NotInList = False
+       DidPersonAdd = False
+       Exit Function
+     End If  ' user response to add record
+   End If 'parsename rtn check
+   Person_NotInList = True
+   Exit Function
+FuncError:
+   MsgBox Err.Description
+   Person_NotInList = False
+   DidPersonAdd = False
+End Function
+Function SciFairDataMaxSize() As Double
+'  Rev 5.5.4  554 DEs  added to help remind users to compact and repair SciFairData
+ On Error GoTo no_SciFairDataSizeProperty
+     ' un-comment next line to set up a new value
+     ' CurrentDb.Properties.Delete ("SciFairDataMaxSize")  ' leave commented unless reseting property
+     SciFairDataMaxSize = CurrentDb.Properties("SciFairDataMaxSize").Value
+    Exit Function
+no_SciFairDataSizeProperty:
+    Dim db As DAO.Database
+    Dim prop As DAO.Property
+   ' Dim fyear As Integer
+   ' fyear = InputBox("Enter Fair Year" & vbCrLf & _
+   '         "(Year of the fair's Exhibits as 'YYYY')")
+    Set db = CurrentDb()
+    Set prop = db.CreateProperty("SciFairDataMaxSize", dbDouble, 2)   ' Set initial max size to 2 MBytes
+    db.Properties.Append prop
+    db.Close
+    Resume ' same line that caused the error
+  
+End Function
+
+Function FairYear() As Integer
+ On Error GoTo no_FairYearProperty
+    FairYear = CurrentDb.Properties("FairYear")
+    Exit Function
+no_FairYearProperty:
+    Dim db As DAO.Database
+    Dim prop As DAO.Property
+    Dim fyear As Integer
+    fyear = InputBox("Enter Fair Year" & vbCrLf & _
+            "(Year of the fair's Exhibits as 'YYYY')")
+    Set db = CurrentDb()
+    Set prop = db.CreateProperty("FairYear", dbInteger, fyear)
+    db.Properties.Append prop
+    Resume ' same line that caused the error
+End Function
+Function SearchDuplicatePersons(ln As String, FN As String, _
+          MI As String, SAL As String, CurrentTable As String, _
+                PID As Long, Optional DuplicatesOK As Boolean) As Boolean
+' Given User entered LN, FN, MI and SAL(utation) and Current Table..
+' Searches Persons for same last name, If none, returns PID=0.  If one or more
+' same Last Name then builds a list of similar names that are NOT currently
+' linked to the CurrentTable.  I.E. if adding to Teachers Table, CurrentTable
+' would be set to "Teachers" and Persons who are already teachers will not be
+' Listed for the user to select from (That would allow duplicates!)
+' Rev 2.1.3 added DuplicatesOK parameter.  If set true then duplicates are ok
+' in the table linked to persons.  (i.e. duplicates are ok in Award Donors and
+'  otherpersons table - contains many types of jobs (ASTA, RegTable, VIP etc)
+' Returns True if successful code execution :
+'    PID = 0 no match to any person LNAME or user choose to use LN, FN MI SAL
+'    PID > 0 = PID of user selected name -(decided Person.PID same as LN, FN..)
+' Return False if error - must cancel the operation in calling routine
+   On Error GoTo funerror
+   Dim db As Database
+   Dim personsRS As Recordset
+   Dim CurTableRS As Recordset
+   Dim msg As String
+   Dim Title As String
+   Dim Name As String
+   Dim criteria As String
+   Dim PerRecords(100) As PerRecord   ' Forgot how to set dimension unlimited
+   Title = "Similar Persons Not In " & CurrentTable
+   Set db = CurrentDb()
+   If ln = "" Then
+      MsgBox "Last Name can not be blank!", vbOKOnly, Title
+      PID = 0
+      SearchDuplicatePersons = False
+      Exit Function
+   End If
+   ' FIRST FIND ALL PERSONS WITH SAME LAST NAME ------------------------
+   criteria = "SELECT FNAME, LNAME, MI, SALUTATION, " & _
+      "TP, PID FROM PERSONS WHERE LNAME = """ & ln & """"
+   Set personsRS = db.OpenRecordset(criteria, dbOpenDynaset)
+   With personsRS  ' RECORD SET IS ALL with same last name....
+     If .BOF And .EOF Then   ' If both then no records
+       .Close
+       PID = 0
+       SearchDuplicatePersons = True ' did not find duplicate
+       Exit Function
+     Else   '    ---------  HAVE ONE or more last name matches ---------------
+       Dim i As Long
+       Dim j As Long
+       Dim userinput As Variant
+       .MoveLast
+       .MoveFirst  'populate the recordset
+       criteria = "LNAME = """ & ln & """"   ' this just lists all records with"
+            ' same last name since PersonsRS has all with same last name
+       If .RecordCount > 4 Then '  do some further filtering for smith and baca etc.
+         If FN <> "" Then   ' Entered FN  list all with similar firstname match
+           criteria = "FNAME LIKE  """ & Mid(FN, 1, 1) & "*"""
+           ' criteria is set to select a subset from those with same last name
+           ' the subset is same last name and first name starts with same letter.
+         End If
+       End If
+       ' criteria should find if First name matches or.. if the first
+       ' name is blank and Salutation matches.  Thus if user has
+       ' Entered Smith, Mary E. Mrs. and there is a Mrs. Smith (no firstname)
+       ' in persons, it will think it is a match. User can select then
+       ' fill in the rest of name in the form is working in.
+       ' This will avoid leaving lots of 'Mrs and Mr. with last name only
+       '  in persons
+       .MoveFirst  ' ----IN PersonsRS (with same last name) ---
+       i = 1
+       ' Set up for Judges, Teachers, Students, etc table (currenttable)
+       Set CurTableRS = db.OpenRecordset(CurrentTable, dbOpenDynaset)
+       ' Fill the array of possible matches not in Current Table
+       .FindFirst criteria ' FIND first match in PersonsRS All with same LastName --
+          ' Criteria will find every record or just those with similar Firstname
+       Do While Not .NoMatch And Not .EOF ' DO WHILE THERE IS A MATCH ----
+         'Rev 5.5.4 554 DES   need to fix for no data
+         If CurTableRS.EOF Then Exit Do
+         
+         CurTableRS.MoveFirst
+         If CurrentTable = "Schools" Then
+           CurTableRS.FindFirst "P_PID = " & !PID 'See if current person in table
+         Else
+           CurTableRS.FindFirst "PID = " & !PID
+         End If
+         If CurTableRS.NoMatch Then  '   ADD TO LIST IF ..NOT.. IN CURRENTTABLE
+           PerRecords(i).PLN = IIf(IsNull(!LNAME), "", !LNAME)
+           PerRecords(i).PFN = IIf(IsNull(!FNAME), "", !FNAME)
+           PerRecords(i).PMI = IIf(IsNull(!MI), "", !MI)
+           PerRecords(i).PSAL = IIf(IsNull(!SALUTATION), "", !SALUTATION)
+           PerRecords(i).PID = !PID
+           PerRecords(i).TP = IIf(IsNull(!TP), "", !TP)
+           i = i + 1
+         Else  '  if a match, then it is ok to add the same person
+            ' this is true for AwardDonors, OtherPersons table etc.
+           If DuplicatesOK = True Then
+             PerRecords(i).PLN = IIf(IsNull(!LNAME), "", !LNAME)
+             PerRecords(i).PFN = IIf(IsNull(!FNAME), "", !FNAME)
+             PerRecords(i).PMI = IIf(IsNull(!MI), "", !MI)
+             PerRecords(i).PSAL = IIf(IsNull(!SALUTATION), "", !SALUTATION)
+             PerRecords(i).PID = !PID
+             PerRecords(i).TP = IIf(IsNull(!TP), "", !TP)
+             i = i + 1
+           End If
+         End If
+         .FindNext criteria ' Next person in persons table meeting criteria
+       Loop
+       CurTableRS.Close
+       If i = 1 Then    ' did not find any  matches
+         .Close
+         PID = 0
+         SearchDuplicatePersons = True ' did not find duplicate
+         Exit Function
+       End If
+       msg = "FOLLOWING PERSONS ARE SIMILAR!" & vbCrLf
+       For j = 1 To i - 1
+           msg = msg & j & " - " & PerRecords(j).PLN & ", " & _
+               PerRecords(j).PFN & " " & PerRecords(j).PMI & " " & _
+                PerRecords(j).PSAL & "  ( " & PerRecords(j).TP & _
+                " )" & vbCrLf
+       Next j
+       msg = msg & vbCrLf
+       msg = msg & "TO ADD " & ln & ", " & FN & " " & MI & " " & SAL & _
+                 " (your input)" & vbCrLf & _
+                 "  - CLICK Cancel or PRESS [Enter] with no entry" & vbCrLf
+                 
+       msg = msg & vbCrLf & "To SELECT an EXISTING PERSON" & vbCrLf & _
+                   "  - TYPE the number, Then CLICK OK or PRESS [Enter]"
+       userinput = InputBox(msg, Title)
+       If userinput = "" Or userinput = "0" Or Val(userinput) = 0 Then
+         .Close
+         PID = 0
+         SearchDuplicatePersons = True ' Use users entry
+         Exit Function
+       Else    ' ----------------  USER SELECTED EXISTING PERSON ----------
+         .Close
+         PID = PerRecords(Val(userinput)).PID
+         SearchDuplicatePersons = True
+         Exit Function
+       End If
+     End If
+   .Close
+   MsgBox Title & "Code error? Did not exit until end"
+   SearchDuplicatePersons = False
+   End With
+   Exit Function
+funerror:
+   MsgBox Title & vbCrLf & Err.Description
+   SearchDuplicatePersons = False
+End Function
+Function ParseName(NameString As String, LNAME As String, FNAME As String, _
+     MI As String, SAL As String, Optional FixedString As Boolean) As Boolean
+  'parses name string and returns the individual names.
+  ' NameString must be in format "LNAME, FNAME MI SAL"
+  ' if any individual namepart has embedded spaces, that part must be
+  ' enclosed in tic marks i.e. "'Smith Jones', Mary,,Mrs."
+  On Error GoTo FuncError
+  Dim i As Integer
+  Dim spaces As Integer
+  Dim word As Integer
+  Dim char As String
+  Dim lastsp As Boolean
+  Dim doubleword As Boolean
+  FixedString = False 'set true if add,delete or change characters in NameString)
+  '  so can clear the error message that occures using form's timer (future?)
+  LNAME = ""
+  FNAME = ""
+  MI = ""
+  SAL = ""
+  spaces = 0
+  word = 1
+  lastsp = False
+  doubleword = False
+  ' Do some checks on the string ---------------------try to fix -----
+  Dim loccomsp As Integer
+  If InStr(1, NameString, "(") > 0 And InStr(1, NameString, ")") > 0 Then
+    If MsgBox("Name contains parenthesis - (ES) or (TH) etc." & vbCrLf & _
+           "Do you want to continue to parse?", vbYesNo + vbDefaultButton2, _
+           "Parse Name") = vbNo Then
+      ParseName = False
+      Exit Function
+    End If
+  End If
+  loccomsp = InStr(1, NameString, ", ")
+  If loccomsp <= 0 Then '----------------- WRONG FORMAT OR ONLY LAST NAME -------
+    Dim locfspace As Integer
+    Dim loccomma As Integer
+    Dim loc1sttic As Integer
+    Dim loc2ndtic As Integer
+    locfspace = InStr(1, NameString, " ")
+    loccomma = InStr(1, NameString, ",")
+    loc1sttic = InStr(1, NameString, "'") ' first tic
+    loc2ndtic = InStr(loc1sttic + 1, NameString, "'")
+    If loccomma <= 0 And locfspace <= 0 Then ' ------------ JUST A LAST NAME ------
+      'NameString = NameString & ", " ' Required to avoid not in list msg
+      MsgBox "Last Name Only? Pease re-enter!" & vbCrLf & _
+             "  Lastname, Firstname MI Salutation " & vbCrLf & _
+             "IF NO FIRST NAME: Enter salutation like this:" & vbCrLf & _
+             "  Lastname, ; ; Salutation" & vbCrLf & _
+             "            ", , "ParseName"
+      ParseName = False
+      Exit Function
+    Else ' have either a comma alone or a space alone
+      If loccomma <= 0 Then  ' SPACE NO COMMA  - this is a common error
+        If loc1sttic <= 0 Then  ' no single quote can fix easy
+          If locfspace > 0 Then ' found first space
+            '   ---------     NO COMMA, NO TIC, FIRST SPACE FOUND
+            ' next lines add the comma but.. causes 'out of list error - too messy
+            'NameString = Mid(NameString, 1, locfspace - 1) & "," & _
+            'Mid(NameString, locfspace, Len(NameString) - locfspace + 1)
+            Dim msg As String
+            'msg = "You forgot the comma! You will get error:" & vbCrLf & _
+            ' "'The text you entered isn't an item in the list.'" & vbCrLf & _
+            ' "Press [Enter] Twice after the error - it MAY Work!" & vbCrLf & _
+            '  "Always enter a comma AND a space after the Last Name!"
+            msg = "No comma after last name " & vbCrLf & _
+                "Always enter a comma AND a space after the Last Name!" & vbCrLf & _
+                "IF NO FIRST NAME: Enter salutation like this:" & vbCrLf & _
+                "  Lastname, ; ; Salutation"
+            MsgBox msg, vbOKOnly, "Parse Name"
+            ParseName = False
+            Exit Function
+          Else '         ------ NO COMMA, NO TIC, NO FIRST SPACE -prob never get here
+            MsgBox "Bad Name Format", , "ParseName"
+            ParseName = False
+            Exit Function
+          End If
+        Else '  ---------SPACE  NO COMMA, FIRST TIC Found
+          'could  add comma after 2nd tic if space there
+          'later if necessary but will give out of list errors - too messy
+          If loc2ndtic > 0 Then ' had second tic
+            If locfspace = loc2ndtic + 1 Then '  found the problem area
+              'replace space with commaspace
+            End If
+          End If
+          MsgBox "Bad Name Format", , "ParseName"
+          ParseName = False
+          Exit Function
+        End If
+      Else   '  ----------  HAS COMMA but NOT SPACE  -------
+        If Len(NameString) > loccomma Then ' probably has rest of name
+        msg = "No space after the comma!" & vbCrLf & _
+              "Always enter a comma AND a space after the Last Name!"
+        Else  ' trying to do last name only ?
+        msg = "No space after the comma!" & vbCrLf & _
+              "Always enter a comma AND a space after the Last Name!" & vbCrLf & _
+              "IF NO FIRST NAME: Enter salutation like this:" & vbCrLf & _
+              "  Lastname, ; ; Salutation"
+        End If
+        ' could add a space after comma here but causes an ' out of list error'
+        MsgBox msg, , "ParseName"
+        ParseName = False
+        Exit Function
+      End If ' loccomma <= 0 no comma, has space
+    End If  'no space and no comma
+  End If ' if no commaspace
+  ' If get here, have lastname, firstname or lastname, ; or similar
+  For i = 1 To Len(NameString)
+    char = Mid(NameString, i, 1)
+    If char = ";" Then
+      word = word + 1
+      lastsp = True ' do not allow another word increment
+      GoTo skipcode
+    End If
+    If char = "'" Then
+      If i = 1 Or lastsp = True Then ' have start of twoword name
+        doubleword = True
+        lastsp = False
+        GoTo skipcode
+      Else
+        If doubleword = True And lastsp = False Then ' end of a double word
+          doubleword = False
+          GoTo skipcode
+        End If
+      End If
+    End If
+    If char = "," Then
+      ' do nothing if comma
+    Else
+      If lastsp = True And char = " " Then
+        'do nothing have multiple spaces
+      Else 'letter or first space after a letter or at start
+        If char = " " Then '  first space after a letter or at start
+          If doubleword = False Then
+            word = word + 1
+            lastsp = True
+          Else  ' in double word so put space in name
+            GoTo dowork
+          End If
+        Else    '      have a letter
+dowork:
+          lastsp = False
+          Select Case word
+            Case 1
+               LNAME = LNAME & char
+            Case 2
+               FNAME = FNAME & char
+            Case 3
+               MI = MI & char
+            Case 4
+               SAL = SAL & char
+          End Select
+        End If  'space or letter
+      End If ' second third..space
+    End If ' comma
+skipcode:
+  Next i
+  If Len(SAL) > 0 Then
+      SAL = UCase(Mid(SAL, 1, 1)) & Mid(SAL, 2, Len(SAL) - 1)
+      If Len(SAL) = 2 And SAL = "Mr" Then SAL = SAL & ".": FixedString = True
+      If Len(SAL) = 2 And SAL = "Ms" Then SAL = SAL & ".": FixedString = True
+      If Len(SAL) = 3 And SAL = "Mrs" Then SAL = SAL & ".": FixedString = True
+      If Len(SAL) = 2 And SAL = "Dr" Then SAL = SAL & ".": FixedString = True
+  End If
+  If Len(LNAME) > 0 Then
+    LNAME = UCase(Mid(LNAME, 1, 1)) & Mid(LNAME, 2, Len(LNAME) - 1)
+  End If
+  If Len(FNAME) > 0 Then
+    FNAME = UCase(Mid(FNAME, 1, 1)) & Mid(FNAME, 2, Len(FNAME) - 1)
+  End If
+  If Len(MI) > 0 Then  ' have middle initial
+    MI = UCase(MI)
+    If Len(MI) = 1 Then MI = MI & ".": FixedString = True
+  End If
+  ParseName = True
+  Exit Function
+FuncError:
+  MsgBox Err.Description
+  ParseName = False
+End Function
+Sub setFieldTP(TPValue As Variant, NewTP As String)
+    On Error GoTo SubError
+    ' Given the existing TP value, add NewTP (if it does not exist)
+    ' and set all to uppercase.   Programmer must set NewTP uppercase
+    If IsNull(TPValue) Or TPValue = "" Then ' No entry
+      TPValue = NewTP
+    Else ' Have some type entry in TPvalue
+      If InStr(1, TPValue, NewTP, vbTextCompare) <= 0 Then 'NewTP not in TPvalue
+        TPValue = UCase(TPValue) & "," & NewTP    ' Add it at End
+      Else     ' Here if already have 'NewTP' in the text somewhere
+        If StrComp(TPValue, UCase(TPValue), 0) <> 0 Then ' Binary compare
+           TPValue = UCase(TPValue)   ' do only if not already ucase
+        End If
+      End If
+    End If
+    Exit Sub
+SubError:
+    MsgBox (Err.Description)
+End Sub
+Sub ClearFieldTP(TPValue As Variant, removeTP As String)
+   'if finds the removeTP in the TP field then:
+   '  if format is good it removes the stringRemoveTP and commas
+        'returns the fixed string in TPValue
+   '  if format is bad it
+   '    'returns "error"
+   '  if field is not in the string then it returns the same string
+   
+    On Error GoTo SubError
+    Dim PosTP As Integer
+    PosTP = InStr(1, TPValue, removeTP, vbTextCompare)
+    If PosTP > 0 Then 'RemoveTP IS in TPvalue
+      If Len(TPValue) > 2 Then  'more than one TP entry
+         If PosTP = 1 Then  'at front and 5 or lonager
+                           'delete first 3 characters including comma after
+           If Mid(TPValue, 3, 1) = "," And Len(TPValue) > 4 Then
+              TPValue = Mid(TPValue, 4, Len(TPValue) - 3)
+           Else  ' sometype format error
+              TPValue = "error"
+           End If
+         Else  ' is in middle or at end
+           ' get value upto removepart
+           If Len(TPValue) > PosTP + 1 Then 'Not at end i.e. in middle
+             If Mid(TPValue, PosTP + 2, 1) = "," And _
+                Mid(TPValue, PosTP - 1, 1) = "," Then ' OK if comma before and after
+              TPValue = Mid(TPValue, 1, PosTP - 2) & Mid(TPValue, PosTP + 2, Len(TPValue) - PosTP - 1)
+             Else
+               TPValue = "error"
+             End If
+           Else  ' must be at end of string
+             If Mid(TPValue, PosTP - 1, 1) = "," And _
+                Len(TPValue) = PosTP + 1 Then ' OK if comma before and two characters
+                 TPValue = Mid(TPValue, 1, PosTP - 2)
+                 
+             Else
+               TPValue = "error"
+             End If
+           End If
+         End If
+      Else  ' found and len = 2 This is the only entry so why not delete the person?
+         TPValue = ""
+      End If
+    Else  ' did not find the string
+       ' do nothing
+    End If
+    Exit Sub
+SubError:
+    MsgBox (Err.Description)
+End Sub

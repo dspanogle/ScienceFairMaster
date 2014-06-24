@@ -1,0 +1,506 @@
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.'
+'
+'
+'
+'
+'
+  '  History and Revision Information:
+  '   IMPORTANT:  Change the revision in Module Functions (the first line)
+  '   IMPORTANT:  See module License for license information.
+  '   Each time code or forms or any object is modified, the revision should be changed
+  '     and those changes should be documented here.
+  '   Every change should also be noted with a comment in the code - refering the the revision
+  '     associated with the change.
+  '   So, to find the changes search for the revision i.e.   x.x.x   or 4.0.4 etc
+  '   some changes may be noted with xxx instead of x.x.x  search for that also
+  '
+  '  **** Recent revision update summaries  *********
+  '
+  '
+  '  Rev 5.5.7
+  ' These changes are to try to ensure users go thru all the steps to finalize scores and to-state and to ISEF
+  '
+  '    Changed the text in Judges Scores Entry  (instructions) made download final scores..often = #6.
+  '    Added checks in Report_xCategory TOC & Ranking Report Report Open to check that webscores are Final
+  '      and have been downloaded  or that local finals have been set ..
+  '  other changes:
+  '    Tried to Fix the 1st textbox error in Judges Scores Entry when empty data bases but counld not
+  '      figure out what is going wrong. the textbox.setfocus does not seem to work.  So ..
+  '    Changed Judges Scores Entry form to Cancel if no judge assignments have been made.
+  '    Changed Judges Scores Entry form to Cancel if SciFairWebData not mapped correctly
+  '
+  '  TO DO :
+  '      TEST the fix towebsite sync so normal run disables the buttons on the bottom but run from JudgeScores Entry
+  '      will disable all the top and enable the one needed only
+  '        test when open from Judges Scores Entry
+  '
+  '
+  '
+  '  Rev 5.5.6   Started by Dennis  6-8-14
+  '    Converted SciFairMaster to Access 2002-2003 format (was 2000) so can work with Source Control
+  '        program AccessSVN (future?)
+  '    Added Access Version in Startup window
+  '    Renamed form xBackup SERC Data to xBackup All Data
+  '
+  '  Rev 5.5.5 Started 06 5 2014
+  '   A few minor changes logged as 5.5.4a working with empty tablea and the distribution website.
+  '
+  '  Rev 5.5.4 Started 05/29/14 by Dennis  DES
+  '    Emptied most data files in scifairdata and scifairwebdata in order to test for errors when starting
+  '    from scratch with empty data tables.  Changes to fix found problems in these and other items:
+  '      Form xWebSite Sync,  Form xSciFairWebdata Users Form xExhibit Edit Add Delete, Function SearchDuplicatePersons
+  '      SchoolsEditAddDelete (form only),module Functions Function GetNextAvailJUN(),
+  '      form swebsite sync Sub CmdUpdtJudges_Click(),
+  '    In Form Startup in Form_Load.  Added a test for size of SciFairData in order to allert user to
+  '     do a Compact and Repair to lower size when SciFair Data Grows by 2 Mb. (And a reminder to compact SciFairWebdata)
+  '     Set SciFairDataMaxSize property to 2 Mbyt in the very last step of Fair Maintenence to force a
+  '      Compact on next startup.
+  '
+  '
+  
+  '  Rev 5.5.3
+  '     Start of changes to apply the GNU license to the application -in anticipation of allowing free distributions
+  '        and allowing others to distribute the solution if they follow the GNU license terms.
+  '     Added Form License
+  '     Modified Startup Form
+  '     Added this module (History) and the module License.
+  '
+  '
+  '  Rev 5.5.2     Search for 552 or 5.5.2   (DES indicates Dennis did change)
+  '      Dennis.  Closed the scores dataset when closing the Judge Scores Entries Form  (probably not requried??)
+  '        Notice the Scores dataset used in Judge Socres Entries stays open the entire time the form is open. This could be improved
+  '        since is not a good idea.  should open it each time used and close it when done so it is closed while the form is setting idle.
+  '      Dennis.  Modified xSciFairWebData Users utility to also look at SciFairData users.
+  '               Added test in Startup form  to check if website FairYear has been set correctly (so users do not forget)
+  '
+  '    **********STILL NEED TO DO (or check) ***************
+  '
+  '        * Sometimes SciFairData and SciFairWebData stay locked  (The .idb file exists)  This is usually caused by some table
+  '          or query being left open in the code of SciFairMaster or in one of the website forms (Chairs ranking WS etc).
+  '        NOTE:  the form xSciFairWebdata Users can possibly help
+  '        NEED to to tests and search the code to see if we leave any open.  Usually, when a form is closed all the open data sets are
+  '           closed but maybe not.  In any case this has been an illusive bug since way back.
+  '        * teamwork in reports (need to check script and other reports to see if they handle teamwork correctly - probably not an issue),
+  '
+  '  Rev   5.5.1   Search for 551 and/or 5.5.1 (DES indicated Dennis did change)
+  '
+  '     *  IsTeam (in exhibit) for now (2014++) is used for scoring only to select the criteria from Categories / SForm union.
+  '             See the ExhScore  code on how this works.
+  '     * DES  I fixed the events for the CR1 thru CR6  in Form_xJudge Scores Entry Subform.  They were broken when the envent names
+  '         in the code were changed but not in the form (Design View)  This broke the fix to update the scores when the marks are changed
+  '         in the subform
+  '     * In Judges Scores Entry reports  (and the generation of status) the note "Invalid: No Score Forms" should read:
+  '        "No Complete Score Forms" or something like that - this was changed in ExhScore subroutine
+  '     * Updated the Forms on the web to reflect the new changes to scoring criteria and other tweaks.  Search for 5.5.0 or 550 in the web cs code
+  '     * Changed the column names for exhibitJudges table on the server to be  CR1,CR2...CR6   Had forgotten to do that
+  '     * The judges marks button in the Page "judge chair ranking form" on the website were fixed to work by
+  '        redoing the pop up page SecChairFormScoreDetail.aspx and the cs code for that page.
+  '        the criteria in the form were the old ones.
+  '        Updated to use the Category table and Sform table to get the titles for the popup using SciFairData.
+  '
+  '   Rev 5.5.0   **  starting tweaks and bug fixes from rev 5.4.9  ***
+  '      12/20/13  Dennis modified form Categories Manager (edit Add Delete) to add selection drop down boxes for scoring criteria
+  '                Created a new form xScoring Criteria  and placed it into the Judges Group
+  '                Changed the allowable values for TmCritNum (team Criteria Number) to include 0 so can have an entry to select in Categories Manager.
+  '
+  '   Rev 5.4.9
+  '     More changes to accomodate new score forms.  Search for 5.4.9 and 549 to find changes.
+  '     Dennis tried to get all the changes made by Chelsea into this revision using the 2003 format .mdb
+  '     Dennis modified table SForm to add the FairYr field. This so can link into the scoreformpreslug query
+  '     Dennis added the global parameters Public CRWeight(80,6) As Double  at top of functions module
+  '     Dennis added code in ExScore to fill in the global parameters from SForm and to verify the data.
+  '        Note: there must always be only one record in SForm and
+  '           the weights must add up to 100    Checks make sure all that is true.
+  '
+  '     Dennis changed the structure of table SForm and  Tab;e Categories to  allow for a different criteria set for each NCAT.
+  '      Each NCAT can have it's own unique criteria set (record in SForm) and optionally a criteria set if the NCAT Exhibit is a team.
+  '       To make this work:
+  '       Added a CritNum (required , >0 < 40)-non-team criteria...  and TmCritNum (Required  0 or > 40 and < 80  Default 0) team members to Categories table
+  '          changed the globals CRWeight(80,6) to hold up to 39 criteria for team and for non-teams (if applicable).
+  '          changed the  ExhScore function to allow for all of this. .
+  '     Dennis modified the query  xScoreFormsPreSlug  to include the descriptions of the criteria for printing
+  '       (Also did a first cut on the MS Word document to work with the new forms.)
+  '     New xScoreFormsPreSlug query and word doc will print weights and descriptions as applicable for the exhibits NCAT and
+  '       if applicable the exhibits NCAT Team criteria.  This should allow for more flexibility  anything in the future.
+  
+  '   Rev 5.4.8
+  '     Start of mods by Chelsea for the new score forms and score critera
+  '     Added table SForms to SciFair Data - this will hold the criteria data and can be modified in future without changing code.
+  '     Changes to Function ExhScore by Chelsea  labeled  5.4.8 or 548
+  '     Changes by Dennis  labeled 5.4.8DES or 548DES
+  '     Dennis changed the "names" in the form xJudges Scores Entry Subform using Design mode.  Chelsea already did the data boxes.
+  '     Dennis added Public CRWeight and CRDesc (see top of this code) needed to save scoring criteria so do not open data table over and over
+  '   Rev 5.4.7 Search for "5.4.7"   Incorporate new scoring criteria (no more separate teamwork score) and fix some bugs
+  '    Fix bugs in Form_Startup:
+  '     cleaned up messages (and bug) if set year ahead and have not run Fair Maintenance
+  '     Fixed bug that caused infinite loop when change fair year and SciFairData not linked
+  '    Fixed issue if change a mark in subform for xJudge Scores Entry subform, then the scores were not updated
+  '      User can click the update score button  -but if forget then ExScore(exn) is never called, even if
+  '      Updatewebscores is done. Thus the exibit's score is never updated to relflect the changes.  This is fix
+  '      in xJudgeScoresEntry  Made Sub btnRecalculateScore_Click() Public  so can call from subform (also changed
+  '          some messages to be more clear.
+  '      in xJudgeScoresEntrySubform, add call to btnRecalcualteScore_Click() for each scoremark change after update
+  '          Thus that click calles ExScore(exn) for the exhibit changed.
+  '    Added enhancement to help user select folder for scores data import and where the studentdata.csv file is stored
+  '        changes in btnImport and btnBuildStuData  in xJudgeScoresEntry.
+  '        Try X:\1_Application_Scoring_Etc\Scoring\ else X:\App_Data   where X: is the mapped drive for SciFairData.mdb
+  '    Form FairInfo Edit Add Delete.
+  '       create the form's code by clicking on the useteamwork for properties and setup onclick event for code
+  '       Form load  set useteamworkmark true  (sets it true in the database)
+  '       msg box to remind if click on useteamwork  will always be set
+  '
+  '    In Judge Scores Entry, btnImport  (import scores)  I added some code to check if we have missed
+  '       reading a score file.  I check the first sequence number in the file being read, then
+  '       search all the files starting with "Imp"  (I.E. already imported) to find the previous sequence number.
+  '       This is because in 2013 we missed importing two files that were placed in the wrong folder after
+  '         a power failure of the router.  Human error but... this will check in future.
+  '       This does not seem to take much time when the files are local.  not sure how long it will take with
+  '         mapped files.
+  '
+  '  *Scoreing weights will now be the same for all prjects but teamwork will always be used in score
+  '    Subroutine ExhScore()
+  '       Force useteamwork to always be true with a test.
+  '        Removed or fixed checks re teamwork and changed code for new scores weighting for 2014 on
+  '    We Must set all exibits as team exhibits when create studentdata.csv  to force checks on that mark
+  '          This is all in the ID in the xScoreFormsPreSlug  query.  so fix it there then the code to create the file
+  '            works since the code uses the preslug query
+  '       Done! in xScoreFormsPreSlug  query, changed ID to ID-Old just to save for future (not used now)
+  '       ALSO:  (xScoreFormsPreSlug  query)
+  '          Added new ID in xScoreFormsPreSlug  query so first digit is always '2'  thus forcing
+  '                 scanner to always check and record the marks in old teamwork  (now interview)
+  '          Added new IsEngr field to xScoreFormsPreSlug  query This is where any changes should be
+  '             made to select which NCAT are Engineering (the rest will be Research)   (See desing mode for query)
+  '          Renamed Cksum to cksum-old and built a new CKsum for first digit of barcode always = 2
+  '          Renamed Barcode to Barcode-old and built new barcode with first digit always = 2
+  '
+  '   Still IN WORK:
+  '
+  '
+  '   Rev 5.4.6 started 3-11-2012  finished 3-20-12 (Search for 5.4.6   or for 546 to find changes.
+  '     Fixed  two bugs found in 2012 fair:
+  '      1. The number of no shows increased sometime as we processed scores ("N" placed in ExhibitsData table "To_State"
+  '          without intention.
+  '        Probably cause: Someone ran the utility xSet To_state/ISEF first two buttons before all cats were final
+  '           (probably trying to change the  number of exhibits allocated to go to state.)
+  '      2. The Category Ranking printout in JudgeScores Form showed  Y  in Final to state when there should
+  '          prior to setting the finals.  - without intention.
+  '         Probable cause:
+  '           a.  MasterChair had logged onto the page to set Final To State and clicked
+  '                the button to set finals to state to the Chairs Suggested to state numbers.. followed by
+  '           b. Someone Then ran the utility xSet To_state/ISEF first two buttons before all cats were final
+  '              (probably trying to change the  number of exhibits allocated to go to state. -I.E. same as bug 1.
+  '     Solution:  Better warning message on the Utility and checks if all final etc.
+  '             see the many code changes in xSet To_State/ISEF  form.
+  '     Other clean up:
+  '        Cleared TOC in ExhibitsData when clear all scores  (JudgeScores Entry)
+  '        Judges Score Entry:
+  '          enabled hourglass when clear Exhibits data
+  '          Made progress bar blink when doing checks when clear Web Exibits data
+  '          Clear TOC and To_State entries in SciFairData.ExhibitsData table when clear all scores
+  '          checked for OK location of SciFairWebData.mdb on form open - warn operator to fix if in error.
+  '          When clear finals category, also clear local ExhibitData.TOC and..
+  '           Clear the SciFairWebData NatCategories.InputFinal field
+  '             This forces the Chair to make Final Again before it is available for download.
+  '        WebSiteSync.  cleaned up some messages etc.
+  '        Backup SERC Data - some clean up but mainly fixed issue that would not backup Website data if
+  '           located in a different place than SciFairData.
+  '
+  '  Rev 5.4.5  started 11022011  (wow backwards that is 11022011)  Finished 3-11-2012
+  '     Clean up of backup SERC Data error messages. - especially when scifairdata is locked.
+  '     Changed FairInfo Edit Add Delete to include the UseTeamworkMark checkbox.
+  '     Updated the help file to better describe the Apperson Data Link install, and usage.
+  '
+  '  5.4.4  Any changes required for 2012 fair.
+  '   Cleaned messages in Fair Maintenance, Website sync and other minor changes.
+  '   Changed backup utility to include SciFairWebData and the SQL backupset
+  '     rules.   scifairdata.mdb must be on web in App_Data.  Sql backupset must be in App_Data\Backup folder
+  '              i.e.  web setup as of 10-31-2011 after sql backup was implemented.
+  '
+  '  5.4.3  Bugs in 2011 fair
+  '    Added Website Cleanup to FairMaintenance form with option to create practice data.
+  '    Fixed xAwardWGroup Sub Form to allow award numbers > 320 Changed Integer to Long
+  '    Scores uploads to the website were clearing ExhibitScores!Override field. Fixed it! added
+  '      a check ClearCat was <> "" in form xWebSiteSync  ( only if <> "" does it clear Override.)
+  '    JudgesScoresEntry:  fixed report name so can print 'all' category reports
+  '    Website: fixed so ISEF votes can be edited and changed.  Added comments and colored buttons
+  '    Added utility xSciFairWebData Users
+  '     (had to add a Reference in VB to 'Microsoft ActiveX Data Objects 2.8 Library' for this to work)
+  '    Aded notes etc. to explain if we change the to-state allocations AFTER we clear scores and have
+  '      started scanning - that the new to_state allocations are uploaded to the website each time
+  '      we do an upload of scores to the website.
+  '
+  '  5.4.2
+  '    Fixed bugs in JudgesScoresEntry:  Needed to remove double quotes in exhibit titles so CSV file works.
+  '      cleaned up the help file a little re setting up scanners.
+  '  5.4.1
+  '   Module/Functions RevisionDate as String    Changed revision
+  '   Form Startup - rework code to handle no entry in FairInfo for Fair Year()
+  '   Changed FairInfo Table (added UseTeamworkMark - set false to ignore and not use Teamwork marks
+  '     Modified Query xScoreFormsPreSlug to handle UseTeamworkMark as set in FairInfo table
+  '     Modified Fomr xJudgeScoreEntries  to show current setting and to handle the option when
+  '         reading score form csv files (btn Import) and creating studentdata.csv file
+  '     Modified function ExhScore() to handle option of UseTeamworkMark = true or false.
+  '
+  '
+  '  5.4.0  Released version after 5.3.9 changes
+  '    Lots of other changes (search for '540'  )
+  '   Fixed fair maintenance to correctly count noshow exibits and To ISEF for schoolsetries table update
+  '   get ready for migration to Access 2007 (or 2010)   removed all hardcoded .mdb extensions
+  '   added T-Shirt counts to WebSiteSync import Exhibits button
+  '    fixed Category TOC report to work correctly and tweeked up Judges Scores again
+  '    Added checks in Exhibit Edit Add Delete to auto check or uncheck TeamEx and/or do checks
+  '    Cleaned up and enhanced backup SciFairData form - allow user to select save destination etc.
+  '      Increased length of name field in ActionLog table.
+  '      Cleaned up Categories manager form.  SciFairData should retain the reference between
+  '       JudgeTypes.JCAT and JudgeTypeCategories.JCAT with inforce and Cascade update both set
+  '    Disabled all code using ExhibitData WebTo-State and WebTo_Isef since these are not
+  '      needed in local data (Web data Cat Chairs recommendations only)
+  '    ToDo,  Remove these from Stem copy of SciFairData.mdb
+  '    Changed button on start up to change Fair year (not FairMaintenance) and added
+  '      more error checks and added location of linked SciFairData.mdb
+  '    Added TSHIRT Size to Web site Exhibits entry table   RFU
+  '    Added TeamEx to Web site ExhibitScores table  RFU
+  '    Fixed bug in Judges Scores that crashed program if incremented import file name exists
+  '    Fixed bug in Judges Scores Overall Status  (added Exhibit.TeamEx to record set)
+  '    Reformated CatChair status and report to show team with 'T'
+  '    added code in Awards Winners Entry subforms to fill in drop down combo boxes for GN and PN
+  '  5.3.9  Start of mods for ultimate rev 5.4.0   (Allow for Teams in any category
+  '    For Team Categories - set TEAM flag in Categories table and must use Category NCATs of 'STEAM' or 'JTEAM'.
+  '    For Team project in other categories - Set only TeamEx in ExhibitData for the team
+  '    Starting 2011 fair team projects will be allowed in any category to be judged along with the
+  '    individual projects (but scored using the team scoring weighing and using Teamwork).
+  '    There will be no Team Categories but SciFairMaster will still allow Team Categories (RFU).
+  '    Search for 'Rev 5.4.0' to find all the mods for this change
+  '    Fixed bug in Categories Manager to allow changes after fair maintenance (No Exhibits)
+  '  5.3.8 Started 04/6/10
+  '     added code in xSet To_State/ISEF  in Download ISEF section to count the ISEF totals.
+  '     changed address field for Donor to 'Can Grow = Yes' for Award Winners post fair report and
+  '        for Award Donor's Post Fair Report  Stem modified their copy of 5.3.7 to incorporate change also
+  '
+  '   5.3.7 Started  03-16-10
+  '     changed length of TO_ISEF in ExhibitsData table in SciFairData.mdb to 3 characters to handle the text
+  '       entered by master chairs - ranking 1 thr 12 and for teams 101,102.  May change this field to numeric
+  '       as part of final for this revision.
+  '     Cleaned up and made more checks for changing an exhibits category after judges are assigned
+  '       see rev 5.3.7 in Exhibit edit add delete.
+  '     Cleaned up and made enhancements in Judges Score Entry and Website sync to allow better flow and
+  '       clearer instructions and notices. Change text of Upload Scores to web button after import scanner record
+  '     Enhanced JudgeScores Category status listing to include TOC, RecTostate, Rec Isef
+  '     Added Top of Category TOC to web exhibitscores to capture the TOC awards
+  '     Added TOC to exhibits data to store Top of Category results 1st. 2nd. 3rd. H  (honorable mention)
+  '     Replaced the old xcategories Edit add delete with the new xCategories Manager (edit add delete)
+  '        and added the subform xCategories Manager Subform
+  '     The new form should eliminate the need to work with tables JudgeTypeCatgories and JudgeTypes
+  '        In order to make the new forms work without a message about jcat changed by another user,
+  '          I REMOVED the reference in SciFairData between JudgeTypeCategories.JCAT and JudgeTypes.JCAT
+  '       However - That is not necessary if I have instructions to deal with the message so added instr.
+  '           in rev 5.4.0
+  '   5.3.6 Started 03-13-10
+  '       fixed query xScoreFormsPreSlug to put Checksum into the Barcode field - missed it last year
+  '       Fixed bug in xJudge Assigned when a category has not entries
+  '       Redid xwebsync so upload always puts judgescore in judgescoer and override score in Override
+  '           and if no override, clears the web field Override.
+  '   5.3.5   Started 02-03-10
+  '     * Changed xWebsitesync to use new items below
+  '       Separated Web and local alternates and  added webfins   all to do with
+  '       Add to Web: RecAlt, FinalAlt  RecToState,
+  '       Add Local:  see below
+  '     * Developed Website from for Master Chairs' To State Worksheet
+  '       Changes to Chairs' Ranking Page on the web to use new items (below)
+  '     * Redid the To_State process.  N_TO_STATE and N_Alt in Categories table are now used as the
+  '           'allocated' or staff recommended values (displayed to Cat Chairs on web as 'recommended')
+  '       * Added S_TO_STATE and S_ALT in SciFairData Categories table - this is where Final numbers go
+  '       * Added field 'FinalToState' in the Website NatCategories table to hold results of final caucus
+  '       * Changed the form xSet To_State/Alternates  to use the website data from the final caucus.
+  '         Web 'FinalToState' is placed in Categories S_TO_STATE and website 'FinalAlt' placed in S_ALT
+  '       * Changed the form xSet To_State/Alternates to use the S_TO_STATE and S_ALT fields to set
+  '          the ExhibitData field To_State (instead of using N_TO_STATE and N_ALT)
+  '     * minor changes in xExhibits Sort & Renumber to find possible problems and give notices.
+  '     * added CheckLocExh  in Xwebsite sync  Search for 5.3.5 and for CheckLocExh
+  '     * added more checks in Xwebsite sync to see if student in web is same or different than one
+  '       already imported with same First Name and Last Name when only one entry in local students table.
+  '       (search for 5.3.5 in Form_xwebsite sync
+  '   5.3.4   started 02-02-2010
+  '     *Changed drop down box for judges in AwardsEditAddDelete form Add NAIOP, change ASTA to RRC-JEA
+  '     * Sorted Categories prior to upload to web in xWebSiteSync, BtnCats routine
+  '   5.3.3
+  '   * Major rework of xJudges Scores Entry form
+  '   * fixed xbackup SciFairData form to replace obsolete application.search. Now detect the linked db
+  '   * redo xwebsite sync upload exhibitscores and downloads to better match process
+  '   * Update the help file. clean up final scores and to-state process.
+  '   * add new field LocFinal in SciFairData.Categories (where was final overrides done)
+  '   * changed unused fields in SciFairData.ExhibitData Salutation->WebTo_State,TFN->WebTo_ISEF
+  '         TMI -> Temp1  TLN-> Temp2 to handle web Chairs ranking process.
+  '
+  '  5.3.2
+  '   * Cleaned up xweb sync form a little.  set Judge status to 'I' for web registration with
+  '       indication they cannot judge this year
+  '   * Added a force sort on PN for subforms xAwardWPrize SubForm and xAwardPrize SubForm
+  '   * Added menu ribbon entry for SciFairMaster with Help button
+  '   * implemented exhibitdata TO_STATE value of 'N' to indicate a no show exhibit
+  '   * changed the logo on the startup page
+  '  5.3.1  Minor bugs and ** Implemented Web Site Exhibit Ranking page for chairs.**
+  '      This is a major enhancement and required an update also to the help file.
+  '
+  '   * fixed if ncat=null to isnull(ncat) in ExhibitsEditAddDelete Sub cbJCAT_Exit(Cancel As Integer)
+  '   * Added SecChairsForm.aspx to the Stem Website, added Role chairs, etc to support the form.
+  '      Added ManageChairs form to Stem Website for the Administration of chair accounts
+  '   * Added ExhibitScores and NatCategories to SciFairWebData.
+  '   * Added various buttons and made changes to xWebsite Sync Form. To support the Chairs website form.
+  '   * Re-arranged and enhanced Judge Scores Entry form to support the Chairs web site form.
+  '
+  '  5.3.0  This is the work contracted in 2009 for the 2010 fair.
+  '   * added Fair Year to Exhibit judge entries for new exhibits.
+  '   * Modified x Award Donor Post Fair Report so each donor gets a report and to eliminate the duplicate
+  '     student lisings (caused by wrong grouping): Group by award name (no fields in that group
+  '      then by Award Donor.  Also hid the AN GN PN and F_ORD  fields from report. Added title other
+  '        misc clean up.
+  '   * Awards Edit Add Delete:
+  '       Disabled 'Type' field in prize sub form. (Type must match the drop down box entry
+  '       Deleted the field ansrt and used field AN for main form.  then changed subforms to link on
+  '          AN not ansrt. (fixed the problem when adding new award the query was not updated so
+  '          when tabed to group the award was set to last one found, not the new one (not in query).
+  '   * Modified Script
+  '      Hide the AN,GN PN F_ORD etc unless operator askes for them.
+  '      Hide the exhibit title and teacher name unless operator asks for them
+  '      Changed grouping and sorting from        to
+  '          1  Grp Script Assy           1 Grp Script Assy
+  '            2  Grp Assy Sort              2 Grp Assy Sort
+  '               3  Grp   GN                  3 Grp   GN
+  '                 4  Sort Script_Sort           4 Grp   Script_Sort
+  '                   5  Gpr  PN                     5  Grp PN
+  '                       6 Srt F_ORD                   6 Srt  F_ORD
+  '   * Modified xAward Winners Entry Form to be able to select an exhibit > 100 to select the teacher
+  '       for a teacher award.  Actually this worked before so I just added code to fix up for teams.
+  '  5.2.4
+  '      XJudges Scores Entry Form
+  '        Added Status listing (lists status of all categories)
+  '        Changed Printing for category All to print every 'individutal' category listing
+  '      Changed Report xCategory Exhibit Ranking Report to take 'Tag' from Judges Scores Entry form
+  '          if that form is open else - asks for the category
+  '      Changed Exhibits Edit Add Delete Form to delete judge assignments if the NCAT is changed and
+  '         Judges have been assigned to the exhibit
+  '         And..  to at the same time allow operator to input the new exhibit number.
+  '      New xScoreFormsPreSlug Query Had to format CheckSum to "00" because some IDs require 2 digits
+  '           Then, that change execeded the length of the query statement of the field BarCode so.
+  '           I had to split the BarCode to two parts
+  '           Field BarCode - all characters up to the '/' before checksum
+  '           Field CKSum   - the '/' and the formated checksum  Format(cksum,"00")
+  '         Note: You can NOT use one query colum's results in another query column as a mail merge source
+  '               It ends up there is no data in the column that uses another column's results.
+  '       Changes in exhibits edit add delete:  (trying to fix some issue in deleting when there are
+  '           messed up records after Import Exhibits created duplicates and incorrect structure
+  '           in exhibit students etc. FIXED - Staff used xExhibits Edit Add Delete QUERY to delete
+  '          exhibits.  This left Records in ExhibitJudges, ExhibitStudents(F_ORD = 2,3,..)
+  '           and ExhibitData since deleteing using the query only deleted record in
+  '           ExhibitStudents where F_ORD = 1  I deleted the 'query' and used the same query but built
+  '           into the ExhibitEditAddDelete form.   Now they will have to use the form to delete exhibits.
+  '  5.2.3   Added Requeries to several recordsets in CmdExh() so that finds duplicates
+  '          that were added in previous loop run.  (in the loop)
+  '          That prevents DUPLICATES created in a single RUN.
+  '          If two team records and names match exactly, then the second record simply
+  '            replaces the first record.
+  '          Rev 5.2.2 would still create duplicates if multiple records with
+  '          same lastname firstname.
+  '         Added checks for the word team in Update Categories in form web sync
+  '           now I can use the word team to selectively load the cat dropdown boxes
+  '            on the web site and know it will alwas work on team or not team.
+  '         added two versions of build Student Database for short or long data
+  '           in Judge Scores Entry form.
+  '  5.2.2   Work to allow reimport of exhibits without creating duplicate entries.
+  '           Also need to rework web site so that teams can only select team categories
+  '           and Individual exhibits can not select team categories. (after this rev done)
+  '  5.2.1   Added code so reimport of Team Exhibits works with origional Exhbit Number
+  '           Minor clean up of code
+  '  5.2.0   Added to xWeb Sync - "update judges" now puts all judge data on the web
+  '  5.1.0,5.0.1 Started 01-13-09   Bug fixes from 5.0.0 and other as follows:
+  '         Clean up misc messages other non critical stuff (Search for 5.0.1)
+  '         Added ADDR2 to Web Judgesdata and Address2 Judges Form
+  '         Change form xWeb Import to xWebSite Sync.
+  '           Added Categories, Judge dropdownlist (Judges table) Schools and Teachers updates.
+  '         (updates  data in Web site to match local SciFairData)
+  '         Started Judge Data load to for judge form and synchronization in xWebSie Sync
+  '         (Work commented out prior to deployment or 5.1.0)
+  '         Add import of 'MINOR' and Address2 from web to local
+  '  5.0.0  After many many itterations of 4.0.4 5.0.0 is delivered version of 4.0.4 final
+  '         Supports Web data imports (From Stem Website)
+  '         Supports Apperson BenchMark3000 Scanner and DataLink Exports
+  '         Supports Team Categories (not team exhibits in any category)
+  '         Does Not support team projects in any category
+  '         Removed use of ComCtl32.ocx - use api version so is compatible with VISTA
+  '  4.0.4  Started Sept 2008:
+  ' Notdone? Update judgescores entry form to clean up and modify
+  '             for Apperson BenchMark3000 scanner.
+  '  Notdone? Plan to Move Peter Luceros queries, code, tables used  to move data from web site
+  '             to scifairdata.mdb
+  '             Updated and fixed some of the code
+  '         Removed the Judges score entry form with category notes (done)
+  '         Removed the Judges score entry from with cantegory notes subform  (done)
+  '  ---------------
+  '  ??     for 2007 fair, Peter Lucero provided code etc to import data from the
+  '         website to SciFairData.  He used his version of SciFairMaster with new
+  '         forms, queries, and code.
+  '         He added some tables to SciFairMaster (his version only)
+  '           TID_on_Web_But_Not_on_SciFi
+  '           xExhibits Students Data QRY1  not sure what this was..
+  '                perhaps to find team students ??
+  '           TblWebDbPath (not sure if he used this one or the one in SciFairData or both?
+  '           JunNbrs  (not sure ... same as above in both places?)
+  '        He also added two tables to SciFairData.mdb
+  '           TblWebDbPath (attached disc drive and database name)
+  '           JunNbrs  (holds temporary or?? available judge numbers ?)
+  '   ---------------
+  '  ?? 4.9.4 Tried some work with a notes (type memo) field in judge scores Entry.
+  '        This wasy was abandoned.
+  '  4.0.3 After 2008 fair: Fixed a problem in import judges scores .  see detail in 4.0.3
+  '  4.0.2  no record of code changes probably just some form tweeks or new forms etc.
+  '  4.0.1 Revision Staff has used until Dec 2008. (no record of code changes
+  '  4.0.0  No record of code changes, but the 2008 fair reverted to using NCAT Team
+  '         Also in this year we used scantron scanners. so I added the judge scores entry
+  '         form and reports so we did not have to use SFData - the old standby used to
+  '         read cards using the HP card readers.
+  '  3.?.?  Not sure there were any changes for but p
+  '  2.4.x + No Team Cats! TeamField in Exhibits table. for 2007 fair, there was a series of revisions
+  '          that allowed any category to have team exhbits but no NCAT Team.
+  '           any category instead of STeam and JTeam. i.e. 'No Team Cats'  These were abandoned.
+  '  2.3.4.1 or 2.3.41 or 2.3.x  The last revision before TeamCats were removed
+  '
+  '
+  ' /------------------------------- VERY IMPORTANT -------------------------\
+  ' The code the SciFair Application is tested with MS Access 2000? and 2003, 2007 only!
+  ' The following references and priority of references must be set in
+  ' Visual Basic for ALL code in the SciFair Applications to compile without error!
+  ' Set the references using the Visual Basic menu 'Tools', 'References'.
+  ' References and list sequence (priority) must be as shown below:
+  ' 1. Visual Basic for Applications              (default #1 - new db)
+  ' 2. Microsoft Access 11.0 Object Library        (default #2 - new db)
+  ' 3. Microsoft Office 11.0 Object Library        (added)
+  ' 4. Microsoft Forms 2.0 objdec Library
+  ' 5. Microsoft Common Dialog Control 6.0(SP6)
+  ' 6. OLE Automation                             (default #3 - new db)
+  ' 7. Microsoft DAO 3.6 Obj Lib                  (added)
+  ' 8. Microsoft Visual Basic of Application Extensibility 5.3 (added)
+  ' x. Others as needed, I. E. if get compile errors before mods, probably
+  '     do not have the library in the pc or reference is not set
+  ' CAUTION:   BEFORE YOU EDIT!   (This may be a copy)
+  ' 'SciFairMaster.mdb' data base Module Functions contains the master version
+  '   of functions for allother SciFair Applications - i.e SciFairSlave and future.
+  '   'Functions' should always edited in SciFair Master first, then exported to
+  '   SciFairSlave and any other (future) applications for the SciFair data base.
+  '

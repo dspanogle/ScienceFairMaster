@@ -1,0 +1,3 @@
+SELECT AwardMaster.*
+FROM AwardMaster;
+

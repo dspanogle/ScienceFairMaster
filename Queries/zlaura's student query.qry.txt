@@ -1,0 +1,3 @@
+SELECT ExhibitStudents.EXN, Students.SEX, Students.GRADE, Students.SSN, Persons.FNAME, Persons.MI, Persons.LNAME, Persons.HOME_PHONE, Persons.ADDR1, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.EMAIL, Persons.COMMENTS, ExhibitData.EXHB_TITLE, ExhibitData.ENTRY_DATE, ExhibitData.NCAT, ExhibitData.FLOOR, ExhibitData.PAID, ExhibitData.SCH_CODE, Schools.SCHOOL, Schools.PHONE, ExhibitData.TFN, ExhibitData.[Temp2], ExhibitData.JCAT
+FROM (Persons RIGHT JOIN Students ON Persons.PID=Students.PID) RIGHT JOIN (Schools RIGHT JOIN (ExhibitData RIGHT JOIN ExhibitStudents ON ExhibitData.EXN=ExhibitStudents.EXN) ON Schools.SCH_CODE=ExhibitData.SCH_CODE) ON Students.STID=ExhibitStudents.STID;
+

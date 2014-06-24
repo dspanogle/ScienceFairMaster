@@ -1,0 +1,155 @@
+Version =196611
+ColumnsShown =0
+Begin
+    Action ="MsgBox"
+    Argument ="Up Date Judges NUM_YRS!@Runs Seven Queries!@Abort: Press[Ctrl] + [Break], then s"
+        "elect [Halt]\015\012Continue: Press [OK]"
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="Clear Judges.Chair in all records"
+    Argument ="Clear Judges.Chair@Next query will Set it correctly!@ "
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYr1 Clear Judges CHAIR Field"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr1 Clear Judges CHAIR Field"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="Set Judges.Chair to 'C' for all Chairs and Assistant Chairs in table 'Chairs'"
+    Argument ="For Chairs and Assistant Chairs@Set Judge.Chair = 'C'@ "
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYr2 Set Judges CHAIR Field"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr2 Set Judges CHAIR Field"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="For All where FIRST_YR = FairYear(), Set NUM_YR = 0 (get ready to increment late"
+        "r"
+    Argument ="For All where FIRST_YR = FairYear()@Set NUM_YEAR = 0@It will be incremented afte"
+        "r the next step!"
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYr3 New set NUM_YR 0"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr3 New set NUM_YR 0"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="For all where STATUS = 'A' or Chair = 'C' set LAST_YR = FairYear()"
+    Argument ="For Active Judges and Chairs@Set LAST_YEAR = FairYear()@ "
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYr4 Set Judges LAST_YR"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr4 Set Judges LAST_YR"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="For all where STATUS = 'A' or Chair = 'C' Increment NUM_YR"
+    Argument ="Finally, For All Active Judges and Chairs@Increment the NUM_YRS@  "
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYr5 UpDate Judge NUM_YR"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr5 UpDate Judge NUM_YR"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="For all where STATUS = 'N' (no show) , Add 'NO SHOW XXXX' at end of COMMENT"
+    Argument ="For status='N' add  to end of comment@ No Show Fair Year()"
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Comment ="        XXXX = Current (last) FairYear()  - The number shown in the Startup Form"
+        "."
+    Argument ="xNewYr6-No Show Comment Update"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr6-No Show Comment Update"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="Clear STATUS in ALL records."
+    Argument ="Clear STATUS field in ALL records."
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYr7-clear status field"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYr7-clear status field"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Argument ="DONE! @Judges.Temp contains the previous LAST_YR, NUM_YRS (yyyy nn).\015\012IF E"
+        "RRORS, Query 'xNewYr8 Undo 4 & 5 will undo the LAST_YR, NUM_YR changes (not the "
+        "other changes)  (uses Judges.Temp)@If ALL OK, clear all Judges.Temp field entrie"
+        "s."
+    Argument ="-1"
+    Argument ="0"
+End

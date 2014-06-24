@@ -1,0 +1,5 @@
+SELECT SchoolContacts.SCH_CODE, SchoolContacts.TID
+FROM SchoolContacts
+WHERE (((SchoolContacts.SCH_CODE) In (SELECT [SCH_CODE] FROM [SchoolContacts] As Tmp GROUP BY [SCH_CODE] HAVING Count(*)>1 )))
+ORDER BY SchoolContacts.SCH_CODE;
+

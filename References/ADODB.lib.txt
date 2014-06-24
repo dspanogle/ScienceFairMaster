@@ -1,0 +1,6 @@
+Begin Reference ADODB
+	FullPath: C:\Program Files (x86)\Common Files\System\ado\msado28.tlb
+	Guid: {2A75196C-D9EB-4129-B803-931327F72D5C}
+	Major: 2
+	Minor: 8
+End

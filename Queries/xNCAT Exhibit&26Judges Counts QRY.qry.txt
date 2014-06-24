@@ -1,0 +1,3 @@
+SELECT [xNCAT Judges Count Sub QRY].NCAT, IIf(IsNull([CountOfJUN]),0,[CountOfJUN]) AS Judges, IIf(IsNull([CountOfEXN]),0,[CountOfEXN]) AS Exhibits, IIf(IsNull([Chairinfo]),"  No Exhibits (name not listed)",[Chairinfo]) AS Chair, IIf([Judges]<3,"N/A!",Format(3*[Exhibits]/[Judges],"00.0")) AS [E/J @ 3J/E], IIf([Judges]<4,"N/A!",Format(4*[Exhibits]/[Judges],"00.0")) AS [E/J @ 4J/E]
+FROM [xNCAT Judges Count Sub QRY] LEFT JOIN [xNCAT Exhibits Count sub QRY] ON [xNCAT Judges Count Sub QRY].NCAT=[xNCAT Exhibits Count sub QRY].NCAT;
+

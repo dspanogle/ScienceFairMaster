@@ -1,0 +1,5 @@
+SELECT [xAwards w/Exhibits&SpecWinners Data].PrzAN, [xAwards w/Exhibits&SpecWinners Data].NCAT, [xAwards w/Exhibits&SpecWinners Data].Win_EXN, [xAwards w/Exhibits&SpecWinners Data].Type, [xAwards w/Exhibits&SpecWinners Data].Place, [xAwards w/Exhibits&SpecWinners Data].EXHB_TITLE, [xAwards w/Exhibits&SpecWinners Data].ADDR1, [xAwards w/Exhibits&SpecWinners Data].ADDR2, [xAwards w/Exhibits&SpecWinners Data].CITY, [xAwards w/Exhibits&SpecWinners Data].STATE, [xAwards w/Exhibits&SpecWinners Data].ZIP, [xAwards w/Exhibits&SpecWinners Data].WinNameLNFirst, [xAwards w/Exhibits&SpecWinners Data].SSN
+FROM [xAwards w/Exhibits&SpecWinners Data]
+WHERE ((([xAwards w/Exhibits&SpecWinners Data].PrzAN)>500 And ([xAwards w/Exhibits&SpecWinners Data].PrzAN)<599) AND (([xAwards w/Exhibits&SpecWinners Data].Win_EXN)>100))
+ORDER BY [xAwards w/Exhibits&SpecWinners Data].NCAT;
+

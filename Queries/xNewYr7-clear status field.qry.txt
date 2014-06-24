@@ -1,0 +1,2 @@
+UPDATE Judges SET Judges.STATUS = Null;
+

@@ -1,0 +1,5 @@
+SELECT Persons.SALUTATION, Persons.LNAME, Persons.MI, Persons.TP, Persons.FNAME, Other_Persons.PID
+FROM ((((((Other_Persons RIGHT JOIN Persons ON Other_Persons.PID = Persons.PID) LEFT JOIN AwardDonors ON Persons.PID = AwardDonors.PID) LEFT JOIN Judges ON Persons.PID = Judges.PID) LEFT JOIN Schools ON Persons.PID = Schools.P_PID) LEFT JOIN SpecialWinners ON Persons.PID = SpecialWinners.PID) LEFT JOIN Students ON Persons.PID = Students.PID) LEFT JOIN Teachers ON Persons.PID = Teachers.PID
+WHERE (((Other_Persons.PID) Is Null) AND ((Students.PID) Is Null) AND ((Teachers.PID) Is Null) AND ((AwardDonors.PID) Is Null) AND ((Schools.P_PID) Is Null) AND ((SpecialWinners.PID) Is Null) AND ((Judges.PID) Is Null))
+ORDER BY Persons.TP;
+

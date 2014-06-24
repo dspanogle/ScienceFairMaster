@@ -1,0 +1,859 @@
+Version =20
+VersionRequired =20
+Checksum =-360731250
+Begin Form
+    RecordSelectors = NotDefault
+    AllowDeletions = NotDefault
+    AllowAdditions = NotDefault
+    DefaultView =0
+    TabularFamily =8
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    Cycle =1
+    GridX =24
+    GridY =24
+    Width =10320
+    DatasheetFontHeight =10
+    ItemSuffix =30
+    Left =765
+    Top =4320
+    Right =11400
+    Bottom =7575
+    DatasheetGridlinesColor =12632256
+    BeforeDelConfirm ="[Event Procedure]"
+    AfterDelConfirm ="[Event Procedure]"
+    RecSrcDt = Begin
+        0x47c656a8bd4ce340
+    End
+    GUID = Begin
+        0xf429249eff50f74bb5cfe38d3d47b153
+    End
+    RecordSource ="SELECT AwardGroup.AN, [gid]-100*Int([gid]/100) AS GN, AwardGroup.G_Div, AwardGro"
+        "up.G_Desc, AwardGroup.GID FROM AwardGroup ORDER BY AwardGroup.AN, [gid]-100*Int("
+        "[gid]/100); "
+    OnCurrent ="[Event Procedure]"
+    OnDelete ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x000000000000000000000000000000000000000024270000400b000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x007c0e300200000001000000020000000000000084d221300500000034531201 ,
+        0x010421409c006d0703df80070100010000000000640001000700fdff02000100 ,
+        0x0000030000000000000000000000000000000000705312008adb57785c541200 ,
+        0xdc5e12007c540000000000000000000000000000000000000000000001000000 ,
+        0x0300000001000000010000000000000000000000000000000000000042836587 ,
+        0x0000000000000000000000000000000000000008880800088808000000000000 ,
+        0x0000000000000000520300004c04000000640000010000000000000000000000 ,
+        0x0000000100070000000000000000000000000000000036000000000000000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0041007200690061006c00000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000038000000c201000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000f2b100004283658701ccdaba000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000ccdaba6800700020007000730063 ,
+        0x0020003100320030003000200073006500720069006500730000006500720069 ,
+        0x00650073002c004c006f00630061006c004f006e006c0079002c004400720076 ,
+        0x0043006f006e0076006500720074000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000010000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000055534230303100
+    End
+    OnLoad ="[Event Procedure]"
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    AllowLayoutView =0
+    DatasheetGridlinesColor12 =12632256
+    UnknownProp = {419 ,0 ,0 ,0 ,2121 } Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x650073000000650072006900650073002c004c006f00630061006c004f000000 ,
+        0x01042140dc006d0703df80070100010000000000640001000700fdff02000100 ,
+        0x0000030000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0300000001000000010000000000000000000000000000000000000042836587 ,
+        0x0000000000000000000000000000000000000008880800088808000000000000 ,
+        0x0000000000000000520300004c04000000640000010000000000000000000000 ,
+        0x0000000100070000000000000000000000000000000036000000000000000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0041007200690061006c00000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000038000000c201000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000f2b100004283658701ccdaba000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000ccdaba6800700020007000730063 ,
+        0x0020003100320030003000200073006500720069006500730000006500720069 ,
+        0x00650073002c004c006f00630061006c004f006e006c0079002c004400720076 ,
+        0x0043006f006e0076006500720074000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000010000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000
+    End
+    UnknownProp = {420 ,0 ,0 ,0 ,98 } Begin
+        0x040017002a000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000550053004200300030003100 ,
+        0x0000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            UnknownProp = {324 ,0 ,0 ,0 ,1 } Begin
+                0x00
+            End
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Subform
+            SpecialEffect =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =3240
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x6870739a60ab8547bb7f9b43417ef173
+            End
+            Begin
+                Begin Subform
+                    OverlapFlags =85
+                    Left =300
+                    Top =780
+                    Width =9960
+                    Height =2340
+                    TabIndex =3
+                    Name ="xAwardWPrize SubForm"
+                    SourceObject ="Form.xAwardWPrize SubForm"
+                    LinkChildFields ="GID"
+                    LinkMasterFields ="GID"
+                    EventProcPrefix ="xAwardWPrize_SubForm"
+                    GUID = Begin
+                        0x00097661f651f74594cb04d2b802fe95
+                    End
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =10260
+                    LayoutCachedHeight =3120
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =60
+                    Top =420
+                    Width =540
+                    Height =210
+                    ForeColor =255
+                    Name ="Label6"
+                    Caption ="Group"
+                    GUID = Begin
+                        0x97e22cfb76dbb14dbbe755ef163789a4
+                    End
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =600
+                    LayoutCachedHeight =630
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =720
+                    Top =420
+                    Width =300
+                    Height =240
+                    Name ="Label7"
+                    Caption ="GN"
+                    GUID = Begin
+                        0xb3d129d25708dc4990e83a3cf811d91f
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1080
+                    Top =420
+                    Width =300
+                    TabIndex =1
+                    BackColor =65408
+                    Name ="tbGN"
+                    ValidationRule =">0 And <=99"
+                    ValidationText ="GN range 1 to 99"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x75f4560bd4b84940aefd35029ea3ca68
+                    End
+
+                End
+                Begin ComboBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    ListWidth =2625
+                    Left =2340
+                    Top =420
+                    Width =4020
+                    Height =300
+                    TabIndex =2
+                    ForeColor =16737843
+                    GUID = Begin
+                        0xa09ab7ce1fcab0409c100dba6add825c
+                    End
+                    Name ="cbGrpDesc"
+                    ControlSource ="G_Desc"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Junior Division\";\"Senior Division\";\"Junior or Senior Division\""
+                    ColumnWidths ="2625"
+                    AfterUpdate ="[Event Procedure]"
+
+                    LayoutCachedLeft =2340
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =6360
+                    LayoutCachedHeight =720
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =1560
+                            Top =420
+                            Width =660
+                            Height =240
+                            Name ="GrpDesc_Label"
+                            Caption ="GrpDesc"
+                            GUID = Begin
+                                0xc72181ad0f020248838cc397f8065833
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =7680
+                    Top =420
+                    Width =960
+                    TabIndex =4
+                    Name ="GID"
+                    ControlSource ="GID"
+                    StatusBarText ="S-GroupID key = 100*AN + GN, Link to Prize  GN = (3rd Script Sort) [SFAGM.AN/GN]"
+                        " [NEW]"
+                    GUID = Begin
+                        0xb04b803dce845d41b577d662b910c674
+                    End
+
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =7860
+                    Top =60
+                    Width =720
+                    TabIndex =5
+                    Name ="AN"
+                    ControlSource ="AN"
+                    StatusBarText ="S-Award Number link to Award Master [SFAGM.AN]"
+                    GUID = Begin
+                        0xb49d5bc40e91f74cb7f86f4b0fa9857a
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =7440
+                            Top =60
+                            Width =345
+                            Height =240
+                            Name ="Label23"
+                            Caption ="AN:"
+                            GUID = Begin
+                                0x4b5f441682524748b94cd8d6a99f1110
+                            End
+                        End
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    ListRows =4
+                    ListWidth =1440
+                    Left =900
+                    Top =60
+                    Width =840
+                    Height =300
+                    FontSize =10
+                    GUID = Begin
+                        0xe9638bfff57514488ae708efc346970a
+                    End
+                    Name ="cbGrpNum"
+                    RowSourceType ="Value List"
+                    ColumnWidths ="1440"
+                    AfterUpdate ="[Event Procedure]"
+                    OnEnter ="[Event Procedure]"
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =60
+                            Width =780
+                            Height =300
+                            FontSize =10
+                            Name ="cbGrpNum_Label"
+                            Caption ="Get GN"
+                            GUID = Begin
+                                0x89820d26be279e49952f025491934acd
+                            End
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =840
+                            LayoutCachedHeight =360
+                        End
+                    End
+                End
+                Begin CommandButton
+                    AutoRepeat = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2580
+                    Top =60
+                    Width =576
+                    Height =306
+                    FontSize =8
+                    TabIndex =6
+                    Name ="btnNext"
+                    Caption ="Command63"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888800888888888800000008888800088888888840000008888800008888888 ,
+                        0x8004322688888000008888888040e26288888000000888888440366688888000 ,
+                        0x000088888111a3338888800000088888899deaee8888800000888888888caaaa ,
+                        0x8888800008888888811133228888800088888888811909108888800888888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f0
+                    End
+                    FontName ="Tahoma"
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Next Record"
+                    GUID = Begin
+                        0xccd3eed450ba3847b458282147e2174e
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =2580
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =3156
+                    LayoutCachedHeight =366
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1860
+                    Top =60
+                    Width =576
+                    Height =306
+                    FontSize =8
+                    TabIndex =7
+                    Name ="btnPrev"
+                    Caption ="Command62"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888888800888888800000008888888000888888840000008888880000888888 ,
+                        0x8004322688888000008888888040e26288880000008888888440366688800000 ,
+                        0x008888888111a3338888000000888888899deaee8888800000888888888caaaa ,
+                        0x8888880000888888811133228888888000888888811909108888888800888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f0
+                    End
+                    FontName ="Tahoma"
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Previous Record"
+                    GUID = Begin
+                        0x9831ac4e301dd746abad6f52afe72e48
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =1860
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2436
+                    LayoutCachedHeight =366
+                    UnknownProp = {356 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {357 ,0 ,0 ,0 ,4 } Begin
+                        0x02000000
+                    End
+                    UnknownProp = {358 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                    UnknownProp = {359 ,0 ,0 ,0 ,4 } Begin
+                        0x01000000
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Option Explicit
+Private didGNChange As Boolean
+Private currGN As Integer
+Private GIDval As Long
+Private TANam As String
+Private msg As String
+Private DidDelete As Boolean
+Private Title As String
+Private ctlPrevFocus
+
+'  Previous and Next Buttons  REV 5.3.0
+Private Sub btnNext_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+  'MsgBox Err.Description
+End Sub
+Private Sub btnNext_Click()
+On Error GoTo Err_btnNext_Click
+    If Me.CurrentRecord = Me.Recordset.RecordCount Then
+      ' MsgBox "End of Data!"
+       ctlPrevFocus.SetFocus
+       Exit Sub
+    End If
+    DoCmd.GoToRecord , , acNext
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnNext_Click:
+    Exit Sub
+Err_btnNext_Click:
+    MsgBox Err.Description   ' Error End of Data
+    Resume Exit_btnNext_Click
+End Sub
+
+Private Sub btnPrev_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+  'MsgBox Err.Description
+End Sub
+Private Sub btnPrev_Click()
+On Error GoTo Err_btnPrev_Click
+    DoCmd.GoToRecord , , acPrevious
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnPrev_Click:
+    Exit Sub
+Err_btnPrev_Click:
+    Dim errnum As Long
+    errnum = Err.Number
+    If Err.Number = 2105 Then  ' can not go to specified record
+       errnum = Err.Number
+       'Exit Sub
+    End If
+   ' MsgBox Err.Description  ' Error You cant go to specific data
+    Resume Exit_btnPrev_Click
+End Sub
+
+
+
+
+
+Private Sub cbGrpDesc_AfterUpdate()
+  On Error GoTo SubError
+  '  Select Case Me.cbGrpDesc.Value
+  '  Case "Junior Division"
+  '    Me.G_Div = "J"
+  '  Case "Senior Division"
+  '    Me.G_Div = "S"
+  '  Case "Junior or Senior Division"
+  '
+  '  Case "Senior or Junior Division"
+  '
+  '  End Select
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+
+End Sub
+
+
+
+Private Sub cbGrpNum_AfterUpdate()
+  On Error GoTo SubError
+  If IsNull(cbGrpNum) Then
+     'MsgBox "Nothing Selected!"
+     Exit Sub
+  End If
+  Me.Recordset.FindFirst "GN = " & Str(Me![cbGrpNum]) ' Edit This?
+  If Me.Recordset.NoMatch Then
+    MsgBox "No Such Group Number", vbOKOnly
+  End If
+  Me.cbGrpNum = Null ' No Edits or replacement on this line
+  Me.xAwardWPrize_SubForm.SetFocus
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub cbGrpNum_Enter()
+' Rev 5.4.0   add group numbers to dropdown box
+On Error GoTo ErrorExit
+Dim rs As Recordset
+' rev 5.4.3 543  changed next three from integer to Long as GID can be as big as 99999
+Dim iGN As Long
+Dim an100 As Long
+Dim iGID As Long
+Set rs = CurrentDb.OpenRecordset("Select GID from AwardGroup where AN = " & Me.AN, dbOpenDynaset)
+Me.cbGrpNum.RowSource = ""  ' clear out old values
+Do While Not rs.EOF
+  iGID = rs!GID
+  an100 = iGID / 100
+  an100 = 100 * an100
+  iGN = iGID - an100
+  Me.cbGrpNum.AddItem (iGN)   ' fill in new values
+  rs.MoveNext
+Loop
+Exit Sub
+ErrorExit:
+MsgBox "Grpnum box list " & Err.Description
+End Sub
+
+Private Sub Form_Current()
+  On Error GoTo SubError
+  Dim pink As Long
+  Dim green As Long
+  pink = 13356030
+  green = 65408
+  If Me.NewRecord Then
+    Me.tbGN.BackColor = pink
+    Me.tbGN.Value = ""
+    Me.tbGN.SetFocus
+  Else
+    Me.tbGN.BackColor = green
+    Me.tbGN.Value = GID - 100 * Int(GID / 100)
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+
+Private Sub G_Div_Exit(Cancel As Integer)
+    On Error GoTo SubError
+    If IsNull(Me.[G_Div]) Then Exit Sub ' no need to check
+    If StrComp(Me.[G_Div], UCase(Me.[G_Div]), 0) <> 0 Then ' Binary compare
+        Me.[G_Div] = UCase(Me.[G_Div])   ' do only if not already ucase
+    End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+Private Sub tbGN_AfterUpdate()
+   On Error GoTo SubError
+  ' Me.GID = 100 * Me.AN + Me.tbGN  ' This will cascade update the GID in all prizes
+  ' Me.Refresh ' This will force the cascade and display the new values
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub tbGN_BeforeUpdate(Cancel As Integer)
+   On Error GoTo SubError
+   Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+Private Sub Form_Delete(Cancel As Integer)
+   ' This plus Sub Form_BeforeDelConfirm work to ALWAYS show a delete message
+   ' Even if user has turned off the warning messages.
+   On Error GoTo SubError
+   msg = "CAUTION: Deleting a Group will delete all" & vbCrLf & _
+         "prizes for that Group " & vbCrLf & vbCrLf & _
+         "DELETE GROUP / Prizes?"
+   If MsgBox(msg, vbYesNo + vbDefaultButton2, Title) = vbNo Then
+      Cancel = True
+      Exit Sub
+   End If
+   DidDelete = True   ' Indicate did a delete of the judge
+   GIDval = Me.GID       ' save GID (AN and GN)  num for log
+   TANam = IIf(IsNull([G_Desc]), " ", Mid([G_Desc], 1, 49))  '  for log
+   Exit Sub  ' Judge record will be deleted on exit
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_BeforeDelConfirm(Cancel As Integer, Response As Integer)
+   ' This suppresses the system confirmation message, I give message in
+   ' Sub Form_Delete (
+   On Error GoTo SubError
+   Response = acDataErrContinue
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub
+Private Sub Form_AfterDelConfirm(STATUS As Integer)
+  ' You must do :me.Application.SetOption "Confirm RecordChanges",True
+  '   Or this Routine is NEVER CALLED!
+  ' This code used to delete other related records
+   On Error GoTo SubError
+   Call ScifairLog("Del Group/Przs GID: ", GIDval, TANam)
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_Load()
+  ' The next statements give a type mismatch error unless or until
+  ' I fixed the priority of references in the Visual Basic Tools option.
+  ' Sequence must be:
+  ' Visual Basic for Applications
+  ' Microsoft Access 9.0 Library
+  ' Microsoft Office 9.0 Library
+  ' OLE Automation
+  ' Microsoft DAO 3.6 Obj Lib
+  ' Microsoft Visual Basic of Application Extensibility 5.3
+  '  Others as needed
+  On Error GoTo SubError
+  Title = "Awards (Grp) "
+  ' next three done in Awards Edit ... form
+  ' This is Required If any Work is done in me.AfterDeleteConfirm_Click Action
+  'HoldCRCState = Me.Application.GetOption("Confirm Record Changes")
+  'Me.Application.SetOption "Confirm Record Changes", True
+  DidDelete = False
+  'DidAdd = False
+  'Me.Rev.Caption = RevisionDate
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub Form_Close()
+   On Error GoTo SubError
+   'Me.Application.SetOption "Confirm Record Changes", HoldCRCState
+   Exit Sub
+SubError:
+   MsgBox Err.Description
+End Sub

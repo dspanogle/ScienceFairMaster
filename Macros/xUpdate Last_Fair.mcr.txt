@@ -1,0 +1,53 @@
+Version =196611
+ColumnsShown =0
+Begin
+    Action ="MsgBox"
+    Comment ="Set Last_Fair to fair year if student is in table ExhibitStudents"
+    Argument ="Set Last_Fair to FairYear if student is in table ExhibitStudents."
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Comment ="CAUTION: DANGER! Do not run this query if ExhbitStudents has been emptied"
+    Argument ="xUpdate Last_Fair for ExhibitStudents"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xUpdate Last_Fair for ExhibitStudents"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="Set Last_Fair null if student is not in table exhibit students (only if Last_Fai"
+        "r = fairyear)"
+    Argument ="Set Last_Fair = Null for all students for the FairYear NOT in ExhibitStudents ta"
+        "ble.\015\012 I.E. students with protocols but no exhibit, \015\012duplicate entr"
+        "ies not used, errors, ETC.\015\012NOTE: This may find No (0) records! - That is "
+        "OK (Not an error)."
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Comment ="CAUTION: DANGER! If you run this query after exhibits are deleted it will "
+    Argument ="xUpdate Last_Fair for non Exhibit Students"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Comment ="Set Last_Fair = Null for ALL Students who really had exhibits"
+    Argument ="1"
+    Argument ="xUpdate Last_Fair for non Exhibit Students"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Argument ="All Done!"
+    Argument ="-1"
+    Argument ="0"
+End

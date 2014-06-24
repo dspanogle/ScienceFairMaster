@@ -1,0 +1,6 @@
+Begin Reference MSForms
+	FullPath: C:\Windows\SysWOW64\FM20.DLL
+	Guid: {0D452EE1-E08F-101A-852E-02608C4D0BB4}
+	Major: 2
+	Minor: 0
+End

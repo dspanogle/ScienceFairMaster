@@ -1,0 +1,4 @@
+SELECT Persons.FNAME, Persons.MI, Persons.LNAME, Schools.SCHOOL, Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP, Schools.PHONE, SchoolContacts.TID, Schools.JR_Forms, Schools.SR_Forms
+FROM (Schools RIGHT JOIN (Persons RIGHT JOIN Teachers ON Persons.PID=Teachers.PID) ON Schools.SCH_CODE=Teachers.SCH_CODE) INNER JOIN SchoolContacts ON Teachers.TID=SchoolContacts.TID
+ORDER BY Schools.SCHOOL;
+

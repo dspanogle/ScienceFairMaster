@@ -1,0 +1,110 @@
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+' CAUTION:   BEFORE YOU EDIT  (This may be a copy)
+'  SciFairMaster contains the master Startup Module. It should always
+'    be edited then exported to SciFairSlave and other copies
+Option Compare Database
+
+Function OpenStartup() As Boolean
+' The 'OnOpen' property of Startup Form does this
+' This function is called when the Form Startup() is selected to run
+'   Either automatically because Tools, Startup has set property to startup with form Startup
+'   When user open the form Startup
+' Displays Startup form only if properties say to do so
+' Used in OnOpen property of Startup form.
+On Error GoTo no_FairYearProperty
+       Forms!StartUp!FairYear = CurrentDb().Properties("FairYear")
+       GoTo Sethidecheckbox
+no_FairYearProperty:
+        Dim db As DAO.Database
+        Dim prop As DAO.Property
+        Dim fyear As Integer
+        fyear = InputBox("Enter Fair Year" & vbCrLf & _
+             "(Year of the fair's Exhibits as 'YYYY')")
+        Set db = CurrentDb()
+        Set prop = db.CreateProperty("FairYear", dbInteger, fyear)
+        db.Properties.Append prop
+        Resume ' same line that caused the error
+Sethidecheckbox:
+On Error GoTo OpenStartup_Err
+        ' Note: this checkbox may be set not visible so the form always runs...
+        '        important to do the initial checks.
+        ' Set the value of HideStartupForm check box using the value of
+        ' StartupForm property of database (as set in code or in the
+        ' Display Form/Page box in Startup dialog box).
+        If (CurrentDb().Properties("StartupForm") = "Startup" Or _
+            CurrentDb().Properties("StartupForm") = "Form.Startup") Then
+            ' StartupForm property is set to Startup, so clear HideStartupForm
+            ' check box.
+            Forms!StartUp!HideStartupForm = False
+        Else
+            ' StartupForm property is not set to Startup, so check HideStartupForm
+            ' checkbox.
+            Forms!StartUp!HideStartupForm = True
+        End If
+' Rev 540   check for location of SciFairData.
+
+
+'
+OpenStartup_Exit:
+    Exit Function
+OpenStartup_Err:
+    Const conPropertyNotFound = 3270
+    If Err = conPropertyNotFound Then
+        Forms!StartUp!HideStartupForm = True
+        Resume OpenStartup_Exit
+    End If
+End Function
+Function HideStartupForm()
+On Error GoTo HideStartupForm_Err
+' Uses the value of HideStartupForm check box to determine the setting for
+' StartupForm property of database. (The setting is displayed in Display Form
+' box in Startup dialog box).
+' Used in OnClose property of Startup form.
+        If Forms!StartUp!HideStartupForm Then
+           resp = MsgBox("Do not show next time - Are You Sure? " & vbCrLf & _
+           "To reset the Fair Year Use Fair Maintenance" & vbCrLf & _
+           "To Again show 'StartUp' Form on Database start: " & vbCrLf & _
+           " Open Form 'StartUp' and uncheck 'Do Not Show This Next Time'" & vbCrLf & _
+           " or.. Use [Tools] [StartUp] and select 'StartUp'", _
+              vbYesNo + vbDefaultButton2, "SciFair Startup Form")
+           If resp = vbYes Then
+          ' HideStartupForm check box is checked, so set StartupForm property to (none).
+              CurrentDb().Properties.Delete "StartupForm"
+           End If
+        Else
+            ' HideStartupForm check box is cleared, so set StartupForm property to Startup.
+            CurrentDb().Properties("StartupForm") = "Startup"
+        End If
+        Exit Function
+HideStartupForm_Err:
+    Const conPropertyNotFound = 3270
+    If Err = conPropertyNotFound Then
+        Dim db As DAO.Database
+        Dim prop As DAO.Property
+        Set db = CurrentDb()
+        Set prop = db.CreateProperty("StartupForm", dbText, "Startup")
+        db.Properties.Append prop
+        Resume Next
+    End If
+End Function
+Function CloseForm()
+' Closes Startup form.
+' Used in OnClick property of OK command button on Startup form.
+    DoCmd.Close acForm, "StartUp"
+End Function

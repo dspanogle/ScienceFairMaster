@@ -1,0 +1,5 @@
+SELECT [LNAME] & ", " & [FNAME] & " " & [MI] AS Name, "Exhibit # " & ExhibitStudents.EXN AS Exhibit, "Category " & Mid(Exhibitdata.NCAT,2,5) AS Cat, ExhibitData.EXHB_TITLE, ExhibitData.EXN, ExhibitData.TeamEx
+FROM (Persons RIGHT JOIN Students ON Persons.PID=Students.PID) RIGHT JOIN (ExhibitData RIGHT JOIN ExhibitStudents ON ExhibitData.EXN=ExhibitStudents.EXN) ON Students.STID=ExhibitStudents.STID
+WHERE (((ExhibitData.EXN)>100))
+ORDER BY [LNAME] & ", " & [FNAME] & " " & [MI];
+

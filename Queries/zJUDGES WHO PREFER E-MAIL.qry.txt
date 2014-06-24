@@ -1,0 +1,4 @@
+SELECT [xJudges Edit, Add, Delete QRY].SALUTATION, [xJudges Edit, Add, Delete QRY].FNAME, [xJudges Edit, Add, Delete QRY].MI, [xJudges Edit, Add, Delete QRY].LNAME, [xJudges Edit, Add, Delete QRY].STATUS, [xJudges Edit, Add, Delete QRY].EMAIL, [xJudges Edit, Add, Delete QRY].MAILPREF
+FROM [xJudges Edit, Add, Delete QRY]
+WHERE ((([xJudges Edit, Add, Delete QRY].STATUS)="A") AND (([xJudges Edit, Add, Delete QRY].MAILPREF)="E"));
+

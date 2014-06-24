@@ -1,0 +1,1128 @@
+Version =20
+VersionRequired =20
+Checksum =1089249477
+Begin Form
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    OrderByOn = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =2
+    ViewsAllowed =2
+    TabularCharSet =238
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =9780
+    DatasheetFontHeight =11
+    ItemSuffix =20
+    Left =2025
+    Top =6705
+    Right =12015
+    Bottom =7755
+    BeforeDelConfirm ="[Event Procedure]"
+    AfterDelConfirm ="[Event Procedure]"
+    OrderBy ="[xCategories Manager subform].JCAT"
+    RecSrcDt = Begin
+        0x49a270abfaa9e340
+    End
+    GUID = Begin
+        0x630a796007fdd24d993e9015c0d2c1ce
+    End
+    RecordSource ="SELECT JudgeTypeCategories.JCAT, JudgeTypes.[JCAT NAME], JudgeTypes.CHAIRNUM, [F"
+        "NAME] & \" \" & [LNAME] AS NAME, JudgeTypeCategories.NCAT FROM Persons RIGHT JOI"
+        "N ((Judges RIGHT JOIN (Chairs RIGHT JOIN JudgeTypes ON Chairs.CHAIRNUM=JudgeType"
+        "s.CHAIRNUM) ON Judges.JUN=Chairs.JUN) RIGHT JOIN JudgeTypeCategories ON JudgeTyp"
+        "es.JCAT=JudgeTypeCategories.JCAT) ON Persons.PID=Judges.PID; "
+    Caption ="Judging Categories and Chairs"
+    BeforeInsert ="[Event Procedure]"
+    OnDelete ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
+    AfterUpdate ="[Event Procedure]"
+    DatasheetFontName ="Calibri"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010421409c006d0703df80070100010000000000640001000700fdff02000100 ,
+        0x0000030000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0300000001000000010000000000000000000000000000000000000042836587 ,
+        0x0000000000000000000000000000000000000008880800088808000000000000 ,
+        0x0000000000000000520300004c04000000640000010000000000000000000000 ,
+        0x0000000100070000000000000000000000000000000036000000000000000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0041007200690061006c00000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000038000000c201000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000f2b100004283658701ccdaba000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000ccdaba6800700020007000730063 ,
+        0x0020003100320030003000200073006500720069006500730000006500720069 ,
+        0x00650073002c004c006f00630061006c004f006e006c0079002c004400720076 ,
+        0x0043006f006e0076006500720074000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000010000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000055534230303100
+    End
+    AllowFormView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =1
+    DatasheetAlternateBackColor =16053492
+    DatasheetGridlinesColor12 =15062992
+    FitToScreen =1
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontCharSet =238
+            FontSize =11
+            BorderColor =-2147483609
+            ForeColor =11830108
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Line
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Image
+            BackStyle =0
+            SizeMode =3
+            PictureAlignment =2
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            TextFontCharSet =238
+            FontSize =11
+            FontWeight =400
+            ForeColor =14919545
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin OptionButton
+            LabelX =230
+            LabelY =-30
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin OptionGroup
+            BackStyle =1
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin BoundObjectFrame
+            SizeMode =3
+            BackStyle =0
+            LabelX =-1800
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            TextFontCharSet =238
+            LabelX =-1800
+            FontSize =11
+            BorderColor =-2147483609
+            FontName ="Calibri"
+            AsianLineBreak =1
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ListBox
+            TextFontCharSet =238
+            LabelX =-1800
+            FontSize =11
+            BorderColor =-2147483609
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            AllowValueListEdits =1
+            InheritValueList =1
+        End
+        Begin ComboBox
+            TextFontCharSet =238
+            LabelX =-1800
+            FontSize =11
+            BorderColor =-2147483609
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            AllowValueListEdits =1
+            InheritValueList =1
+        End
+        Begin Subform
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin UnboundObjectFrame
+            BackStyle =0
+            OldBorderStyle =1
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CustomControl
+            OldBorderStyle =1
+            BorderColor =-2147483609
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin ToggleButton
+            TextFontCharSet =238
+            FontSize =11
+            FontWeight =400
+            ForeColor =14919545
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Tab
+            TextFontCharSet =238
+            FontSize =11
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin FormHeader
+            Height =180
+            BackColor =14919545
+            Name ="FormHeader"
+            GUID = Begin
+                0x442207c8fb7d20419e30e21d77a02dd3
+            End
+        End
+        Begin Section
+            Height =2865
+            Name ="Detail"
+            GUID = Begin
+                0x69c6fdd11d677e4395baa448a407d383
+            End
+            AutoHeight =1
+            AlternateBackColor =16777215
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2700
+                    Top =450
+                    Width =3900
+                    Height =330
+                    ColumnWidth =960
+                    ColumnOrder =1
+                    TabIndex =1
+                    Name ="tbJCAT"
+                    ControlSource ="JCAT"
+                    StatusBarText ="Judging Category Code (from JudgeType Table)"
+                    OnClick ="[Event Procedure]"
+                    OnChange ="[Event Procedure]"
+                    GUID = Begin
+                        0x1a0d6f7d4d276644809731a8ff057857
+                    End
+                    RowGroup =1
+                    GroupTable =1
+
+                    LayoutCachedLeft =2700
+                    LayoutCachedTop =450
+                    LayoutCachedWidth =6600
+                    LayoutCachedHeight =780
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =60
+                            Top =450
+                            Width =2580
+                            Height =330
+                            Name ="JudgeTypeCategories_JCAT_Label"
+                            Caption ="JCAT"
+                            GUID = Begin
+                                0x46ef165167df424e8bb4b3e7034c7f45
+                            End
+                            RowGroup =1
+                            GroupTable =1
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =450
+                            LayoutCachedWidth =2640
+                            LayoutCachedHeight =780
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2700
+                    Top =855
+                    Width =3900
+                    Height =330
+                    ColumnWidth =3585
+                    ColumnOrder =2
+                    TabIndex =2
+                    Name ="tbJcatName"
+                    ControlSource ="JCAT NAME"
+                    StatusBarText ="Judging Category long name.             Same as old  SFCM:CATNAME (37char)"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x2bd2f5aca46ef7488234a2e61823de87
+                    End
+                    RowGroup =2
+                    GroupTable =1
+
+                    LayoutCachedLeft =2700
+                    LayoutCachedTop =855
+                    LayoutCachedWidth =6600
+                    LayoutCachedHeight =1185
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =60
+                            Top =855
+                            Width =2580
+                            Height =330
+                            Name ="JCAT NAME_Label"
+                            Caption ="JCAT NAME"
+                            EventProcPrefix ="JCAT_NAME_Label"
+                            GUID = Begin
+                                0xc36006e326840549be5a625e83b24151
+                            End
+                            RowGroup =2
+                            GroupTable =1
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =855
+                            LayoutCachedWidth =2640
+                            LayoutCachedHeight =1185
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2700
+                    Top =1260
+                    Width =3900
+                    Height =330
+                    ColumnWidth =1410
+                    ColumnOrder =3
+                    TabIndex =3
+                    Name ="CHAIRNUM"
+                    ControlSource ="CHAIRNUM"
+                    StatusBarText ="Chair Person for this JCAT                  Same as old SFCM:JUDGE_CH"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x62fa9210e5639946b23738ba084f45a8
+                    End
+                    RowGroup =3
+                    GroupTable =1
+
+                    LayoutCachedLeft =2700
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =6600
+                    LayoutCachedHeight =1590
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =60
+                            Top =1260
+                            Width =2580
+                            Height =330
+                            Name ="CHAIRNUM_Label"
+                            Caption ="CHAIRNUM"
+                            GUID = Begin
+                                0xd1e6b33591e2b7438f437c9f9d4b7a32
+                            End
+                            RowGroup =3
+                            GroupTable =1
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =1260
+                            LayoutCachedWidth =2640
+                            LayoutCachedHeight =1590
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =1680
+                    Height =315
+                    ColumnWidth =2115
+                    ColumnOrder =4
+                    TabIndex =4
+                    Name ="NAME"
+                    ControlSource ="NAME"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xde2c56cc66eac142a3b6be8c621def7e
+                    End
+
+                    LayoutCachedLeft =1860
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =3300
+                    LayoutCachedHeight =1995
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1680
+                            Width =1215
+                            Height =315
+                            Name ="Label12"
+                            Caption ="Chair Name:"
+                            GUID = Begin
+                                0x2378d8f33f3ea44f85d8fefb6c03bd69
+                            End
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =1680
+                            LayoutCachedWidth =1275
+                            LayoutCachedHeight =1995
+                        End
+                    End
+                End
+                Begin TextBox
+                    ColumnHidden = NotDefault
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2700
+                    Top =60
+                    Width =3900
+                    Height =315
+                    ColumnWidth =915
+                    ColumnOrder =0
+                    Name ="tbNCAT"
+                    ControlSource ="NCAT"
+                    StatusBarText ="National Science Fair Category Code (from Categories Table)"
+                    GUID = Begin
+                        0x25347c12f426b145a0de757bbdecf462
+                    End
+                    RowGroup =4
+                    GroupTable =1
+
+                    LayoutCachedLeft =2700
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =6600
+                    LayoutCachedHeight =375
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =60
+                            Top =60
+                            Width =2580
+                            Height =315
+                            Name ="Label14"
+                            Caption ="NCAT:"
+                            GUID = Begin
+                                0xebfd93dc0a1aa84a8478e7b0896896e1
+                            End
+                            RowGroup =4
+                            GroupTable =1
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =2640
+                            LayoutCachedHeight =375
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            Name ="FormFooter"
+            GUID = Begin
+                0x5b88bfe2ff9e2b45831eb06a2115d51d
+            End
+            AutoHeight =1
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Option Explicit
+Private DoJCAT As Boolean
+Private DoDelete As String
+Private OldJCAT As String
+Private PrevOldJCAT As String
+Private NewJCAT As String
+Private Function ExhibitsOldJCATToNew(tOldJCAT As String, tNewJCAT As String) As Boolean
+  On Error GoTo SubError
+  Dim rsWork As Recordset
+  Set rsWork = CurrentDb().OpenRecordset("Select * from ExhibitData", dbOpenDynaset)
+  With rsWork
+     If Not .EOF Then
+        .MoveFirst
+        Do While Not .EOF
+          If !JCAT = tOldJCAT Then
+             .Edit
+             !JCAT = tNewJCAT
+             .Update
+          End If
+        .MoveNext
+        Loop
+     End If
+  End With
+  ExhibitsOldJCATToNew = True
+  Exit Function
+SubError:
+  MsgBox "ExhibitsOldJCATsToNew " & Err.Description
+  ExhibitsOldJCATToNew = False
+End Function
+Private Function JudgesOldJCATSToNew(tOldJCAT As String, tNewJCAT As String) As Boolean
+  On Error GoTo SubError
+  Dim rsWork As Recordset
+  Set rsWork = CurrentDb().OpenRecordset("Select * from Judges", dbOpenDynaset)
+  With rsWork
+     If Not .EOF Then
+        .MoveFirst
+        Do While Not .EOF
+          If !JCAT = tOldJCAT Then
+             .Edit
+             !JCAT = tNewJCAT     ' this will probably never happen (unless someone deletes the
+             .Update              ' Cascadeupdate in refereces
+          End If
+          If !P_1 = tOldJCAT Then
+            .Edit
+            !P_1 = tNewJCAT
+            .Update
+          End If
+          If !P_2 = tOldJCAT Then
+            .Edit
+            !P_2 = tNewJCAT
+            .Update
+          End If
+          If !P_3 = tOldJCAT Then
+            .Edit
+            !P_3 = tNewJCAT
+            .Update
+          End If
+          If !P_4 = tOldJCAT Then
+            .Edit
+            !P_4 = tNewJCAT
+            .Update
+          End If
+        .MoveNext
+        Loop
+     End If
+  End With
+  JudgesOldJCATSToNew = True
+  Exit Function
+SubError:
+  JudgesOldJCATSToNew = False
+  MsgBox "JudgesOldJCATSToNew: " & Err.Description
+End Function
+Private Sub DeleteOldJCATJudgesTable()
+  On Error GoTo SubError
+  Dim rsWork As Recordset
+  Set rsWork = CurrentDb().OpenRecordset("Select * from JudgeTypes", dbOpenDynaset)
+  With rsWork
+     If Not .EOF Then
+        .MoveFirst
+        Do While Not .EOF
+          If !JCAT = OldJCAT Then
+             .Delete
+          End If
+        .MoveNext
+        Loop
+     End If
+  End With
+  Exit Sub
+SubError:
+  MsgBox "DeleteOldJCATJudgesTable: " & Err.Description
+End Sub
+Private Sub Form_BeforeInsert(Cancel As Integer)
+  ' When the subform is used with the main form then...
+  ' When user types the JCAT into the JCAT box they are adding a JCAT to the
+  '   JudgeTypeCategories table.  THE NCAT selected in the main form is entered into
+  '     the NCAT field.
+  '  The entry causes an update to add the NCAT (I think) and at that time, the
+  '     JudgeTypes Table JCAT  (JT_JCAT) is null so..  I set it to JCAT in the update
+  '  For this to work well without confusing the user, leave the JT_JCAT field hidden
+  '  Allow Additions of JCAT.  The Before Update will set the JT_JCAT = JTCategories jcat
+End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+  ' Very Important NOTE:  the subform uses JudgeTypeCategories as data source for this subform
+  '  Thus, to change all the JCATs we first must really change the JCAT in JudgeTypes - which will
+  '  cascade update most of the other locations (not all) because of the
+  '  Referential cascade update between the tables.  Changing JCAT in judgetypes in this
+  '   routine updates the JCAT in JudgeTypeCategores.  Unfortunately, that means that when I leave
+  '   this routine and access tries to finish the change in judgetypecategories - it has alread
+  '   been changed which causes a Write Conflict message  'changed by another user' - me!
+  '
+  '  There may be a way around this but I have not found it.  I want to leave the relationship so
+  '  I just give instructions to click save the record.
+  Dim holdName As String
+ Dim holdNum As String
+ Dim NCATst As String
+ On Error Resume Next
+ '  Get the name of the National category
+ NCATst = Forms![xCategories Manager (Edit Add Delete)]!CATNAME.Value
+ On Error GoTo SubError
+  ' Enter this routine with a value for OldJCAT
+ '  OldJCAT is set when click on the JCAT field or other field IN THE ROW
+ NewJCAT = JCAT      ' The value the user changes is in the JudgeTypeCategories Table
+ ' Do not allow change of NCAT  so do not show NCAT in form but it is updated or set
+ '   the the value the recordset is seletec by  (NCAT from main form)
+ ' If When JCAT in JudgeTypes is changed  then the relationships update Judges JCAT,
+ '  and Exhibits JCAT.
+ '  The code needs to update all occurances of P1, P2, P3 and P4 in Judges table.
+ '  Done after update.
+ ' -------  IF NewdJCAT is different from Old JCAT -----------------
+ If StrComp(OldJCAT, NewJCAT, 0) <> 0 And OldJCAT <> "" Then  ' Making a change not a new entry
+ '  I can delete msgbox later
+   'If MsgBox("Change JCATs Everywhere", vbYesNo, "JCAT Change") = vbNo Then
+   '  Cancel = True  ' stop the change
+   '  DoJCAT = False  ' no update later
+   '  JCAT = OldJCAT  ' reset the value so do not have to press cancel key
+   'Else
+   Dim rsJT As Recordset
+  
+     ' Rev 540  see if the oldjcat is in JudgeTypeCategories more than once
+     
+      Dim rsJTCt As Recordset
+      Set rsJTCt = CurrentDb().OpenRecordset("Select * from JudgeTypeCategories where JCAT = '" & OldJCAT & _
+          "'", dbOpenDynaset)
+     Dim rct As Integer
+     rsJTCt.MoveLast
+     rsJTCt.MoveFirst
+     
+     rct = rsJTCt.RecordCount   ' I CANNOT GET THIS TO WORK
+     If rsJTCt.RecordCount > 1 Then   ' Yes It does  - special situations for smaller fairs
+        Dim inst As String
+        MsgBox "JCAT " & OldJCAT & " is used for more than one NCAT!" & vbCrLf & _
+               "Change Not supported  You will have to go to the tables to do this!"
+        Cancel = True
+        ' THen if there are two, and I know which one to change I can make that work but
+        '  IN THE FUTURE!
+        
+        
+        rsJTCt.Close
+        Exit Sub
+     End If
+     rsJTCt.Close
+     'end add rev 540
+   
+      ' change the value in JudgeTypes table
+     Set rsJT = CurrentDb().OpenRecordset("Select * from JudgeTypes ", dbOpenDynaset)
+      ' change all the Exhibit and Judge to the other jcat for now assume never more than 2
+      If Not rsJT.EOF Then
+        With rsJT
+        .MoveFirst
+          Do While Not .EOF
+            If !JCAT = OldJCAT Then
+              .Edit
+              !JCAT = NewJCAT
+              On Error GoTo AlreadyExists  'Changing this JCAT to one that already exists
+              .Update
+            End If
+            .MoveNext
+          Loop
+        End With
+        GoTo AddedAbove
+AlreadyExists:            ' escape from loop above if try to change to existing JCAT
+        On Error GoTo SubError
+        DoDelete = OldJCAT   ' Delete the old JCAT from JudgeTypes table after
+                             ' replacing OLDJCAT everywhere with NEWJcat
+        DoJCAT = True        '  Do all the other updates  P1, etc
+        Exit Sub
+AddedAbove:
+        On Error GoTo SubError
+      End If
+     DoDelete = ""  ' Renamed without error so no need to delete OldJCAT
+     DoJCAT = True  ' Do the other updates after this update else get nasty messages
+   Exit Sub    ' Renamed or created new for normal operations so exit
+ End If
+ ' Get here When:
+ '  1) OldJCAT = NewJCAT and oldjcat <> "":   just changing JudgeTypes CatName or Chairnum
+ '       and no need to change JudgeTypes JCAT
+ '  2) oldjcat = ""  This is the problem I have with many trys to do updates
+ If IsNull([JCAT NAME].Value) And OldJCAT <> "" Then
+  Cancel = True
+  MsgBox "You must Enter ONLY JCAT!  Later you can change/enter JCAT NAME & CHAIRNUMBER" & vbCrLf & _
+     "Press [Esc] key on the pc keyboard two times - then start over. "
+  JCAT = PrevOldJCAT
+  Exit Sub
+ End If
+ '  If get here then OldJCAT = NewJCAT and JCAT NAME is not null (Updating JudgeType JcatName or chair
+ '  OR  OldJCAT = ""    Adding a new JCAT for this NCAT
+ If IsNull([JCAT NAME].Value) Then
+  'Cancel = True
+  'MsgBox "JCAT NAME null and OldJCAT null - adding"
+  'JCAT = PrevOldJCAT
+  'Exit Sub
+ Else
+   'MsgBox "changing jcatname or chair"
+ End If
+ 
+ '  ----------- See if Need to add JCAT to JudgeTypes ---------------
+ '   because if adding a record to JudgeTypeCategories then need to add to Judetypes
+   Set rsJT = CurrentDb().OpenRecordset("Select * from JudgeTypes ", dbOpenDynaset)
+   rsJT.FindFirst ("JCAT ='" & NewJCAT & "'")
+   If rsJT.NoMatch Then   ' I did NOT find the record in JudgeTypes
+     ' there is no record in JudgeTypes but I have to check this to avoid errors
+     If Not IsNull([JCAT NAME]) Then   '  Get errors If user trys to enter Name or Chair
+                                       '  at same time as JCAT
+        Cancel = True
+        MsgBox "You must Enter ONLY JCAT!  Later you can change/enter JCAT NAME & CHAIRNUMBER" & vbCrLf & _
+               "Press [Esc] key on the pc keyboard two times - then start over. "
+        Exit Sub
+     End If
+     ' first set the key value = JCAT
+     rsJT.AddNew
+       rsJT!JCAT = NewJCAT
+     rsJT.Update   '
+     ' Then set the other values
+     rsJT.FindFirst ("JCAT = '" & NewJCAT & "'")
+     If Not rsJT.NoMatch Then   ' I found the newjcat
+       If NCATst = "" Then  ' will happen if testing subform without main form
+         NCATst = "Change this to the desired text"
+       End If
+       ' could  find the CATNAME from Categories
+       rsJT.Edit
+          rsJT![JCAT NAME] = NCATst
+          rsJT!CHAIRNUM = CHAIRNUM
+       rsJT.Update
+     End If
+    ' Me.Requery
+   End If
+ Exit Sub
+SubError:
+ MsgBox "Before updtate " & Err.Description
+End Sub
+
+Private Sub Form_AfterUpdate()
+  On Error GoTo SubError
+  If DoJCAT = True Then  ' had JCAT change and user wants to update all
+     '  REMEMBER  Exhibitdata.jcat and judges.jcat and Judgetypecategories.JCAT
+     '  are updated automatically
+     ' but the routines check anyway
+    Dim tt As Boolean
+    tt = JudgesOldJCATSToNew(OldJCAT, NewJCAT)  '  go update Judges Table
+    tt = ExhibitsOldJCATToNew(OldJCAT, NewJCAT)
+    DoJCAT = False       ' do not come here again
+  End If
+  If DoDelete <> "" Then
+    ' I already all exhibit and Judges jcats = newjcat but need to delete oldjcat
+    DeleteOldJCATJudgesTable
+    DoDelete = ""
+  End If
+  Me.Requery
+  Exit Sub
+SubError:
+ DoJCAT = False
+ DoDelete = ""
+ MsgBox "Setting P1-P4 " & Err.Description
+End Sub
+
+
+Private Sub Form_Delete(Cancel As Integer)
+ '  Could delete a record which would just delete the record in table JudgeTypeCategories
+ '  To keep everything working, must first decide what to do in these places
+ '    Judges  JCAT, P1, P2, P3, P4
+ '    Exhibits JCAT
+ '     Judges Assignements (if any must reassigne)
+ 'Options: Cannot delete last JCAT for any NCAT - can change JCAT and or name or chair
+ '  if delete one when there are 2 or more then options
+ '    Replace every instance of deleted JCAT with one of the other entries
+ '      or  Delete JCAT in Exhibit and Judges including P1,p2,p3,p4 (really should not)
+ Dim tOldJCAT As String
+ Dim test As String
+ tOldJCAT = JCAT
+ 'See if there are more than one record in the dataset
+ Dim testct As Integer
+ testct = Me.RecordsetClone.RecordCount
+ If testct < 2 Then
+   MsgBox "Must have at least one Judge Category for each NCAT. Delete Not Allowed! "
+   Cancel = True
+   DoDelete = ""
+   Exit Sub
+ End If
+ '  OK there are more than one so I could delete one
+ '  Only the JudgeTypeCategories Table record is deleted so need to delete the
+ '   JudgeTypes record also.
+  DoDelete = tOldJCAT
+
+End Sub
+Private Sub Form_BeforeDelConfirm(Cancel As Integer, Response As Integer)
+ '  Note the record has already been deleted but could be restored
+ On Error GoTo SubError
+ If DoDelete = "" Then
+   Cancel = True  ' probably never get here??
+   MsgBox "Delete JCAT is null"
+   Exit Sub
+ Else
+   ' Had TWO so  Find a value to use in replacing JCATs For a deleted JCAT in same NCAT
+   Dim RepJCAT As String
+   With Me.RecordsetClone
+   .MoveFirst
+    Do While Not .EOF
+     If !JCAT <> DoDelete Then
+       RepJCAT = !JCAT
+     End If
+      .MoveNext
+     Loop
+    End With
+    If RepJCAT = "" Then
+     ' should never get here since can not delete the last one.
+     MsgBox "Can not find a replacement JCAT"
+     Cancel = True
+    Else
+    MsgBox "You are about to delete JCAT " & DoDelete & "!" & vbCrLf & _
+           "All occurrences of " & DoDelete & " in the ExhibitData and Judge tables" & vbCrLf & _
+           "  will be replaced by " & RepJCAT & "!" & vbCrLf & _
+           "  Verify Exhibits JCAT and Judges JCAT if you continue!" & vbCrLf & _
+           "The next message is your LAST CHANCE to cancel this action!"
+    End If
+ End If
+ Exit Sub
+SubError:
+  MsgBox Err.Description
+ End Sub
+
+Private Sub Form_AfterDelConfirm(STATUS As Integer)
+  On Error GoTo MoreError
+  If STATUS = 2 Then   ' delete was not or did not happpen ??
+    JCAT = DoDelete
+    Exit Sub
+  End If
+  ' change all the Exhibit and Judge to the other jcat for now assume never more than 2
+  '  Find the other JCAT for this NCAT
+  Dim RepJCAT As String
+  With Me.RecordsetClone
+   .MoveFirst
+    Do While Not .EOF
+     If !JCAT <> DoDelete Then
+       RepJCAT = !JCAT
+     End If
+      .MoveNext
+     Loop
+  End With
+  '  Change the values in judges table
+  Dim tt As Boolean
+  tt = JudgesOldJCATSToNew(DoDelete, RepJCAT)
+  tt = ExhibitsOldJCATToNew(DoDelete, RepJCAT)
+ '   Try to delete the JudgeTypes record now.
+  Dim rsJT As Recordset
+  Set rsJT = CurrentDb().OpenRecordset("Select * from JudgeTypes ", dbOpenDynaset)
+  With rsJT
+  .FindFirst ("JCAT = '" & DoDelete & "'")
+  If Not .NoMatch Then
+     .Delete  ' This will fail if any records in Exhibits etc.
+  End If
+  End With
+  MsgBox "Done! All tables have been updated to " & RepJCAT & "!"
+  DoDelete = ""
+  Exit Sub
+MoreError:
+ MsgBox "Replacing " & DoDelete & " with " & RepJCAT & "! " & Err.Description
+
+End Sub
+
+Private Sub NAME_Click()
+ PrevOldJCAT = OldJCAT
+ If IsNull(JCAT) Then
+    OldJCAT = ""
+ Else
+      OldJCAT = JCAT
+  End If
+End Sub
+
+Private Sub tbJCAT_Click()
+ PrevOldJCAT = OldJCAT
+ If IsNull(JCAT) Then
+   OldJCAT = ""
+ Else
+   OldJCAT = JCAT
+ End If
+End Sub
+
+Private Sub tbJcatName_Click()
+ PrevOldJCAT = OldJCAT
+  If IsNull(JCAT) Then
+    OldJCAT = ""
+  Else
+    OldJCAT = JCAT  '  stop updates of JCAT
+  End If
+End Sub
+Private Sub CHAIRNUM_Click()
+ PrevOldJCAT = OldJCAT
+  If IsNull(JCAT) Then
+    OldJCAT = ""
+  Else
+     OldJCAT = JCAT
+  End If
+End Sub

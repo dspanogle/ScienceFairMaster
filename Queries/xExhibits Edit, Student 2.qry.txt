@@ -1,0 +1,4 @@
+SELECT ExhibitStudents.FYR, ExhibitStudents.EXN, ExhibitStudents.STID AS ES_STID, ExhibitStudents.F_ORD, Students.PID, Students.SEX, Students.GRADE, Students.SSN, Students.S_SCH, Students.S_TID, Students.Temp AS S_Temp, Persons.TP, Persons.FNAME, Persons.MI, Persons.LNAME, Persons.HOME_PHONE AS SHmPh, Persons.ADDR1, Persons.ADDR2, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.SALUTATION, Persons.LAST_CHG, Persons.EMAIL, Persons.Temp AS P_Temp, Persons.COMMENTS, Students.LAST_FAIR
+FROM (Persons RIGHT JOIN Students ON Persons.PID=Students.PID) RIGHT JOIN ExhibitStudents ON Students.STID=ExhibitStudents.STID
+WHERE (((ExhibitStudents.F_ORD)=2));
+

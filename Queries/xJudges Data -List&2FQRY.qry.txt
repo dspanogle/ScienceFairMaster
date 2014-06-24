@@ -1,0 +1,5 @@
+SELECT Judges.JUN, Judges.PID, Judges.JCAT, Judges.STATUS, Judges.LAST_CHG, Judges.DEGREE, Judges.MAJOR, Judges.EXPER, Judges.MINOR, Judges.P_1, Judges.P_2, Judges.P_3, Judges.P_4, Judges.TEAM_OK, Judges.CHAIR, Judges.COMMENT AS J_COMMENT, Judges.LOCAL_FAIR, Persons.SALUTATION, Persons.LNAME, Persons.FNAME, Persons.MI, Judges.ORG_NAME, Persons.WORK_PHONE, Persons.EXTENSION, Persons.ADDR1, Persons.ADDR2, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.HOME_PHONE, Judges.FIRST_YR, Judges.LAST_YR, Judges.NUM_YR, Persons.COMMENTS AS P_COMMENT, Persons.CELL_PHONE, Persons.FAX_PHONE, Persons.EMAIL, Persons.MAILPREF
+FROM Persons RIGHT JOIN Judges ON Persons.PID = Judges.PID
+WHERE (((Judges.STATUS)="A"))
+ORDER BY Judges.JCAT, Persons.LNAME, Persons.FNAME;
+

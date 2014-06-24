@@ -1,0 +1,3 @@
+SELECT [AwardGroup.GID]-100*Int(([AwardGroup.GID]/100)) AS GrpGN, [AwardPrize.GID]-100*Int([AwardPrize.GID]/100) AS PrzGN, Int([AwardPrize.GID]/100) AS PrzAN, AwardMaster.*, AwardGroup.*, AwardPrize.*, AwardPrize.EXN AS Win_EXN
+FROM AwardMaster RIGHT JOIN (AwardGroup RIGHT JOIN AwardPrize ON AwardGroup.GID=AwardPrize.GID) ON AwardMaster.AN=AwardGroup.AN;
+

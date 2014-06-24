@@ -1,0 +1,4 @@
+SELECT Persons.ZIP, ExhibitStudents.F_ORD, ExhibitStudents.EXN, Students.SEX, Students.GRADE, Students.SSN, [LNAME] & ", " & [SALUTATION] & " " & [FNAME] & " " & [MI] AS Name, Persons.FNAME, Persons.MI, Persons.LNAME, Persons.HOME_PHONE, [ADDR1] & ", " & [ADDR2] AS Address, Persons.ADDR1, Persons.ADDR2, [CITY] & " " & [STATE] & ", " & [ZIP] AS CtyStZip, Persons.CITY, Persons.STATE, Persons.EMAIL
+FROM (Persons RIGHT JOIN Students ON Persons.PID=Students.PID) RIGHT JOIN ExhibitStudents ON Students.STID=ExhibitStudents.STID
+ORDER BY Persons.ZIP, ExhibitStudents.F_ORD;
+

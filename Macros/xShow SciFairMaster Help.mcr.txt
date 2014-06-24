@@ -1,0 +1,7 @@
+Version =196611
+ColumnsShown =8
+Begin
+    Action ="RunCode"
+    Comment ="Just open the SciFairMaster.chm file using hh.exe"
+    Argument ="ShowHelp()"
+End

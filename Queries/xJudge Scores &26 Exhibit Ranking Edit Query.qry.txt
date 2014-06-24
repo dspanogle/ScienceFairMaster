@@ -1,0 +1,3 @@
+SELECT ExhibitJudges.EXN, ExhibitJudges.JUN, ExhibitJudges.CR1, ExhibitJudges.CR2, ExhibitJudges.CR3, ExhibitJudges.CR4, ExhibitJudges.CR5, ExhibitJudges.CR6, ExhibitJudges.NTR, ExhibitData.EXHB_TITLE, ExhibitData.SCORE_OVERRIDE, ExhibitData.SCORE, ExhibitData.TO_STATE, ExhibitData.FLOOR, Persons.FNAME, Persons.LNAME, Categories.TEAM, Categories.CATNAME, Categories.FIRST_EX, Categories.LAST_EX, Judges.NUMEX, ExhibitData.TeamEx
+FROM Persons RIGHT JOIN (Judges RIGHT JOIN ((Categories RIGHT JOIN ExhibitData ON Categories.NCAT = ExhibitData.NCAT) RIGHT JOIN ExhibitJudges ON ExhibitData.EXN = ExhibitJudges.EXN) ON Judges.JUN = ExhibitJudges.JUN) ON Persons.PID = Judges.PID;
+

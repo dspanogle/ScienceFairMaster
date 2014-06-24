@@ -1,0 +1,71 @@
+Version =20
+VersionRequired =20
+Checksum =-1968089628
+Begin Form
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    TabularFamily =7
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    DatasheetFontHeight =10
+    ItemSuffix =1
+    Left =600
+    Top =330
+    Right =9585
+    Bottom =5265
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x2a528802dd27e240
+    End
+    GUID = Begin
+        0xd0fe861fb3c3d511876900a04b0988d5
+    End
+    DatasheetFontName ="Arial"
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Section
+            Height =2880
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0xd1fe861fb3c3d511876900a04b0988d5
+            End
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    Left =2100
+                    Top =660
+                    Width =3840
+                    Height =840
+                    Name ="Label0"
+                    Caption ="Do Not Delete Forms begining with the letter 'x'"
+                    GUID = Begin
+                        0xd2fe861fb3c3d511876900a04b0988d5
+                    End
+                End
+            End
+        End
+    End
+End

@@ -1,0 +1,3 @@
+SELECT Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP, [xSchools With Contacts].[Cont FName], [xSchools With Contacts].[Cont LName], [xSchools With Contacts].SCHOOL, [xSchools With Contacts].Type
+FROM Schools INNER JOIN [xSchools With Contacts] ON Schools.SCH_CODE = [xSchools With Contacts].SCH_CODE;
+

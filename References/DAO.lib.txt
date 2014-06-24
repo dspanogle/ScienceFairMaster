@@ -1,0 +1,6 @@
+Begin Reference DAO
+	FullPath: C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\dao360.dll
+	Guid: {00025E01-0000-0000-C000-000000000046}
+	Major: 5
+	Minor: 0
+End

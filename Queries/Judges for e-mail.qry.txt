@@ -1,0 +1,4 @@
+SELECT [xJudges Edit, Add, Delete QRY].SALUTATION, [xJudges Edit, Add, Delete QRY].FNAME, [xJudges Edit, Add, Delete QRY].MI, [xJudges Edit, Add, Delete QRY].LNAME, [xJudges Edit, Add, Delete QRY].ADDR1, [xJudges Edit, Add, Delete QRY].ADDR2, [xJudges Edit, Add, Delete QRY].CITY, [xJudges Edit, Add, Delete QRY].STATE, [xJudges Edit, Add, Delete QRY].ZIP, [xJudges Edit, Add, Delete QRY].EMAIL, [xJudges Edit, Add, Delete QRY].MAILPREF
+FROM [xJudges Edit, Add, Delete QRY]
+WHERE ((([xJudges Edit, Add, Delete QRY].MAILPREF)="E"));
+

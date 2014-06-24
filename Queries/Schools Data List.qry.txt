@@ -1,0 +1,4 @@
+SELECT SchoolContacts.SCH_CODE, Schools.SCHOOL, Persons.FNAME AS [Cont FName], Persons.LNAME AS [Cont LName], Persons_1.FNAME AS [Princ FName], Persons_1.LNAME AS [Princ LName]
+FROM (Persons RIGHT JOIN Teachers ON Persons.PID = Teachers.PID) RIGHT JOIN ((Schools LEFT JOIN Persons AS Persons_1 ON Schools.P_PID = Persons_1.PID) LEFT JOIN SchoolContacts ON Schools.SCH_CODE = SchoolContacts.SCH_CODE) ON Teachers.TID = SchoolContacts.TID
+ORDER BY Schools.SCHOOL;
+

@@ -1,0 +1,5 @@
+SELECT Persons.LNAME, Persons.FNAME, Persons.MI, Persons.SALUTATION, Persons.TP, Persons.ADDR1, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.LAST_CHG, Persons.COMMENTS, Persons.PID
+FROM Persons
+WHERE (((Persons.LNAME) In (SELECT [LNAME] FROM [Persons] As Tmp GROUP BY [LNAME],[FNAME] HAVING Count(*)>1  And [FNAME] = [Persons].[FNAME]) And (Persons.LNAME) Not In (SELECT [LNAME] FROM [Persons] As Tmp GROUP BY [LNAME],[FNAME],[MI] HAVING Count(*)>1  And [FNAME] = [Persons].[FNAME] And (isnull([Persons].[MI]) or [MI] = [Persons].[MI]))))
+ORDER BY Persons.LNAME, Persons.FNAME;
+

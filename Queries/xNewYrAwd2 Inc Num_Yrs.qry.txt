@@ -1,0 +1,3 @@
+UPDATE AwardMaster SET AwardMaster.Status = Null, AwardMaster.Last_YR = FairYear(), AwardMaster.Num_YR = IIf(IsNull([num_yr]),1,[Num_yr]+1), AwardMaster.Temp = [Status] & "L" & IIf(IsNull([last_yr]),"null",[Last_Yr]) & "N" & [Num_yr]
+WHERE (((AwardMaster.Status)="A"));
+

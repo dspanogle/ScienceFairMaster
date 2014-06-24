@@ -1,0 +1,3 @@
+UPDATE Chairs, Judges SET Judges.CHAIR = "C"
+WHERE (((Chairs.jun=judges.jun And chairs.status="A")=True));
+

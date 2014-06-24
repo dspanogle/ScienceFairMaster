@@ -1,0 +1,3 @@
+UPDATE Judges SET Judges.JCAT = [P_1]
+WHERE (((Judges.STATUS)="A"));
+

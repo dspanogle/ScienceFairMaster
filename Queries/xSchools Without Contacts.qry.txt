@@ -1,0 +1,4 @@
+SELECT Schools.SCHOOL, Schools.SCH_CODE, " " AS CNAME, Persons.LNAME, Persons.FNAME, Schools.PHONE
+FROM (Persons RIGHT JOIN Schools ON Persons.PID = Schools.P_PID) LEFT JOIN SchoolContacts ON Schools.SCH_CODE = SchoolContacts.SCH_CODE
+WHERE (((SchoolContacts.SCH_CODE) Is Null));
+

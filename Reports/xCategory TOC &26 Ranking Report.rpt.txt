@@ -1,0 +1,1586 @@
+Version =20
+VersionRequired =20
+Checksum =-1374509922
+Begin Report
+    LayoutForPrint = NotDefault
+    FilterOn = NotDefault
+    OrderByOn = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    TabularFamily =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10680
+    DatasheetFontHeight =10
+    ItemSuffix =100
+    Top =600
+    Right =12465
+    Bottom =8250
+    DatasheetGridlinesColor =12632256
+    OnNoData ="[Event Procedure]"
+    Filter ="[NCAT]='SCHEM'"
+    OrderBy ="[SCORE] DESC"
+    RecSrcDt = Begin
+        0xbf2aa14fefc4e340
+    End
+    GUID = Begin
+        0x3677951eef405f499eaee3f4c12a66f7
+    End
+    RecordSource ="SELECT Categories.CATNAME, ExhibitData.EXN, ExhibitData.EXHB_TITLE, ExhibitData."
+        "SCORE, ExhibitData.TO_STATE, ExhibitData.SCORE_OVERRIDE, Categories.NCAT, Catego"
+        "ries.N_TO_STATE, Categories.N_ALT, Categories.TEAM, exhscore([EXN]) AS Return, M"
+        "id([Return],8,Len([return])-8) AS ScoreStatus, ExhibitData.TOC, ExhibitData.Team"
+        "Ex, Categories.LocFinal, ExhibitData.TO_ISEF FROM Categories RIGHT JOIN ExhibitD"
+        "ata ON Categories.NCAT=ExhibitData.NCAT; "
+    Caption ="Category Exhibit Ranking"
+    OnOpen ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x6801000068010000680100004b03000000000000b8290000a401000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00ec0203df800701000100ea0a6f08640001000700fdff02000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200b000ec020000ba9173ca0000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000200000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000b0000000534d544a ,
+        0x000000001000a000470065006e00650072006900630020002f00200054006500 ,
+        0x7800740020004f006e006c0079000000496e70757442696e004f7074696f6e31 ,
+        0x00524553444c4c00556e69726573444c4c005265736f6c7574696f6e004f7074 ,
+        0x696f6e3100506170657253697a65004c4554544552004f7269656e746174696f ,
+        0x6e00504f52545241495400000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001c0030000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000046494c453a00
+    End
+    FilterOnLoad =255
+    DatasheetBackColor12 =16777215
+    DisplayOnSharePointSite =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Line
+            BorderColor =8388608
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =0
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Subform
+            OldBorderStyle =0
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            KeepTogether =2
+            ControlSource ="NCAT"
+        End
+        Begin BreakLevel
+            SortOrder = NotDefault
+            ControlSource ="SCORE"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportHeader"
+            GUID = Begin
+                0x90f42d730a127840a7fb56adb97936df
+            End
+        End
+        Begin PageHeader
+            Height =3420
+            OnFormat ="[Event Procedure]"
+            Name ="PageHeaderSection"
+            GUID = Begin
+                0x3e286bad6d41954fba40c84a78e8e3fa
+            End
+            Begin
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =2
+                    Left =60
+                    Top =60
+                    Width =10620
+                    Name ="Line24"
+                    GUID = Begin
+                        0xf535198e6eddf24ab1edddadca1fda5e
+                    End
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =10680
+                    LayoutCachedHeight =60
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =2
+                    Left =60
+                    Top =2940
+                    Width =10620
+                    Name ="Line25"
+                    GUID = Begin
+                        0xb1bc4512432ffe44b9c8e09b2b86bf64
+                    End
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =10680
+                    LayoutCachedHeight =2940
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =120
+                    Top =780
+                    Width =7500
+                    Height =360
+                    ColumnWidth =3315
+                    FontSize =14
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="CATNAME"
+                    ControlSource ="CATNAME"
+                    StatusBarText ="Category long name      1st 37 char =    Old SFCM:CATNAME for types \"B\" and \""
+                        "S\""
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x16a27b2059b42d4c86aa9214ea2b8de1
+                    End
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =7620
+                    LayoutCachedHeight =1140
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =9900
+                    Top =780
+                    Width =360
+                    FontSize =11
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="N_TO_STATE"
+                    ControlSource ="N_TO_STATE"
+                    StatusBarText ="Number Exhibits this Category to GO TO STATE Fair"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x87e2229468b59b47a570f21af078f747
+                    End
+
+                    LayoutCachedLeft =9900
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =10260
+                    LayoutCachedHeight =1020
+                    Begin
+                        Begin Label
+                            TextAlign =3
+                            Left =7800
+                            Top =780
+                            Width =1920
+                            Height =300
+                            FontSize =11
+                            Name ="N_TO_STATE_Label"
+                            Caption ="Allocated To State:"
+                            Tag ="DetachedLabel"
+                            GUID = Begin
+                                0x7df4d124bcb6b64e88ff48197b787fb0
+                            End
+                            LayoutCachedLeft =7800
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =9720
+                            LayoutCachedHeight =1080
+                        End
+                    End
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =9900
+                    Top =1020
+                    Width =360
+                    FontSize =11
+                    TabIndex =2
+                    ForeColor =8388608
+                    Name ="N_ALT"
+                    ControlSource ="N_ALT"
+                    StatusBarText ="Number of Alternates (for State Fair) for this Category"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x5b62d0c287472940b59fed39a916a157
+                    End
+
+                    LayoutCachedLeft =9900
+                    LayoutCachedTop =1020
+                    LayoutCachedWidth =10260
+                    LayoutCachedHeight =1260
+                    Begin
+                        Begin Label
+                            TextAlign =3
+                            Left =7680
+                            Top =1020
+                            Width =2055
+                            Height =300
+                            FontSize =11
+                            Name ="N_ALT_Label"
+                            Caption ="Allocated Alternates:"
+                            Tag ="DetachedLabel"
+                            GUID = Begin
+                                0x31a07b1f2ecb9d4386b5f8aa62ff92bb
+                            End
+                            LayoutCachedLeft =7680
+                            LayoutCachedTop =1020
+                            LayoutCachedWidth =9735
+                            LayoutCachedHeight =1320
+                        End
+                    End
+                End
+                Begin CheckBox
+                    Visible = NotDefault
+                    Left =120
+                    Top =1140
+                    Width =185
+                    ColumnWidth =675
+                    TabIndex =3
+                    Name ="TEAM"
+                    ControlSource ="TEAM"
+                    StatusBarText ="Team type Category                               Old SFEM:TEAM"
+                    GUID = Begin
+                        0xb8790c751cb4f943a7fdf252430b0440
+                    End
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =1140
+                    LayoutCachedWidth =305
+                    LayoutCachedHeight =1380
+                End
+                Begin Label
+                    BackStyle =1
+                    Left =60
+                    Top =180
+                    Width =4800
+                    Height =510
+                    FontSize =16
+                    FontWeight =500
+                    Name ="Label20"
+                    Caption ="Category Ranking and TOC awards"
+                    GUID = Begin
+                        0xba05d6b8b071f443966ec003919197c1
+                    End
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =4860
+                    LayoutCachedHeight =690
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =60
+                    Top =720
+                    Width =10620
+                    BorderColor =12632256
+                    Name ="Line23"
+                    GUID = Begin
+                        0xf2e15ee64779714ca9c699ad08f92be4
+                    End
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =720
+                    LayoutCachedWidth =10680
+                    LayoutCachedHeight =720
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =120
+                    Width =10680
+                    BorderColor =12632256
+                    Name ="Line27"
+                    GUID = Begin
+                        0x3d1917e74f874a45993f11a4964e777a
+                    End
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =10680
+                    LayoutCachedHeight =120
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =360
+                    Top =1140
+                    Width =2400
+                    TabIndex =4
+                    Name ="Text32"
+                    ControlSource ="=IIf([TEAM],\"Team Category\",\"\")"
+                    GUID = Begin
+                        0xdd08a4dd27e60544b5c5983fb7487064
+                    End
+
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =1140
+                    LayoutCachedWidth =2760
+                    LayoutCachedHeight =1380
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =9540
+                    Top =180
+                    Width =1020
+                    Height =300
+                    ColumnWidth =900
+                    FontSize =11
+                    TabIndex =5
+                    ForeColor =8388608
+                    Name ="NCAT"
+                    ControlSource ="NCAT"
+                    StatusBarText ="National Science Fair Category Code     Old SFCM: [DIV + SCAT]"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x3f63c3498f27da45b44aeb6edc18f483
+                    End
+
+                    LayoutCachedLeft =9540
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =10560
+                    LayoutCachedHeight =480
+                    Begin
+                        Begin Label
+                            Left =8580
+                            Top =180
+                            Width =840
+                            Height =300
+                            FontSize =11
+                            Name ="NCAT_Label"
+                            Caption ="NCAT"
+                            Tag ="DetachedLabel"
+                            GUID = Begin
+                                0x733de561eb1b144ea7a6bca6e9cd22ad
+                            End
+                            LayoutCachedLeft =8580
+                            LayoutCachedTop =180
+                            LayoutCachedWidth =9420
+                            LayoutCachedHeight =480
+                        End
+                    End
+                End
+                Begin Label
+                    Left =120
+                    Top =3000
+                    Width =3600
+                    Height =300
+                    FontSize =12
+                    Name ="EXHB_TITLE_Label"
+                    Caption ="Exhibit Title"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x9903bdb59dcf5b42baf9ab7ee38b36d7
+                    End
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =3720
+                    LayoutCachedHeight =3300
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =8340
+                    Top =3000
+                    Width =780
+                    Height =300
+                    FontSize =10
+                    Name ="SCORE_Label"
+                    Caption ="SCORE"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xa0f91c15fae93e44a0f051b892840259
+                    End
+                    LayoutCachedLeft =8340
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =9120
+                    LayoutCachedHeight =3300
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =4200
+                    Top =3000
+                    Width =540
+                    Height =300
+                    FontSize =11
+                    Name ="EXN_Label"
+                    Caption ="EXN"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x97fe759ff22cf34bb1d700cefca5bd57
+                    End
+                    LayoutCachedLeft =4200
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =4740
+                    LayoutCachedHeight =3300
+                End
+                Begin Label
+                    Left =9720
+                    Top =3000
+                    Width =660
+                    Height =300
+                    FontSize =9
+                    Name ="Label40"
+                    Caption =" Status"
+                    GUID = Begin
+                        0xa9e7f65ce05e9a46aaf6c5170c639a4f
+                    End
+                    LayoutCachedLeft =9720
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =10380
+                    LayoutCachedHeight =3300
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =6240
+                    Top =2940
+                    Width =720
+                    Height =480
+                    Name ="TO_STATE_Label"
+                    Caption =" Final ToState"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x16077fe7ffd0f142bbb2bd2d5d3c5a76
+                    End
+                    LayoutCachedLeft =6240
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =6960
+                    LayoutCachedHeight =3420
+                End
+                Begin Label
+                    Left =1980
+                    Top =1380
+                    Width =2220
+                    Height =240
+                    Name ="lbWebStatus"
+                    Caption ="Web Staus 1"
+                    GUID = Begin
+                        0xfed4d8ddf5ac1f40a7cbeb53a27ceac1
+                    End
+                    LayoutCachedLeft =1980
+                    LayoutCachedTop =1380
+                    LayoutCachedWidth =4200
+                    LayoutCachedHeight =1620
+                End
+                Begin Label
+                    Left =120
+                    Top =1380
+                    Width =1800
+                    Height =225
+                    Name ="Label44"
+                    Caption ="Status as of this Printing: "
+                    GUID = Begin
+                        0x1dac171f9a905f4180169b41a02ebfb9
+                    End
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =1380
+                    LayoutCachedWidth =1920
+                    LayoutCachedHeight =1605
+                End
+                Begin Label
+                    Left =2160
+                    Top =1680
+                    Width =6720
+                    Height =225
+                    Name ="Label46"
+                    Caption ="My signature approves the Top of Category, Scores and Ranking indicated on this "
+                        "form."
+                    GUID = Begin
+                        0xc7fb1f11043f694987c5a46b3c5d8d00
+                    End
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =8880
+                    LayoutCachedHeight =1905
+                End
+                Begin Label
+                    Left =120
+                    Top =1920
+                    Width =2040
+                    Height =300
+                    FontSize =10
+                    Name ="Label49"
+                    Caption ="Chairperson Signature:"
+                    GUID = Begin
+                        0xb26dfb4369b83042ad2c4ee78f6a3cf5
+                    End
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =2160
+                    LayoutCachedHeight =2220
+                End
+                Begin Label
+                    Left =120
+                    Top =1680
+                    Width =1980
+                    Height =300
+                    FontSize =10
+                    Name ="Label50"
+                    Caption ="Chairperson Approval"
+                    GUID = Begin
+                        0x03650c4743dbd74b8bb8a0798b13b722
+                    End
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =2100
+                    LayoutCachedHeight =1980
+                End
+                Begin Label
+                    Left =4380
+                    Top =1380
+                    Width =5880
+                    Height =240
+                    Name ="lblWebStatus2"
+                    Caption ="Web Status 2"
+                    GUID = Begin
+                        0x9dfaabc82e9f6d49b007ad7f44b0b2e6
+                    End
+                    LayoutCachedLeft =4380
+                    LayoutCachedTop =1380
+                    LayoutCachedWidth =10260
+                    LayoutCachedHeight =1620
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =4980
+                    Top =240
+                    Width =2040
+                    Height =300
+                    FontWeight =700
+                    TabIndex =6
+                    ForeColor =8388608
+                    Name ="Text56"
+                    ControlSource ="=Date() & \"  \" & Time()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x4ce15e17c9964d48a3095c068a79f536
+                    End
+
+                    LayoutCachedLeft =4980
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =7020
+                    LayoutCachedHeight =540
+                End
+                Begin Label
+                    Left =8580
+                    Top =480
+                    Width =1740
+                    Height =240
+                    Name ="Label57"
+                    Caption ="(your web user name)"
+                    GUID = Begin
+                        0x1e3ee362c21cc64dbeff974e67c2ac3b
+                    End
+                    LayoutCachedLeft =8580
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =10320
+                    LayoutCachedHeight =720
+                End
+                Begin Rectangle
+                    Left =2220
+                    Top =1920
+                    Width =8340
+                    Height =480
+                    Name ="Box58"
+                    GUID = Begin
+                        0x2bf245a0fc4a58409f3a9685c6a2f183
+                    End
+                    LayoutCachedLeft =2220
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =10560
+                    LayoutCachedHeight =2400
+                End
+                Begin Label
+                    Left =180
+                    Top =2160
+                    Width =1980
+                    Height =240
+                    Name ="Label65"
+                    Caption ="Return signed form to staff"
+                    GUID = Begin
+                        0x94b9bdbfa5e1e446ba2e32f412277ca9
+                    End
+                    LayoutCachedLeft =180
+                    LayoutCachedTop =2160
+                    LayoutCachedWidth =2160
+                    LayoutCachedHeight =2400
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =5160
+                    Top =3000
+                    Width =480
+                    Height =300
+                    FontSize =11
+                    Name ="Label68"
+                    Caption ="TOC"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xb6e34899a67af74793f41d6a24c86883
+                    End
+                    LayoutCachedLeft =5160
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =5640
+                    LayoutCachedHeight =3300
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =5640
+                    Top =2940
+                    Width =600
+                    Height =480
+                    Name ="Label70"
+                    Caption =" Rec ToState"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x5200cdf0caab2444a74ce30070552707
+                    End
+                    LayoutCachedLeft =5640
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =6240
+                    LayoutCachedHeight =3420
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =6960
+                    Top =2940
+                    Width =600
+                    Height =480
+                    Name ="Label72"
+                    Caption =" Rec ToISEF"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x7cffa4dda00f624b8cb22cbf2d637680
+                    End
+                    LayoutCachedLeft =6960
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =7560
+                    LayoutCachedHeight =3420
+                End
+                Begin Label
+                    Left =4740
+                    Top =3060
+                    Width =315
+                    Height =300
+                    Name ="Label74"
+                    Caption ="Tm"
+                    GUID = Begin
+                        0x188ac15878ad7b4586f7d28584047fbf
+                    End
+                    LayoutCachedLeft =4740
+                    LayoutCachedTop =3060
+                    LayoutCachedWidth =5055
+                    LayoutCachedHeight =3360
+                End
+                Begin Label
+                    Left =540
+                    Top =2460
+                    Width =10020
+                    Height =420
+                    ForeColor =2366701
+                    Name ="lbFinalDLStatus"
+                    Caption ="Please Note: Your Web Entries are not final and have NOT been downloaded! Sort o"
+                        "rder is  by Judges Score. \015\012SCORE is the current score from your Web entri"
+                        "es."
+                    GUID = Begin
+                        0x47cc6d20aaa81b47bee253f26cfd69b1
+                    End
+                    LayoutCachedLeft =540
+                    LayoutCachedTop =2460
+                    LayoutCachedWidth =10560
+                    LayoutCachedHeight =2880
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    IMESentenceMode =3
+                    Left =3900
+                    Top =1140
+                    Width =900
+                    Height =180
+                    TabIndex =7
+                    Name ="LocFinal"
+                    ControlSource ="LocFinal"
+                    StatusBarText ="Location of the final scores and ranking: 'W'eb, 'L'ocal, null or blank (not fin"
+                        "al no override)"
+                    GUID = Begin
+                        0xf4734f1043a63c45b49030b5a7933124
+                    End
+
+                    LayoutCachedLeft =3900
+                    LayoutCachedTop =1140
+                    LayoutCachedWidth =4800
+                    LayoutCachedHeight =1320
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =7560
+                    Top =2940
+                    Width =720
+                    Height =480
+                    Name ="Label94"
+                    Caption =" Final ToISEF"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xfef704fa9d5dcd4abf5e62b88184a083
+                    End
+                    LayoutCachedLeft =7560
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =8280
+                    LayoutCachedHeight =3420
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            ForceNewPage =1
+            Height =0
+            Name ="GroupHeader0"
+            GUID = Begin
+                0xfe3756ea93f9f94b881f5d0abd028f6d
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =420
+            OnFormat ="[Event Procedure]"
+            Name ="Detail"
+            GUID = Begin
+                0x651d13d4c2395a459f5054a5dda72e23
+            End
+            Begin
+                Begin TextBox
+                    DecimalPlaces =0
+                    IMESentenceMode =3
+                    Left =4200
+                    Width =600
+                    Height =300
+                    ColumnWidth =630
+                    FontSize =10
+                    Name ="EXN"
+                    ControlSource ="EXN"
+                    StatusBarText ="The Exhibit Number"
+                    GUID = Begin
+                        0x530eae693fbce14baec03e451161b82a
+                    End
+
+                    LayoutCachedLeft =4200
+                    LayoutCachedWidth =4800
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    TextFontCharSet =178
+                    IMESentenceMode =3
+                    Left =120
+                    Width =4020
+                    Height =420
+                    ColumnWidth =1245
+                    FontSize =9
+                    TabIndex =1
+                    Name ="EXHB_TITLE"
+                    ControlSource ="EXHB_TITLE"
+                    StatusBarText ="The title of the Exhibit"
+                    GUID = Begin
+                        0x40ddfecc14785141bf05eade2f88868f
+                    End
+
+                    LayoutCachedLeft =120
+                    LayoutCachedWidth =4140
+                    LayoutCachedHeight =420
+                End
+                Begin TextBox
+                    TextFontCharSet =178
+                    IMESentenceMode =3
+                    Left =6540
+                    Width =360
+                    Height =300
+                    ColumnWidth =750
+                    FontSize =9
+                    TabIndex =2
+                    Name ="TO_STATE"
+                    ControlSource ="TO_STATE"
+                    StatusBarText ="Exhibit qualified to go to next level? Y=Yes A= Alternate  I.E. To the State Sci"
+                        "ence Fair"
+                    GUID = Begin
+                        0x1c787c9d58f36c4f9f2b5d44549183dd
+                    End
+
+                    LayoutCachedLeft =6540
+                    LayoutCachedWidth =6900
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =9120
+                    Width =240
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="Text34"
+                    ControlSource ="=IIf([SCORE_OVERRIDE],\"**\",\"\")"
+                    GUID = Begin
+                        0x2b86a039b4ec3f418f3d8f766e45306a
+                    End
+
+                    LayoutCachedLeft =9120
+                    LayoutCachedWidth =9360
+                    LayoutCachedHeight =240
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    IMESentenceMode =3
+                    Left =9360
+                    Width =1260
+                    Height =360
+                    FontSize =7
+                    TabIndex =4
+                    Name ="lbScoreStatus"
+                    ControlSource ="=IIf([TO_STATE]=\"N\",\"No Show\",[ScoreStatus])"
+                    GUID = Begin
+                        0xb89dbae36515e6429739237fd7faa0d0
+                    End
+
+                    LayoutCachedLeft =9360
+                    LayoutCachedWidth =10620
+                    LayoutCachedHeight =360
+                End
+                Begin TextBox
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =4800
+                    Top =60
+                    Width =240
+                    Height =225
+                    TabIndex =5
+                    Name ="TeamT"
+                    ControlSource ="=IIf([TeamEx]=True,\"T\",\"\")"
+                    GUID = Begin
+                        0x212a1f514c9669489a19fbc76baeb69a
+                    End
+
+                    LayoutCachedLeft =4800
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =5040
+                    LayoutCachedHeight =285
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =5220
+                    Width =360
+                    Height =300
+                    TabIndex =6
+                    Name ="tbWebTOC"
+                    GUID = Begin
+                        0xf47797a7fd6a1341a96b2e63f024e458
+                    End
+
+                    LayoutCachedLeft =5220
+                    LayoutCachedWidth =5580
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =5820
+                    Width =360
+                    Height =300
+                    TabIndex =7
+                    Name ="tbRecToState"
+                    GUID = Begin
+                        0xd7fd7707dfa2684fa07c633234060056
+                    End
+
+                    LayoutCachedLeft =5820
+                    LayoutCachedWidth =6180
+                    LayoutCachedHeight =300
+                End
+                Begin CheckBox
+                    Left =7200
+                    Top =60
+                    Width =240
+                    Height =180
+                    TabIndex =8
+                    Name ="cbRecISEF"
+                    GUID = Begin
+                        0x479c266c025e834398ae9d515565fb34
+                    End
+
+                    LayoutCachedLeft =7200
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =7440
+                    LayoutCachedHeight =240
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =8340
+                    Width =720
+                    Height =300
+                    TabIndex =9
+                    Name ="tbScore"
+                    GUID = Begin
+                        0xd33613bd9702a34c84bfd92679d6ef12
+                    End
+
+                    LayoutCachedLeft =8340
+                    LayoutCachedWidth =9060
+                    LayoutCachedHeight =300
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =2
+                    IMESentenceMode =3
+                    Left =8760
+                    Top =180
+                    Width =600
+                    Height =225
+                    ColumnWidth =1305
+                    TabIndex =10
+                    Name ="SCORE"
+                    ControlSource ="SCORE"
+                    StatusBarText ="The final score"
+                    GUID = Begin
+                        0xc844e56cf93dfb4490e63730ed65196d
+                    End
+
+                    LayoutCachedLeft =8760
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =9360
+                    LayoutCachedHeight =405
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =7680
+                    Width =480
+                    Height =285
+                    TabIndex =11
+                    Name ="tbFinalISEF"
+                    GUID = Begin
+                        0x07d40b489020b04581c5a7cfae40493c
+                    End
+
+                    LayoutCachedLeft =7680
+                    LayoutCachedWidth =8160
+                    LayoutCachedHeight =285
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    IMESentenceMode =3
+                    Left =5520
+                    Top =180
+                    Width =420
+                    Height =180
+                    TabIndex =12
+                    Name ="TOC"
+                    ControlSource ="TOC"
+                    StatusBarText ="Top of Category = 1st, 2nd,3rd, H (Honorable mention)"
+                    GUID = Begin
+                        0xfa62622ecfb5664dbc9bc3fb13b1b848
+                    End
+
+                    LayoutCachedLeft =5520
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =360
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    IMESentenceMode =3
+                    Left =7440
+                    Top =180
+                    Width =480
+                    Height =180
+                    ColumnWidth =1290
+                    TabIndex =13
+                    Name ="TO_ISEF"
+                    ControlSource ="TO_ISEF"
+                    StatusBarText ="Rank order of exhibits selected for ISEF (Blank = not selected)"
+                    GUID = Begin
+                        0xc8f00d65a2593544be2423aa832d6966
+                    End
+
+                    LayoutCachedLeft =7440
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =360
+                End
+            End
+        End
+        Begin PageFooter
+            Height =480
+            Name ="PageFooterSection"
+            GUID = Begin
+                0xcf1e1d1b6e94b341bbf639c7b56acab8
+            End
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =180
+                    Top =120
+                    Width =3300
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text21"
+                    ControlSource ="=Date() & \"  \" & Time()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0xec49776f45012e49ae550bbe3cadc532
+                    End
+
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =4500
+                    Top =120
+                    Width =4200
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text22"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0xa456aed073edb54fb3a487810e52c854
+                    End
+
+                    LayoutCachedLeft =4500
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =8700
+                    LayoutCachedHeight =420
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter"
+            GUID = Begin
+                0x33834594c21caf48ada38a4b6b45adc4
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+' REV 540
+Option Explicit
+Private webdb As Database
+Private LocFinalSet As Boolean
+
+
+
+
+Private Sub Detail_Format(Cancel As Integer, FormatCount As Integer)
+    
+    'Rev 540  Added all this.  On design change after 2010 fair to add TOC I had the
+    ' local WebToState and WebtoISE in the report. They were removed from local so get from website
+    ' Also, local TOC is not filled in until I do the Final download so use web unless final download done
+    '      (Web marked Final, Final download - that locks the website and adds a W in categories LocFinal)
+    ' IF I Have not done the final download, I need to use the website TOC else use local
+    
+    '  What about the score.  If I Have not done the final download then local score is not final
+    '    Report is sorted by local score ... That is OK   this report mostly used after final download
+    '    But these mods will allow us to see things prior to final download - just not sorted by final scores
+    ' I need to use webscore if LocFinal is null.  use Local score if LocFinal = L or W
+    
+    Dim WebTOC As String
+    Dim WebState As String
+    Dim WebScore As String
+    Dim rsWebexh As Recordset
+    On Error GoTo SubError
+    
+    WebTOC = ""
+    WebState = ""
+    WebScore = ""
+   
+    Set rsWebexh = webdb.OpenRecordset("Select * from ExhibitScores Where NCAT = '" & NCAT & "'")
+
+    rsWebexh.FindFirst ("[ExNo] = " & EXN)
+    If Not rsWebexh.NoMatch Then
+        WebTOC = IIf(IsNull(rsWebexh!TOC), "", rsWebexh!TOC)
+        WebState = IIf(IsNull(rsWebexh!TO_STATE), "", rsWebexh!TO_STATE)
+        WebScore = IIf(IsNull(rsWebexh!Override), "", Format(rsWebexh!Override, "00.00"))
+     End If
+      tbRecToState = WebState
+      cbRecISEF = rsWebexh!TO_ISEF
+      tbWebTOC = IIf(LocFinalSet, Me!TOC, WebTOC)
+      tbScore = IIf(LocFinalSet, Format([SCORE], "00.00"), IIf(WebScore = "", Format([SCORE], "00.00"), WebScore & "*"))
+      tbFinalISEF = IIf(IsNull([TO_ISEF]), "", [TO_ISEF])
+      rsWebexh.Close
+      Exit Sub
+SubError:
+      Dim erst As String
+      rsWebexh.Close
+      MsgBox "err in detail " & Err.Description
+      erst = Err.Description  ' set report items = the default blanks.
+End Sub
+
+
+Private Sub PageHeaderSection_Format(Cancel As Integer, FormatCount As Integer)
+   ' Get Web site status
+    ' rev 5.3.1  Add status of web site final etc for each category
+  'Dim RSTFairInfo As Recordset 'rev 540 moved to report open
+  'Dim MyWebdbPath As String  ' REV 540 PUT IN REPORT open
+  'Dim dbweb As DAO.Database 'REV 540 MADE GLOBAL
+  Dim rsWebCat As Recordset
+  Dim amat As Integer
+  On Error GoTo SubError
+  amat = 0
+ ' Set RSTFairInfo = CurrentDb.OpenRecordset("SELECT * FROM FairInfo WHERE Fair_Year = " & FairYear())
+  amat = 1
+ ' MyWebdbPath = RSTFairInfo!webdbpath
+ ' RSTFairInfo.Close
+ '  open remote table
+ ' Set dbweb = DBEngine.OpenDatabase(MyWebdbPath)
+  amat = 2
+  Set rsWebCat = webdb.OpenRecordset("Select * from NatCategories WHERE NCAT = '" & NCAT & "'")
+  ' LastAcc date last touched by a chairperson
+  ' LastUpd date  last upload of exhibit scores to website
+  ' LastDld  date last time overrides were downloaded from the website.
+  ' FinalUpld boolean staff did final upload to website
+  ' RecToState = Chair's recommended number to attend state
+  ' ToState = staff rec to state same as in Categories?
+  ' Alternate = staff rec alternates same as in Categories?
+  amat = 3
+  Dim l_LocFinal As String
+  LocFinalSet = False
+  If (IsNull(LocFinal)) Then
+    l_LocFinal = ""
+  Else
+    l_LocFinal = LocFinal
+    If l_LocFinal = "W" Or l_LocFinal = "L" Then LocFinalSet = True
+  End If
+  lblWebStatus2.ForeColor = vbBlack  ' assume normal
+  lbFinalDLStatus.ForeColor = vbBlack
+  
+  If rsWebCat!InputFinal = True Then
+   ' ChairWebFinal = "    **** Chair Web Rank Final ****"
+       lbWebStatus.Caption = "Web Status: Final"
+       If IsNull(rsWebCat!LastDld) Then
+         lblWebStatus2.Caption = "Last change: " & Format(rsWebCat!LastAcc, "M/D h:mm a/p") & " (Not Downloaded)"
+       Else  ' date indicates download  so locfinal should be W  (or L)
+         ' rev 540 added check of LocFinal
+         If rsWebCat!LastDld > rsWebCat!LastAcc And l_LocFinal = "W" Then  '  Final download since last web change
+           ' This is the NORMAL expected result for a final that has been downloaded
+           lblWebStatus2.Caption = "Last change: " & Format(rsWebCat!LastAcc, "M/D h:mm a/p") & _
+           " Downloaded: " & Format(rsWebCat!LastDld, "M/D h:mm a/p")
+         Else  ' web access date > lastdownload   or   LocFinal = "" or locfinal = "L"
+            If l_LocFinal = "L" Then  ''  override locally
+              lblWebStatus2.Caption = "Final Results were Entered/Altered Manually at Local level!"
+              lblWebStatus2.ForeColor = vbRed
+            Else     '  Locfinal = null or blank
+              lblWebStatus2.Caption = "NEEDS Download! Lst Chg: " & Format(rsWebCat!LastAcc, "M/D h:mm a/p") & _
+                                   " DwnLd: " & Format(rsWebCat!LastDld, "M/D h:mm a/p")
+            End If
+         End If
+       End If
+  Else  ' Web ranking is not final
+        lbWebStatus.Caption = "Web Status: NOT Final"
+        If IsNull(rsWebCat!LastAcc) Then  ' website not changed ever
+          lblWebStatus2.Caption = "Web Not Accessed "
+          If l_LocFinal = "L" Then
+             lblWebStatus2.Caption = "Final Results have been entered Locally!"
+          End If
+        Else  ' web has been accessed
+          lblWebStatus2.Caption = "Last change: " & Format(rsWebCat!LastAcc, "M/D h:mm a/p") & " "
+          If IsNull(rsWebCat!LastDld) Then
+            If l_LocFinal = "" Then
+               lblWebStatus2.Caption = lblWebStatus2.Caption & "Waiting Final"
+            Else  ' not final but locfinal = 'L' or 'W'   well probably 'L'
+              If l_LocFinal = "L" Then
+                lblWebStatus2.Caption = "Final Results have been entered Locally!"
+              Else  ' something is wrong
+                 lblWebStatus2.Caption = "???  Web not Final, Web NOT downloaded, LocFinal = W"
+                 lblWebStatus2.ForeColor = vbRed
+              End If
+            End If
+          Else  'Not Final,  Downloaddate set, means in some type recovery
+             If l_LocFinal = "" Then '   probably reset and waiting for final and new download
+                If rsWebCat!LastDld < rsWebCat!LastAcc Then  ' updates after last download
+                  lblWebStatus2.Caption = lblWebStatus2.Caption & "Needs Update! Last Download: " & Format(rsWebCat!LastDld, "M/D h:mm a/p")
+                Else
+                  lblWebStatus2.Caption = lblWebStatus2.Caption & "Waiting Final "
+                End If
+              Else
+                If l_LocFinal = "L" Then
+                  lblWebStatus2.Caption = "Final Results have been entered Locally!"
+                Else
+                  lblWebStatus2.Caption = "??? Web NOT final, Previous download, LocFinal = 'W'"
+                  lblWebStatus2.ForeColor = vbRed
+                End If
+              End If
+          End If
+        End If
+  End If
+  'rev 540
+  If l_LocFinal = "" Then  'not downloaded'
+    lbFinalDLStatus.ForeColor = vbRed
+    lbFinalDLStatus.Caption = "Note: Your changes (if any) have NOT been downloaded from the Web-site!" & _
+    " Sort order is by Judges Score (not your results). " & vbCrLf & _
+    " An '*' after score represents Web-site final score entries as of this report."
+  Else  ' is 'L' or 'W' or something else not blank
+    ' check if is not final and downloaded - if not then problem
+    If l_LocFinal = "W" And rsWebCat!InputFinal = False Then
+      ' this should never happen if the process has been followed.  It could happen if web or local data has
+      '   been changed for testing
+      lbFinalDLStatus.ForeColor = vbRed
+      lbFinalDLStatus.Caption = "??? Web data 'NOT FINAL', LocFinal = 'W', Verify process!" & vbCrLf & _
+               " Sort order and scores may not be in sync!"
+    Else  '  InputFinal = true and 'W' or 'L'
+      If l_LocFinal = "W" Then
+        lbFinalDLStatus.Caption = "Web-Site Final Results HAVE been downloaded! Sort order and scores are Final Results!"
+      Else  ' = 'L' or something else not blank
+        If l_LocFinal = "L" Then
+           lbFinalDLStatus.Caption = "Final Results HAVE BEEN SET LOCALLY!  Sort order and scores are Final Results!"
+        Else   ' locfinal is not blank, L or W
+           lbFinalDLStatus.Caption = "ERROR:  LocFinal set incorrectly = " & l_LocFinal
+           lbFinalDLStatus.ForeColor = vbRed
+        End If
+      End If
+    End If
+  End If
+  rsWebCat.Close
+ ' dbweb.Close
+  Exit Sub
+SubError:
+  MsgBox "PageHeader Section: " & Err.Description   ' remove this after debug??
+  lbWebStatus.Caption = "Website Access Error"
+  ' if amat = 0 then no closes requiried
+  If amat = 1 Then
+     'RSTFairInfo.Close
+  Else
+    If amat = 2 Then
+       'dbweb.Close
+    Else
+       If amat = 3 Then
+         rsWebCat.Close
+        'dbweb.Close
+       End If
+    End If
+  End If
+End Sub
+
+Private Sub Report_NoData(Cancel As Integer)
+   'DoCmd.CancelEvent
+   MsgBox "There are no records to include in report "    '"" & _
+       ' strCaption & """.", vbInformation, "No Data..."
+    Cancel = True
+End Sub
+
+Private Sub Report_Open(Cancel As Integer)
+  On Error GoTo SubError
+  Dim promptmsg As String
+  Dim Instrg As String
+  Dim hadError As String
+  Dim rsWebCat As Recordset   'rev 5.5.7
+  '' ----------------- new rev 5.2.4
+  Instrg = ""
+  On Error Resume Next 'GoTo GetCatHere   ' if Judge scores Entry NOT open get error so get cat here
+  'MsgBox "pre tag"
+  Instrg = Forms("xJudge Scores Entry").Tag  'If judge Scores Entry open assume get cat from tag
+  'MsgBox "Post Tag"
+  hadError = Err.Number
+  If hadError = 0 Then
+     ' Got a tag from Judge Scores entry form will always contain a NCAT never ""
+     If Instrg = "" Then  ' Judge score entry is open  but did not request Tag = ""
+       ' Do nothing contine
+     Else
+       GoTo HaveTag  'rev 5.3.1  Got ncat from Judge Scores Entry form
+     End If
+  End If
+  ' Open a form as a dialog box. on exit from the form it just Hides It's self, then
+  ' this code closes the form.  (Trick that works in Access 2003)
+   'MsgBox "pre open"
+   DoCmd.OpenForm "xCategory Exhibit Ranking Selector", , , , , acDialog, ""   'tempStr
+   Instrg = Forms("xCategory Exhibit Ranking Selector").Form.Tag
+   DoCmd.Close acForm, "xCategory Exhibit Ranking Selector"
+  On Error GoTo SubError
+HaveTag:
+'  promptmsg = "Click [OK] for ALL NCAT Categories" & vbCrLf & _
+'     "OR Enter NCAT for a Single Category" & vbCrLf & _
+'     "OR  Enter a filter string for NCAT: Example: " & vbCrLf & _
+'     "[NCAT] = 'JBEH' OR [NCAT] = 'STEAM'" & vbCrLf & _
+'     " " & vbCrLf & _
+'     " "
+'  InStrg = InputBox(promptmsg, "Category Exhibit Ranking Report", "ALL")
+'  If Len(InStrg) = 0 Then InStrg = "ALL"
+  If Instrg = "" Then
+    MsgBox "You Did Not Select a category"
+    Cancel = True
+    Exit Sub
+  End If
+  ' rev 540 moved this from pageheader_Format
+  Dim RSTFairInfo As Recordset 'rev 540 moved to report open
+  Dim MyWebdbPath As String  ' REV 540 PUT IN REPORT open
+  Set RSTFairInfo = CurrentDb.OpenRecordset("SELECT * FROM FairInfo WHERE Fair_Year = " & FairYear())
+  MyWebdbPath = RSTFairInfo!WebdbPath
+  RSTFairInfo.Close
+     '  open remote database
+  Set webdb = DBEngine.OpenDatabase(MyWebdbPath)
+    ' rev 5.5.7   check that the single or all of the categories are final
+  Dim FoundOne As Boolean
+  FoundOne = False
+  If Instrg = "ALL" Then
+     Set rsWebCat = webdb.OpenRecordset("Select * from NatCategories ")
+    With rsWebCat
+     If .EOF Then
+      MsgBox "SciFairWebData NatCategories table is empty"
+      Cancel = True
+      Exit Sub
+     End If
+     .MoveFirst
+     Do While Not .EOF
+        If IsNull(!LocFinal) Or !LocFinal = "" Then   ' should be 'L' or 'W'
+          FoundOne = True
+        Else  '  !LocFinal is W or L
+          If !InputFinal = False And !LocFinal <> "L" Then  ' OK if LocFinal is L
+             FoundOne = True
+          End If
+        End If
+       .MoveNext
+     Loop
+    .Close
+    If FoundOne = True Then
+      MsgBox "Warning: At least one Category FINAL Scores have NOT BEEN DOWNLOADED" & vbCrLf & _
+             "         Or Have NOT been set Final Locally "
+    End If
+    
+    End With
+  Else
+    Set rsWebCat = webdb.OpenRecordset("Select * from NatCategories WHERE NCAT = '" & Instrg & "'")
+    With rsWebCat
+     If .EOF Then
+      MsgBox "NCAT " & Instrg & " not in SciFairWebData NatCategories table"
+      Cancel = True
+      Exit Sub
+     End If
+     If IsNull(!LocFinal) Or !LocFinal = "" Then   ' should be 'L' or 'W'
+        FoundOne = True
+     Else
+       If !InputFinal = False And !LocFinal <> "L" Then
+        FoundOne = True
+       End If
+     End If
+     .Close
+    If FoundOne = True Then
+      MsgBox "Warning: " & Instrg & " FINAL Scores have NOT BEEN DOWNLOADED" & vbCrLf & _
+             "         Or Have NOT been set Final Locally "
+    End If
+    End With
+   End If
+  ' end of rev 5.5.7 changes
+
+  
+  Me.OrderBy = "[SCORE] DESC"
+  If Instrg = "ALL" Then Me.Filter = "": Exit Sub
+  Me.FilterOn = True
+  Me.Filter = "[NCAT] = '" & UCase(Instrg) & "'"
+  
+  Exit Sub
+SubError:
+  DoCmd.Close acForm, "xCategory Exhibit Ranking Selector" 'rev 5.2.4
+  MsgBox "Form Open Code Error: " & Err.Description
+
+End Sub

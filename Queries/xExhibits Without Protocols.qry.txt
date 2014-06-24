@@ -1,0 +1,4 @@
+SELECT ExhibitStudents.EXN, Schools.SCHOOL AS Ex_Sch, Persons.LNAME AS SLN, Persons.FNAME AS SFN, Students.GRADE, Teachers.SCH_CODE AS T_SC, Schools_1.SCHOOL AS T_Sch, Persons_1.LNAME AS TLN, Persons_1.FNAME AS TFN, ExhibitData.NCAT, ExhibitData.JCAT, ExhibitData.EXHB_TITLE, ExhibitData.PROTOID
+FROM ((Teachers LEFT JOIN Persons AS Persons_1 ON Teachers.PID = Persons_1.PID) LEFT JOIN Schools AS Schools_1 ON Teachers.SCH_CODE = Schools_1.SCH_CODE) RIGHT JOIN ((Persons RIGHT JOIN Students ON (Persons.PID = Students.PID) AND (Persons.PID = Students.PID) AND (Persons.PID = Students.PID)) RIGHT JOIN ((Schools RIGHT JOIN ExhibitData ON Schools.SCH_CODE = ExhibitData.SCH_CODE) RIGHT JOIN ExhibitStudents ON ExhibitData.EXN = ExhibitStudents.EXN) ON Students.STID = ExhibitStudents.STID) ON Teachers.TID = ExhibitData.TID
+WHERE (((ExhibitStudents.EXN)>100) AND ((ExhibitData.PROTOID) Is Null));
+

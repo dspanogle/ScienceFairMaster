@@ -1,0 +1,5 @@
+SELECT ExhibitData.NCAT, Count(ExhibitData.EXN) AS CountOfEXN
+FROM ExhibitData
+WHERE (((ExhibitData.EXN)>100))
+GROUP BY ExhibitData.NCAT;
+

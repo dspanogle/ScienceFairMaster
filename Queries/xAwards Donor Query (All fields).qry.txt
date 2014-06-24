@@ -1,0 +1,4 @@
+SELECT AwardMaster.*, AwardDonors.*, Persons.*, Persons.SALUTATION, AwardMaster.Alpha_Sort
+FROM Persons INNER JOIN (AwardMaster RIGHT JOIN AwardDonors ON AwardMaster.AN=AwardDonors.AN) ON Persons.PID=AwardDonors.PID
+ORDER BY AwardMaster.Alpha_Sort;
+

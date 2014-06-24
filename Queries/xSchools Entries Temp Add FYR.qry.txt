@@ -1,0 +1,5 @@
+INSERT INTO SchoolEntriesTemp ( SCH_CODE, FYR, Total_Exhibits, To_State, Alternates, To_ISEF, No_Shows )
+SELECT SchoolEntries.SCH_CODE, SchoolEntries.FYR, SchoolEntries.Total_Exhibits, SchoolEntries.To_State, SchoolEntries.Alternates, SchoolEntries.To_ISEF, SchoolEntries.No_Shows
+FROM SchoolEntries
+WHERE (((SchoolEntries.FYR)=[Fair Year]));
+

@@ -1,0 +1,5 @@
+INSERT INTO SchoolEntriesTemp ( SCH_CODE, FYR )
+SELECT Schools.SCH_CODE, [Fair Year] AS FairYr
+FROM Schools LEFT JOIN SchoolEntriesTemp ON Schools.SCH_CODE = SchoolEntriesTemp.SCH_CODE
+WHERE (((SchoolEntriesTemp.SCH_CODE) Is Null));
+

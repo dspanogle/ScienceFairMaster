@@ -1,0 +1,6 @@
+SELECT Categories.CATNAME, ExhibitData.EXN, ExhibitData.EXHB_TITLE
+FROM Categories RIGHT JOIN ExhibitData ON Categories.NCAT=ExhibitData.NCAT
+WHERE (((ExhibitData.EXN)>100))
+GROUP BY Categories.CATNAME, ExhibitData.EXN, ExhibitData.EXHB_TITLE
+ORDER BY Categories.CATNAME, ExhibitData.EXN;
+

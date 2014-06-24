@@ -1,0 +1,3 @@
+SELECT Schools.SCH_CODE, Schools.SCHOOL
+FROM Schools;
+

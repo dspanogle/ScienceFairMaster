@@ -1,0 +1,3 @@
+SELECT Persons.SALUTATION, Persons.FNAME, Persons.MI, Persons.LNAME, Schools.SCHOOL, Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP
+FROM Schools RIGHT JOIN (Persons RIGHT JOIN Teachers ON Persons.PID = Teachers.PID) ON Schools.SCH_CODE = Teachers.SCH_CODE;
+

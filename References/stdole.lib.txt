@@ -1,0 +1,6 @@
+Begin Reference stdole
+	FullPath: C:\Windows\SysWOW64\stdole2.tlb
+	Guid: {00020430-0000-0000-C000-000000000046}
+	Major: 2
+	Minor: 0
+End

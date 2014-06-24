@@ -1,0 +1,3 @@
+SELECT [xTeachers Edit, Add, Delete QRY].Type, [xTeachers Edit, Add, Delete QRY].SALUTATION, [xTeachers Edit, Add, Delete QRY].FNAME, [xTeachers Edit, Add, Delete QRY].LNAME, Schools.ADDR, Schools.CITY, Schools.STATE, Schools.ZIP, Schools.PHONE
+FROM Schools INNER JOIN [xTeachers Edit, Add, Delete QRY] ON Schools.SCH_CODE = [xTeachers Edit, Add, Delete QRY].SCH_CODE;
+

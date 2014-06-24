@@ -1,0 +1,81 @@
+Version =196611
+ColumnsShown =0
+Begin
+    Action ="MsgBox"
+    Comment ="Udates Awards NUM_YEARS, clears status"
+    Argument ="Up Date Awards NUM_YRS!@Runs 2 Queries!@Abort: Press[Ctrl] + [Break], then selec"
+        "t [Halt]\015\012Continue: Press [OK]"
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="For All where FIRST_YR = FairYear(), Set NUM_YR = 0 (get ready to increment late"
+        "r)"
+    Argument ="For All where FIRST_YR = FairYear\015\012Set NUM_YEAR = 0\015\012It will be incr"
+        "emented after the next step\015\012  If Status = 'A'!"
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYrAwd1 Set NUM_YR 0"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYrAwd1 Set NUM_YR 0"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="For all where STATUS = 'A'  set LAST_YR = FairYear()"
+    Argument ="For Active Awards:\015\012Set LAST_YEAR = FairYear\015\012Increment Num_Years\015"
+        "\012Save old values in [Temp]\015\012Clear Status."
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Comment =" Increment NUM_YR & Clear Status and save changes in Temp?"
+    Argument ="xNewYrAwd2 Inc Num_Yrs"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Comment ="clear status"
+    Argument ="1"
+    Argument ="xNewYrAwd2 Inc Num_Yrs"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Comment ="Clear EXN and Stud_Num in AwardPrize table"
+    Argument ="Clear EXN and Stud_Num in AwardPrize Table\015\012(If AwardPrize.Type = 'S' it d"
+        "oes not change EXN or Stud_Num)"
+    Argument ="-1"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="xNewYrAwd3 SetEXN,Stud_Num=0"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Close"
+    Argument ="1"
+    Argument ="xNewYrAwd3 SetEXN,Stud_Num=0"
+    Argument ="0"
+End
+Begin
+    Action ="MsgBox"
+    Argument ="DONE! @AwardMaster.Temp contains the previous Status, LAST_YR, NUM_YRS (sLyyyyNn"
+        "n).\015\012IF ERRORS, You could build a query to replace the old values.@If ALL "
+        "OK, clear all AwardMaster.Temp field entries."
+    Argument ="-1"
+    Argument ="0"
+End

@@ -1,0 +1,3 @@
+UPDATE AwardPrize SET AwardPrize.EXN = 0, AwardPrize.Stud_Num = 0
+WHERE (((IIf(IsNull([Type])," ",[Type]))<>"S"));
+

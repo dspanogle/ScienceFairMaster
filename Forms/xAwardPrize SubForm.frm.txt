@@ -1,0 +1,919 @@
+Version =20
+VersionRequired =20
+Checksum =337612609
+Begin Form
+    OrderByOn = NotDefault
+    DefaultView =0
+    TabularFamily =8
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    Cycle =1
+    GridX =24
+    GridY =24
+    Width =11220
+    DatasheetFontHeight =10
+    ItemSuffix =25
+    Left =1095
+    Top =7980
+    Right =12450
+    Bottom =9555
+    DatasheetGridlinesColor =12632256
+    OrderBy ="[AwardPrize].[PN] DESC"
+    RecSrcDt = Begin
+        0xc5a8e1aff19ae340
+    End
+    GUID = Begin
+        0xba111e19f73cf84284f2b3debadbfeee
+    End
+    RecordSource ="SELECT AwardPrize.*, Int([GID]/100) AS AN, [GID]-100*Int([gid]/100) AS GN, Exhib"
+        "itData.EXHB_TITLE, AwardPrize.[PN] AS Pnsrt FROM ExhibitData RIGHT JOIN AwardPri"
+        "ze ON ExhibitData.EXN=AwardPrize.EXN ORDER BY AwardPrize.[PN]; "
+    OnCurrent ="[Event Procedure]"
+    OnOpen ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    AllowLayoutView =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Section
+            Height =1320
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x099b8c7281ffd246bce35f3d91e3e747
+            End
+            Begin
+                Begin TextBox
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    Left =8040
+                    Top =420
+                    Width =720
+                    TabIndex =5
+                    Name ="EXN"
+                    ControlSource ="EXN"
+                    StatusBarText ="S-Winning Exhibit (EXN) or Special Winner Number (RXN)  [SFAPM.EXN]"
+                    GUID = Begin
+                        0xeed904ea85a1404dbd73d95ee96f619c
+                    End
+
+                    LayoutCachedLeft =8040
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =8760
+                    LayoutCachedHeight =660
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =7500
+                            Top =420
+                            Width =420
+                            Height =240
+                            Name ="Label0"
+                            Caption ="EXN:"
+                            GUID = Begin
+                                0x14ccd1f86e3ec6499094a9bd63b1a64c
+                            End
+                            LayoutCachedLeft =7500
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =7920
+                            LayoutCachedHeight =660
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    Left =9420
+                    Top =420
+                    Width =300
+                    TabIndex =6
+                    Name ="Stud_Num"
+                    ControlSource ="Stud_Num"
+                    StatusBarText ="S-For Team only: Blank=All Team Students get prize. 1,2,3 = One Student gets pri"
+                        "ze (using F_ORD from  ExhibitStudents table)  [SFAPM.STUD_NUM]"
+                    GUID = Begin
+                        0x5714b6532af0c948b6222177b669de3f
+                    End
+
+                    LayoutCachedLeft =9420
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =9720
+                    LayoutCachedHeight =660
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =8880
+                            Top =420
+                            Width =510
+                            Height =240
+                            Name ="Label1"
+                            Caption ="Stud#"
+                            GUID = Begin
+                                0x21efef907b969b408a9cee62dd4d2fbd
+                            End
+                            LayoutCachedLeft =8880
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =9390
+                            LayoutCachedHeight =660
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    Left =660
+                    Top =420
+                    Width =6720
+                    Height =423
+                    TabIndex =3
+                    ForeColor =16711680
+                    Name ="Prize"
+                    ControlSource ="Prize"
+                    StatusBarText ="P-Prize description for Script, News, Booklets. 3rd News Sort (after sort based "
+                        "on Type). [SFAPM.P1 + P2]"
+                    GUID = Begin
+                        0x00fea07719b7814989e48be58f1c2f79
+                    End
+
+                    LayoutCachedLeft =660
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =7380
+                    LayoutCachedHeight =843
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =420
+                            Width =480
+                            Height =240
+                            ForeColor =255
+                            Name ="Label3"
+                            Caption ="Prize"
+                            GUID = Begin
+                                0x68f1c7c49d7c33459330edbb9deb7755
+                            End
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =540
+                            LayoutCachedHeight =660
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    Left =1080
+                    Top =960
+                    Width =8040
+                    Height =243
+                    TabIndex =4
+                    Name ="Details"
+                    ControlSource ="Details"
+                    StatusBarText ="S-Staff Details about prize.  Not printed on Script or for news. [New]"
+                    GUID = Begin
+                        0x7c73082e41f2f1478b68d0ea1e0dc8e9
+                    End
+
+                    LayoutCachedLeft =1080
+                    LayoutCachedTop =960
+                    LayoutCachedWidth =9120
+                    LayoutCachedHeight =1203
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =960
+                            Width =960
+                            Height =240
+                            Name ="Label5"
+                            Caption ="Staff Notes:"
+                            GUID = Begin
+                                0x370813c54ef4774393d18fe76b48708f
+                            End
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =960
+                            LayoutCachedWidth =1020
+                            LayoutCachedHeight =1200
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    Left =9300
+                    Top =780
+                    Width =480
+                    TabIndex =7
+                    Name ="AN"
+                    ControlSource ="AN"
+                    StatusBarText ="S-Award Number (linked to AwardMaster) [SFAPM.AN]"
+                    GUID = Begin
+                        0x45470bd6f894484b811486240c440019
+                    End
+
+                    LayoutCachedLeft =9300
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =9780
+                    LayoutCachedHeight =1020
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =420
+                    Top =60
+                    Width =300
+                    BackColor =65408
+                    Name ="PN"
+                    ControlSource ="AwardPrize.PN"
+                    StatusBarText ="S-Prize Number - 5th Script Sort (After Sort based on Type) [SFAPM.PN]"
+                    BeforeUpdate ="[Event Procedure]"
+                    ControlTipText ="Prize Number: 1,2,3..."
+                    GUID = Begin
+                        0x5ca4470b7aeeb7478e311175954c324d
+                    End
+
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    DecimalPlaces =0
+                    OverlapFlags =93
+                    Left =10380
+                    Top =720
+                    Width =540
+                    TabIndex =8
+                    Name ="GN"
+                    ControlSource ="GN"
+                    StatusBarText ="S-Group Number (linked to AwardGroup)  [SFAPM.GN]"
+                    GUID = Begin
+                        0x658cf5decf6eab49afd891db0623adcd
+                    End
+
+                    LayoutCachedLeft =10380
+                    LayoutCachedTop =720
+                    LayoutCachedWidth =10920
+                    LayoutCachedHeight =960
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =9840
+                    Top =780
+                    Width =555
+                    Height =240
+                    Name ="Label9"
+                    Caption ="AN-GN"
+                    GUID = Begin
+                        0x16401777c54af04da9a10bd6ed66c5a2
+                    End
+                    LayoutCachedLeft =9840
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =10395
+                    LayoutCachedHeight =1020
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =60
+                    Top =60
+                    Width =270
+                    Height =240
+                    Name ="Label11"
+                    Caption ="PN"
+                    ControlTipText ="Prize Number: 1,2,3..."
+                    GUID = Begin
+                        0x48274a57f4008b41b959cfc30794c9e5
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =10260
+                    Top =1080
+                    Width =660
+                    TabIndex =9
+                    Name ="GID"
+                    ControlSource ="GID"
+                    StatusBarText ="GroupID = 100*AN + GN (unique key to link to the Group) [New]"
+                    GUID = Begin
+                        0xca43262817a31043b32c64a199c69429
+                    End
+
+                    LayoutCachedLeft =10260
+                    LayoutCachedTop =1080
+                    LayoutCachedWidth =10920
+                    LayoutCachedHeight =1320
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =9840
+                            Top =1080
+                            Width =360
+                            Height =240
+                            Name ="Label12"
+                            Caption ="GID:"
+                            GUID = Begin
+                                0xcf7d2fa119ad3b4eae5726d0b8f0c876
+                            End
+                            LayoutCachedLeft =9840
+                            LayoutCachedTop =1080
+                            LayoutCachedWidth =10200
+                            LayoutCachedHeight =1320
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =7200
+                    Top =60
+                    Width =780
+                    TabIndex =2
+                    Name ="Value"
+                    ControlSource ="Value"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    StatusBarText ="S-Actual Value of Prize in dollars"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x91b810e3a1b27b458e26438569617d59
+                    End
+
+                    LayoutCachedLeft =7200
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =7980
+                    LayoutCachedHeight =300
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =6840
+                            Top =60
+                            Width =300
+                            Height =240
+                            Name ="Label13"
+                            Caption ="Val"
+                            GUID = Begin
+                                0x6e8cec67a3a80045a300d46e355b901c
+                            End
+                            LayoutCachedLeft =6840
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =7140
+                            LayoutCachedHeight =300
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OverlapFlags =87
+                    ListWidth =1455
+                    Left =4320
+                    Top =60
+                    Width =1560
+                    TabIndex =1
+                    ForeColor =16737843
+                    ColumnInfo ="\"\";\"\";\"10\";\"60\""
+                    GUID = Begin
+                        0x4da4c8f65e3884418947a963cb373b8f
+                    End
+                    Name ="cbPlace"
+                    ControlSource ="Place"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT AwardPrizeSort.Place FROM AwardPrizeSort; "
+                    ColumnWidths ="1455"
+                    AfterUpdate ="[Event Procedure]"
+
+                    LayoutCachedLeft =4320
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =5880
+                    LayoutCachedHeight =300
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =3840
+                            Top =60
+                            Width =480
+                            Height =240
+                            Name ="Place_Label"
+                            Caption ="Place"
+                            GUID = Begin
+                                0x9017b52abbdcc9468912b243d4182da9
+                            End
+                            LayoutCachedLeft =3840
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =4320
+                            LayoutCachedHeight =300
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =6420
+                    Top =60
+                    Width =360
+                    TabIndex =10
+                    Name ="Type"
+                    ControlSource ="Type"
+                    StatusBarText ="S-'1',  '2' or '3' (place), 'H'onor, 'R'ecog, 'C'atTopy, 'E'xc, 'T'each  (2nd Ne"
+                        "ws Sort, 4th Script Sort from Type and table AwardPrizeSort [SFAPM.SORT_ASSEM]"
+                    GUID = Begin
+                        0xf9ce8eeb6669c9409b09a99d2156d8db
+                    End
+
+                    LayoutCachedLeft =6420
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =6780
+                    LayoutCachedHeight =300
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =5940
+                            Top =60
+                            Width =495
+                            Height =240
+                            Name ="Label20"
+                            Caption ="Type:"
+                            GUID = Begin
+                                0x897c292d6789644e88291e4b33309c0e
+                            End
+                            LayoutCachedLeft =5940
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =6435
+                            LayoutCachedHeight =300
+                        End
+                    End
+                End
+                Begin CheckBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =9780
+                    Top =90
+                    ColumnWidth =2580
+                    TabIndex =11
+                    Name ="RptSSN"
+                    ControlSource ="RptSSN"
+                    StatusBarText ="If set 'Yes', various reports will include the Winners' SSN,  If 'No' , these re"
+                        "ports will not include SSN"
+                    GUID = Begin
+                        0xa255f66d9e40f449bfab117b41843047
+                    End
+
+                    LayoutCachedLeft =9780
+                    LayoutCachedTop =90
+                    LayoutCachedWidth =10040
+                    LayoutCachedHeight =330
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =10020
+                            Top =60
+                            Width =900
+                            Height =240
+                            Name ="Label22"
+                            Caption ="SSN in Rpts"
+                            GUID = Begin
+                                0x231d47c6da55eb46a7058be0af9c66e2
+                            End
+                            LayoutCachedLeft =10020
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =10920
+                            LayoutCachedHeight =300
+                        End
+                    End
+                End
+                Begin CheckBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =8160
+                    Top =90
+                    TabIndex =12
+                    Name ="SplitPrize"
+                    ControlSource ="SplitPrize"
+                    StatusBarText ="If set 'Yes' The Prize is split between the team members. If  'No,' each member "
+                        "gets full prize"
+                    GUID = Begin
+                        0xcfff88c16385f640a8c4510307f0714b
+                    End
+
+                    LayoutCachedLeft =8160
+                    LayoutCachedTop =90
+                    LayoutCachedWidth =8420
+                    LayoutCachedHeight =330
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =8340
+                            Top =60
+                            Width =1260
+                            Height =240
+                            Name ="Label23"
+                            Caption ="Team Splits Prize"
+                            GUID = Begin
+                                0x4a81617469a7e749b3334bd210e97d8e
+                            End
+                            LayoutCachedLeft =8340
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =9600
+                            LayoutCachedHeight =300
+                        End
+                    End
+                End
+                Begin CommandButton
+                    AutoRepeat = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1740
+                    Top =120
+                    Width =576
+                    Height =246
+                    FontSize =8
+                    TabIndex =13
+                    Name ="btnNext"
+                    Caption ="Command63"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888800888888888800000008888800088888888840000008888800008888888 ,
+                        0x8004322688888000008888888040e26288888000000888888440366688888000 ,
+                        0x000088888111a3338888800000088888899deaee8888800000888888888caaaa ,
+                        0x8888800008888888811133228888800088888888811909108888800888888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f0
+                    End
+                    FontName ="Tahoma"
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Next Record"
+                    GUID = Begin
+                        0x04d1ae4b46f49b42bb52e36f73842986
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =1740
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =2316
+                    LayoutCachedHeight =366
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1020
+                    Top =120
+                    Width =576
+                    Height =246
+                    FontSize =8
+                    TabIndex =14
+                    Name ="btnPrev"
+                    Caption ="Command62"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888888800888888800000008888888000888888840000008888880000888888 ,
+                        0x8004322688888000008888888040e26288880000008888888440366688800000 ,
+                        0x008888888111a3338888000000888888899deaee8888800000888888888caaaa ,
+                        0x8888880000888888811133228888888000888888811909108888888800888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f0
+                    End
+                    FontName ="Tahoma"
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Previous Record"
+                    GUID = Begin
+                        0x622b856f7379c34c83882500e6312f5e
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =1020
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =1596
+                    LayoutCachedHeight =366
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2580
+                    Top =60
+                    Width =426
+                    Height =306
+                    FontSize =8
+                    TabIndex =15
+                    Name ="btnAdd"
+                    Caption ="Command65"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000100000000f0000000100040000000000780000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x80800000c0c0c000808080000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00777777777777777777777777777777777777777777777777 ,
+                        0x7077777777777777700777777770777770007777707070777000077777000777 ,
+                        0x7000007700000007700007777700077770007777707070777007777777707777 ,
+                        0x7077777777777777777777777777777777777777777777777777777777777777
+                    End
+                    FontName ="Tahoma"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Add Record"
+                    GUID = Begin
+                        0x15f5227bde72cc428712d0f35dcd2e9b
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =2580
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =3006
+                    LayoutCachedHeight =366
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =3000
+                    Top =180
+                    Width =615
+                    Height =210
+                    Name ="Label24"
+                    Caption ="new PN"
+                    GUID = Begin
+                        0x172152bdaf280245baf9a9fb9365cd57
+                    End
+                    LayoutCachedLeft =3000
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =3615
+                    LayoutCachedHeight =390
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Option Explicit
+Private AwardPrizeSortRS As Recordset
+Private ctlPrevFocus
+
+
+'  Previous and Next Buttons are REV 5.3.0
+Private Sub btnAdd_Click()
+    DoCmd.GoToRecord , , acNewRec
+End Sub
+
+Private Sub btnNext_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+  'MsgBox Err.Description
+End Sub
+Private Sub btnNext_Click()
+On Error GoTo Err_btnNext_Click
+    If Me.CurrentRecord = Me.Recordset.RecordCount Then
+      ' MsgBox "End of Data!"
+       ctlPrevFocus.SetFocus
+       Exit Sub
+    End If
+    DoCmd.GoToRecord , , acNext
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnNext_Click:
+    Exit Sub
+Err_btnNext_Click:
+    MsgBox Err.Description   ' Error End of Data
+    Resume Exit_btnNext_Click
+End Sub
+
+
+
+Private Sub btnPrev_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+  'MsgBox Err.Description
+End Sub
+Private Sub btnPrev_Click()
+On Error GoTo Err_btnPrev_Click
+    DoCmd.GoToRecord , , acPrevious
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnPrev_Click:
+    Exit Sub
+Err_btnPrev_Click:
+    Dim errnum As Long
+    errnum = Err.Number
+    If Err.Number = 2105 Then  ' can not go to specified record
+       errnum = Err.Number
+       'Exit Sub
+    End If
+   ' MsgBox Err.Description  ' Error You cant go to specific data
+    Resume Exit_btnPrev_Click
+End Sub
+
+
+Private Sub cbPlace_AfterUpdate()
+  On Error GoTo SubError
+  With AwardPrizeSortRS
+    .FindFirst ("[Place] = '" & Me.cbPlace.Value & "'")
+     If Not .NoMatch Then  ' Found a match so fill in Type
+       Me.Type = !Type
+     Else  ' No match so see if similar else leave it the same
+       .MoveFirst
+       Do While Not .EOF
+          If InStr(1, Me.cbPlace.Value, !PLACE) > 0 Then
+             Me.Type = !Type
+             Exit Do
+          End If
+          .MoveNext
+       Loop
+     End If
+  End With
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub Form_Current()
+  On Error GoTo SubError
+  Dim pink As Long
+  Dim green As Long
+  pink = 13356030
+  green = 65408
+  
+  If Me.NewRecord Then
+    Me.PN.BackColor = pink
+    Me.PN.SetFocus   ' Rev 5.3.0
+  Else
+    Me.PN.BackColor = green
+  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub Form_Open(Cancel As Integer)
+  On Error GoTo SubError
+  Set AwardPrizeSortRS = CurrentDb().OpenRecordset("AwardPrizeSort", dbOpenDynaset)
+  Me.OrderBy = "PN"  ' rev 5.3.2
+  Me.Requery
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub PN_BeforeUpdate(Cancel As Integer)
+  On Error GoTo SubError
+  'Me.AN = ??
+  'Me.GN = ??
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub Type_Exit(Cancel As Integer)
+    On Error GoTo SubError
+    If IsNull(Me.[Type]) Then Exit Sub ' no need to check
+    If StrComp(Me.[Type], UCase(Me.[Type]), 0) <> 0 Then ' Binary compare
+        Me.[Type] = UCase(Me.[Type])   ' do only if not already ucase
+    End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+
+Private Sub Value_AfterUpdate()
+ ' update the valuesum in main form
+ On Error GoTo SubError
+ Me.Refresh
+ FillValueSum (Me.AN)   ' Located in module functions
+ Exit Sub
+SubError:
+ MsgBox Err.Description
+End Sub

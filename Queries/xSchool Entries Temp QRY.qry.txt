@@ -1,0 +1,4 @@
+SELECT SchoolEntriesTemp.FYR, Schools.SCH_CODE, SchoolEntriesTemp.Total_Exhibits, SchoolEntriesTemp.To_State, SchoolEntriesTemp.Alternates, SchoolEntriesTemp.To_ISEF, SchoolEntriesTemp.No_Shows, Schools.SCHOOL, Schools.JR_Forms, Schools.SR_Forms
+FROM Schools LEFT JOIN SchoolEntriesTemp ON Schools.SCH_CODE = SchoolEntriesTemp.SCH_CODE
+WHERE ((([Enter Fair Year (Assumes macro xSchoolEntriesTemp Table Prep has been executed for the FYR entered)])=[schoolentriestemp].[fyr]));
+

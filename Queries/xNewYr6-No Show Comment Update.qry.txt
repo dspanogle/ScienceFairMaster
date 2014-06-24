@@ -1,0 +1,3 @@
+UPDATE Judges SET Judges.COMMENT = [comment] & " -NO SHOW " & FairYear()
+WHERE (((Judges.STATUS)="N"));
+

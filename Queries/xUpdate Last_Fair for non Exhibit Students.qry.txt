@@ -1,0 +1,3 @@
+UPDATE Students LEFT JOIN ExhibitStudents ON Students.STID = ExhibitStudents.STID SET Students.LAST_FAIR = Null
+WHERE (((Students.LAST_FAIR)=FairYear()) AND ((ExhibitStudents.STID) Is Null));
+

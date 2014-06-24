@@ -1,0 +1,59 @@
+Version =196611
+ColumnsShown =0
+Begin
+    Action ="MsgBox"
+    Argument ="Empties, then Prepares Table 'SchoolEntriesTemp' For Given Fair Year's History.\015"
+        "\012Preparing the table for queries and reports using the table's data.  \015\012"
+        "It is Safe - Just Enter the same 'Fair Year' each time you are asked. \015\012\015"
+        "\012Any key to continue"
+    Argument ="-1"
+    Argument ="4"
+End
+Begin
+    Action ="OpenTable"
+    Comment ="Open SchoolEntriesTemp Table and Empty it"
+    Argument ="SchoolEntriesTemp"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="RunCommand"
+    Argument ="109"
+End
+Begin
+    Action ="OnError"
+    Comment ="if no records do not fail"
+    Argument ="0"
+End
+Begin
+    Action ="RunCommand"
+    Argument ="223"
+End
+Begin
+    Action ="Close"
+    Comment ="Close Table.   Next actions APPEND to SchoolEntriesTemp Table"
+    Argument ="0"
+    Argument ="SchoolEntriesTemp"
+    Argument ="0"
+End
+Begin
+    Action ="OpenQuery"
+    Comment ="Append  the Records from SchoolEntries Table  for a given FYR (Fair Year)"
+    Argument ="xSchools Entries Temp Add FYR"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="OpenQuery"
+    Comment ="Select and Append all Schools Records that are NOT in SchoolEntries Table  for t"
+        "he fair year"
+    Argument ="xSchools Entries Temp Add schs no entries"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="MsgBox"
+    Argument ="The table SchoolEntriesTemp is now ready for use."
+    Argument ="-1"
+    Argument ="4"
+End

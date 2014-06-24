@@ -1,0 +1,1121 @@
+Version =20
+VersionRequired =20
+Checksum =-1192436528
+Begin Form
+    RecordSelectors = NotDefault
+    AllowDeletions = NotDefault
+    AllowAdditions = NotDefault
+    OrderByOn = NotDefault
+    DefaultView =0
+    TabularFamily =8
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    Cycle =1
+    GridX =24
+    GridY =24
+    Width =9660
+    DatasheetFontHeight =10
+    ItemSuffix =37
+    Left =1410
+    Top =5730
+    Right =11085
+    Bottom =7785
+    DatasheetGridlinesColor =12632256
+    OrderBy ="PN"
+    RecSrcDt = Begin
+        0x5eb613998fc1e340
+    End
+    GUID = Begin
+        0x7d4904de768ab847a80fcfd0cbafc37f
+    End
+    RecordSource ="SELECT AwardPrize.GID, AwardPrize.PN, Int([GID]/100) AS AN, [GID]-100*Int([gid]/"
+        "100) AS GN, ExhibitData.NCAT, SpecialWinners.RXN, SpecialWinners.Desc_FN, Specia"
+        "lWinners.Desc_LN, SpecialWinners.EXHB_TITLE AS SWEX_TITLE, Persons.FNAME, Person"
+        "s.LNAME, ExhibitData.EXHB_TITLE AS EXTitle, ExhibitData.EXN AS EXDExn, IIf(IsNul"
+        "l(SpecialWinners.ncat),\"\",IIf(Mid(SpecialWinners.NCAT,1,1)=\"J\",\"Junior Divi"
+        "sion\",\"Senior Division\")) AS SWDiv, Categories.TEAM, Persons_1.FNAME AS TFN, "
+        "Persons_1.MI AS TMI, Persons_1.LNAME AS TLN, AwardPrize.EXN, AwardPrize.Stud_Num"
+        ", AwardPrize.Place, AwardPrize.Prize, AwardPrize.Type, AwardPrize.Details, Award"
+        "Prize.Value, AwardPrize.Assembly, AwardPrize.Script_Sort, AwardPrize.News_Sort, "
+        "AwardPrize.SplitPrize, AwardPrize.RptSSN, ExhibitData.TeamEx FROM (Persons AS Pe"
+        "rsons_1 RIGHT JOIN Teachers ON Persons_1.PID=Teachers.PID) RIGHT JOIN (Categorie"
+        "s RIGHT JOIN (Persons RIGHT JOIN ((ExhibitData RIGHT JOIN AwardPrize ON ExhibitD"
+        "ata.EXN=AwardPrize.EXN) LEFT JOIN SpecialWinners ON AwardPrize.EXN=SpecialWinner"
+        "s.RXN) ON Persons.PID=SpecialWinners.PID) ON Categories.NCAT=ExhibitData.NCAT) O"
+        "N Teachers.TID=ExhibitData.TID ORDER BY AwardPrize.GID, AwardPrize.PN; "
+    OnCurrent ="[Event Procedure]"
+    OnOpen ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x380400006801000038040000f00000000000000038220000cc06000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574204949500000000000000000000000000000000000 ,
+        0x00040104940040000367000401000100000000000000010001002c0101000100 ,
+        0x2c01020000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d53554403034850 ,
+        0x204c617365724a65742049495000000000000000000000000000000000008001 ,
+        0x000000000000000000000000000064000a000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002100010077696e73706f6f6c004850204c617365724a657420494950 ,
+        0x004c5054313a0000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000
+    End
+    OnGotFocus ="[Event Procedure]"
+    FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
+    AllowLayoutView =0
+    DatasheetGridlinesColor12 =12632256
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Calibri"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+        End
+        Begin Section
+            Height =1995
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0xf1e5d2a5208bbb46b095743e373b7fab
+            End
+            Begin
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =85
+                    Left =540
+                    Top =1140
+                    Width =720
+                    TabIndex =1
+                    Name ="EXN"
+                    ControlSource ="EXN"
+                    StatusBarText ="S-Winning Exhibit (EXN) or Special Winner Number (RXN)  [SFAPM.EXN]"
+                    AfterUpdate ="[Event Procedure]"
+                    OnGotFocus ="[Event Procedure]"
+                    OnChange ="[Event Procedure]"
+                    GUID = Begin
+                        0xb8013f5e4782e241ae0b980417359b74
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1140
+                            Width =420
+                            Height =240
+                            Name ="Label0"
+                            Caption ="EXN:"
+                            GUID = Begin
+                                0x567bdd36d99bd74cb4f56589cb5efa0c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    Left =3660
+                    Top =360
+                    Width =5460
+                    Height =423
+                    TabIndex =4
+                    ForeColor =16711680
+                    Name ="Prize"
+                    ControlSource ="Prize"
+                    StatusBarText ="P-Prize description for Script, News, Booklets. 3rd News Sort (after sort based "
+                        "on Type). [SFAPM.P1 + P2]"
+                    GUID = Begin
+                        0x3593abd8e5f52441842ead71c9b1844f
+                    End
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =3060
+                            Top =360
+                            Width =480
+                            Height =240
+                            ForeColor =255
+                            Name ="Label3"
+                            Caption ="Prize"
+                            GUID = Begin
+                                0x8c2419c76c4a474e9f1d88e4b36c0e33
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =360
+                    Top =420
+                    Width =300
+                    TabIndex =2
+                    BackColor =65408
+                    Name ="PN"
+                    ControlSource ="AwardPrize.PN"
+                    StatusBarText ="S-Prize Number - 5th Script Sort (After Sort based on Type) [SFAPM.PN]"
+                    BeforeUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0xe708863cc8684b48835d39720284ca0e
+                    End
+
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Top =420
+                    Width =270
+                    Height =240
+                    Name ="Label11"
+                    Caption ="PN"
+                    GUID = Begin
+                        0x31e48a5d7ecad74d913bcb2568c3d968
+                    End
+                End
+                Begin ComboBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    ListWidth =1455
+                    Left =1320
+                    Top =420
+                    Width =1680
+                    TabIndex =3
+                    ForeColor =16737843
+                    ColumnInfo ="\"\";\"\";\"10\";\"60\""
+                    GUID = Begin
+                        0x13f2fc213cbc1445bad8dbae0f20b078
+                    End
+                    Name ="cbPlace"
+                    ControlSource ="Place"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT AwardPrizeSort.Place FROM AwardPrizeSort; "
+                    ColumnWidths ="1455"
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =780
+                            Top =420
+                            Width =480
+                            Height =240
+                            Name ="Place_Label"
+                            Caption ="Place"
+                            GUID = Begin
+                                0x420ee7e8e793a94cbb4fe17352b4e5ce
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =1380
+                    Top =1140
+                    Width =7740
+                    Height =540
+                    ColumnWidth =1245
+                    TabIndex =5
+                    Name ="tbWinInfo"
+                    ControlSource ="=filltextbox()"
+                    StatusBarText ="The title of the Exhibit"
+                    AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x4d23ffbde2e20743bd14098ad30afef1
+                    End
+
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    ListWidth =1440
+                    Left =960
+                    Top =60
+                    Width =720
+                    Height =300
+                    FontSize =10
+                    GUID = Begin
+                        0x61b85715d69a4e419c3beb7ec54d3d59
+                    End
+                    Name ="cbPN"
+                    RowSourceType ="Table/Query"
+                    ColumnWidths ="1440"
+                    AfterUpdate ="[Event Procedure]"
+                    OnEnter ="[Event Procedure]"
+                    OnExit ="[Event Procedure]"
+
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Top =60
+                            Width =810
+                            Height =300
+                            FontSize =10
+                            Name ="cbPN_Label"
+                            Caption ="Get PN"
+                            GUID = Begin
+                                0x0cf1857377714c40a6dfc8713ea3712e
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    Left =1080
+                    Top =840
+                    Width =8040
+                    Height =243
+                    TabIndex =6
+                    Name ="Details"
+                    ControlSource ="Details"
+                    StatusBarText ="S-Staff Details about prize.  Not printed on Script or for news. [New]"
+                    GUID = Begin
+                        0x4ab8f7ffd2a68c46a05c3c1b2342b610
+                    End
+
+                    LayoutCachedLeft =1080
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =9120
+                    LayoutCachedHeight =1083
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =840
+                            Width =960
+                            Height =240
+                            Name ="Label25"
+                            Caption ="Staff Notes:"
+                            GUID = Begin
+                                0x15d8dac120d26d4186e6ca26acd91a38
+                            End
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =840
+                            LayoutCachedWidth =1020
+                            LayoutCachedHeight =1080
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =87
+                    Left =1380
+                    Top =1680
+                    Width =7740
+                    Height =240
+                    ForeColor =255
+                    Name ="tbTeamWarn"
+                    Caption ="Team Exhibit: Team Students SPLIT Prize!"
+                    GUID = Begin
+                        0xbaba1fa082a1244f8084c5dc49f41436
+                    End
+                    LayoutCachedLeft =1380
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =9120
+                    LayoutCachedHeight =1920
+                End
+                Begin ComboBox
+                    TabStop = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    ColumnCount =2
+                    ListRows =4
+                    ListWidth =2448
+                    Left =600
+                    Top =1440
+                    Width =480
+                    TabIndex =7
+                    GUID = Begin
+                        0xb58b2e6c525cd34db66e17f432424e00
+                    End
+                    Name ="cbStudnum"
+                    ControlSource ="Stud_Num"
+                    RowSourceType ="Value List"
+                    RowSource ="0;'';1;'';2;'';3;''"
+                    ColumnWidths ="288;2160"
+                    StatusBarText ="Team only: Blank/0=All Team Students get prize. 1,2,3 = One Student gets prize"
+                    AfterUpdate ="[Event Procedure]"
+                    OnGotFocus ="[Event Procedure]"
+
+                End
+                Begin Label
+                    OverlapFlags =87
+                    Left =60
+                    Top =1440
+                    Width =525
+                    Height =210
+                    Name ="lbStud"
+                    Caption ="Stud#"
+                    GUID = Begin
+                        0xb894f051e6a1074cb84a6f4254d4224d
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =600
+                    Top =1740
+                    Width =420
+                    Height =255
+                    ColumnWidth =1050
+                    TabIndex =8
+                    Name ="Type"
+                    ControlSource ="Type"
+                    StatusBarText ="S-'1',  '2' or '3' (place), 'H'onorable mention, 'R'ecognition, top of 'C'ategor"
+                        "y, 'E'xcellence, 'T'eacher (2nd News Sort, 4th Script Sort from Type and table A"
+                        "wardPrizeSort [SFAPM.SORT_ASSEM]"
+                    GUID = Begin
+                        0x6de44bdbc128eb40bd802515c060103b
+                    End
+
+                    LayoutCachedLeft =600
+                    LayoutCachedTop =1740
+                    LayoutCachedWidth =1020
+                    LayoutCachedHeight =1995
+                    Begin
+                        Begin Label
+                            Visible = NotDefault
+                            OverlapFlags =85
+                            Top =1740
+                            Width =495
+                            Height =240
+                            Name ="Label33"
+                            Caption ="Type:"
+                            GUID = Begin
+                                0x157a39b80dfb8e459cc42733754680b9
+                            End
+                            LayoutCachedTop =1740
+                            LayoutCachedWidth =495
+                            LayoutCachedHeight =1980
+                        End
+                    End
+                End
+                Begin CheckBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =3780
+                    Top =90
+                    TabIndex =9
+                    Name ="SplitPrize"
+                    ControlSource ="SplitPrize"
+                    StatusBarText ="If set 'Yes' The Prize is split between the team members. If  'No,' each member "
+                        "gets full prize"
+                    AfterUpdate ="[Event Procedure]"
+                    OnExit ="[Event Procedure]"
+                    GUID = Begin
+                        0x0388181f06fc7b40a88d201bfcb830a4
+                    End
+
+                    LayoutCachedLeft =3780
+                    LayoutCachedTop =90
+                    LayoutCachedWidth =4040
+                    LayoutCachedHeight =330
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =4005
+                            Top =60
+                            Width =4680
+                            Height =240
+                            Name ="Label35"
+                            Caption ="Team Splits Prize (Change Only in Awards Edit Add Delete Form)"
+                            GUID = Begin
+                                0x923bc5eb3ace1b4286df1c5db07f8fc8
+                            End
+                            LayoutCachedLeft =4005
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =8685
+                            LayoutCachedHeight =300
+                        End
+                    End
+                End
+                Begin CommandButton
+                    AutoRepeat = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2520
+                    Top =60
+                    Width =576
+                    Height =306
+                    FontSize =8
+                    TabIndex =10
+                    Name ="btnNext"
+                    Caption ="Command63"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888800888888888800000008888800088888888840000008888800008888888 ,
+                        0x8004322688888000008888888040e26288888000000888888440366688888000 ,
+                        0x000088888111a3338888800000088888899deaee8888800000888888888caaaa ,
+                        0x8888800008888888811133228888800088888888811909108888800888888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f0
+                    End
+                    FontName ="Tahoma"
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Next Record"
+                    GUID = Begin
+                        0xf3bbb1b60486dc45af6ae54914f03e21
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =2520
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =3096
+                    LayoutCachedHeight =366
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1800
+                    Top =60
+                    Width =576
+                    Height =306
+                    FontSize =8
+                    TabIndex =11
+                    Name ="btnPrev"
+                    Caption ="Command62"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x28000000110000000f0000000100040000000000b40000000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888888888888888888888880000000 ,
+                        0x8888888800888888800000008888888000888888840000008888880000888888 ,
+                        0x8004322688888000008888888040e26288880000008888888440366688800000 ,
+                        0x008888888111a3338888000000888888899deaee8888800000888888888caaaa ,
+                        0x8888880000888888811133228888888000888888811909108888888800888888 ,
+                        0x8ff865f088888888888888888f8765f088888888888888888f0865f0
+                    End
+                    FontName ="Tahoma"
+                    OnMouseDown ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Previous Record"
+                    GUID = Begin
+                        0x5d3fa1c60c413f4b8984d875a47c6bd9
+                    End
+                    ImageData = Begin
+                        0x00000000
+                    End
+
+                    LayoutCachedLeft =1800
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2376
+                    LayoutCachedHeight =366
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'    SciFairMaster.mdb  (All class objects and modules)
+'
+'    Copyright (C) 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,
+'                  2014  Dennis e.Spanogle
+'
+'    This program is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    This program is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Compare Database
+Option Explicit
+Private AwardPrizeSortRS As Recordset
+Private TeamSplitOnEntry As Boolean
+Private ctlPrevFocus
+'  Previous and Next Buttons are REV 5.3.0
+Private Sub btnNext_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+  'MsgBox Err.Description
+End Sub
+Private Sub btnNext_Click()
+On Error GoTo Err_btnNext_Click
+    If Me.CurrentRecord = Me.Recordset.RecordCount Then
+      ' MsgBox "End of Data!"
+       ctlPrevFocus.SetFocus
+       Exit Sub
+    End If
+    DoCmd.GoToRecord , , acNext
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnNext_Click:
+    Exit Sub
+Err_btnNext_Click:
+    MsgBox Err.Description   ' Error End of Data
+    Resume Exit_btnNext_Click
+End Sub
+
+Private Sub btnPrev_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+  On Error GoTo SubError
+  Set ctlPrevFocus = Screen.PreviousControl
+  Exit Sub
+SubError:
+  'MsgBox Err.Description
+End Sub
+Private Sub btnPrev_Click()
+On Error GoTo Err_btnPrev_Click
+    DoCmd.GoToRecord , , acPrevious
+    On Error Resume Next
+    ctlPrevFocus.SetFocus
+Exit_btnPrev_Click:
+    Exit Sub
+Err_btnPrev_Click:
+    Dim errnum As Long
+    errnum = Err.Number
+    If Err.Number = 2105 Then  ' can not go to specified record
+       errnum = Err.Number
+       'Exit Sub
+    End If
+   ' MsgBox Err.Description  ' Error You cant go to specific data
+    Resume Exit_btnPrev_Click
+End Sub
+
+
+
+
+Private Function FillTextbox() As String
+ On Error GoTo SubError
+'  Rev 5.3.0   Here is the code separated out so you can see the logic
+' iif([EXN]=100
+'    ,
+'       "Script Announcement Note"
+'    ,
+'        iif([EXN]>100
+'           ,
+'               iif(IsNull([EXDExn])
+'                  ,
+'                        "ERROR:No such Exhibit?"
+'                  ,
+'                         iif(([Stud_Num]>0) And ([TEAM]=True or [TeamEx] = true)  <<--teamex added rev 5.4.0
+'                            ,
+'                               iif(Teammember([exn],[stud_num])="ERROR"
+'                                  ,
+'                                     "ERROR: No Such Stud# "
+'                                  ,
+'                                      iif([Type] = "T"
+'                                         ,
+'                                             "Teacher Award: Teacher: " & [TFN] & " " & [TLN] & "  Exhibit: " & [EXTITLE]
+'                                         ,
+'                                              [NCAT] & " Exhibit: " & [EXTITLE] & " - Single Team Winner: " & TeamMember([EXN],[Stud_Num])
+'                                         )
+'                                  )
+'                            ,
+'                               iif(([TeamEx] = true or [TEAM]=True)  ( and stud_num = 0 )  <<-- TeamEx added rev 5.4.0
+'                                   ,
+'                                      iif([Type] = "T"
+'                                         ,
+'                                             "ERROR: Teacher Award From Team: You MUST set Stud#> 0"
+'                                         ,
+'                                             [NCAT] & " Exhibit Title: " & [EXTITLE] & " Note: IF ONLY ONE Student to receive prize Set Stud# > 0"
+'                                         )
+'                                   ,
+'                                       iif([Type]="T"
+'                                          ,
+'                                             "Teacher Award: Teacher " & [TFN] & " " & [TLN] & "  Exhibit: " & [EXTITLE]
+'                                          ,
+'
+'                                            [NCAT] & " Exhibit Title: " & [EXTITLE]
+'                                          )
+'                                   )
+'                            )
+'                  )
+'           ,
+'               iif(IsNull([EXN]) Or [EXN]=0
+'                  ,
+'                      "No Entry!"
+'                  ,
+'                       iif(IsNull([RXN]) Or [RXN] = 0
+'                          ,
+'                              "ERROR: No Such Special Winner!"
+'                          ,
+'                               [Desc_FN] & " " & [Desc_LN] & "    " & [FNAME] & " " & [LNAME] & [SWDiv] & VbCrLf & "SpecWinnerExTitle: " & [SWEX_TITLE]
+'                          )
+'                  )
+'           )
+'    )
+'
+'
+ ' rev 5.4.0 adde [TeamEx] or'  Note teamEx can be null - not totally debuged as of 10-9-2010
+ FillTextbox = IIf([EXN] = 100, "Script Announcement Note", IIf([EXN] > 100, IIf(IsNull([EXDExn]), "ERROR:No such Exhibit?", _
+ IIf(([Stud_Num] > 0) And ([TeamEx] = True Or [TEAM] = True), IIf(TeamMember([EXN], [Stud_Num]) = "ERROR", "ERROR: No Such Stud# ", _
+ IIf([Type] = "T", "Teacher Award: Teacher: " & [TFN] & " " & [TLN] & "  Exhibit: " & [EXTitle] & vbCrLf, _
+ [NCAT] & " Exhibit: " & [EXTitle] & vbCrLf & " - Single Team Winner: " & TeamMember([EXN], [Stud_Num]))), _
+ IIf(([TeamEx] = True Or [TEAM] = True), IIf([Type] = "T", "ERROR: Teacher Award From Team: You MUST set Stud#> 0", _
+ [NCAT] & " Exhibit Title: " & [EXTitle] & vbCrLf & " Note: IF ONLY ONE Student to receive prize Set Stud# > 0"), _
+ IIf([Type] = "T", "Teacher Award: Teacher " & [TFN] & " " & [TLN] & "  Exhibit: " & [EXTitle] & vbCrLf, _
+ [NCAT] & " Exhibit Title: " & [EXTitle])))), IIf(IsNull([EXN]) Or [EXN] = 0, "No Entry!", _
+ IIf(IsNull([RXN]) Or [RXN] = 0, "ERROR: No Such Special Winner!", [Desc_FN] & " " & [Desc_LN] & "    " & _
+ [FNAME] & " " & [LNAME] & [SWDiv] & vbCrLf & "SpecWinnerExTitle: " & [SWEX_TITLE]))))
+ Me.tbWinInfo.ForeColor = 0
+ If Len(FillTextbox) > 4 Then
+   If Mid(FillTextbox, 1, 5) = "Error" Then
+     DoCmd.Beep
+     Me.tbWinInfo.ForeColor = vbRed
+   End If
+ End If
+ If Len(FillTextbox) > 7 Then
+    If Mid(FillTextbox, 1, 8) = "No Entry" Then
+       ' DoCmd.Beep
+       Me.tbWinInfo.ForeColor = vbRed
+    End If
+ End If
+ tbWinInfo.Requery    ' Rev 5.3.0
+ Exit Function
+SubError:
+  FillTextbox = "FillTextbox Error: " & Err.Description
+ 
+End Function
+
+
+
+Private Sub cbPN_Enter()
+  'Rev 5.4.0  attempt to fill PN combobox
+  ' must set the property RowSource Type to Table/Query for this to work
+  On Error GoTo ErrorExit
+   Me.cbPN.RowSource = "Select PN from AwardPrize where GID = " & Me.GID
+   Exit Sub
+ErrorExit:
+   
+   End Sub
+
+Private Sub cbPN_Exit(Cancel As Integer)
+  'Rev 5.4.0
+   'Me.cbPN.RowSource = ""    ' turns out do not really need this.
+  
+End Sub
+
+
+
+Private Sub cbPN_AfterUpdate()
+  On Error GoTo SubError
+  If IsNull(cbPN) Then
+     'MsgBox "Nothing Selected!"
+     Exit Sub
+  End If
+  Me.Recordset.FindFirst "PN = " & Str(Me![cbPN]) ' Edit This?
+  If Me.Recordset.NoMatch Then
+    MsgBox "No Such Prize Number", vbOKOnly
+  End If
+  Me.cbPN = Null ' No Edits or replacement on this line
+  Me.EXN.SetFocus
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+Private Sub TeamMsg()  ' Added Rev 5.3.0
+  On Error GoTo SubError
+  ' rev 5.4.0   added or TeamEx
+  If Not IsNull([TEAM]) And Not IsNull([TeamEx]) Then
+    If [TEAM] = True Or [TeamEx] = True Then
+     If Not IsNull([Stud_Num]) Then
+      If [Stud_Num] > 0 Then
+       Me.tbTeamWarn.Caption = "Team Exhibit: Only Selected Student Wins Prize. Set Stud#=0 to select all."
+      Else
+         If [SplitPrize] = 0 Then
+           Me.tbTeamWarn.Caption = "Team Exhibit: Each Team Student Wins FULL Prize!"
+         Else
+           Me.tbTeamWarn.Caption = "Team Exhibit: Team Students SPLIT Prize!"
+         End If
+      End If
+     Else  ' Student Number = null
+       Me.tbTeamWarn.Caption = "ERROR: Student Number is NULL": DoCmd.Beep
+     End If
+     If Me.Type = "T" Then  '  Team and Teacher
+         If [Stud_Num] > 0 And [Stud_Num] < 4 Then
+            Me.tbTeamWarn.Caption = "Team Exhibit Teacher: Only Selected Student's Teacher Gets Prize. "
+         Else
+            Me.tbTeamWarn.Caption = "NOTE: Team Exhibit Teacher: Set Stud# to 1, 2 or 3 to Select ONE Teacher Winner."
+         End If
+     End If
+     Me.tbTeamWarn.Visible = True
+     Me.cbStudnum.Enabled = True
+    Else  ' team is false
+      Me.tbTeamWarn.Visible = False
+      Me.cbStudnum.Enabled = False
+    End If
+  Else   ' team is NULL
+    Me.tbTeamWarn.Visible = False
+    Me.cbStudnum.Enabled = False
+  End If
+  Exit Sub
+SubError:
+      MsgBox "TeamMsgError" & Err.Description
+
+End Sub
+
+
+Private Sub cbStudnum_AfterUpdate()
+  On Error GoTo SubError
+ ' If Not IsNull([Stud_Num]) Then
+ '  If [Stud_Num] > 0 Then
+ '   Me.tbTeamWarn.Caption = "Team Exhibit: Only Selected Student Wins Prize. Set Stud#=0 to select all."
+ '  Else
+ '     If [SplitPrize] = 0 Then
+ '       Me.tbTeamWarn.Caption = "Team Exhibit: Each Team Student Wins FULL Prize unless you select a specific Stud#"
+ '     Else
+ '       Me.tbTeamWarn.Caption = "Team Exhibit: Team Students SPLIT Prize unless you select a specific Stud#"
+ '     End If
+ '  End If
+ ' Else  ' Student Number = null
+ '   Me.tbTeamWarn.Caption = "Team Exhibit: All Students Win Prize unless you select a specific Stud#"
+ ' End If
+ '      ' Rev 5.3.0 ---------
+ '
+ '      If Me.Type = "T" Then
+ '       If [Stud_Num] > 0 And [Stud_Num] < 4 Then
+ '        Me.tbTeamWarn.Caption = "Team Exhibit Teacher: Only Selected Student's Teacher Gets Prize. "
+ '       Else
+ '        Me.tbTeamWarn.Caption = "Team Exhibit Teacher: Set Stud# to 1, 2 or 3 to Select ONE Teacher Winner."
+ '       End If
+ '     End If
+ '     '  end Rev 5.3.0
+'
+'
+ '  'Me.Requery
+'  'Me.Stud_Num.SetFocus
+  'DoEvents
+  Call TeamMsg
+  Call FillTextbox    ' rev 5.3.0
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+
+End Sub
+
+Private Sub cbStudnum_GotFocus()
+  On Error GoTo SubError
+  Me.cbStudnum.RowSource = "0;'';1;'';2;'';3;''"
+  If Not IsNull(Me.EXN) Then
+    ' Rev 5.4.0  added teamex
+    If Not IsNull(Me.TEAM) And Not IsNull([TeamEx]) Then
+      If Me.TEAM = True Or [TeamEx] = True Then
+        Dim TName(3) As String
+        Dim studnum As Integer
+        For studnum = 1 To 3
+           TName(studnum) = TeamMember(Me.EXN, studnum)
+           If TName(studnum) = "ERROR" Then
+             TName(studnum) = "No Student " & studnum
+           End If
+        Next studnum
+        Me.cbStudnum.RowSource = "0;'All';1;'" & TName(1) & _
+        "';2;'" & TName(2) & "';3;'" & TName(3) & " '"
+      End If
+    End If
+  End If
+  Me.cbStudnum.SelLength = 1  ' does not work if enter via mouse click
+  Call TeamMsg     '  rev 5.3.0
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+
+End Sub
+
+Private Sub EXN_AfterUpdate()
+  Dim CurRec As Long
+  On Error GoTo Aferror
+  CurRec = Me.CurrentRecord
+  Me.Requery  ' Refresh is not enough - must requery to establish
+              ' if this is a TEAM or not.
+  If CurRec > 1 Then
+    Me.Recordset.Move (CurRec - 1)
+  End If
+  ' rev 5.4.0
+  If Not IsNull([TEAM]) And Not IsNull([TeamEx]) Then
+    If TEAM = False And TeamEx = False Then
+      [Stud_Num] = 0     ' TEAM is not null and exn is not a team exhibit
+   ' REV 5.3.0 ---------------------------------------------
+    Else    ' So what if TEAM is true - do this if teacher award
+      If Not IsNull(Me.Type) Then
+        If Me.Type = "T" Then  ' if this is a teacher award
+          If EXN > 100 Then     ' and are selecting an exhibit to indicate teacher
+          ' rev 5.4.0  added teamex
+            If TEAM = True Or TeamEx = True Then ' and it is a team exhibit
+              Stud_Num = 1      ' select student 1 to cause only one listing of teacher
+            End If
+          End If
+        End If
+      End If
+    ' --- end rev 5.3.0 -------------------------------------------
+    End If
+  Else   ' if TEAM is Null
+    [Stud_Num] = 0
+  End If
+  If Me.EXN = 95 Then
+    MsgBox "Do Not Set EXN = 95 Here!  " & vbCrLf & vbCrLf & _
+           " Normally exhibit number 95 is reserved for system use." & vbCrLf & _
+           " The query 'xAwards w/Exhibits&SpecWinners Data' Sets it!" & vbCrLf & _
+           "   Here is how this works: " & vbCrLf & _
+           "   If you set a specific TEAM member as a winner of a prize" & vbCrLf & _
+           "   (i.e. you set Stud# to 1,2,or 3) then WHEN THE ABOVE QUERY RUNS" & vbCrLf & _
+           "   it sets fields EXN and Win_EXN to 95 for each NON-WINNING Student." & vbCrLf & _
+           "   See the query and the function FixWinExn() in Modules for details" & vbCrLf & _
+           "    **  So - All you need to do to select a single winning TEAM student" & vbCrLf & _
+           "    **  is set Stud# to that student, relax, take a breath - and continue on!"
+  End If
+'  If Len(Me.tbWinInfo.Value) > 4 Then
+'    If Mid(Me.tbWinInfo.Value, 1, 5) = "Error" Then
+'      DoCmd.Beep
+'    End If
+'  End If
+  Exit Sub
+Aferror:
+  MsgBox "error after update " & Err.Description
+  
+End Sub
+
+Private Sub EXN_Change()
+  On Error GoTo SubError
+  
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+
+
+Private Sub EXN_GotFocus()
+  On Error GoTo SubError
+  Me.EXN.SelLength = 22
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub Form_Current()
+  On Error GoTo SubError
+  TeamSplitOnEntry = Me.SplitPrize.Value
+  Dim pink As Long
+  Dim green As Long
+  pink = 13356030
+  green = 65408
+  If Me.NewRecord Then
+    Me.PN.BackColor = pink
+    Me.PN.SetFocus
+  Else
+    Me.PN.BackColor = green
+  End If
+  Call TeamMsg
+'  If Not IsNull([TEAM]) Then
+'    If [TEAM] = True Then
+'      If Not IsNull([Stud_Num]) Then
+'        If [Stud_Num] > 0 And [Stud_Num] < 4 Then
+'         Me.tbTeamWarn.Caption = "Team Exhibit: Only Selected Student Wins Prize. Set Stud#=0 to select all."
+'        Else
+'         Me.tbTeamWarn.Caption = "Team Exhibit: All Students Win Prize unless you select a specific Stud#"
+'        End If
+'     ' Rev 5.3.0 ---------
+'       If Me.Type = "T" Then
+'        If [Stud_Num] > 0 And [Stud_Num] < 4 Then
+'         Me.tbTeamWarn.Caption = "Team Exhibit Teacher: Only Selected Student's Teacher Gets Prize. "
+'        Else
+'         Me.tbTeamWarn.Caption = "Team Exhibit Teacher: Set Stud# to 1, 2 or 3 to Select ONE Teacher Winner"
+'        End If
+'      End If
+'      '  end Rev 5.3.0
+'      Else
+'        Me.tbTeamWarn.Caption = "Team Exhibit: All Students Win Prize unless you select a specific Stud#"
+'      End If
+'      Me.tbTeamWarn.Visible = True
+'      Me.cbStudnum.Enabled = True
+'    Else
+'      Me.tbTeamWarn.Visible = False
+'      Me.cbStudnum.Enabled = False
+'    End If
+'  Else
+'    Me.tbTeamWarn.Visible = False
+'    Me.cbStudnum.Enabled = False
+'  End If
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub Form_GotFocus()
+' Note:  This never gets called when the subform is inside the xAward Winners Entry main form
+  
+  Me.cbPN.SetFocus
+End Sub
+
+Private Sub Form_Open(Cancel As Integer)
+  On Error GoTo SubError
+  'Set AwardPrizeSortRS = CurrentDb().OpenRecordset("AwardPrizeSort", dbOpenDynaset)
+  Me.OrderBy = "PN"   ' rev 5.3.2
+  Me.Requery
+  Me.cbPN.SetFocus
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub PN_BeforeUpdate(Cancel As Integer)
+  On Error GoTo SubError
+  'Me.AN = ??
+  'Me.GN = ??
+  Exit Sub
+SubError:
+  MsgBox Err.Description
+End Sub
+
+Private Sub SplitPrize_AfterUpdate()
+  Call TeamMsg
+  MsgBox "You just changed the Team Split! Verify it is set as necessary for this Prize. " & vbCrLf & _
+          " Origional Value = " & IIf(TeamSplitOnEntry = True, "Checked", "Un-Checked")
+End Sub
+
+
+Private Sub SplitPrize_Exit(Cancel As Integer)
+'MsgBox "Caution: Are you sure you want to change this?"
+End Sub
+
+Private Sub Type_Exit(Cancel As Integer)
+    On Error GoTo SubError
+   ' If IsNull(Me.[Type]) Then Exit Sub ' no need to check
+   ' If StrComp(Me.[Type], UCase(Me.[Type]), 0) <> 0 Then ' Binary compare
+   '     Me.[Type] = UCase(Me.[Type])   ' do only if not already ucase
+   ' End If
+    Exit Sub
+SubError:
+    MsgBox Err.Description
+End Sub
+
+Private Sub Value_AfterUpdate()
+ ' update the valuesum in main form
+ On Error GoTo SubError
+ ' Me.Refresh
+ ' DO NOT CALL NEXT AS IT TRYS TO UPDATE THE WRONG FORM
+ ' FillValueSum (Me.AN)   ' Located in module functions
+ Exit Sub
+SubError:
+ MsgBox Err.Description
+End Sub
+
+Private Sub tbWinInfo_AfterUpdate()
+'  On Error GoTo suberror
+'  If Mid(Me.tbWinInfo.Value, 1, 5) = "Error" Then
+'    DoCmd.Beep
+'  End If
+'  Exit Sub
+'suberror:
+'  MsgBox Err.Description
+
+End Sub

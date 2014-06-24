@@ -1,0 +1,4 @@
+SELECT Other_Persons.PID, Other_Persons.TP, Other_Persons.OTH_NAME AS Expr1, Other_Persons.OTH, Other_Persons.SCH_CODE, Other_Persons.Comment, Other_Persons.Temp, Persons.FNAME, Persons.MI, Persons.LNAME, Persons.HOME_PHONE, Persons.ADDR1, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.SALUTATION, Persons.COMMENTS AS PERCOM
+FROM Persons RIGHT JOIN (Other_Persons LEFT JOIN Schools ON Other_Persons.SCH_CODE=Schools.SCH_CODE) ON Persons.PID=Other_Persons.PID
+WHERE (((Other_Persons.TP)="AS"));
+

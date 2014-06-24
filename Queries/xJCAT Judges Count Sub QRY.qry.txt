@@ -1,0 +1,5 @@
+SELECT Judges.STATUS, Judges.JCAT, [LNAME] & ", " & [FNAME] & ", #" & Format(Chairs.CHAIRNUM,"00") & " Ph: " & [Home_Phone] AS Chairinfo, Count(Judges.JUN) AS CountOfJUN
+FROM ((Chairs LEFT JOIN Judges AS Judges_1 ON Chairs.JUN=Judges_1.JUN) LEFT JOIN Persons ON Judges_1.PID=Persons.PID) RIGHT JOIN (JudgeTypes RIGHT JOIN Judges ON JudgeTypes.JCAT=Judges.JCAT) ON Chairs.CHAIRNUM=JudgeTypes.CHAIRNUM
+GROUP BY Judges.STATUS, Judges.JCAT, [LNAME] & ", " & [FNAME] & ", #" & Format(Chairs.CHAIRNUM,"00") & " Ph: " & [Home_Phone]
+HAVING (((Judges.STATUS)="A"));
+

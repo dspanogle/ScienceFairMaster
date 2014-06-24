@@ -1,0 +1,5 @@
+SELECT Protocols.PROTOID, Protocols.NDATE, Protocols.SCH_CODE, Protocols.STID, Protocols.STID2, Protocols.STID3, Protocols.TID, Schools.SCHOOL AS ProtoSch, Schools_1.SCHOOL AS ThSch, Persons.LNAME AS S1LN, Persons.FNAME AS S1FN, Persons_1.LNAME AS S2LN, Persons_1.FNAME AS S2FN, Persons_2.LNAME AS S3LN, Persons_2.FNAME AS S3FN, Persons_3.LNAME AS TLN, Persons_3.FNAME AS TFN
+FROM ((Teachers LEFT JOIN Persons AS Persons_3 ON Teachers.PID=Persons_3.PID) LEFT JOIN Schools AS Schools_1 ON Teachers.SCH_CODE=Schools_1.SCH_CODE) RIGHT JOIN ((Schools INNER JOIN ((((((Protocols LEFT JOIN Students ON Protocols.STID=Students.STID) LEFT JOIN Students AS Students_1 ON Protocols.STID2=Students_1.STID) LEFT JOIN Students AS Students_2 ON Protocols.STID3=Students_2.STID) LEFT JOIN Persons ON Students.PID=Persons.PID) LEFT JOIN Persons AS Persons_1 ON Students_1.PID=Persons_1.PID) LEFT JOIN Persons AS Persons_2 ON Students_2.PID=Persons_2.PID) ON Schools.SCH_CODE=Protocols.SCH_CODE) LEFT JOIN ExhibitData ON Protocols.PROTOID=ExhibitData.PROTOID) ON Teachers.TID=Protocols.TID
+WHERE (((ExhibitData.PROTOID) Is Null))
+ORDER BY Protocols.STID;
+

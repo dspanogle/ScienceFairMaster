@@ -1,0 +1,3 @@
+SELECT Chairs.CHAIRNUM, Persons.FNAME, Persons.LNAME, Chairs.TYPE AS TC, Chairs.ASSISTING AS Ast, Judges.JCAT, Judges.DEGREE, Judges.MAJOR, Judges.EXPER, Judges.ORG_NAME, Persons.HOME_PHONE, Persons.WORK_PHONE, Persons.EXTENSION, Chairs.LOCATION, Chairs.GROUP AS Grp, Chairs.PRIORITY AS Pri, Chairs.STATUS AS CSt, Judges.STATUS AS JSt, Judges.JUN, Persons.ADDR1, Persons.ADDR2, Persons.CITY, Persons.STATE, Persons.ZIP, Persons.EMAIL, Persons.CELL_PHONE, Persons.FAX_PHONE, Persons.MAILPREF, Persons.SALUTATION, Persons.MI, Judges.FIRST_YR, Judges.LAST_YR, Judges.NUM_YR
+FROM Persons RIGHT JOIN (Judges RIGHT JOIN Chairs ON Judges.JUN=Chairs.JUN) ON Persons.PID=Judges.PID;
+

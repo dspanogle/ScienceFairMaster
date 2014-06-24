@@ -1,0 +1,2 @@
+UPDATE ExhibitData SET ExhibitData.NUMJUDGES = Null, ExhibitData.J_1 = Null, ExhibitData.J_2 = Null, ExhibitData.J_3 = Null, ExhibitData.J_4 = Null;
+
